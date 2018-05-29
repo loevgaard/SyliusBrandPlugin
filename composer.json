@@ -1,11 +1,10 @@
 {
-    "name": "sylius/plugin-skeleton",
+    "name": "loevgaard/sylius-brand-plugin",
     "type": "sylius-plugin",
-    "description": "Acme example plugin for Sylius.",
+    "description": "A Sylius plugin for handling brands",
     "license": "MIT",
     "require": {
         "php": "^7.1",
-
         "sylius/sylius": "^1.1"
     },
     "require-dev": {
@@ -39,7 +38,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1-dev"
+            "dev-master": "1.0-dev"
         }
     },
     "config": {
