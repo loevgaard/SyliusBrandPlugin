@@ -29,8 +29,8 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "Loevgaard\\SyliusBrandPlugin\\": "src/",
+            "Tests\\Loevgaard\\SyliusBrandPlugin\\": "tests/"
         }
     },
     "autoload-dev": {
