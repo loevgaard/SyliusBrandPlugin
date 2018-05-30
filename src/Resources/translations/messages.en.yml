@@ -1,0 +1,8 @@
+loevgaard_sylius_brand:
+    ui:
+        name: Name
+        slug: Slug
+        brand: Brand
+        brands: Brands
+        edit_brand: Edit brand
+        new_brand: New brand

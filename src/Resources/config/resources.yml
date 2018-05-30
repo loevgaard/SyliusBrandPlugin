@@ -1,0 +1,8 @@
+sylius_resource:
+    resources:
+        loevgaard_sylius_brand.brand:
+            driver: doctrine/orm
+            classes:
+                model: Loevgaard\SyliusBrandPlugin\Entity\Brand
+                interface: Loevgaard\SyliusBrandPlugin\Entity\BrandInterface
+                repository: Loevgaard\SyliusBrandPlugin\Repository\BrandRepository

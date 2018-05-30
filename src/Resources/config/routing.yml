@@ -1,0 +1,9 @@
+shop:
+    resource: "routing/shop.yml"
+    prefix: /{_locale}
+    requirements:
+        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
+
+admin:
+    resource: "routing/admin.yml"
+    prefix: /admin

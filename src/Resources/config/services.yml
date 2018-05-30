@@ -1,0 +1,5 @@
+services:
+    loevgaard_sylius_brand.listener.admin.menu_builder:
+        class: Loevgaard\SyliusBrandPlugin\Menu\AdminMenuListener
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addAdminMenuItems }

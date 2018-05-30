@@ -1,94 +1,78 @@
-<p align="center">
-    <a href="http://sylius.org" target="_blank">
-        <img src="http://demo.sylius.org/assets/shop/img/logo.png" />
-    </a>
-</p>
-<h1 align="center">Plugin Skeleton</h1>
-<p align="center">
-    <a href="https://packagist.org/packages/sylius/plugin-skeleton" title="License">
-        <img src="https://img.shields.io/packagist/l/sylius/plugin-skeleton.svg" />
-    </a>
-    <a href="https://packagist.org/packages/sylius/plugin-skeleton" title="Version">
-        <img src="https://img.shields.io/packagist/v/sylius/plugin-skeleton.svg" />
-    </a>
-    <a href="http://travis-ci.org/Sylius/PluginSkeleton" title="Build status">
-        <img src="https://img.shields.io/travis/Sylius/PluginSkeleton/master.svg" />
-    </a>
-    <a href="https://scrutinizer-ci.com/g/Sylius/PluginSkeleton/" title="Scrutinizer">
-        <img src="https://img.shields.io/scrutinizer/g/Sylius/PluginSkeleton.svg" />
-    </a>
-</p>
+# Sylius Brand Plugin
+
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE)
+[![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
+[![Quality Score][ico-code-quality]][link-code-quality]
 
 ## Installation
 
-1. Run `composer create-project sylius/plugin-skeleton ProjectName`.
+### Step 1: Download the plugin
 
-2. From the plugin skeleton root directory, run the following commands:
+Open a command console, enter your project directory and execute the following command to download the latest stable version of this bundle:
 
-    ```bash
-    $ (cd tests/Application && yarn install)
-    $ (cd tests/Application && yarn run gulp)
-    $ (cd tests/Application && bin/console assets:install web -e test)
+```bash
+$ composer require loevgaard/sylius-brand-plugin
+```
+
+This command requires you to have Composer installed globally, as explained in the [installation chapter](https://getcomposer.org/doc/00-intro.md) of the Composer documentation.
+
+
+### Step 2: Enable the plugin
+
+Then, enable the plugin by adding it to the list of registered plugins/bundles
+in the `app/AppKernel.php` file of your project:
+
+```php
+<?php
+// app/AppKernel.php
+
+use Sylius\Bundle\CoreBundle\Application\Kernel;
+
+final class AppKernel extends Kernel
+{
+    public function registerBundles(): array
+    {
+        return array_merge(parent::registerBundles(), [
+            // ...
+            new \Loevgaard\SyliusBrandPlugin\LoevgaardSyliusBrandPlugin(),
+            // ...
+        ]);
+    }
     
-    $ (cd tests/Application && bin/console doctrine:database:create -e test)
-    $ (cd tests/Application && bin/console doctrine:schema:create -e test)
-    ```
+    // ...
+}
+```
+
+### Step 3: Configure the plugin
+
+```yaml
+# app/config/config.yml
+
+imports:
+    # ...
+    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/config.yml" }
+```
+
+### Step 4: Update your database schema
+```bash
+$ php bin/console doctrine:schema:update --force
+```
+
+or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html).
 
 ## Usage
 
-### Running plugin tests
+TODO
 
-  - PHPUnit
+[ico-version]: https://img.shields.io/packagist/v/loevgaard/sylius-brand-plugin.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/loevgaard/SyliusBrandPlugin/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/loevgaard/SyliusBrandPlugin.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/loevgaard/SyliusBrandPlugin.svg?style=flat-square
 
-    ```bash
-    $ bin/phpunit
-    ```
-
-  - PHPSpec
-
-    ```bash
-    $ bin/phpspec run
-    ```
-
-  - Behat (non-JS scenarios)
-
-    ```bash
-    $ bin/behat --tags="~@javascript"
-    ```
-
-  - Behat (JS scenarios)
- 
-    1. Download [Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/)
-    
-    2. Run Selenium server with previously downloaded Chromedriver:
-    
-        ```bash
-        $ bin/selenium-server-standalone -Dwebdriver.chrome.driver=chromedriver
-        ```
-    3. Run test application's webserver on `localhost:8080`:
-    
-        ```bash
-        $ (cd tests/Application && bin/console server:run 127.0.0.1:8080 -d web -e test)
-        ```
-    
-    4. Run Behat:
-    
-        ```bash
-        $ bin/behat --tags="@javascript"
-        ```
-
-### Opening Sylius with your plugin
-
-- Using `test` environment:
-
-    ```bash
-    $ (cd tests/Application && bin/console sylius:fixtures:load -e test)
-    $ (cd tests/Application && bin/console server:run -d web -e test)
-    ```
-    
-- Using `dev` environment:
-
-    ```bash
-    $ (cd tests/Application && bin/console sylius:fixtures:load -e dev)
-    $ (cd tests/Application && bin/console server:run -d web -e dev)
-    ```
+[link-packagist]: https://packagist.org/packages/loevgaard/sylius-brand-plugin
+[link-travis]: https://travis-ci.org/loevgaard/SyliusBrandPlugin
+[link-scrutinizer]: https://scrutinizer-ci.com/g/loevgaard/SyliusBrandPlugin/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/loevgaard/SyliusBrandPlugin
