@@ -113,11 +113,6 @@ You need to override the template displaying the product form and add a `form_ro
     {{ form_row(form.channels) }}
 
     {{ form_row(form.brand) }}
-
-    {% if product.simple %}
-        <h4 class="ui dividing header">{{ 'sylius.ui.pricing'|trans }}</h4>
-        {{ form_row(form.variant.channelPricings, {'label': false}) }}
-    {% endif %}
 </div>
 
 {# ... #}
