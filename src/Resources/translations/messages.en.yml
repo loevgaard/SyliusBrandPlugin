@@ -9,4 +9,5 @@ loevgaard_sylius_brand:
 
     form:
         product:
-            select_brand: Brand
+            brand: Brand
+            select_brand: Select brand...
