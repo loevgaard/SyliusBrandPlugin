@@ -55,12 +55,73 @@ imports:
     - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/config.yml" }
 ```
 
-### Step 4: Update your database schema
+```yaml
+# app/config/routing.yml
+
+loevgaard_sylius_brand:
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yml"
+```
+
+```yaml
+# src/AppBundle/Resources/config/doctrine/Product.orm.yml
+
+AppBundle\Entity\Product:
+    type: entity
+    table: sylius_product
+    manyToOne:
+        brand:
+            targetEntity: Loevgaard\SyliusBrandPlugin\Entity\Brand
+            joinColumn:
+                name: brand_id
+                referencedColumnName: id
+```
+
+### Step 4: Import product trait
+
+```php
+<?php declare(strict_types = 1);
+
+namespace AppBundle\Entity;
+
+use Loevgaard\SyliusBrandPlugin\Entity\ProductTrait as ProductBrandTrait;
+use Sylius\Component\Core\Model\Product as BaseProduct;
+
+class Product extends BaseProduct
+{
+    use ProductBrandTrait;
+    
+    // ...
+}
+```
+
+### Step 5: Update your database schema
 ```bash
 $ php bin/console doctrine:schema:update --force
 ```
 
 or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html).
+
+### Step 6: Add form widget to twig template
+You need to override the template displaying the product form and add a `form_row` statement with the brand. In the example below I have added it below the channels widget.
+
+```twig
+{# app/Resources/SyliusAdminBundle/views/Product/Tab/_details.html.twig #}
+
+{# ... #}
+
+<div class="column">
+    {{ form_row(form.channels) }}
+
+    {{ form_row(form.brand) }}
+
+    {% if product.simple %}
+        <h4 class="ui dividing header">{{ 'sylius.ui.pricing'|trans }}</h4>
+        {{ form_row(form.variant.channelPricings, {'label': false}) }}
+    {% endif %}
+</div>
+
+{# ... #}
+```
 
 ## Usage
 
