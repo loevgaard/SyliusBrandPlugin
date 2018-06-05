@@ -6,3 +6,7 @@ loevgaard_sylius_brand:
         brands: Brands
         edit_brand: Edit brand
         new_brand: New brand
+
+    form:
+        product:
+            select_brand: Brand

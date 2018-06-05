@@ -11,7 +11,9 @@ class BrandRepository extends EntityRepository implements BrandRepositoryInterfa
 {
     /**
      * @param string $slug
+     *
      * @return BrandInterface|null
+     *
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
     public function findOneBySlug(string $slug): ?BrandInterface

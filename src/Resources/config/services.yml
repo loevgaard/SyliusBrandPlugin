@@ -3,3 +3,17 @@ services:
         class: Loevgaard\SyliusBrandPlugin\Menu\AdminMenuListener
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addAdminMenuItems }
+
+    loevgaard_sylius_brand.form.extension.type.product:
+        class: Loevgaard\SyliusBrandPlugin\Form\Extension\ProductTypeExtension
+        arguments:
+            - "%loevgaard_sylius_brand.model.brand.class%"
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\ProductBundle\Form\Type\ProductType }
+
+    loevgaard_sylius_brand.form.type.brand_choice:
+        class: Loevgaard\SyliusBrandPlugin\Form\Type\BrandChoiceType
+        arguments:
+            - "@loevgaard_sylius_brand.repository.brand"
+        tags:
+            - { name: form.type , alias: loevgaard_sylius_brand_choice }

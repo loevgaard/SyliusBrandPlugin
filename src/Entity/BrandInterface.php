@@ -15,9 +15,10 @@ interface BrandInterface extends ResourceInterface
 
     /**
      * @param int $id
+     *
      * @return Brand
      */
-    public function setId(int $id) : BrandInterface;
+    public function setId(int $id): self;
 
     /**
      * @return string
@@ -26,9 +27,10 @@ interface BrandInterface extends ResourceInterface
 
     /**
      * @param string $slug
+     *
      * @return Brand
      */
-    public function setSlug(string $slug) : BrandInterface;
+    public function setSlug(string $slug): self;
 
     /**
      * @return string
@@ -37,7 +39,8 @@ interface BrandInterface extends ResourceInterface
 
     /**
      * @param string $name
+     *
      * @return Brand
      */
-    public function setName(string $name) : BrandInterface;
+    public function setName(string $name): self;
 }

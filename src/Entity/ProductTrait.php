@@ -21,11 +21,13 @@ trait ProductTrait
 
     /**
      * @param BrandInterface $brand
+     *
      * @return ProductTrait
      */
     public function setBrand(BrandInterface $brand)
     {
         $this->brand = $brand;
+
         return $this;
     }
 }

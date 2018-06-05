@@ -26,16 +26,18 @@ class Brand implements BrandInterface
      */
     public function getId(): int
     {
-        return intval($this->id);
+        return (int) ($this->id);
     }
 
     /**
      * @param int $id
+     *
      * @return Brand
      */
-    public function setId(int $id) : BrandInterface
+    public function setId(int $id): BrandInterface
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -44,16 +46,18 @@ class Brand implements BrandInterface
      */
     public function getSlug(): string
     {
-        return (string)$this->slug;
+        return (string) $this->slug;
     }
 
     /**
      * @param string $slug
+     *
      * @return Brand
      */
-    public function setSlug(string $slug) : BrandInterface
+    public function setSlug(string $slug): BrandInterface
     {
         $this->slug = $slug;
+
         return $this;
     }
 
@@ -62,16 +66,18 @@ class Brand implements BrandInterface
      */
     public function getName(): string
     {
-        return (string)$this->name;
+        return (string) $this->name;
     }
 
     /**
      * @param string $name
+     *
      * @return Brand
      */
-    public function setName(string $name) : BrandInterface
+    public function setName(string $name): BrandInterface
     {
         $this->name = $name;
+
         return $this;
     }
 }
