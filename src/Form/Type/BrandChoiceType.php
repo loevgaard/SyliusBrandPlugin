@@ -39,13 +39,13 @@ final class BrandChoiceType extends AbstractType
     {
         $resolver->setDefaults([
             'choices' => function (Options $options): array {
-                $vendors = $this->brandRepository->findBy([], ['name' => 'ASC']);
+                $brands = $this->brandRepository->findBy([], ['name' => 'ASC']);
 
                 $choices = [];
 
-                /** @var BrandInterface $vendor */
-                foreach ($vendors as $vendor) {
-                    $choices[$vendor->getName()] = $vendor;
+                /** @var BrandInterface $brand */
+                foreach ($brands as $brand) {
+                    $choices[$brand->getName()] = $brand;
                 }
 
                 return $choices;

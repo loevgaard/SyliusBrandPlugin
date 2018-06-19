@@ -24,10 +24,17 @@ final class AppKernel extends Kernel
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
+     *
+     * @throws Exception
      */
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
-        $loader->load($this->getRootDir() . '/config/config.yml');
+        $loader->load($this->getProjectDir() . '/app/config/config_' . $this->environment . '.yml');
+    }
+
+    public function getProjectDir(): string
+    {
+        return dirname(__DIR__);
     }
 }

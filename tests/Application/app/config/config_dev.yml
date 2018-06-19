@@ -3,4 +3,14 @@ imports:
 
 doctrine:
     dbal:
-        path: "%kernel.root_dir%/../var/db_dev.sql"
+        path: "%kernel.project_dir%/var/db_dev.sql"
+
+web_profiler:
+  toolbar: true
+  intercept_redirects: false
+
+framework:
+    router:
+        resource: "%kernel.project_dir%/app/config/routing_dev.yml"
+    profiler:
+        enabled: true

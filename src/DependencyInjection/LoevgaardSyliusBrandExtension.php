@@ -12,7 +12,9 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 final class LoevgaardSyliusBrandExtension extends Extension
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
+     * 
+     * @throws \Exception
      */
     public function load(array $config, ContainerBuilder $container): void
     {
