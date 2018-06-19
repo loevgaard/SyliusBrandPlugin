@@ -22,17 +22,15 @@ class Brand implements BrandInterface
     protected $name;
 
     /**
-     * @return int
+     * {@inheritdoc}
      */
-    public function getId(): int
+    public function getId(): ?int
     {
-        return (int) ($this->id);
+        return $this->id;
     }
 
     /**
-     * @param int $id
-     *
-     * @return Brand
+     * {@inheritdoc}
      */
     public function setId(int $id): BrandInterface
     {
@@ -42,17 +40,15 @@ class Brand implements BrandInterface
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    public function getSlug(): string
+    public function getSlug(): ?string
     {
-        return (string) $this->slug;
+        return $this->slug;
     }
 
     /**
-     * @param string $slug
-     *
-     * @return Brand
+     * {@inheritdoc}
      */
     public function setSlug(string $slug): BrandInterface
     {
@@ -62,17 +58,15 @@ class Brand implements BrandInterface
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    public function getName(): string
+    public function getName(): ?string
     {
-        return (string) $this->name;
+        return $this->name;
     }
 
     /**
-     * @param string $name
-     *
-     * @return Brand
+     * {@inheritdoc}
      */
     public function setName(string $name): BrandInterface
     {

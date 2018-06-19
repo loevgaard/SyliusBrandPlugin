@@ -22,9 +22,9 @@ class ProductTypeExtension extends AbstractTypeExtension
             'label' => 'loevgaard_sylius_brand.form.product.brand',
             'constraints' => [
                 new NotNull([
-                    'groups' => ['sylius']
-                ])
-            ]
+                    'groups' => ['sylius'],
+                ]),
+            ],
         ]);
     }
 

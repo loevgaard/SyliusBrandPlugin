@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Menu;
 
+use Knp\Menu\ItemInterface;
 use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
 
 final class AdminMenuListener
@@ -15,13 +16,22 @@ final class AdminMenuListener
     {
         $menu = $event->getMenu();
 
-        $menu
-            ->getChild('catalog')
+        $catalog = $menu->getChild('catalog');
+
+        if ($catalog) {
+            $this->addChild($catalog);
+        } else {
+            $this->addChild($menu->getFirstChild());
+        }
+    }
+
+    private function addChild(ItemInterface $item): void
+    {
+        $item
             ->addChild('brands', [
                 'route' => 'loevgaard_sylius_brand_admin_brand_index',
             ])
             ->setLabel('Brands')
-            ->setLabelAttribute('icon', 'building')
-        ;
+            ->setLabelAttribute('icon', 'building');
     }
 }
