@@ -24,6 +24,14 @@ class Brand implements BrandInterface
     /**
      * {@inheritdoc}
      */
+    public function __toString(): string
+    {
+        return (string) $this->getName();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getId(): ?int
     {
         return $this->id;

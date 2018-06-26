@@ -9,6 +9,13 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 interface BrandInterface extends ResourceInterface
 {
     /**
+     * Returns the name of the brand
+     *
+     * @return string
+     */
+    public function __toString(): string;
+
+    /**
      * @return int
      */
     public function getId(): ?int;
