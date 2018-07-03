@@ -4,6 +4,16 @@ services:
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addAdminMenuItems }
 
+    loevgaard_sylius_brand.listener.images_upload:
+        class: Sylius\Bundle\CoreBundle\EventListener\ImagesUploadListener
+        parent: sylius.listener.images_upload
+        autowire: true
+        autoconfigure: false
+        public: false
+        tags:
+            - { name: kernel.event_listener, event: loevgaard_sylius_brand.brand.pre_create, method: uploadImages }
+            - { name: kernel.event_listener, event: loevgaard_sylius_brand.brand.pre_update, method: uploadImages }
+
     loevgaard_sylius_brand.form.extension.type.product:
         class: Loevgaard\SyliusBrandPlugin\Form\Extension\ProductTypeExtension
         arguments:
@@ -17,3 +27,15 @@ services:
             - "@loevgaard_sylius_brand.repository.brand"
         tags:
             - { name: form.type , alias: loevgaard_sylius_brand_choice }
+
+    loevgaard_sylius_brand.form.type.brand:
+        class: Loevgaard\SyliusBrandPlugin\Form\Type\BrandType
+        tags:
+            - { name: form.type }
+        arguments: ['%loevgaard_sylius_brand.model.brand.class%']
+
+    loevgaard_sylius_brand.form.type.brand_image:
+        class: Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType
+        tags:
+            - { name: form.type }
+        arguments: ['%loevgaard_sylius_brand.model.brand_image.class%']

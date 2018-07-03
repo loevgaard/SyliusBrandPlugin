@@ -8,6 +8,8 @@ loevgaard_sylius_brand:
         new_brand: New brand
 
     form:
+        brand:
+            images: Images
         product:
             brand: Brand
             select_brand: Select brand...

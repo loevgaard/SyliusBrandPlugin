@@ -9,6 +9,11 @@
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
+        <one-to-many field="images" target-entity="Loevgaard\SyliusBrandPlugin\Entity\BrandImage" mapped-by="owner" orphan-removal="true">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
         <field name="slug" type="string" length="191" unique="true" nullable="false" />
         <field name="name" type="string" length="191" nullable="false" />
     </mapped-superclass>

@@ -63,6 +63,13 @@ loevgaard_sylius_brand:
 ```
 
 ```yaml
+# app/config/routing_dev.yml
+
+loevgaard_sylius_brand:
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yml"
+```
+
+```yaml
 # src/AppBundle/Resources/config/doctrine/Product.orm.yml
 
 AppBundle\Entity\Product:
@@ -121,6 +128,12 @@ You need to override the template displaying the product form and add a `form_ro
 ## Usage
 
 TODO
+
+## TODO
+
+* Add validation to both `Brand` and `BrandImage`
+* Add brand image to grid view
+* Add tests (including behat)
 
 [ico-version]: https://img.shields.io/packagist/v/loevgaard/sylius-brand-plugin.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
