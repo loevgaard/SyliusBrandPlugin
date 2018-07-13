@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="loevgaard_sylius_barcode.context.ui.admin.managing_brands" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Admin\ManagingBrandsContext">
+            <argument type="service" id="loevgaard_sylius_barcode.page.admin.index_brand" />
+            <argument type="service" id="loevgaard_sylius_barcode.page.admin.create_brand" />
+            <tag name="fob.context_service" />
+        </service>
+
+        <service id="loevgaard_sylius_barcode.page.admin.index_brand" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Page\Admin\Brand\IndexBrandPage" parent="sylius.behat.page.admin.crud.index" public="false">
+            <argument type="string">loevgaard_sylius_brand_admin_brand_index</argument>
+        </service>
+
+        <service id="loevgaard_sylius_barcode.page.admin.create_brand" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Page\Admin\Brand\CreateBrandPage" parent="sylius.behat.page.admin.crud.create" public="false">
+            <argument type="string">loevgaard_sylius_brand_admin_brand_create</argument>
+        </service>
+    </services>
+</container>
