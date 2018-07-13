@@ -4,18 +4,19 @@ declare(strict_types = 1);
 
 namespace Loevgaard\SyliusBrandPlugin\Tests\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Loevgaard\SyliusBrandPlugin\Entity\Brand;
 use PHPUnit\Framework\TestCase;
 
 class BrandTest extends TestCase
 {
-    public function testGettersReturnNull()
+    public function testInitialState()
     {
-        $getters = $this->getGetters();
         $brand = new Brand();
-        foreach ($getters as $getter) {
-            $this->assertEquals(null, $brand->{$getter->getName()}());
-        }
+        $this->assertEquals(null, $brand->getId());
+        $this->assertEquals(null, $brand->getName());
+        $this->assertEquals(null, $brand->getSlug());
+        $this->assertInstanceOf(ArrayCollection::class, $brand->getImages());
     }
 
     public function testMutability()
@@ -26,18 +27,5 @@ class BrandTest extends TestCase
         $this->assertEquals(1, $brand->getId());
         $this->assertEquals('name', $brand->getName());
         $this->assertEquals('slug', $brand->getSlug());
-    }
-
-    /**
-     * @return \ReflectionProperty[]
-     * @throws \ReflectionException
-     */
-    private function getGetters(): array
-    {
-        $refl = new \ReflectionClass(Brand::class);
-        $methods = $refl->getMethods(\ReflectionMethod::IS_PUBLIC);
-        return array_filter($methods, function(\ReflectionMethod $method) {
-            return substr($method->getName(), 0, 3) === 'get';
-        });
     }
 }
