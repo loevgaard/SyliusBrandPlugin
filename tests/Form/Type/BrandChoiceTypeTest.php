@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
@@ -36,18 +37,18 @@ class BrandChoiceTypeTest extends TypeTestCase
         // create a type instance with the mocked dependencies
         $type = new BrandChoiceType($this->brandRepository);
 
-        return array(
+        return [
             // register the type instances with the PreloadedExtension
-            new PreloadedExtension(array($type), array()),
-        );
+            new PreloadedExtension([$type], []),
+        ];
     }
 
     public function testSubmitValidData()
     {
-        $formData = array(
+        $formData = [
             'test' => 'test',
             'test2' => 'test2',
-        );
+        ];
 
         //$objectToCompare = new TestObject();
         // $objectToCompare will retrieve data from the form submission; pass it as the second argument

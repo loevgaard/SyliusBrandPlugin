@@ -25,4 +25,11 @@ class BrandRepository extends EntityRepository implements BrandRepositoryInterfa
             ->getOneOrNullResult()
         ;
     }
+
+    public function findByName(string $name): array
+    {
+        return $this->findBy([
+            'name' => $name,
+        ]);
+    }
 }
