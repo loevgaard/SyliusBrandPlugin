@@ -119,7 +119,7 @@ You need to override the template displaying the product form and add a `form_ro
 <div class="column">
     {{ form_row(form.channels) }}
 
-    {{ form_row(form.brand) }}
+    {{ form_row(form.brand) }} {# This is the part you should add #}
 </div>
 
 {# ... #}
