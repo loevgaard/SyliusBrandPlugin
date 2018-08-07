@@ -1,0 +1,15 @@
+---
+loevgaard_sylius_brand:
+  ui:
+    name: Navn
+    slug: Slug
+    brand: Mærke
+    brands: Mærker
+    edit_brand: Rediger mærke
+    new_brand: Nyt mærke
+  form:
+    brand:
+      images: Billeder
+    product:
+      brand: Mærke
+      select_brand: Vælg mærke...
