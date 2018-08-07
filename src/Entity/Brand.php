@@ -55,16 +55,6 @@ class Brand implements BrandInterface, ImagesAwareInterface
     /**
      * {@inheritdoc}
      */
-    public function setId(int $id): BrandInterface
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getSlug(): ?string
     {
         return $this->slug;
@@ -73,11 +63,9 @@ class Brand implements BrandInterface, ImagesAwareInterface
     /**
      * {@inheritdoc}
      */
-    public function setSlug(string $slug): BrandInterface
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
-
-        return $this;
     }
 
     /**
@@ -91,11 +79,9 @@ class Brand implements BrandInterface, ImagesAwareInterface
     /**
      * {@inheritdoc}
      */
-    public function setName(string $name): BrandInterface
+    public function setName(string $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     /********************************
