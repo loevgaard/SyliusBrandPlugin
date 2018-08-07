@@ -5,6 +5,10 @@
 [![Build Status][ico-travis]][link-travis]
 [![Quality Score][ico-code-quality]][link-code-quality]
 
+If you want to add a brand to your products this is the plugin to use. Use cases:
+- Add brand logo to your product pages
+- Filter by brand in the frontend or backend, i.e. product lists
+
 ## Installation
 
 ### Step 1: Download the plugin
@@ -78,20 +82,26 @@ AppBundle\Entity\Product:
 ### Step 4: Import product trait
 
 ```php
-<?php declare(strict_types = 1);
+<?php
+// src/AppBundle/Entity/Product.php
+
+declare(strict_types=1);
 
 namespace AppBundle\Entity;
 
-use Loevgaard\SyliusBrandPlugin\Entity\ProductTrait as ProductBrandTrait;
+use Loevgaard\SyliusBrandPlugin\Entity\BrandAwareInterface;
+use Loevgaard\SyliusBrandPlugin\Entity\ProductTrait;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 
-class Product extends BaseProduct
+class Product extends BaseProduct implements BrandAwareInterface
 {
-    use ProductBrandTrait;
+    use ProductTrait;
     
     // ...
 }
 ```
+
+**NOTE:** If you haven't extended the `Product` entity yet, follow the [customization instructions](https://docs.sylius.com/en/1.2/customization/model.html) first because you need to add a bit more configuration.
 
 ### Step 5: Update your database schema
 ```bash
@@ -116,16 +126,6 @@ You need to override the template displaying the product form and add a `form_ro
 
 {# ... #}
 ```
-
-## Usage
-
-TODO
-
-## TODO
-
-* Add validation to both `Brand` and `BrandImage`
-* Add brand image to grid view
-* Add tests (including behat)
 
 [ico-version]: https://img.shields.io/packagist/v/loevgaard/sylius-brand-plugin.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
