@@ -1,15 +1,15 @@
+---
 loevgaard_sylius_brand:
-    ui:
-        name: Name
-        slug: Slug
-        brand: Brand
-        brands: Brands
-        edit_brand: Edit brand
-        new_brand: New brand
-
-    form:
-        brand:
-            images: Images
-        product:
-            brand: Brand
-            select_brand: Select brand...
+  ui:
+    name: Name
+    slug: Slug
+    brand: Brand
+    brands: Brands
+    edit_brand: Edit brand
+    new_brand: New brand
+  form:
+    brand:
+      images: Images
+    product:
+      brand: Brand
+      select_brand: Select brand...
