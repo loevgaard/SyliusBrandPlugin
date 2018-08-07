@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
 
 use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
-use Loevgaard\SyliusBrandPlugin\Repository\BrandRepositoryInterface;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Bridge\Doctrine\Form\DataTransformer\CollectionToArrayTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -16,14 +16,14 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 final class BrandChoiceType extends AbstractType
 {
     /**
-     * @var BrandRepositoryInterface
+     * @var RepositoryInterface
      */
     private $brandRepository;
 
     /**
-     * @param BrandRepositoryInterface $brandRepository
+     * @param RepositoryInterface $brandRepository
      */
-    public function __construct(BrandRepositoryInterface $brandRepository)
+    public function __construct(RepositoryInterface $brandRepository)
     {
         $this->brandRepository = $brandRepository;
     }

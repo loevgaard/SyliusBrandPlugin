@@ -5,28 +5,25 @@ declare(strict_types=1);
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
 
 use Loevgaard\SyliusBrandPlugin\Entity\Brand;
-use Loevgaard\SyliusBrandPlugin\Repository\BrandRepositoryInterface;
 use PHPUnit\Framework\MockObject\MockObject;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\Form\PreloadedExtension;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 class BrandChoiceTypeTest extends TypeTestCase
 {
     /**
-     * @var MockObject|BrandRepositoryInterface
+     * @var MockObject|RepositoryInterface
      */
     private $brandRepository;
 
     protected function setUp()
     {
         $brand = new Brand();
-        $brand
-            ->setId(1)
-            ->setName('brand name')
-            ->setSlug('brand-name')
-        ;
+        $brand->setName('brand name');
+        $brand->setSlug('brand-name');
 
-        $this->brandRepository = $this->createMock(BrandRepositoryInterface::class);
+        $this->brandRepository = $this->createMock(RepositoryInterface::class);
         $this->brandRepository->method('findBy')->willReturn([$brand]);
 
         parent::setUp();

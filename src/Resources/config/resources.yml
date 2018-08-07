@@ -5,7 +5,6 @@ sylius_resource:
             classes:
                 model: Loevgaard\SyliusBrandPlugin\Entity\Brand
                 interface: Loevgaard\SyliusBrandPlugin\Entity\BrandInterface
-                repository: Loevgaard\SyliusBrandPlugin\Repository\BrandRepository
                 form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandType
 
         loevgaard_sylius_brand.brand_image:

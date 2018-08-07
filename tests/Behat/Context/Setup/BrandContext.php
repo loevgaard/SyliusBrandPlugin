@@ -6,13 +6,13 @@ namespace Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Setup;
 
 use Behat\Behat\Context\Context;
 use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
-use Loevgaard\SyliusBrandPlugin\Repository\BrandRepositoryInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 final class BrandContext implements Context
 {
     /**
-     * @var BrandRepositoryInterface
+     * @var RepositoryInterface
      */
     private $brandRepository;
 
@@ -21,7 +21,7 @@ final class BrandContext implements Context
      */
     private $brandFactory;
 
-    public function __construct(BrandRepositoryInterface $brandRepository, FactoryInterface $brandFactory)
+    public function __construct(RepositoryInterface $brandRepository, FactoryInterface $brandFactory)
     {
         $this->brandRepository = $brandRepository;
         $this->brandFactory = $brandFactory;

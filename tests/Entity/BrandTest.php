@@ -22,9 +22,10 @@ class BrandTest extends TestCase
     public function testMutability()
     {
         $brand = new Brand();
-        $brand->setId(1)->setName('name')->setSlug('slug');
+        $brand->setName('name');
+        $brand->setSlug('slug');
 
-        $this->assertEquals(1, $brand->getId());
+        $this->assertEquals(null, $brand->getId());
         $this->assertEquals('name', $brand->getName());
         $this->assertEquals('slug', $brand->getSlug());
     }
