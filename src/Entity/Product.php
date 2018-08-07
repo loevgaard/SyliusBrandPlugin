@@ -6,7 +6,7 @@ namespace Loevgaard\SyliusBrandPlugin\Entity;
 
 use Sylius\Component\Core\Model\Product as BaseProduct;
 
-class Product extends BaseProduct
+class Product extends BaseProduct implements BrandAwareInterface
 {
     use ProductTrait;
 }
