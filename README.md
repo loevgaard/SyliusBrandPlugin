@@ -62,13 +62,6 @@ loevgaard_sylius_brand:
 ```
 
 ```yaml
-# app/config/routing_dev.yml
-
-loevgaard_sylius_brand:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yml"
-```
-
-```yaml
 # src/AppBundle/Resources/config/doctrine/Product.orm.yml
 
 AppBundle\Entity\Product:
