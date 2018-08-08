@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Loevgaard\SyliusBrandPlugin\Form\Type;
+namespace Tests\Loevgaard\SyliusBrandPlugin\Form\Type;
 
 use Loevgaard\SyliusBrandPlugin\Entity\Brand;
+use Loevgaard\SyliusBrandPlugin\Form\Type\BrandChoiceType;
 use PHPUnit\Framework\MockObject\MockObject;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\Form\PreloadedExtension;

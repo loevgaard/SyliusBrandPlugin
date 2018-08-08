@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Loevgaard\SyliusBrandPlugin\Tests\Entity;
+namespace Tests\Loevgaard\SyliusBrandPlugin\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Loevgaard\SyliusBrandPlugin\Entity\Brand;
