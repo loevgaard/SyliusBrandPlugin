@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Loevgaard\SyliusBrandPlugin\Entity;
+namespace Tests\Loevgaard\SyliusBrandPlugin\Entity;
 
+use Loevgaard\SyliusBrandPlugin\Entity\BrandAwareInterface;
+use Loevgaard\SyliusBrandPlugin\Entity\ProductTrait;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 
 class Product extends BaseProduct implements BrandAwareInterface
