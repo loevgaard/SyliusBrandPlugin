@@ -49,6 +49,12 @@ doctrine:
         driver: "pdo_sqlite"
         path: "%kernel.project_dir%/var/db.sql"
         charset: UTF8
+    orm:
+        mappings:
+            AppBundle:
+                type: xml
+                dir: "%kernel.project_dir%/app/Resources/config/doctrine"
+                prefix: Tests\Loevgaard\SyliusBrandPlugin\Application\Entity
 
 fos_rest:
     exception: ~
@@ -77,4 +83,4 @@ sylius_product:
     resources:
         product:
             classes:
-                model: Loevgaard\SyliusBrandPlugin\Entity\Product
+                model: Tests\Loevgaard\SyliusBrandPlugin\Application\Entity\Product

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Loevgaard\SyliusBrandPlugin\Entity;
+namespace Tests\Loevgaard\SyliusBrandPlugin\Application\Entity;
 
 use Loevgaard\SyliusBrandPlugin\Entity\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Entity\ProductTrait;
