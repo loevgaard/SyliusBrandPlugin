@@ -20,6 +20,12 @@ sylius_grid:
                 options:
                     class: Loevgaard\SyliusBrandPlugin\Entity\Brand
             fields:
+                image:
+                    type: twig
+                    label: loevgaard_sylius_brand.ui.image
+                    path: .
+                    options:
+                        template: "@LoevgaardSyliusBrandPlugin/Grid/Field/image.html.twig"
                 name:
                     type: string
                     label: loevgaard_sylius_brand.ui.name

@@ -1,0 +1,9 @@
+{% if data.imagesByType('logo') is not empty %}
+    {% set path = data.imagesByType('logo').first.path|imagine_filter(filter|default('sylius_small')) %}
+{% elseif data.images.first %}
+    {% set path = data.images.first.path|imagine_filter(filter|default('sylius_small')) %}
+{% else %}
+    {% set path = '//placehold.it/120x90' %}
+{% endif %}
+
+<img src="{{ path }}" alt="" class="ui bordered image">
