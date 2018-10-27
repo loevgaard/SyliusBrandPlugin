@@ -1,10 +1,10 @@
 ---
 loevgaard_sylius_brand:
   ui:
-    name: Name
+    name: Naam
     slug: Slug
-    brand: Brand
-    brands: Brands
+    brand: Merk
+    brands: Merken
     edit_brand: Edit brand
     new_brand: New brand
     image: Image
