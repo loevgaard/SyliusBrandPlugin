@@ -5,12 +5,12 @@ loevgaard_sylius_brand:
     slug: Slug
     brand: Merk
     brands: Merken
-    edit_brand: Edit brand
-    new_brand: New brand
-    image: Image
+    edit_brand: Merk aanpassen
+    new_brand: Nieuwe merk
+    image: Foto
   form:
     brand:
-      images: Images
+      images: Foto's
     product:
-      brand: Brand
-      select_brand: Select brand...
+      brand: Merk
+      select_brand: Merk uitzoeken...
