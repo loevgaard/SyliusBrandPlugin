@@ -3,14 +3,14 @@ loevgaard_sylius_brand:
   ui:
     name: Name
     slug: Slug
-    brand: Brand
-    brands: Brands
-    edit_brand: Edit brand
-    new_brand: New brand
-    image: Image
+    brand: Marke
+    brands: Marken
+    edit_brand: Marke bearbeiten
+    new_brand: Neue Marke
+    image: Bild
   form:
     brand:
-      images: Images
+      images: Bilder
     product:
-      brand: Brand
-      select_brand: Select brand...
+      brand: Marke
+      select_brand: Marke wählen...

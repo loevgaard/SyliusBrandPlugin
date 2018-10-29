@@ -7,7 +7,7 @@ loevgaard_sylius_brand:
     brands: Mærker
     edit_brand: Rediger mærke
     new_brand: Nyt mærke
-    image: Image
+    image: Billede
   form:
     brand:
       images: Billeder
