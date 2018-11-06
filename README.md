@@ -118,6 +118,9 @@ You need to override the template displaying the product form and add a `form_ro
 
 If you haven't overridden the template yet, you can just copy the template from `vendor/loevgaard/sylius-brand-plugin/src/Resources/views/SyliusAdminBundle` to `app/Resources/SyliusAdminBundle/views/`
 
+## Installation and usage for plugin development
+[Find more information here](install-dev.md)
+
 ## Contribute by translating
 We use the same service as Sylius for translating, namely [Crowdin](https://crowdin.com/project/sylius-brand-plugin). You can help out by translating this project into your mother tongue ;)
 
