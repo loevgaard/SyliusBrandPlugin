@@ -26,7 +26,7 @@ class UpdateBrandPage extends UpdatePage
     /**
      * {@inheritdoc}
      */
-    protected function getDefinedElements()
+    protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
             'name' => '#loevgaard_sylius_brand_brand_name',
