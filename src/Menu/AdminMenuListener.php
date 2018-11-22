@@ -31,7 +31,7 @@ final class AdminMenuListener
             ->addChild('brands', [
                 'route' => 'loevgaard_sylius_brand_admin_brand_index',
             ])
-            ->setLabel('Brands')
+            ->setLabel('loevgaard_sylius_brand.ui.brands')
             ->setLabelAttribute('icon', 'building');
     }
 }
