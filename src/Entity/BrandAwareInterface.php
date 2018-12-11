@@ -12,7 +12,7 @@ interface BrandAwareInterface
     public function getBrand(): ?BrandInterface;
 
     /**
-     * @param BrandInterface $brand
+     * @param BrandInterface|null $brand
      */
-    public function setBrand(BrandInterface $brand): void;
+    public function setBrand(BrandInterface $brand = null): void;
 }

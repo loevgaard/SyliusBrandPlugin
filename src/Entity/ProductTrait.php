@@ -20,9 +20,9 @@ trait ProductTrait
     }
 
     /**
-     * @param BrandInterface $brand
+     * @param BrandInterface|null $brand
      */
-    public function setBrand(BrandInterface $brand): void
+    public function setBrand(BrandInterface $brand = null): void
     {
         $this->brand = $brand;
     }
