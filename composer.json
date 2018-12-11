@@ -33,7 +33,8 @@
         "symfony/dotenv": "^3.4|^4.1",
         "symfony/intl": "^3.4|^4.1",
         "symfony/web-profiler-bundle": "^3.4|^4.1",
-        "symfony/web-server-bundle": "^3.4|^4.1"
+        "symfony/web-server-bundle": "^3.4|^4.1",
+        "sonata-project/core-bundle": "^3.12 !=3.13.0"
     },
     "prefer-stable": true,
     "autoload": {

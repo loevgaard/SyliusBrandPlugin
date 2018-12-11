@@ -7,12 +7,12 @@ namespace Loevgaard\SyliusBrandPlugin\Entity;
 interface BrandAwareInterface
 {
     /**
-     * @return BrandInterface
+     * @return BrandInterface|null
      */
     public function getBrand(): ?BrandInterface;
 
     /**
-     * @param BrandInterface $brand
+     * @param BrandInterface|null $brand
      */
-    public function setBrand(BrandInterface $brand): void;
+    public function setBrand(?BrandInterface $brand): void;
 }

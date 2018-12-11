@@ -7,12 +7,12 @@ namespace Loevgaard\SyliusBrandPlugin\Entity;
 trait ProductTrait
 {
     /**
-     * @var BrandInterface
+     * @var BrandInterface|null
      */
     protected $brand;
 
     /**
-     * @return BrandInterface
+     * @return BrandInterface|null
      */
     public function getBrand(): ?BrandInterface
     {
@@ -20,9 +20,9 @@ trait ProductTrait
     }
 
     /**
-     * @param BrandInterface $brand
+     * @param BrandInterface|null $brand
      */
-    public function setBrand(BrandInterface $brand): void
+    public function setBrand(?BrandInterface $brand): void
     {
         $this->brand = $brand;
     }
