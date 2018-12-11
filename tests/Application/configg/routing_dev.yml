@@ -1,5 +1,0 @@
-sylius:
-    resource: "../../../../vendor/sylius/sylius/app/config/routing_dev.yml"
-
-loevgaard_sylius_brand:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yml"
