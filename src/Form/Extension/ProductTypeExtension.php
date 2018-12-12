@@ -17,11 +17,7 @@ class ProductTypeExtension extends AbstractTypeExtension
         $builder->add('brand', BrandChoiceType::class, [
             'placeholder' => 'loevgaard_sylius_brand.form.product.select_brand',
             'label' => 'loevgaard_sylius_brand.form.product.brand',
-            'constraints' => [
-                new NotNull([
-                    'groups' => ['sylius'],
-                ]),
-            ],
+            'required' => false,
         ]);
     }
 
