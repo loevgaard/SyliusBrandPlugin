@@ -99,25 +99,6 @@ $ php bin/console doctrine:schema:update --force
 
 or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html).
 
-### Step 6: Add form widget to twig template
-You need to override the template displaying the product form and add a `form_row` statement with the brand. In the example below I have added it below the channels widget.
-
-```twig
-{# app/Resources/SyliusAdminBundle/views/Product/Tab/_details.html.twig #}
-
-{# ... #}
-
-<div class="column">
-    {{ form_row(form.channels) }}
-
-    {{ form_row(form.brand) }} {# This is the part you should add #}
-</div>
-
-{# ... #}
-```
-
-If you haven't overridden the template yet, you can just copy the template from `vendor/loevgaard/sylius-brand-plugin/src/Resources/views/SyliusAdminBundle` to `app/Resources/SyliusAdminBundle/views/`
-
 ## Installation and usage for plugin development
 [Find more information here](install-dev.md)
 
