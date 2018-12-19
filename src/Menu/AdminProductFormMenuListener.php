@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Menu;
+namespace Loevgaard\SyliusBrandPlugin\Menu;
 
 use Sylius\Bundle\AdminBundle\Event\ProductMenuBuilderEvent;
 
