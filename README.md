@@ -40,7 +40,7 @@ return [
 ### Step 3: Configure the plugin
 
 ```yaml
-# config/services.yml
+# config/packages/loevgaard_sylius_brand.yaml
 
 imports:
     # ...
@@ -48,24 +48,10 @@ imports:
 ```
 
 ```yaml
-# config/routing.yml
+# config/routes/loevgaard_sylius_brand.yaml
 
 loevgaard_sylius_brand:
     resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yml"
-```
-
-```yaml
-# config/doctrine/Product.orm.yml
-
-AppBundle\Entity\Product:
-    type: entity
-    table: sylius_product
-    manyToOne:
-        brand:
-            targetEntity: Loevgaard\SyliusBrandPlugin\Entity\Brand
-            joinColumn:
-                name: brand_id
-                referencedColumnName: id
 ```
 
 ### Step 4: Import product trait
@@ -76,12 +62,17 @@ AppBundle\Entity\Product:
 
 declare(strict_types=1);
 
-namespace AppBundle\Entity;
+namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use Loevgaard\SyliusBrandPlugin\Entity\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Entity\ProductTrait;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 
+/**
+ * @ORM\MappedSuperclass()
+ * @ORM\Table(name="sylius_product")
+ */
 class Product extends BaseProduct implements BrandAwareInterface
 {
     use ProductTrait;
@@ -90,7 +81,7 @@ class Product extends BaseProduct implements BrandAwareInterface
 }
 ```
 
-**NOTE:** If you haven't extended the `Product` entity yet, follow the [customization instructions](https://docs.sylius.com/en/1.2/customization/model.html) first because you need to add a bit more configuration.
+**NOTE:** If you haven't extended the `Product` entity yet, follow the [customization instructions](https://docs.sylius.com/en/1.3/customization/model.html) first because you need to add a bit more configuration.
 
 ### Step 5: Update your database schema
 ```bash
