@@ -39,3 +39,8 @@ services:
         tags:
             - { name: form.type }
         arguments: ['%loevgaard_sylius_brand.model.brand_image.class%']
+    
+    loevgaard_sylius_brand.listener.admin.product_form_menu_builder:
+        class: Loevgaard\SyliusBrandPlugin\Menu\AdminProductFormMenuListener:
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.product.form, method: addItems }
