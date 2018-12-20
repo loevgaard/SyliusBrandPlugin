@@ -10,23 +10,23 @@ trait ProductTrait
 {
     /**
      * @var BrandInterface|null
-     * @ORM\ManyToOne(targetEntity="Loevgaard\SyliusBrandPlugin\Entity\Brand")
+     * @ORM\ManyToOne(targetEntity="Loevgaard\SyliusBrandPlugin\Entity\Brand", inversedBy="products")
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="id")
      */
     protected $brand;
 
     /**
-     * @return BrandInterface|null
+     * {@inheritdoc}
      */
-    public function getBrand(): ?BrandInterface
+    public function getBrand(): ?ProductsAwareInterface
     {
         return $this->brand;
     }
 
     /**
-     * @param BrandInterface|null $brand
+     * {@inheritdoc}
      */
-    public function setBrand(?BrandInterface $brand): void
+    public function setBrand(?ProductsAwareInterface $brand): void
     {
         $this->brand = $brand;
     }

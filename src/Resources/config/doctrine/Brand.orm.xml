@@ -14,6 +14,7 @@
                 <cascade-all/>
             </cascade>
         </one-to-many>
+        <one-to-many field="products" target-entity="Sylius\Component\Product\Model\ProductInterface" mapped-by="brand" />
         <field name="slug" type="string" length="191" unique="true" nullable="false" />
         <field name="name" type="string" length="191" nullable="false" />
     </mapped-superclass>
