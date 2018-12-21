@@ -18,7 +18,7 @@ trait ProductTrait
     /**
      * {@inheritdoc}
      */
-    public function getBrand(): ?ProductsAwareInterface
+    public function getBrand(): ?BrandInterface
     {
         return $this->brand;
     }
@@ -26,7 +26,7 @@ trait ProductTrait
     /**
      * {@inheritdoc}
      */
-    public function setBrand(?ProductsAwareInterface $brand): void
+    public function setBrand(?BrandInterface $brand): void
     {
         $this->brand = $brand;
     }
