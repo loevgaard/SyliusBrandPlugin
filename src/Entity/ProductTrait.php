@@ -10,13 +10,13 @@ trait ProductTrait
 {
     /**
      * @var BrandInterface|null
-     * @ORM\ManyToOne(targetEntity="Loevgaard\SyliusBrandPlugin\Entity\Brand")
+     * @ORM\ManyToOne(targetEntity="Loevgaard\SyliusBrandPlugin\Entity\Brand", inversedBy="products")
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="id")
      */
     protected $brand;
 
     /**
-     * @return BrandInterface|null
+     * {@inheritdoc}
      */
     public function getBrand(): ?BrandInterface
     {
@@ -24,7 +24,7 @@ trait ProductTrait
     }
 
     /**
-     * @param BrandInterface|null $brand
+     * {@inheritdoc}
      */
     public function setBrand(?BrandInterface $brand): void
     {

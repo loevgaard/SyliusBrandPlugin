@@ -6,7 +6,7 @@ namespace Loevgaard\SyliusBrandPlugin\Entity;
 
 use Sylius\Component\Resource\Model\ResourceInterface;
 
-interface BrandInterface extends ResourceInterface
+interface BrandInterface extends ResourceInterface, ProductsAwareInterface, ImagesAwareInterface
 {
     /**
      * Returns the name of the brand

@@ -44,3 +44,23 @@ services:
         class: Loevgaard\SyliusBrandPlugin\Menu\AdminProductFormMenuListener
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.product.form, method: addItems }
+
+    loevgaard_sylius_brand.assigner.products:
+        class: Loevgaard\SyliusBrandPlugin\Assigner\ProductsAssigner
+        
+    loevgaard_sylius_brand.fixture.brand:
+        public: true
+        class: Loevgaard\SyliusBrandPlugin\Fixture\BrandFixture
+        arguments:
+            - '@loevgaard_sylius_brand.manager.brand'
+            - '@loevgaard_sylius_brand.fixture.example_factory.brand'
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    loevgaard_sylius_brand.fixture.example_factory.brand:
+        public: true
+        class: Loevgaard\SyliusBrandPlugin\Fixture\Factory\BrandExampleFactory
+        arguments:
+            - '@sylius.repository.product'
+            - '@loevgaard_sylius_brand.assigner.products'
+            - '@loevgaard_sylius_brand.factory.brand'

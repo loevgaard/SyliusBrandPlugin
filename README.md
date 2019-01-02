@@ -90,6 +90,36 @@ $ php bin/console doctrine:schema:update --force
 
 or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html).
 
+## Fixtures
+
+ 1. Add a new yaml file to the folder `config/packages` and name it as you wish, e.g. `my_own_fixtures.yaml`.
+
+ 2. Fill this yaml with your own brand fixtures and don't forget to declare the definition of
+   your product(s) before this brand definition or use existing product(s) code.
+    ```
+    # config/packages/my_own_fixtures.yaml
+    
+    sylius_fixtures:
+       suites:
+           my_own_brand_fixtures:
+                fixtures:
+                    loevgaard_sylius_brand_plugin_brand:
+                        options:
+                            custom:
+                                flux:
+                                    name: 'My brand'
+                                    slug: 'my-brand'
+                                    products:
+                                      - product_code_1
+                                      - product_code_2
+                                      - product_code_3
+    ```
+
+ 3. Load your fixtures
+
+    ```bash
+    php bin/console sylius:fixture:load my_own_brand_fixtures
+    ```
 ## Installation and usage for plugin development
 [Find more information here](install-dev.md)
 
