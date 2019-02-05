@@ -45,3 +45,5 @@ default:
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
                 - "features"
+            contexts:
+                - "Tests\\Loevgaard\\SyliusBrandPlugin\\Behat\\Context\\Setup\\FeatureContext" # default one!
