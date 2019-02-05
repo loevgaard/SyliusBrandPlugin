@@ -46,4 +46,7 @@ default:
             paths:
                 - "features"
             contexts:
-                - "Tests\\Loevgaard\\SyliusBrandPlugin\\Behat\\Context\\Setup\\FeatureContext" # default one!
+                - "Sylius\\Behat\\Context\\Domain\\SecurityContext"
+                - "loevgaard_sylius_barcode.behat.context.setup.brand"
+                - "loevgaard_sylius_barcode.behat.context.transform.brand"
+                - "loevgaard_sylius_barcode.behat.context.ui.admin.managing_brands"
