@@ -13,7 +13,7 @@ trait ProductTrait
      * @ORM\ManyToOne(targetEntity="Loevgaard\SyliusBrandPlugin\Entity\Brand", inversedBy="products")
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="id")
      */
-    protected $brand;
+    private $brand;
 
     /**
      * {@inheritdoc}
