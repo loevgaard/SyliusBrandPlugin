@@ -10,10 +10,11 @@ trait ProductTrait
 {
     /**
      * @var BrandInterface|null
+     *
      * @ORM\ManyToOne(targetEntity="Loevgaard\SyliusBrandPlugin\Entity\Brand", inversedBy="products")
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="id")
      */
-    private $brand;
+    protected $brand;
 
     /**
      * {@inheritdoc}
