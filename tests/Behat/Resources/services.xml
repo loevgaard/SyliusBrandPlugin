@@ -3,11 +3,9 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <defaults public="true" />
-        <!-- Put your Behat services here -->
 
         <service id="loevgaard_sylius_barcode.behat.context.transform.brand" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Transform\BrandContext">
             <argument type="service" id="loevgaard_sylius_brand.repository.brand" />
-            <tag name="fob.context_service" />
         </service>
 
         <service id="loevgaard_sylius_barcode.behat.context.setup.brand" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Setup\BrandContext">
