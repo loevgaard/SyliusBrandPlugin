@@ -5,7 +5,7 @@ Feature: Editing a brand
   I want to be able to edit a brand
 
   Background:
-    Given The store has a brand "Levis"
+    Given the store has a brand "Levis"
     And I am logged in as an administrator
 
   @ui
