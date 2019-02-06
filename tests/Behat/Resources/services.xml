@@ -2,22 +2,21 @@
 
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="loevgaard_sylius_barcode.behat.context.transform.brand" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Transform\BrandContext" public="false">
-            <argument type="service" id="__symfony__.loevgaard_sylius_brand.repository.brand" />
-            <tag name="fob.context_service" />
+        <defaults public="true" />
+
+        <service id="loevgaard_sylius_barcode.behat.context.transform.brand" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Transform\BrandContext">
+            <argument type="service" id="loevgaard_sylius_brand.repository.brand" />
         </service>
 
-        <service id="loevgaard_sylius_barcode.behat.context.setup.brand" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Setup\BrandContext" public="false">
-            <argument type="service" id="__symfony__.loevgaard_sylius_brand.repository.brand" />
-            <argument type="service" id="__symfony__.loevgaard_sylius_brand.factory.brand" />
-            <tag name="fob.context_service" />
+        <service id="loevgaard_sylius_barcode.behat.context.setup.brand" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Setup\BrandContext">
+            <argument type="service" id="loevgaard_sylius_brand.repository.brand" />
+            <argument type="service" id="loevgaard_sylius_brand.factory.brand" />
         </service>
 
         <service id="loevgaard_sylius_barcode.behat.context.ui.admin.managing_brands" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Ui\Admin\ManagingBrandsContext">
             <argument type="service" id="loevgaard_sylius_barcode.behat.page.admin.index_brand" />
             <argument type="service" id="loevgaard_sylius_barcode.behat.page.admin.create_brand" />
             <argument type="service" id="loevgaard_sylius_barcode.behat.page.admin.update_brand" />
-            <tag name="fob.context_service" />
         </service>
 
         <service id="loevgaard_sylius_barcode.behat.page.admin.index_brand" class="Tests\Loevgaard\SyliusBrandPlugin\Behat\Page\Admin\Brand\IndexBrandPage" parent="sylius.behat.page.admin.crud.index" public="false">

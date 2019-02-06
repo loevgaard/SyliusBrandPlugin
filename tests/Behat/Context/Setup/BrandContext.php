@@ -28,7 +28,7 @@ final class BrandContext implements Context
     }
 
     /**
-     * @Given the store has a brand :brandName
+     * @Given The store has a brand :brandName
      */
     public function storeHasABrand($brandName)
     {

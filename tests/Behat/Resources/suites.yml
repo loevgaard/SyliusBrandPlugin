@@ -1,7 +1,7 @@
 default:
     suites:
         managing_brands:
-            contexts_services:
+            contexts:
                 - sylius.behat.context.hook.doctrine_orm
                 - sylius.behat.context.setup.admin_security
                 - sylius.behat.context.ui.admin.notification
