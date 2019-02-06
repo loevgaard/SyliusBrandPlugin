@@ -14,8 +14,12 @@ final class BrandType extends AbstractResourceType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('slug', TextType::class)
+            ->add('name', TextType::class, [
+                'label' => 'loevgaard_sylius_brand.form.brand.name',
+            ])
+            ->add('slug', TextType::class, [
+                'label' => 'loevgaard_sylius_brand.form.brand.slug',
+            ])
             ->add('images', CollectionType::class, [
                 'entry_type' => BrandImageType::class,
                 'allow_add' => true,

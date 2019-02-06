@@ -10,6 +10,8 @@ loevgaard_sylius_brand:
     image: Foto
   form:
     brand:
+      name: Name
+      slug: Slug
       images: Foto's
     product:
       brand: Merk

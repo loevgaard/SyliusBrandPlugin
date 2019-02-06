@@ -40,7 +40,7 @@ return [
 ### Step 3: Configure the plugin
 
 ```yaml
-# config/services.yml
+# config/packages/loevgaard_sylius_brand.yaml
 
 imports:
     # ...
@@ -48,24 +48,10 @@ imports:
 ```
 
 ```yaml
-# config/routing.yml
+# config/routes/loevgaard_sylius_brand.yaml
 
 loevgaard_sylius_brand:
     resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yml"
-```
-
-```yaml
-# config/doctrine/Product.orm.yml
-
-AppBundle\Entity\Product:
-    type: entity
-    table: sylius_product
-    manyToOne:
-        brand:
-            targetEntity: Loevgaard\SyliusBrandPlugin\Entity\Brand
-            joinColumn:
-                name: brand_id
-                referencedColumnName: id
 ```
 
 ### Step 4: Import product trait
@@ -76,12 +62,17 @@ AppBundle\Entity\Product:
 
 declare(strict_types=1);
 
-namespace AppBundle\Entity;
+namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use Loevgaard\SyliusBrandPlugin\Entity\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Entity\ProductTrait;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 
+/**
+ * @ORM\MappedSuperclass()
+ * @ORM\Table(name="sylius_product")
+ */
 class Product extends BaseProduct implements BrandAwareInterface
 {
     use ProductTrait;
@@ -90,7 +81,7 @@ class Product extends BaseProduct implements BrandAwareInterface
 }
 ```
 
-**NOTE:** If you haven't extended the `Product` entity yet, follow the [customization instructions](https://docs.sylius.com/en/1.2/customization/model.html) first because you need to add a bit more configuration.
+**NOTE:** If you haven't extended the `Product` entity yet, follow the [customization instructions](https://docs.sylius.com/en/1.3/customization/model.html) first because you need to add a bit more configuration.
 
 ### Step 5: Update your database schema
 ```bash
@@ -99,25 +90,36 @@ $ php bin/console doctrine:schema:update --force
 
 or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html).
 
-### Step 6: Add form widget to twig template
-You need to override the template displaying the product form and add a `form_row` statement with the brand. In the example below I have added it below the channels widget.
+## Fixtures
 
-```twig
-{# app/Resources/SyliusAdminBundle/views/Product/Tab/_details.html.twig #}
+ 1. Add a new yaml file to the folder `config/packages` and name it as you wish, e.g. `my_own_fixtures.yaml`.
 
-{# ... #}
+ 2. Fill this yaml with your own brand fixtures and don't forget to declare the definition of
+   your product(s) before this brand definition or use existing product(s) code.
+    ```
+    # config/packages/my_own_fixtures.yaml
+    
+    sylius_fixtures:
+       suites:
+           my_own_brand_fixtures:
+                fixtures:
+                    loevgaard_sylius_brand_plugin_brand:
+                        options:
+                            custom:
+                                flux:
+                                    name: 'My brand'
+                                    slug: 'my-brand'
+                                    products:
+                                      - product_code_1
+                                      - product_code_2
+                                      - product_code_3
+    ```
 
-<div class="column">
-    {{ form_row(form.channels) }}
+ 3. Load your fixtures
 
-    {{ form_row(form.brand) }} {# This is the part you should add #}
-</div>
-
-{# ... #}
-```
-
-If you haven't overridden the template yet, you can just copy the template from `vendor/loevgaard/sylius-brand-plugin/src/Resources/views/SyliusAdminBundle` to `app/Resources/SyliusAdminBundle/views/`
-
+    ```bash
+    php bin/console sylius:fixture:load my_own_brand_fixtures
+    ```
 ## Installation and usage for plugin development
 [Find more information here](install-dev.md)
 
