@@ -5,6 +5,8 @@
 [![Build Status][ico-travis]][link-travis]
 [![Quality Score][ico-code-quality]][link-code-quality]
 
+<a href="https://sylius.com/plugins/" target="_blank"><img src="https://sylius.com/assets/badge-approved-by-sylius.png" width="100"></a>
+
 If you want to add a brand to your products this is the plugin to use. Use cases:
 - Add brand logo to your product pages
 - Filter by brand in the frontend or backend, i.e. product lists
