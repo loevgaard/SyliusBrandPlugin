@@ -34,7 +34,7 @@ return [
     // ...
     Loevgaard\SyliusBrandPlugin\LoevgaardSyliusBrandPlugin::class => ['all' => true],
     // ...
-}
+];
 ```
 
 ### Step 3: Configure the plugin
