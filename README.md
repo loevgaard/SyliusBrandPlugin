@@ -135,5 +135,4 @@ Thanks!
 
 [link-packagist]: https://packagist.org/packages/loevgaard/sylius-brand-plugin
 [link-travis]: https://travis-ci.org/loevgaard/SyliusBrandPlugin
-[link-scrutinizer]: https://scrutinizer-ci.com/g/loevgaard/SyliusBrandPlugin/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/loevgaard/SyliusBrandPlugin
