@@ -7,3 +7,7 @@ loevgaard_sylius_brand_shop:
 loevgaard_sylius_brand_admin:
     resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin.yml"
     prefix: /admin
+
+loevgaard_sylius_brand_admin_api:
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin_api.yml"
+    prefix: /api/v{version}

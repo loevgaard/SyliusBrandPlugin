@@ -1,0 +1,11 @@
+Loevgaard\SyliusBrandPlugin\Entity\BrandImage:
+    exclusion_policy: ALL
+    xml_root_name: brand-image
+    relations:
+        -   rel: self
+            href:
+                route: loevgaard_sylius_brand_admin_api_brand_image_show
+                parameters:
+                    slug: expr(object.getOwner().getSlug())
+                    id: expr(object.getId())
+                    version: 1

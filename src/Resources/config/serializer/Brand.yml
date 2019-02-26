@@ -1,0 +1,44 @@
+Loevgaard\SyliusBrandPlugin\Entity\Brand:
+    exclusion_policy: ALL
+    xml_root_name: brand
+    properties:
+        id:
+            expose: true
+            type: integer
+            xml_attribute: true
+            groups: [Default, Detailed, Autocomplete]
+        slug:
+            expose: true
+            type: string
+            groups: [Default, Detailed, Autocomplete]
+        name:
+            expose: true
+            type: string
+            groups: [Default, Detailed, Autocomplete]
+        images:
+            expose: true
+            type: array
+            groups: [Detailed]
+    relations:
+        -   rel: self
+            href:
+                route: loevgaard_sylius_brand_admin_api_brand_show
+                parameters:
+                    slug: expr(object.getSlug())
+                    version: 1
+        -   rel: images
+            href:
+                route: loevgaard_sylius_brand_admin_api_brand_image_index
+                parameters:
+                    slug: expr(object.getSlug())
+                    version: 1
+            exclusion:
+                groups: [Default]
+        -   rel: products
+            href:
+                route: loevgaard_sylius_brand_admin_api_brand_product_index
+                parameters:
+                    slug: expr(object.getSlug())
+                    version: 1
+            exclusion:
+                groups: [Default, Detailed]

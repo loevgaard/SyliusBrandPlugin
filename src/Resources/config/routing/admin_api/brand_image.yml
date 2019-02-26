@@ -1,0 +1,42 @@
+loevgaard_sylius_brand_admin_api_brand_image:
+    resource: |
+        path: 'images'
+        alias: loevgaard_sylius_brand.brand_image
+        section: admin_api
+        only: ['show']
+        form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType
+        serialization_version: $version
+        vars:
+            route:
+                parameters:
+                    slug: $slug
+    type: sylius.resource_api
+
+loevgaard_sylius_brand_admin_api_brand_image_index:
+    path: /images/
+    methods: [GET]
+    defaults:
+        _controller: loevgaard_sylius_brand.controller.brand_image:indexAction
+        _sylius:
+            serialization_version: $version
+            section: admin_api
+            serialization_groups: [Default]
+            repository:
+                method: createPaginatorForBrand
+                arguments:
+                    - expr:notFoundOnNull(service('loevgaard_sylius_brand.repository.brand').findOneBySlug($slug))
+
+loevgaard_sylius_brand_admin_api_brand_image_index_by_type:
+    path: /images/{type}
+    methods: [GET]
+    defaults:
+        _controller: loevgaard_sylius_brand.controller.brand_image:indexAction
+        _sylius:
+            serialization_version: $version
+            section: admin_api
+            serialization_groups: [Default]
+            repository:
+                method: createPaginatorForBrandAndType
+                arguments:
+                    - expr:notFoundOnNull(service('loevgaard_sylius_brand.repository.brand').findOneBySlug($slug))
+                    - $type

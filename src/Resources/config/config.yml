@@ -16,3 +16,10 @@ sylius_resource:
                 interface: Loevgaard\SyliusBrandPlugin\Entity\BrandImageInterface
                 repository: Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandImageRepository
                 form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType
+
+jms_serializer:
+    metadata:
+        directories:
+            loevgaard-sylius-brand:
+                namespace_prefix: "Loevgaard\\SyliusBrandPlugin\\Entity"
+                path: "@LoevgaardSyliusBrandPlugin/Resources/config/serializer"

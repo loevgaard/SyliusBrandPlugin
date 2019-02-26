@@ -166,6 +166,74 @@ or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigr
 ## Installation and usage for plugin development
 [Find more information here](install-dev.md)
 
+## Testing
+
+### Play with API
+
+* Install https://stedolan.github.io/jq/
+  (type `brew install jq` at OSX terminal)
+
+* Get admin API access token:
+
+    ```bash
+    SYLIUS_ADMIN_API_ACCESS_TOKEN=$(curl http://localhost:8000/api/oauth/v2/token \
+        --silent --show-error \
+        -d "client_id"=demo_client \
+        -d "client_secret"=secret_demo_client \
+        -d "grant_type"=password \
+        -d "username"=api@example.com \
+        -d "password"=sylius-api | jq '.access_token' --raw-output)
+    ```
+
+* Make requests:
+
+   To Brands admin API:
+
+    ```bash
+    curl http://localhost:8000/api/v1/brands/ \
+        -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+    ```
+
+    ```bash
+    curl http://localhost:8000/api/v1/brands/setono/ \
+        -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+    ```
+
+    Brand images API:
+
+    ```bash
+    curl http://localhost:8000/api/v1/brands/setono/images/ \
+        -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+    ```
+
+    Brand images by type API:
+
+    ```bash
+    curl http://localhost:8000/api/v1/brands/setono/images/logo/ \
+        -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+    ```
+
+    ```bash
+    curl http://localhost:8000/api/v1/brands/setono/images/<ID>/ \
+        -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+    ```
+
+    Brand products API:
+
+    ```bash
+    curl http://localhost:8000/api/v1/brands/setono/products/ \
+        -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+    ```
+
+    Product details API:
+
+    ```bash
+    curl http://localhost:8000/api/v1/products/setono-mug/ \
+        -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+    ```
+
+    For XML output, add `-H "Accept: application/xml"` to request
+
 ## Contribute by translating
 We use the same service as Sylius for translating, namely [Crowdin](https://crowdin.com/project/sylius-brand-plugin). You can help out by translating this project into your mother tongue ;)
 

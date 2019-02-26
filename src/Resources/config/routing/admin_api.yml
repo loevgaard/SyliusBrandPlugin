@@ -1,0 +1,30 @@
+loevgaard_sylius_brand_admin_api_brand:
+    resource: |
+        identifier: slug
+        alias: loevgaard_sylius_brand.brand
+        section: admin_api
+        only: ['index', 'show']
+        grid: loevgaard_sylius_brand_admin_brand
+        form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandType
+        serialization_version: $version
+        criteria:
+            slug: $slug
+    type: sylius.resource_api
+
+loevgaard_sylius_brand_admin_api_brand_image:
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin_api/brand_image.yml"
+    prefix: /brands/{slug}
+
+loevgaard_sylius_brand_admin_api_brand_product_index:
+    path: /brands/{slug}/products/
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.product:indexAction
+        _sylius:
+            serialization_version: $version
+            section: admin_api
+            serialization_groups: [Default]
+            repository:
+                method: createPaginatorForBrand
+                arguments:
+                    - expr:notFoundOnNull(service('loevgaard_sylius_brand.repository.brand').findOneBySlug($slug))
