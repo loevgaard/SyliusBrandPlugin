@@ -14,4 +14,23 @@ class BrandImage extends Image implements BrandImageInterface
     {
         return $this->getType() === self::TYPE_LOGO;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBrand(): ?BrandInterface
+    {
+        /** @var BrandInterface|null $brand */
+        $brand = $this->getOwner();
+
+        return $brand;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setBrand(?BrandInterface $brand): void
+    {
+        $this->setOwner($brand);
+    }
 }

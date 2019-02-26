@@ -6,6 +6,6 @@ namespace Loevgaard\SyliusBrandPlugin\Entity;
 
 use Sylius\Component\Core\Model\ImageInterface;
 
-interface BrandImageInterface extends ImageInterface
+interface BrandImageInterface extends ImageInterface, BrandAwareInterface
 {
 }
