@@ -64,3 +64,5 @@ services:
             - '@sylius.repository.product'
             - '@loevgaard_sylius_brand.assigner.products'
             - '@loevgaard_sylius_brand.factory.brand'
+            - '@loevgaard_sylius_brand.factory.brand_image'
+            - '@sylius.image_uploader'

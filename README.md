@@ -111,6 +111,9 @@ or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigr
                                 flux:
                                     name: 'My brand'
                                     slug: 'my-brand'
+                                    images:
+                                      - type: logo
+                                        path: logos/my-brand.jpg
                                     products:
                                       - product_code_1
                                       - product_code_2

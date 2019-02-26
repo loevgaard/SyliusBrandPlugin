@@ -1,0 +1,17 @@
+sylius_fixtures:
+    suites:
+        default:
+            fixtures:
+                loevgaard_sylius_brand_plugin_brand:
+                    options:
+                        custom:
+                            brand_setono:
+                                name: Setono
+                                slug: setono
+                                images:
+                                    - type: logo
+                                      path: fixtures/images/logos/setono.jpg
+#                                products:
+#                                  - product_code_1
+#                                  - product_code_2
+#                                  - product_code_3
