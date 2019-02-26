@@ -56,7 +56,9 @@ loevgaard_sylius_brand:
     resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yml"
 ```
 
-### Step 4: Import product trait
+### Step 4: Extends entities
+
+#### Extend `Product` 
 
 ```php
 <?php
@@ -84,6 +86,42 @@ class Product extends BaseProduct implements BrandAwareInterface
 ```
 
 **NOTE:** If you haven't extended the `Product` entity yet, follow the [customization instructions](https://docs.sylius.com/en/1.3/customization/model.html) first because you need to add a bit more configuration.
+
+#### Extend `ProductRepository`
+
+```php
+<?php
+# Doctrine/ORM/ProductRepository.php
+
+declare(strict_types=1);
+
+namespace App\Doctrine\ORM;
+
+use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\ProductRepositoryInterface;
+use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\ProductRepositoryTrait;
+use Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository as BaseProductRepository;
+
+class ProductRepository extends BaseProductRepository implements ProductRepositoryInterface
+{
+    use ProductRepositoryTrait;
+
+    // ...
+}
+```
+
+#### Configure
+
+```yaml
+config/sylius_product.yml
+
+sylius_product:
+    resources:
+        product:
+            classes:
+                model: App\Entity\Product
+                repository: App\Doctrine\ORM\ProductRepository
+
+```  
 
 ### Step 5: Update your database schema
 ```bash
