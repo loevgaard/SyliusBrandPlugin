@@ -1,3 +1,6 @@
+imports:
+    - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/loevgaard_sylius_brand_admin_brand.yml"
+
 sylius_resource:
     resources:
         loevgaard_sylius_brand.brand:
@@ -11,33 +14,3 @@ sylius_resource:
             classes:
                 model: Loevgaard\SyliusBrandPlugin\Entity\BrandImage
                 form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType
-
-sylius_grid:
-    grids:
-        loevgaard_sylius_brand_admin_brand:
-            driver:
-                name: doctrine/orm
-                options:
-                    class: Loevgaard\SyliusBrandPlugin\Entity\Brand
-            fields:
-                image:
-                    type: twig
-                    label: loevgaard_sylius_brand.ui.image
-                    path: .
-                    options:
-                        template: "@LoevgaardSyliusBrandPlugin/Grid/Field/image.html.twig"
-                name:
-                    type: string
-                    label: loevgaard_sylius_brand.ui.name
-                slug:
-                    type: string
-                    label: loevgaard_sylius_brand.ui.slug
-            actions:
-                main:
-                    create:
-                        type: create
-                item:
-                    update:
-                        type: update
-                    delete:
-                        type: delete
