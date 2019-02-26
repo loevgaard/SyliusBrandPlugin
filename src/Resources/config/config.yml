@@ -9,8 +9,8 @@ sylius_resource:
                 model: Loevgaard\SyliusBrandPlugin\Entity\Brand
                 interface: Loevgaard\SyliusBrandPlugin\Entity\BrandInterface
                 form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandType
-
         loevgaard_sylius_brand.brand_image:
             classes:
                 model: Loevgaard\SyliusBrandPlugin\Entity\BrandImage
+                interface: Loevgaard\SyliusBrandPlugin\Entity\BrandImageInterface
                 form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType

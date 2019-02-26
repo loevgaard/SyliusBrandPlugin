@@ -6,7 +6,7 @@ namespace Loevgaard\SyliusBrandPlugin\Entity;
 
 use Sylius\Component\Core\Model\Image;
 
-class BrandImage extends Image
+class BrandImage extends Image implements BrandImageInterface
 {
     const TYPE_LOGO = 'logo';
 

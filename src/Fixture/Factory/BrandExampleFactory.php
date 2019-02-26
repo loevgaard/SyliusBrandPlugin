@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Loevgaard\SyliusBrandPlugin\Fixture\Factory;
 
 use Loevgaard\SyliusBrandPlugin\Assigner\ProductsAssignerInterface;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandImage;
+use Loevgaard\SyliusBrandPlugin\Entity\BrandImageInterface;
 use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\AbstractExampleFactory;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
@@ -114,7 +114,7 @@ final class BrandExampleFactory extends AbstractExampleFactory implements Exampl
 
             $uploadedImage = new UploadedFile($imagePath, basename($imagePath));
 
-            /** @var BrandImage $brandImage */
+            /** @var BrandImageInterface $brandImage */
             $brandImage = $this->productImageFactory->createNew();
             $brandImage->setFile($uploadedImage);
             $brandImage->setType($imageType);
