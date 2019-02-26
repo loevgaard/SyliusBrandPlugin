@@ -14,9 +14,7 @@ final class ProductsAssigner implements ProductsAssignerInterface
     public function assign(ProductsAwareInterface $productsAware, array $products): void
     {
         foreach ($products as $product) {
-            if (null !== $product) {
-                $productsAware->addProduct($product);
-            }
+            $productsAware->addProduct($product);
         }
     }
 }
