@@ -1,0 +1,5 @@
+{% if data is not null %}
+<a href="{{ path('loevgaard_sylius_brand_admin_brand_update', {'id': data.id}) }}">
+    {{ data.name }}
+</a>
+{% endif %}

@@ -47,6 +47,9 @@ return [
 imports:
     # ...
     - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/config.yml" }
+
+    # If you want to see Brand column at admin products list - uncomment next line
+    # - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yml" }
 ```
 
 ```yaml
