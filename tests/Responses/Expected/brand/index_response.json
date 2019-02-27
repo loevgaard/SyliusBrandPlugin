@@ -17,7 +17,7 @@
     "_embedded": {
         "items": [
             {
-                "id": @integer@,
+                "id": "@integer@",
                 "slug": "setono",
                 "name": "Setono",
                 "_links": {
@@ -33,7 +33,7 @@
                 }
             },
             {
-                "id": @integer@,
+                "id": "@integer@",
                 "slug": "sylius",
                 "name": "Sylius",
                 "_links": {
@@ -49,7 +49,7 @@
                 }
             },
             {
-                "id": @integer@,
+                "id": "@integer@",
                 "slug": "symfony",
                 "name": "Symfony",
                 "_links": {
