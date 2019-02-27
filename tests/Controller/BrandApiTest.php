@@ -57,6 +57,26 @@ final class BrandApiTest extends AbstractApiTestCase
     }
 
     /**
+     * @test
+     */
+    public function it_allows_showing_brand()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+
+            // We load products, but they shouldn't be at response.
+            // As it could be huge. There are separate endpoint for this.
+            'resources/products.yml',
+        ]);
+
+        $this->client->request('GET', $this->getBrandUrl($entities['brand_setono']), [], [], static::$authorizedHeaderWithAccept);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/show_response', Response::HTTP_OK);
+    }
+
+    /**
      * @param BrandInterface|string $brand
      * @return string
      */

@@ -1,1 +1,47 @@
-[]
+{
+    "id": "@integer@",
+    "slug": "setono",
+    "name": "Setono",
+    "images": [
+        {
+            "id": "@integer@",
+            "type": "logo",
+            "path": "\/setono-logo-1.jpg",
+            "_links": {
+                "self": {
+                    "href": "@string@"
+                }
+            }
+        },
+        {
+            "id": "@integer@",
+            "path": "\/setono-etc.jpg",
+            "_links": {
+                "self": {
+                  "href": "@string@"
+                }
+            }
+        },
+        {
+            "id": "@integer@",
+            "type": "logo",
+            "path": "\/setono-logo-big.jpg",
+            "_links": {
+                "self": {
+                  "href": "@string@"
+                }
+            }
+        }
+    ],
+    "_links": {
+        "self": {
+            "href": "\/api\/v1\/brands\/setono"
+        },
+        "images": {
+            "href": "\/api\/v1\/brands\/setono\/images\/"
+        },
+        "products": {
+            "href": "\/api\/v1\/brands\/setono\/products\/"
+        }
+    }
+}
