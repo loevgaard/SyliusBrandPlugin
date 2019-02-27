@@ -1,0 +1,2 @@
+{% set menu = knp_menu_get('loevgaard_sylius_brand.admin.brand_form', [], {'brand': brand}) %}
+{{ knp_menu_render(menu, {'template': '@LoevgaardSyliusBrandPlugin/Admin/Brand/_menu.html.twig', 'form': form, 'brand': brand}) }}

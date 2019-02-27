@@ -158,13 +158,29 @@ or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigr
                                       - product_code_3
     ```
 
+    See example at `tests/Application/config/packages/sylius_fixtures.yml`.
+
  3. Load your fixtures
 
     ```bash
     php bin/console sylius:fixture:load my_own_brand_fixtures
     ```
+
 ## Installation and usage for plugin development
 [Find more information here](install-dev.md)
+
+### Sonata blocks available
+
+* `loevgaard_sylius_brand.admin.brand.create.tab_details`
+* `loevgaard_sylius_brand.admin.brand.update.tab_details`
+* `loevgaard_sylius_brand.admin.brand.create.tab_media`
+* `loevgaard_sylius_brand.admin.brand.update.tab_media`
+
+### Events available
+
+* `loevgaard_sylius_brand.menu.admin.brand.form` to customize `Brand` 
+  admin form like you usually do with `Product` form via
+  `sylius.menu.admin.product.form` event.
 
 ## Testing
 
