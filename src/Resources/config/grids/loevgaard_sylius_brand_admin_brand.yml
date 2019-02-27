@@ -4,7 +4,7 @@ sylius_grid:
             driver:
                 name: doctrine/orm
                 options:
-                    class: Loevgaard\SyliusBrandPlugin\Entity\Brand
+                    class: "%loevgaard_sylius_brand.model.brand.class%"
             fields:
                 image:
                     type: twig
