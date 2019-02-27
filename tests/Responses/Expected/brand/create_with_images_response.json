@@ -1,1 +1,38 @@
-[]
+{
+    "id": "@integer@",
+    "slug": "php",
+    "name": "PHP",
+    "images": [
+        {
+            "id": "@integer@",
+            "type": "logo",
+            "path": "@string@.endsWith('.png')",
+            "_links": {
+                "self": {
+                    "href": "@string@.startsWith('/api/v1/brands/php/images/')"
+                }
+            }
+        },
+        {
+            "id": "@integer@",
+            "type": "logo",
+            "path": "@string@.endsWith('.png')",
+            "_links": {
+                "self": {
+                    "href": "@string@.startsWith('/api/v1/brands/php/images/')"
+                }
+            }
+        }
+    ],
+    "_links": {
+        "self": {
+            "href": "\/api\/v1\/brands\/php"
+        },
+        "images": {
+            "href": "\/api\/v1\/brands\/php\/images\/"
+        },
+        "products": {
+            "href": "\/api\/v1\/brands\/php\/products\/"
+        }
+    }
+}

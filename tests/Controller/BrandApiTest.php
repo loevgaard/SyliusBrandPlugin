@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Loevgaard\SyliusBrandPlugin\Controller;
 
 use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Response;
 
 final class BrandApiTest extends AbstractApiTestCase
@@ -111,6 +112,133 @@ final class BrandApiTest extends AbstractApiTestCase
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'error/not_found_response', Response::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * @test
+     */
+    public function it_does_not_allow_to_create_brand_without_required_fields()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+        ]);
+
+        $this->client->request('POST', $this->getBrandUrl(), [], [], static::$authorizedHeaderWithContentType);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/create_validation_fail_response', Response::HTTP_BAD_REQUEST);
+    }
+
+    /**
+     * @test
+     */
+    public function it_does_not_allow_to_create_brand_with_too_long_name_and_slug()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+        ]);
+
+        $longString = str_repeat('s', 192);
+
+        $data =
+<<<EOT
+        {
+            "name": "{$longString}",
+            "slug": "{$longString}"
+        }
+EOT;
+
+        $this->client->request('POST', $this->getBrandUrl(), [], [], static::$authorizedHeaderWithContentType, $data);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/create_with_long_name_and_slug_validation_fail_response', Response::HTTP_BAD_REQUEST);
+    }
+
+    /**
+     * @test
+     */
+    public function it_does_not_allow_to_create_brand_with_too_short_name()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+        ]);
+
+        $data =
+            <<<EOT
+        {
+            "name": "s",
+            "slug": "valid-slug"
+        }
+EOT;
+
+        $this->client->request('POST', $this->getBrandUrl(), [], [], static::$authorizedHeaderWithContentType, $data);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/create_with_short_name_validation_fail_response', Response::HTTP_BAD_REQUEST);
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_create_brand()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+        ]);
+
+        $data =
+            <<<EOT
+        {
+            "name": "Brand name",
+            "slug": "brand-slug"
+        }
+EOT;
+
+        $this->client->request('POST', $this->getBrandUrl(), [], [], static::$authorizedHeaderWithContentType, $data);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/create_response', Response::HTTP_CREATED);
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_creating_brand_with_images()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+        ]);
+
+        $data =
+<<<EOT
+        {
+            "name": "PHP",
+            "slug": "php",
+            "images": [
+                {
+                    "type": "logo"
+                },
+                {
+                    "type": "logo"
+                }
+            ]
+        }
+EOT;
+
+        $this->client->request(
+            'POST',
+            $this->getBrandUrl(),
+            [],
+            ['images' => [
+                ['file' => new UploadedFile(sprintf('%s/../Resources/fixtures/php-logo.png', __DIR__), 'php-logo')],
+                ['file' => new UploadedFile(sprintf('%s/../Resources/fixtures/php-logo-transparent-background.png', __DIR__), 'php-logo-transparent-background')],
+            ]],
+            static::$authorizedHeaderWithContentType,
+            $data
+        );
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/create_with_images_response', Response::HTTP_CREATED);
     }
 
     /**

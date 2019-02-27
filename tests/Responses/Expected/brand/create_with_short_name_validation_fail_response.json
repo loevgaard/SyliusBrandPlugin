@@ -5,14 +5,10 @@
         "children": {
             "name": {
                 "errors": [
-                    "Please enter brand name."
+                    "Brand name must be at least 2 characters long."
                 ]
             },
-            "slug": {
-                "errors": [
-                    "Please enter brand slug."
-                ]
-            },
+            "slug": {},
             "images": {}
         }
     }

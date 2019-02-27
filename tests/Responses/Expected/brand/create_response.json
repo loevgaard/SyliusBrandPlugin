@@ -1,1 +1,17 @@
-[]
+{
+    "id": "@integer@",
+    "slug": "brand-slug",
+    "name": "Brand name",
+    "images": [],
+    "_links": {
+        "self": {
+            "href": "\/api\/v1\/brands\/brand-slug"
+        },
+        "images": {
+            "href": "\/api\/v1\/brands\/brand-slug\/images\/"
+        },
+        "products": {
+            "href": "\/api\/v1\/brands\/brand-slug\/products\/"
+        }
+    }
+}

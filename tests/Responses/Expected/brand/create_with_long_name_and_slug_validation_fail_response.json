@@ -5,12 +5,12 @@
         "children": {
             "name": {
                 "errors": [
-                    "Please enter brand name."
+                    "Brand name must not be longer than 191 characters."
                 ]
             },
             "slug": {
                 "errors": [
-                    "Please enter brand slug."
+                    "Brand slug must not be longer than 191 characters."
                 ]
             },
             "images": {}
