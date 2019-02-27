@@ -11,6 +11,24 @@ If you want to add a brand to your products this is the plugin to use. Use cases
 - Add brand logo to your product pages
 - Filter by brand in the frontend or backend, i.e. product lists
 
+## Screenshots
+
+Menu:
+
+![Screenshot showing admin menu](docs/images/admin-menu-with-brand.png)
+
+Brand admin pages:
+
+![Screenshot showing brand admin index page](docs/images/admin-brand-index.png)
+
+![Screenshot showing brand admin update page](docs/images/admin-brand-update.png)
+
+Products admin pages:
+
+![Screenshot showing product admin index page with brand column](docs/images/admin-product-index-brand-column.png)
+
+![Screenshot showing brand tab at product admin update page](docs/images/admin-product-update-tab-brand.png)
+
 ## Installation
 
 ### Step 1: Download the plugin
