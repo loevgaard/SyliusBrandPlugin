@@ -1,0 +1,17 @@
+{
+    "id": "@integer@",
+    "slug": "updated-slug",
+    "name": "Updated name",
+    "images": [],
+    "_links": {
+        "self": {
+            "href": "\/api\/v1\/brands\/updated-slug"
+        },
+        "images": {
+            "href": "\/api\/v1\/brands\/updated-slug\/images\/"
+        },
+        "products": {
+            "href": "\/api\/v1\/brands\/updated-slug\/products\/"
+        }
+    }
+}

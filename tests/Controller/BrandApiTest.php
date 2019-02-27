@@ -242,6 +242,60 @@ EOT;
     }
 
     /**
+     * @test
+     */
+    public function it_allows_updating_partial_information_about_brand()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+        ]);
+
+        $data =
+<<<EOT
+        {
+            "name": "Updated name"
+        }
+EOT;
+        $this->client->request('PATCH', $this->getBrandUrl($entities['brand_symfony']), [], [], static::$authorizedHeaderWithContentType, $data);
+        $response = $this->client->getResponse();
+        $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
+
+        $this->client->request('GET', $this->getBrandUrl($entities['brand_symfony']), [], [], static::$authorizedHeaderWithAccept);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/show_after_partial_update_response');
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_updating_brand()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+        ]);
+
+        $data =
+<<<EOT
+        {
+              "name": "Updated name",
+              "slug": "updated-slug"
+        }
+EOT;
+        $this->client->request('PUT', $this->getBrandUrl($entities['brand_symfony']), [], [], static::$authorizedHeaderWithContentType, $data);
+        $response = $this->client->getResponse();
+
+        $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
+
+        $this->client->request('GET', $this->getBrandUrl('updated-slug'), [], [], static::$authorizedHeaderWithAccept);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/show_after_update_response');
+    }
+
+    /**
      * @param BrandInterface|string $brand
      * @return string
      */
