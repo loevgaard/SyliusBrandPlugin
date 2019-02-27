@@ -18,7 +18,7 @@
             </constraint>
             <constraint name="Length">
                 <option name="max">191</option>
-                <option name="maxMessage">loevgaard_sylius_brand.brand.name.max_length</option>
+                <option name="maxMessage">loevgaard_sylius_brand.brand.slug.max_length</option>
                 <option name="groups">loevgaard_sylius_brand</option>
             </constraint>
             <constraint name="Regex">
