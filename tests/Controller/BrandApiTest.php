@@ -77,6 +77,43 @@ final class BrandApiTest extends AbstractApiTestCase
     }
 
     /**
+     * @test
+     */
+    public function it_does_not_allow_delete_brand_if_it_does_not_exist()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+        ]);
+
+        $this->client->request('DELETE', $this->getBrandUrl(-1), [], [], static::$authorizedHeaderWithAccept);
+
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'error/not_found_response', Response::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_delete_brand()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+        ]);
+
+        $this->client->request('DELETE', $this->getBrandUrl($entities['brand_setono']), [], [], static::$authorizedHeaderWithContentType);
+
+        $response = $this->client->getResponse();
+        $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
+
+        $this->client->request('GET', $this->getBrandUrl($entities['brand_setono']), [], [], static::$authorizedHeaderWithAccept);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'error/not_found_response', Response::HTTP_NOT_FOUND);
+    }
+
+    /**
      * @param BrandInterface|string $brand
      * @return string
      */
