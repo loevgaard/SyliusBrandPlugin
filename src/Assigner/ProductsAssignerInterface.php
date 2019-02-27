@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Assigner;
 
-use Loevgaard\SyliusBrandPlugin\Entity\BrandAwareInterface;
-use Loevgaard\SyliusBrandPlugin\Entity\ProductsAwareInterface;
+use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
+use Sylius\Component\Core\Model\ProductInterface;
 
 interface ProductsAssignerInterface
 {
     /**
-     * @param ProductsAwareInterface $productsAware
-     * @param BrandAwareInterface[] $products
+     * @param BrandInterface $brand
+     * @param ProductInterface[]|array $products
      */
-    public function assign(ProductsAwareInterface $productsAware, array $products): void;
+    public function assign(BrandInterface $brand, array $products): void;
 }
