@@ -9,7 +9,7 @@
             "path": "\/setono-logo-1.jpg",
             "_links": {
                 "self": {
-                    "href": "@string@"
+                    "href": "@string@.startsWith('/api/v1/brands/setono/images/')"
                 }
             }
         },
@@ -18,7 +18,7 @@
             "path": "\/setono-etc.jpg",
             "_links": {
                 "self": {
-                  "href": "@string@"
+                    "href": "@string@.startsWith('/api/v1/brands/setono/images/')"
                 }
             }
         },
@@ -28,7 +28,7 @@
             "path": "\/setono-logo-big.jpg",
             "_links": {
                 "self": {
-                  "href": "@string@"
+                    "href": "@string@.startsWith('/api/v1/brands/setono/images/')"
                 }
             }
         }
