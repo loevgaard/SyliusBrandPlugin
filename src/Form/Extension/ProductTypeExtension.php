@@ -8,7 +8,6 @@ use Loevgaard\SyliusBrandPlugin\Form\Type\BrandChoiceType;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Validator\Constraints\NotNull;
 
 class ProductTypeExtension extends AbstractTypeExtension
 {

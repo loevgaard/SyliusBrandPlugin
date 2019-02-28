@@ -62,7 +62,6 @@ final class BrandExampleFactory extends AbstractExampleFactory implements Exampl
         $this->configureOptions($this->optionsResolver);
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -124,5 +123,4 @@ final class BrandExampleFactory extends AbstractExampleFactory implements Exampl
             $brand->addImage($brandImage);
         }
     }
-
 }

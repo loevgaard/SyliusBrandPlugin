@@ -10,7 +10,6 @@ use Sylius\Component\Core\Model\ImageInterface;
 
 trait ImagesAwareTrait
 {
-
     /** @var Collection|ImageInterface[] */
     protected $images;
 

@@ -23,6 +23,7 @@ interface ProductsAwareInterface
 
     /**
      * @param BrandAwareInterface $product
+     *
      * @return bool
      */
     public function hasProduct(BrandAwareInterface $product): bool;

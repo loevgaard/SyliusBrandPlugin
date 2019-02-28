@@ -11,6 +11,7 @@ interface ProductRepositoryInterface extends BaseProductRepositoryInterface
 {
     /**
      * @param BrandInterface $brand
+     *
      * @return iterable
      */
     public function createPaginatorForBrand(BrandInterface $brand): iterable;

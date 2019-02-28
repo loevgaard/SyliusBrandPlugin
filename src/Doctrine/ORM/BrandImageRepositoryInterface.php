@@ -12,6 +12,7 @@ interface BrandImageRepositoryInterface extends RepositoryInterface
 {
     /**
      * @param string $brandSlug
+     *
      * @return QueryBuilder
      */
     public function createListQueryBuilder(string $brandSlug): QueryBuilder;
@@ -19,6 +20,7 @@ interface BrandImageRepositoryInterface extends RepositoryInterface
     /**
      * @param BrandInterface $brand
      * @param string $type
+     *
      * @return iterable
      */
     public function createPaginatorForBrandAndType(BrandInterface $brand, string $type): iterable;
