@@ -106,6 +106,21 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
+    public function it_denies_showing_brand_for_non_authenticated_user()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'resources/brands.yml',
+        ]);
+
+        $this->client->request('GET', $this->getBrandUrl($entities['brand_sylius']));
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'authentication/access_denied_response', Response::HTTP_UNAUTHORIZED);
+    }
+
+    /**
+     * @test
+     */
     public function it_allows_showing_brand()
     {
         $entities = $this->loadDefaultFixtureFiles([
@@ -121,6 +136,21 @@ final class BrandApiTest extends AbstractApiTestCase
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'brand/show_response', Response::HTTP_OK);
+    }
+
+    /**
+     * @test
+     */
+    public function it_denies_brand_deletion_for_non_authenticated_user()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'resources/brands.yml',
+        ]);
+
+        $this->client->request('DELETE', $this->getBrandUrl($entities['brand_sylius']));
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'authentication/access_denied_response', Response::HTTP_UNAUTHORIZED);
     }
 
     /**
@@ -158,6 +188,21 @@ final class BrandApiTest extends AbstractApiTestCase
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'error/not_found_response', Response::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * @test
+     */
+    public function it_denies_brand_creation_for_non_authenticated_user()
+    {
+        $this->loadDefaultFixtureFiles([
+            'resources/brands.yml',
+        ]);
+
+        $this->client->request('POST', $this->getBrandUrl(), [], [], self::$headerWithContentType);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'authentication/access_denied_response', Response::HTTP_UNAUTHORIZED);
     }
 
     /**
@@ -290,6 +335,21 @@ EOT;
     /**
      * @test
      */
+    public function it_denies_partial_updating_brand_for_non_authenticated_user()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'resources/brands.yml',
+        ]);
+
+        $this->client->request('PATCH', $this->getBrandUrl($entities['brand_sylius']), [], [], self::$headerWithContentType);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'authentication/access_denied_response', Response::HTTP_UNAUTHORIZED);
+    }
+
+    /**
+     * @test
+     */
     public function it_allows_updating_partial_information_about_brand()
     {
         $entities = $this->loadDefaultFixtureFiles([
@@ -311,6 +371,22 @@ EOT;
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'brand/show_after_partial_update_response');
+    }
+
+
+    /**
+     * @test
+     */
+    public function it_denies_updating_brand_for_non_authenticated_user()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'resources/brands.yml',
+        ]);
+
+        $this->client->request('PUT', $this->getBrandUrl($entities['brand_sylius']), [], [], self::$headerWithContentType);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'authentication/access_denied_response', Response::HTTP_UNAUTHORIZED);
     }
 
     /**

@@ -12,6 +12,11 @@ abstract class AbstractApiTestCase extends JsonApiTestCase
     protected $defaultFixtureFiles = [];
 
     /** @var array */
+    protected static $headerWithContentType = [
+        'CONTENT_TYPE' => 'application/json',
+    ];
+
+    /** @var array */
     protected static $authorizedHeaderWithContentType = [
         'HTTP_Authorization' => 'Bearer SampleTokenNjZkNjY2MDEwMTAzMDkxMGE0OTlhYzU3NzYyMTE0ZGQ3ODcyMDAwM2EwMDZjNDI5NDlhMDdlMQ',
         'CONTENT_TYPE' => 'application/json',
