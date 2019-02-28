@@ -6,7 +6,7 @@ The first step is upgrading Plugin with Composer
 
 # Update your `Product` entity
 
-`Product`` now should implement `Loevgaard\SyliusBrandPlugin\Entity\ProductInterface`
+`Product` now should implement `Loevgaard\SyliusBrandPlugin\Entity\ProductInterface`
 rather than just `Loevgaard\SyliusBrandPlugin\Entity\BrandAwareInterface`:
 
 ```php
