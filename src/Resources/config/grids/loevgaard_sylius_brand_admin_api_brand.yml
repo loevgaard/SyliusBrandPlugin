@@ -1,0 +1,23 @@
+sylius_grid:
+    grids:
+        loevgaard_sylius_brand_admin_api_brand:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%loevgaard_sylius_brand.model.brand.class%"
+                    repository:
+                        method: createListQueryBuilder
+            sorting:
+                name: asc
+            fields:
+                slug:
+                    type: string
+                    label: loevgaard_sylius_brand.ui.slug
+                name:
+                    type: string
+                    label: loevgaard_sylius_brand.ui.name
+            filters:
+                search:
+                    type: string
+                    options:
+                        fields: [slug, name]

@@ -10,7 +10,7 @@ loevgaard_sylius_brand_admin_api_brand:
         alias: loevgaard_sylius_brand.brand
         section: admin_api
         except: ['bulkDelete']
-        grid: loevgaard_sylius_brand_admin_brand
+        grid: loevgaard_sylius_brand_admin_api_brand
         form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandType
         serialization_version: $version
         criteria:
