@@ -5,6 +5,10 @@ sylius_grid:
                 name: doctrine/orm
                 options:
                     class: "%loevgaard_sylius_brand.model.brand.class%"
+                    repository:
+                        method: createListQueryBuilder
+            sorting:
+                name: asc
             fields:
                 image:
                     type: twig
@@ -18,6 +22,11 @@ sylius_grid:
                 slug:
                     type: string
                     label: loevgaard_sylius_brand.ui.slug
+            filters:
+                search:
+                    type: string
+                    options:
+                        fields: [slug, name]
             actions:
                 main:
                     create:
