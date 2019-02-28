@@ -1,0 +1,75 @@
+{
+    "page": 2,
+    "limit": 3,
+    "pages": 8,
+    "total": 23,
+    "_links": {
+        "self": {
+            "href": "\/api\/v1\/brands\/?page=2&limit=3"
+        },
+        "first": {
+            "href": "\/api\/v1\/brands\/?page=1&limit=3"
+        },
+        "last": {
+            "href": "\/api\/v1\/brands\/?page=8&limit=3"
+        },
+        "next": {
+            "href": "\/api\/v1\/brands\/?page=3&limit=3"
+        },
+        "previous": {
+            "href": "\/api\/v1\/brands\/?page=1&limit=3"
+        }
+    },
+    "_embedded": {
+        "items": [
+            {
+                "id": "@integer@",
+                "slug": "brand-12",
+                "name": "Brand 12",
+                "_links": {
+                    "self": {
+                        "href": "\/api\/v1\/brands\/brand-12"
+                    },
+                    "images": {
+                        "href": "\/api\/v1\/brands\/brand-12\/images\/"
+                    },
+                    "products": {
+                        "href": "\/api\/v1\/brands\/brand-12\/products\/"
+                    }
+                }
+            },
+            {
+                "id": "@integer@",
+                "slug": "brand-13",
+                "name": "Brand 13",
+                "_links": {
+                    "self": {
+                        "href": "\/api\/v1\/brands\/brand-13"
+                    },
+                    "images": {
+                        "href": "\/api\/v1\/brands\/brand-13\/images\/"
+                    },
+                    "products": {
+                        "href": "\/api\/v1\/brands\/brand-13\/products\/"
+                    }
+                }
+            },
+            {
+                "id": "@integer@",
+                "slug": "brand-14",
+                "name": "Brand 14",
+                "_links": {
+                    "self": {
+                        "href": "\/api\/v1\/brands\/brand-14"
+                    },
+                    "images": {
+                        "href": "\/api\/v1\/brands\/brand-14\/images\/"
+                    },
+                    "products": {
+                        "href": "\/api\/v1\/brands\/brand-14\/products\/"
+                    }
+                }
+            }
+        ]
+    }
+}

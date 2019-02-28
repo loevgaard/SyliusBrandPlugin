@@ -60,6 +60,52 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
+    public function it_allows_paginating_and_limiting_the_index_of_brands()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+            'resources/many_brands.yml',
+        ]);
+
+        $this->client->request('GET', $this->getBrandUrl(), ['page' => 2, 'limit' => 3], [], static::$authorizedHeaderWithAccept);
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/index_response_paginated');
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_sorting_the_index_of_brands()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+        ]);
+
+        $this->client->request('GET', $this->getBrandUrl(), ['sorting' => ['slug' => 'desc']], [], static::$authorizedHeaderWithAccept);
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/index_response_sorted');
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_filtering_the_index_of_brands()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+        ]);
+
+        $this->client->request('GET', $this->getBrandUrl(), ['criteria' => ['search' => ['type' => 'contains', 'value' => 'sylius']]], [], static::$authorizedHeaderWithAccept);
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'brand/index_response_filtered');
+    }
+
+    /**
+     * @test
+     */
     public function it_allows_showing_brand()
     {
         $entities = $this->loadDefaultFixtureFiles([
