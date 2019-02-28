@@ -3,3 +3,5 @@ files:
     translation: /src/Resources/translations/messages.%two_letters_code%.yml
   - source: /src/Resources/translations/validators.en.yml
     translation: /src/Resources/translations/validators.%two_letters_code%.yml
+  - source: /src/Resources/translations/flashes.en.yml
+    translation: /src/Resources/translations/flashes.%two_letters_code%.yml
