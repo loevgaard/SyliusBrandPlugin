@@ -171,6 +171,29 @@ final class BrandApiTest extends AbstractApiTestCase
 
     /**
      * @test
+     *
+     * Actually, I'm not sure 500 Internal Server Error is good response for REST
+     * and that message will be visible in production
+     *
+     * @todo Find better solution
+     */
+    public function it_does_not_allow_delete_brand_if_it_used_by_products()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+            'resources/products.yml',
+        ]);
+
+        $this->client->request('DELETE', $this->getBrandUrl($entities['brand_setono']), [], [], static::$authorizedHeaderWithAccept);
+
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'error/brand_delete_error', Response::HTTP_INTERNAL_SERVER_ERROR);
+    }
+
+    /**
+     * @test
      */
     public function it_allows_delete_brand()
     {
