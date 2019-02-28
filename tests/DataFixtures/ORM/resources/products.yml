@@ -38,6 +38,7 @@ Sylius\Component\Core\Model\ProductVariant:
 
 Tests\Loevgaard\SyliusBrandPlugin\Application\Entity\Product:
     product_setono_mug:
+        brand: "@brand_setono"
         fallbackLocale: "en_US"
         currentLocale: "en_US"
         code: "SETONO_MUG"
@@ -47,6 +48,7 @@ Tests\Loevgaard\SyliusBrandPlugin\Application\Entity\Product:
             - "@product_translation_setono_mug_en_US"
             - "@product_translation_setono_mug_uk_UA"
     product_setono_sticker:
+        brand: "@brand_setono"
         fallbackLocale: "en_US"
         currentLocale: "en_US"
         code: "SETONO_STICKER"
@@ -56,6 +58,7 @@ Tests\Loevgaard\SyliusBrandPlugin\Application\Entity\Product:
             - "@product_translation_setono_sticker_en_US"
             - "@product_translation_setono_sticker_uk_UA"
     product_sylius_sticker:
+        brand: "@brand_sylius"
         fallbackLocale: "en_US"
         currentLocale: "en_US"
         code: "SYLIUS_STICKER"
