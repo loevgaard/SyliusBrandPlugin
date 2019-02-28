@@ -10,27 +10,21 @@
     "channels": [],
     "reviews": [],
     "averageRating": 0,
-    "images": [
-        {
-            "id": "@integer@",
-            "type": "thumbnail",
-            "path": "\/setono-mug-thumbnail.jpg"
-        }
-    ],
+    "images": "@array@",
     "brand": {
         "id": "@integer@",
-        "slug": "setono",
-        "name": "Setono",
+        "slug": "sylius",
+        "name": "Sylius",
         "images": "@array@",
         "_links": {
             "self": {
-                "href": "\/api\/v1\/brands\/setono"
+                "href": "\/api\/v1\/brands\/sylius"
             },
             "images": {
-                "href": "\/api\/v1\/brands\/setono\/images\/"
+                "href": "\/api\/v1\/brands\/sylius\/images\/"
             },
             "products": {
-                "href": "\/api\/v1\/brands\/setono\/products\/"
+                "href": "\/api\/v1\/brands\/sylius\/products\/"
             }
         }
     },
