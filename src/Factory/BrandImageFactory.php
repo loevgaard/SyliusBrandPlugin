@@ -25,7 +25,10 @@ class BrandImageFactory implements BrandImageFactoryInterface
      */
     public function createNew(): BrandImageInterface
     {
-        return $this->factory->createNew();
+        /** @var BrandImageInterface $brandImage */
+        $brandImage = $this->factory->createNew();
+
+        return $brandImage;
     }
 
     /**
