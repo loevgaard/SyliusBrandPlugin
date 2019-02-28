@@ -16,4 +16,17 @@ class BrandRepository extends EntityRepository implements BrandRepositoryInterfa
     {
         return $this->createQueryBuilder('o');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function findByPhrase(string $phrase): array
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.name LIKE :phrase OR o.slug LIKE :phrase')
+            ->setParameter('phrase', '%' . $phrase . '%')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

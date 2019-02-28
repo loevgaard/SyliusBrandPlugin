@@ -30,6 +30,12 @@
             <tag name="form.type" alias="loevgaard_sylius_brand_choice"/>
         </service>
 
+        <service id="loevgaard_sylius_brand.form.type.brand_autocomplete_choice"
+                 class="Loevgaard\SyliusBrandPlugin\Form\Type\BrandAutocompleteChoiceType">
+
+            <tag name="form.type" alias="loevgaard_sylius_brand_autocomplete_choice"/>
+        </service>
+
         <service id="loevgaard_sylius_brand.form.type.brand"
                  class="Loevgaard\SyliusBrandPlugin\Form\Type\BrandType">
             <argument>%loevgaard_sylius_brand.model.brand.class%</argument>

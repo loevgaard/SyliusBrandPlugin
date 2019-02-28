@@ -1,6 +1,6 @@
 <div class="ui tab" data-tab="brand">
     <div class="ui segment">
         <h4 class="ui dividing header">{{ 'loevgaard_sylius_brand.ui.brand'|trans }}</h4>
-        {{ form_row(form.brand) }}
+        {{ form_row(form.brand, {'remote_url': path('loevgaard_sylius_brand_admin_ajax_brands_by_phrase'), 'load_edit_url': path('loevgaard_sylius_brand_admin_ajax_brand_by_slug')}) }}
     </div>
 </div>
