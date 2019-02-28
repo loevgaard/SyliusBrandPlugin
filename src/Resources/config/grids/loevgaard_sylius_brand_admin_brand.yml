@@ -19,9 +19,11 @@ sylius_grid:
                 name:
                     type: string
                     label: loevgaard_sylius_brand.ui.name
+                    sortable: ~
                 slug:
                     type: string
                     label: loevgaard_sylius_brand.ui.slug
+                    sortable: ~
             filters:
                 search:
                     type: string
