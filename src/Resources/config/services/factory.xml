@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="false" />
+
+        <service id="loevgaard_sylius_brand.custom_factory.brand_image"
+                 class="Loevgaard\SyliusBrandPlugin\Factory\BrandImageFactory"
+                 decorates="loevgaard_sylius_brand.factory.brand_image"
+                 decoration-priority="256"
+                 public="false">
+            <argument type="service" id="loevgaard_sylius_brand.custom_factory.brand_image.inner" />
+        </service>
+
+    </services>
+
+</container>

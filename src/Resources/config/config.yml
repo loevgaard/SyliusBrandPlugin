@@ -1,6 +1,7 @@
 imports:
     - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/loevgaard_sylius_brand_admin_brand.yml"
     - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/loevgaard_sylius_brand_admin_api_brand.yml"
+    - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/loevgaard_sylius_brand_admin_api_brand_image.yml"
 
 sylius_resource:
     resources:

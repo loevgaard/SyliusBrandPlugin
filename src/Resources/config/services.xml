@@ -6,6 +6,7 @@
 
     <imports>
         <import resource="services/event_listener.xml" />
+        <import resource="services/factory.xml" />
         <import resource="services/fixture.xml" />
         <import resource="services/form.xml" />
         <import resource="services/menu.xml" />
@@ -13,14 +14,6 @@
 
     <services>
         <defaults public="false" />
-
-        <service id="loevgaard_sylius_brand.listener.images_upload"
-                 class="Sylius\Bundle\CoreBundle\EventListener\ImagesUploadListener"
-                 parent="sylius.listener.images_upload"
-                 public="false">
-            <tag name="kernel.event_listener" event="loevgaard_sylius_brand.brand.pre_create" method="uploadImages"/>
-            <tag name="kernel.event_listener" event="loevgaard_sylius_brand.brand.pre_update" method="uploadImages"/>
-        </service>
 
         <service id="loevgaard_sylius_brand.assigner.products"
                  class="Loevgaard\SyliusBrandPlugin\Assigner\ProductsAssigner"/>

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Doctrine\ORM;
 
+use Doctrine\ORM\QueryBuilder;
 use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
@@ -12,14 +13,13 @@ class BrandImageRepository extends EntityRepository implements BrandImageReposit
     /**
      * {@inheritdoc}
      */
-    public function createPaginatorForBrand(BrandInterface $brand): iterable
+    public function createListQueryBuilder(string $brandSlug): QueryBuilder
     {
-        $queryBuilder = $this->createQueryBuilder('o')
-            ->andWhere('o.owner = :brand')
-            ->setParameter('brand', $brand)
-        ;
-
-        return $this->getPaginator($queryBuilder);
+        return $this->createQueryBuilder('o')
+            ->addSelect('brand')
+            ->innerJoin('o.owner', 'brand', 'WITH', 'brand.slug = :brandSlug')
+            ->setParameter('brandSlug', $brandSlug)
+            ;
     }
 
     /**

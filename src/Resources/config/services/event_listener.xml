@@ -11,6 +11,22 @@
                  class="Loevgaard\SyliusBrandPlugin\EventListener\BrandDeletionListener">
             <tag name="kernel.event_listener" event="loevgaard_sylius_brand.brand.pre_delete" method="onBrandPreDelete" />
         </service>
+
+        <service id="loevgaard_sylius_brand.listener.images_upload"
+                 class="Sylius\Bundle\CoreBundle\EventListener\ImagesUploadListener"
+                 parent="sylius.listener.images_upload"
+                 public="false">
+            <tag name="kernel.event_listener" event="loevgaard_sylius_brand.brand.pre_create" method="uploadImages"/>
+            <tag name="kernel.event_listener" event="loevgaard_sylius_brand.brand.pre_update" method="uploadImages"/>
+        </service>
+
+        <service id="loevgaard_sylius_brand.listener.image_upload"
+                 class="Loevgaard\SyliusBrandPlugin\EventListener\ImageUploadListener"
+                 public="false">
+            <argument type="service" id="sylius.image_uploader" />
+            <tag name="kernel.event_listener" event="loevgaard_sylius_brand.brand_image.pre_create" method="uploadImage"/>
+        </service>
+
     </services>
 
 </container>
