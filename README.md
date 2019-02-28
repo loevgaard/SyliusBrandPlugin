@@ -147,8 +147,10 @@ sylius_product:
 ```  
 
 ### Step 5: Update your database schema
+
 ```bash
-$ php bin/console doctrine:schema:update --force
+$ php bin/console doctrine:migrations:diff
+$ php bin/console doctrine:migrations:migrate
 ```
 
 or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html).
