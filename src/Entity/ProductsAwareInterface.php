@@ -12,6 +12,11 @@ interface ProductsAwareInterface
     public function initializeProductsCollection(): void;
 
     /**
+     * @return bool
+     */
+    public function hasProducts(): bool;
+
+    /**
      * @return Collection|BrandAwareInterface[]|ProductInterface[]
      */
     public function getProducts(): Collection;

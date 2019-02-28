@@ -24,6 +24,14 @@ trait ProductsAwareTrait
     /**
      * {@inheritdoc}
      */
+    public function hasProducts(): bool
+    {
+        return $this->products->count() > 0;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getProducts(): Collection
     {
         return $this->products;
