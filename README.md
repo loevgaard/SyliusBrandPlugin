@@ -25,6 +25,8 @@ Brand admin pages:
 
 Products admin pages:
 
+![Screenshot showing product admin index page with brand filter](docs/images/admin-product-index-filter-with-brand.png)
+
 ![Screenshot showing product admin index page with brand column](docs/images/admin-product-index-brand-column.png)
 
 ![Screenshot showing brand tab at product admin update page](docs/images/admin-product-update-tab-brand.png)
