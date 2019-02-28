@@ -446,7 +446,8 @@ EOT;
      */
     private function getBrandUrl($brand = '')
     {
-        return sprintf('/api/v1/brands/%s',
+        return sprintf(
+            '/api/v1/brands/%s',
             $brand instanceof BrandInterface ? $brand->getSlug() : $brand
         );
     }

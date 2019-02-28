@@ -336,7 +336,8 @@ EOT;
      */
     private function getBrandImageByTypeUrl(BrandInterface $brand, string $type)
     {
-        return sprintf('/api/v1/brands/%s/images/by-type/%s',
+        return sprintf(
+            '/api/v1/brands/%s/images/by-type/%s',
             $brand->getSlug(),
             $type
         );
