@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Loevgaard\SyliusBrandPlugin\Assigner;
 
 use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
-use Sylius\Component\Core\Model\ProductInterface;
+use Loevgaard\SyliusBrandPlugin\Entity\ProductInterface;
 
 interface ProductsAssignerInterface
 {

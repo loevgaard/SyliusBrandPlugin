@@ -92,15 +92,15 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Entity\ProductTrait;
+use Loevgaard\SyliusBrandPlugin\Entity\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 
 /**
  * @ORM\MappedSuperclass()
  * @ORM\Table(name="sylius_product")
  */
-class Product extends BaseProduct implements BrandAwareInterface
+class Product extends BaseProduct implements LoevgaardSyliusBrandPluginProductInterface
 {
     use ProductTrait;
     
