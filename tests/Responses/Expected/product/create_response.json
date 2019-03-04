@@ -1,1 +1,38 @@
-[]
+{
+    "id": "@integer@",
+    "code": "SETONO_BIG_MUG",
+    "attributes": [],
+    "options": [],
+    "associations": [],
+    "translations": "@array@",
+    "productTaxons": [],
+    "channels": [],
+    "reviews": [],
+    "averageRating": 0,
+    "images": [],
+    "brand": {
+        "id": "@integer@",
+        "slug": "setono",
+        "name": "Setono",
+        "images": "@array@",
+        "_links": {
+            "self": {
+                "href": "\/api\/v1\/brands\/setono"
+            },
+            "images": {
+                "href": "\/api\/v1\/brands\/setono\/images\/"
+            },
+            "products": {
+                "href": "\/api\/v1\/brands\/setono\/products\/"
+            }
+        }
+    },
+    "_links": {
+        "self": {
+            "href": "\/api\/v1\/products\/SETONO_BIG_MUG"
+        },
+        "variants": {
+            "href": "\/api\/v1\/products\/SETONO_BIG_MUG\/variants\/"
+        }
+    }
+}

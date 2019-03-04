@@ -46,6 +46,56 @@ final class ProductApiTest extends AbstractApiTestCase
     /**
      * @test
      */
+    public function it_allows_create_product_with_brand_field()
+    {
+        $entities = $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+            'resources/products.yml',
+        ]);
+
+        $data =
+<<<EOT
+        {
+            "code": "SETONO_BIG_MUG",
+            "brand": "{$entities['brand_setono']->getSlug()}"
+        }
+EOT;
+
+        $this->client->request('POST', $this->getProductUrl(), [], [], static::$authorizedHeaderWithContentType, $data);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'product/create_response', Response::HTTP_CREATED);
+    }
+
+    /**
+     * @test
+     */
+    public function it_does_not_allow_to_create_product_with_invalid_brand_code()
+    {
+        $this->loadDefaultFixtureFiles([
+            'authentication/api_administrator.yml',
+            'resources/brands.yml',
+            'resources/products.yml',
+        ]);
+
+        $data =
+<<<EOT
+        {
+            "code": "SETONO_BIG_MUG",
+            "brand": "invalid-code"
+        }
+EOT;
+
+        $this->client->request('POST', $this->getProductUrl(), [], [], static::$authorizedHeaderWithContentType, $data);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'product/create_validation_fail_response', Response::HTTP_BAD_REQUEST);
+    }
+
+    /**
+     * @test
+     */
     public function it_allows_updating_product_brand()
     {
         $entities = $this->loadDefaultFixtureFiles([

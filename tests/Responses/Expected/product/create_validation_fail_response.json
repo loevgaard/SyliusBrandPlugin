@@ -1,1 +1,23 @@
-[]
+{
+    "code": 400,
+    "message": "Validation Failed",
+    "errors": {
+        "children": {
+            "enabled": {},
+            "translations": {},
+            "attributes": {},
+            "associations": {},
+            "channels": {},
+            "mainTaxon": {},
+            "images": {},
+            "brand": {
+                "errors": [
+                    "This value is not valid."
+                ]
+            },
+            "code": {},
+            "options": {},
+            "productTaxons": {}
+        }
+    }
+}
