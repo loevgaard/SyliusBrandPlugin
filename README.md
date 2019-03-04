@@ -192,7 +192,8 @@ or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigr
     ```
 
 ## Installation and usage for plugin development
-[Find more information here](install-dev.md)
+
+To run test application to play with just type `composer try`.
 
 ### Sonata blocks available
 
@@ -280,7 +281,12 @@ or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigr
 
     For XML output, add `-H "Accept: application/xml"` to request
 
-## Contribute by translating
+## Contribute
+
+Please, run `composer all` to run all checks and tests before committing.
+
+### Contribute by translating
+
 We use the same service as Sylius for translating, namely [Crowdin](https://crowdin.com/project/sylius-brand-plugin). You can help out by translating this project into your mother tongue ;)
 
 Thanks!
