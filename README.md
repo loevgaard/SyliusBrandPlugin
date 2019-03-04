@@ -228,6 +228,11 @@ or use [Doctrine Migrations](https://symfony.com/doc/master/bundles/DoctrineMigr
 
 * Make requests:
 
+   (`GET` requests indexing/showing resources shown here, 
+   see `tests/Controller/*ApiTest.php` to discover more details
+   about how to communicate with API and create `BrandImages` 
+   with actual files)
+
    To Brands admin API:
 
     ```bash
