@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
 
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Bridge\Doctrine\Form\DataTransformer\CollectionToArrayTransformer;
 use Symfony\Component\Form\AbstractType;
@@ -38,18 +37,12 @@ final class BrandChoiceType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'choices' => function (Options $options): array {
-                $brands = $this->brandRepository->findBy([], ['name' => 'ASC']);
-
-                $choices = [];
-
-                /** @var BrandInterface $brand */
-                foreach ($brands as $brand) {
-                    $choices[$brand->getName()] = $brand;
-                }
-
-                return $choices;
+            'choices' => function (Options $options) {
+                return $this->brandRepository->findAll();
             },
+            'choice_value' => 'slug',
+            'choice_label' => 'name',
+            'choice_translation_domain' => false,
         ]);
     }
 
