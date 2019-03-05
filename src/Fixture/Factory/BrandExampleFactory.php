@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Loevgaard\SyliusBrandPlugin\Fixture\Factory;
 
 use Loevgaard\SyliusBrandPlugin\Assigner\ProductsAssignerInterface;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandImageInterface;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandImageInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\AbstractExampleFactory;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;

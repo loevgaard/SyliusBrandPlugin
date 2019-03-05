@@ -3,25 +3,9 @@ imports:
     - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/loevgaard_sylius_brand_admin_api_brand.yml"
     - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/loevgaard_sylius_brand_admin_api_brand_image.yml"
 
-sylius_resource:
-    resources:
-        loevgaard_sylius_brand.brand:
-            driver: doctrine/orm
-            classes:
-                model: Loevgaard\SyliusBrandPlugin\Entity\Brand
-                interface: Loevgaard\SyliusBrandPlugin\Entity\BrandInterface
-                repository: Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandRepository
-                form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandType
-        loevgaard_sylius_brand.brand_image:
-            classes:
-                model: Loevgaard\SyliusBrandPlugin\Entity\BrandImage
-                interface: Loevgaard\SyliusBrandPlugin\Entity\BrandImageInterface
-                repository: Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandImageRepository
-                form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType
-
 jms_serializer:
     metadata:
         directories:
             loevgaard-sylius-brand:
-                namespace_prefix: "Loevgaard\\SyliusBrandPlugin\\Entity"
+                namespace_prefix: "Loevgaard\\SyliusBrandPlugin\\Model"
                 path: "@LoevgaardSyliusBrandPlugin/Resources/config/serializer"

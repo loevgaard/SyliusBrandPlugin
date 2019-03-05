@@ -6,8 +6,8 @@ namespace Loevgaard\SyliusBrandPlugin\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
 use Loevgaard\SyliusBrandPlugin\Event\BrandMenuBuilderEvent;
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 final class BrandFormMenuBuilder

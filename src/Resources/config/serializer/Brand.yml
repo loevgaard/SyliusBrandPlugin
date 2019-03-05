@@ -1,4 +1,4 @@
-Loevgaard\SyliusBrandPlugin\Entity\Brand:
+Loevgaard\SyliusBrandPlugin\Model\Brand:
     exclusion_policy: ALL
     xml_root_name: brand
     properties:

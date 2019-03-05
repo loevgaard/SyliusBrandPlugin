@@ -6,7 +6,7 @@ namespace Loevgaard\SyliusBrandPlugin\Event;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
 
 class BrandMenuBuilderEvent extends MenuBuilderEvent

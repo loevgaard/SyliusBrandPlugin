@@ -1,4 +1,4 @@
-Loevgaard\SyliusBrandPlugin\Entity\Brand:
+Loevgaard\SyliusBrandPlugin\Model\Brand:
     brand_{1..20}:
          slug: brand-<current()>
          name: Brand <current()>

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Loevgaard\SyliusBrandPlugin\Entity;
+namespace Tests\Loevgaard\SyliusBrandPlugin\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Loevgaard\SyliusBrandPlugin\Entity\Brand;
+use Loevgaard\SyliusBrandPlugin\Model\Brand;
 use PHPUnit\Framework\TestCase;
 
 class BrandTest extends TestCase

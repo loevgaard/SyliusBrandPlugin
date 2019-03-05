@@ -1,4 +1,4 @@
-Loevgaard\SyliusBrandPlugin\Entity\Brand:
+Loevgaard\SyliusBrandPlugin\Model\Brand:
     brand_setono:
         slug: "setono"
         name: "Setono"
@@ -9,7 +9,7 @@ Loevgaard\SyliusBrandPlugin\Entity\Brand:
         slug: "symfony"
         name: "Symfony"
         
-Loevgaard\SyliusBrandPlugin\Entity\BrandImage:
+Loevgaard\SyliusBrandPlugin\Model\BrandImage:
     brand_image_setono_logo:
         brand: "@brand_setono"
         type: "logo"

@@ -1,4 +1,4 @@
-Loevgaard\SyliusBrandPlugin\Entity\BrandImage:
+Loevgaard\SyliusBrandPlugin\Model\BrandImage:
     exclusion_policy: ALL
     xml_root_name: brand-image
     relations:

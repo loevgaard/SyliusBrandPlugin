@@ -7,7 +7,7 @@ declare(strict_types=1);
 namespace Loevgaard\SyliusBrandPlugin\Doctrine\ORM;
 
 use Doctrine\ORM\QueryBuilder;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 
 trait ProductRepositoryTrait
 {

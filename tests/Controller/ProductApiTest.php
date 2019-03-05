@@ -6,8 +6,8 @@ declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Controller;
 
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
-use Loevgaard\SyliusBrandPlugin\Entity\ProductInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
+use Loevgaard\SyliusBrandPlugin\Model\ProductInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 final class ProductApiTest extends AbstractApiTestCase

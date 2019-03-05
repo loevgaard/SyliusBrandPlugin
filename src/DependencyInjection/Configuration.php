@@ -8,12 +8,12 @@ namespace Loevgaard\SyliusBrandPlugin\DependencyInjection;
 
 use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandImageRepository;
 use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandRepository;
-use Loevgaard\SyliusBrandPlugin\Entity\Brand;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandImage;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandImageInterface;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType;
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandType;
+use Loevgaard\SyliusBrandPlugin\Model\Brand;
+use Loevgaard\SyliusBrandPlugin\Model\BrandImage;
+use Loevgaard\SyliusBrandPlugin\Model\BrandImageInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Sylius\Component\Resource\Factory\Factory;
@@ -28,8 +28,14 @@ final class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('loevgaard_sylius_brand');
+        if (method_exists(TreeBuilder::class, 'getRootNode')) {
+            $treeBuilder = new TreeBuilder('loevgaard_sylius_brand');
+            $rootNode = $treeBuilder->getRootNode();
+        } else {
+            // BC layer for symfony/config 4.1 and older
+            $treeBuilder = new TreeBuilder();
+            $rootNode = $treeBuilder->root('loevgaard_sylius_brand');
+        }
 
         $rootNode
             ->addDefaultsIfNotSet()

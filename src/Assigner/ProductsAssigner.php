@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Assigner;
 
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
-use Loevgaard\SyliusBrandPlugin\Entity\ProductInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
+use Loevgaard\SyliusBrandPlugin\Model\ProductInterface;
 
 final class ProductsAssigner implements ProductsAssignerInterface
 {

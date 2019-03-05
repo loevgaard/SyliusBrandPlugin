@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Loevgaard\SyliusBrandPlugin\Entity;
+namespace Loevgaard\SyliusBrandPlugin\Model;
 
 use Sylius\Component\Resource\Model\ResourceInterface;
 

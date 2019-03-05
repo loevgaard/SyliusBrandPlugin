@@ -6,12 +6,12 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\DependencyInjection;
 
+use Sylius\Bundle\ResourceBundle\DependencyInjection\Extension\AbstractResourceExtension;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
-final class LoevgaardSyliusBrandExtension extends Extension
+final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension
 {
     /**
      * {@inheritdoc}
@@ -22,6 +22,9 @@ final class LoevgaardSyliusBrandExtension extends Extension
     {
         $config = $this->processConfiguration($this->getConfiguration([], $container), $config);
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+
+        $this->registerResources('loevgaard_sylius_brand', $config['driver'], $config['resources'], $container);
+
         $loader->load('services.xml');
     }
 }

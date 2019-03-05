@@ -20,6 +20,6 @@ doctrine:
             Tests:
                 is_bundle: false
                 type: xml
-                dir: '%kernel.project_dir%/config/doctrine'
-                prefix: 'Tests\Loevgaard\SyliusBrandPlugin\Application\Entity'
+                dir: '%kernel.project_dir%/config/doctrine/model'
+                prefix: 'Tests\Loevgaard\SyliusBrandPlugin\Application\Model'
                 alias: App

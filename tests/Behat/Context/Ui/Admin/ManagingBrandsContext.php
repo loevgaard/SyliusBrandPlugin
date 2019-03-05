@@ -8,7 +8,7 @@ declare(strict_types=1);
 namespace Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Ui\Admin;
 
 use Behat\Behat\Context\Context;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Tests\Loevgaard\SyliusBrandPlugin\Behat\Page\Admin\Brand\CreateBrandPage;
 use Tests\Loevgaard\SyliusBrandPlugin\Behat\Page\Admin\Brand\IndexBrandPage;
 use Tests\Loevgaard\SyliusBrandPlugin\Behat\Page\Admin\Brand\UpdateBrandPage;
