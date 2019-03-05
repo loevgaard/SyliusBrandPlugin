@@ -47,14 +47,17 @@ This command requires you to have Composer installed globally, as explained in t
 ### Step 2: Enable the plugin
 
 Then, enable the plugin by adding it to the list of registered plugins/bundles
-in `config/bundles.php` file of your project:
+in `config/bundles.php` file of your project before (!) `SyliusGridBundle`:
 
 ```php
 <?php
 
+# config/bundles.php
+
 return [
     // ...
     Loevgaard\SyliusBrandPlugin\LoevgaardSyliusBrandPlugin::class => ['all' => true],
+    Sylius\Bundle\GridBundle\SyliusGridBundle::class => ['all' => true],
     // ...
 ];
 ```
