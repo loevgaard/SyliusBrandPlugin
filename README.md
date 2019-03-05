@@ -91,21 +91,35 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Loevgaard\SyliusBrandPlugin\Entity\ProductTrait;
 use Loevgaard\SyliusBrandPlugin\Entity\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 
-/**
- * @ORM\MappedSuperclass()
- * @ORM\Table(name="sylius_product")
- */
 class Product extends BaseProduct implements LoevgaardSyliusBrandPluginProductInterface
 {
     use ProductTrait;
     
     // ...
 }
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config/doctrine/Product.orm.xml -->
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                                      http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="App\Entity\Product" table="sylius_product">
+        <many-to-one field="brand" target-entity="Loevgaard\SyliusBrandPlugin\Entity\Brand">
+            <join-column name="brand_id" on-delete="SET NULL" />
+        </many-to-one>
+    </mapped-superclass>
+
+</doctrine-mapping>
 ```
 
 **NOTE:** If you haven't extended the `Product` entity yet, follow the [customization instructions](https://docs.sylius.com/en/1.3/customization/model.html) first because you need to add a bit more configuration.

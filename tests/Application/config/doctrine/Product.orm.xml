@@ -7,7 +7,7 @@
 
     <mapped-superclass name="Tests\Loevgaard\SyliusBrandPlugin\Application\Entity\Product" table="sylius_product">
         <many-to-one field="brand" target-entity="Loevgaard\SyliusBrandPlugin\Entity\Brand">
-            <join-column name="brand_id" />
+            <join-column name="brand_id" on-delete="SET NULL" />
         </many-to-one>
     </mapped-superclass>
 
