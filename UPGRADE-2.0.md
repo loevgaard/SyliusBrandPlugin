@@ -1,14 +1,20 @@
-# UPGRADE PLUGIN FROM `v1.3.X` TO `v2.0`
+# UPGRADE PLUGIN 
+
+## FROM `v1.3.X` TO `v2.0`
 
 The first step is upgrading Plugin with Composer
 
 - `composer require loevgaard/sylius-brand-plugin:^2.0`
 
-# Replace classnames
+### Replace classnames
 
 - Replace plugin's `Entity` to `Model`
 
-# Update your `Product` entity
+### Replace imported config
+
+- Replace `config/config.yml` > `config/app/config.yml`
+
+### Update your `Product` entity
 
 `Product` now should implement `Loevgaard\SyliusBrandPlugin\Model\ProductInterface`
 rather than just `Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface`:
