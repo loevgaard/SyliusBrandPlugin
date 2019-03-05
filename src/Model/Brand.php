@@ -6,8 +6,12 @@ namespace Loevgaard\SyliusBrandPlugin\Model;
 
 class Brand implements BrandInterface
 {
-    use ProductsAwareTrait,
-        ImagesAwareTrait;
+    use ProductsAwareTrait {
+        ProductsAwareTrait::__construct as private __productsAwareTraitConstruct;
+    }
+    use ImagesAwareTrait {
+        ImagesAwareTrait::__construct as private __imagesAwareTraitConstruct;
+    }
 
     /**
      * @var int
@@ -26,8 +30,8 @@ class Brand implements BrandInterface
 
     public function __construct()
     {
-        $this->initializeImagesCollection();
-        $this->initializeProductsCollection();
+        $this->__imagesAwareTraitConstruct();
+        $this->__productsAwareTraitConstruct();
     }
 
     /**

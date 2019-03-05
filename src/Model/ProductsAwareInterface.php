@@ -8,8 +8,6 @@ use Doctrine\Common\Collections\Collection;
 
 interface ProductsAwareInterface
 {
-    public function initializeProductsCollection(): void;
-
     /**
      * @return bool
      */

@@ -8,5 +8,4 @@ use Sylius\Component\Core\Model\ImagesAwareInterface as BaseImagesAwareInterface
 
 interface ImagesAwareInterface extends BaseImagesAwareInterface
 {
-    public function initializeImagesCollection(): void;
 }

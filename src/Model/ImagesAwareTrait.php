@@ -10,10 +10,12 @@ use Sylius\Component\Core\Model\ImageInterface;
 
 trait ImagesAwareTrait
 {
-    /** @var Collection|ImageInterface[] */
+    /**
+     * @var Collection|ImageInterface[]
+     */
     protected $images;
 
-    public function initializeImagesCollection(): void
+    public function __construct()
     {
         $this->images = new ArrayCollection();
     }

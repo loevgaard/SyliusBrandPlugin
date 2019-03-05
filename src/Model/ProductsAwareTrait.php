@@ -17,7 +17,7 @@ trait ProductsAwareTrait
     /**
      * {@inheritdoc}
      */
-    public function initializeProductsCollection(): void
+    public function __construct()
     {
         $this->products = new ArrayCollection();
     }
