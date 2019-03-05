@@ -8,7 +8,7 @@ use Sylius\Component\Core\Model\Image;
 
 class BrandImage extends Image implements BrandImageInterface
 {
-    const TYPE_LOGO = 'logo';
+    public const TYPE_LOGO = 'logo';
 
     public function isLogo(): bool
     {

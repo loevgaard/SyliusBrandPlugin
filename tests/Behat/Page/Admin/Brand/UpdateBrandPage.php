@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpUnhandledExceptionInspection */
+
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Behat\Page\Admin\Brand;
@@ -8,12 +10,12 @@ use Sylius\Behat\Page\Admin\Crud\UpdatePage;
 
 class UpdateBrandPage extends UpdatePage
 {
-    public function nameIt($name)
+    public function nameIt($name): void
     {
         $this->getElement('name')->setValue($name);
     }
 
-    public function specifySlug($slug)
+    public function specifySlug($slug): void
     {
         $this->getElement('slug')->setValue($slug);
     }

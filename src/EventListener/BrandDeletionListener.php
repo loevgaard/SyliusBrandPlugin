@@ -12,6 +12,8 @@ final class BrandDeletionListener
 {
     /**
      * Prevent brand deletion if it used in product
+     *
+     * @param ResourceControllerEvent $event
      */
     public function onBrandPreDelete(ResourceControllerEvent $event): void
     {

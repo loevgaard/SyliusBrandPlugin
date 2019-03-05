@@ -1,9 +1,12 @@
 <?php
 
+/** @noinspection PhpUnhandledExceptionInspection */
+
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Controller;
 
+use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
 use Loevgaard\SyliusBrandPlugin\Entity\ProductInterface;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -12,7 +15,7 @@ final class ProductApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_allows_indexing_products_with_brand_field()
+    public function it_allows_indexing_products_with_brand_field(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -29,7 +32,7 @@ final class ProductApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_allows_showing_product_with_brand_field()
+    public function it_allows_showing_product_with_brand_field(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -46,7 +49,7 @@ final class ProductApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_allows_create_product_with_brand_field()
+    public function it_allows_create_product_with_brand_field(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -54,11 +57,13 @@ final class ProductApiTest extends AbstractApiTestCase
             'resources/products.yml',
         ]);
 
+        /** @var BrandInterface $brand */
+        $brand = $entities['brand_setono'];
         $data =
 <<<EOT
         {
             "code": "SETONO_BIG_MUG",
-            "brand": "{$entities['brand_setono']->getSlug()}"
+            "brand": "{$brand->getSlug()}"
         }
 EOT;
 
@@ -71,7 +76,7 @@ EOT;
     /**
      * @test
      */
-    public function it_does_not_allow_to_create_product_with_invalid_brand_code()
+    public function it_does_not_allow_to_create_product_with_invalid_brand_code(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -96,7 +101,7 @@ EOT;
     /**
      * @test
      */
-    public function it_allows_updating_product_brand()
+    public function it_allows_updating_product_brand(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -104,10 +109,12 @@ EOT;
             'resources/products.yml',
         ]);
 
+        /** @var BrandInterface $brand */
+        $brand = $entities['brand_sylius'];
         $data =
 <<<EOT
         {
-            "brand": "{$entities['brand_sylius']->getSlug()}"
+            "brand": "{$brand->getSlug()}"
         }
 EOT;
 
@@ -125,7 +132,7 @@ EOT;
     /**
      * @test
      */
-    public function it_allows_updating_partial_information_about_product()
+    public function it_allows_updating_partial_information_about_product(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -133,10 +140,12 @@ EOT;
             'resources/products.yml',
         ]);
 
+        /** @var BrandInterface $brand */
+        $brand = $entities['brand_sylius'];
         $data =
 <<<EOT
         {
-            "brand": "{$entities['brand_sylius']->getSlug()}"
+            "brand": "{$brand->getSlug()}"
         }
 EOT;
 
@@ -153,7 +162,7 @@ EOT;
      * @param ProductInterface|string $product
      * @return string
      */
-    private function getProductUrl($product = '')
+    private function getProductUrl($product = ''): string
     {
         return sprintf(
             '/api/v1/products/%s',

@@ -11,6 +11,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 final class BrandType extends AbstractResourceType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder

@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection ReturnTypeCanBeDeclaredInspection */
+
 declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Doctrine\ORM;

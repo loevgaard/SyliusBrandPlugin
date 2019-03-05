@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpUnhandledExceptionInspection */
+
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Controller;
@@ -13,7 +15,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allow_to_show_brands_list_when_access_is_denied()
+    public function it_does_not_allow_to_show_brands_list_when_access_is_denied(): void
     {
         $this->loadDefaultFixtureFiles([
             'resources/brands.yml',
@@ -28,7 +30,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allow_to_show_brand_when_it_does_not_exist()
+    public function it_does_not_allow_to_show_brand_when_it_does_not_exist(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -44,7 +46,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_allows_indexing_brands()
+    public function it_allows_indexing_brands(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -60,7 +62,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_allows_paginating_and_limiting_the_index_of_brands()
+    public function it_allows_paginating_and_limiting_the_index_of_brands(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -76,7 +78,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_allows_sorting_the_index_of_brands()
+    public function it_allows_sorting_the_index_of_brands(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -91,7 +93,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_allows_filtering_the_index_of_brands()
+    public function it_allows_filtering_the_index_of_brands(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -106,7 +108,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_denies_showing_brand_for_non_authenticated_user()
+    public function it_denies_showing_brand_for_non_authenticated_user(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'resources/brands.yml',
@@ -121,7 +123,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_allows_showing_brand()
+    public function it_allows_showing_brand(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -141,7 +143,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_denies_brand_deletion_for_non_authenticated_user()
+    public function it_denies_brand_deletion_for_non_authenticated_user(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'resources/brands.yml',
@@ -156,7 +158,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allow_delete_brand_if_it_does_not_exist()
+    public function it_does_not_allow_delete_brand_if_it_does_not_exist(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -177,7 +179,7 @@ final class BrandApiTest extends AbstractApiTestCase
      *
      * @todo Find better solution
      */
-    public function it_does_not_allow_delete_brand_if_it_used_by_products()
+    public function it_does_not_allow_delete_brand_if_it_used_by_products(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -195,7 +197,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_allows_delete_brand()
+    public function it_allows_delete_brand(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -216,7 +218,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_denies_brand_creation_for_non_authenticated_user()
+    public function it_denies_brand_creation_for_non_authenticated_user(): void
     {
         $this->loadDefaultFixtureFiles([
             'resources/brands.yml',
@@ -231,7 +233,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allow_to_create_brand_without_required_fields()
+    public function it_does_not_allow_to_create_brand_without_required_fields(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -246,7 +248,7 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allow_to_create_brand_with_too_long_name_and_slug()
+    public function it_does_not_allow_to_create_brand_with_too_long_name_and_slug(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -271,7 +273,7 @@ EOT;
     /**
      * @test
      */
-    public function it_does_not_allow_to_create_brand_with_too_short_name()
+    public function it_does_not_allow_to_create_brand_with_too_short_name(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -294,7 +296,7 @@ EOT;
     /**
      * @test
      */
-    public function it_allows_create_brand()
+    public function it_allows_create_brand(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -317,7 +319,7 @@ EOT;
     /**
      * @test
      */
-    public function it_allows_creating_brand_with_images()
+    public function it_allows_creating_brand_with_images(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -358,7 +360,7 @@ EOT;
     /**
      * @test
      */
-    public function it_denies_partial_updating_brand_for_non_authenticated_user()
+    public function it_denies_partial_updating_brand_for_non_authenticated_user(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'resources/brands.yml',
@@ -373,7 +375,7 @@ EOT;
     /**
      * @test
      */
-    public function it_allows_updating_partial_information_about_brand()
+    public function it_allows_updating_partial_information_about_brand(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -400,7 +402,7 @@ EOT;
     /**
      * @test
      */
-    public function it_denies_updating_brand_for_non_authenticated_user()
+    public function it_denies_updating_brand_for_non_authenticated_user(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'resources/brands.yml',
@@ -415,7 +417,7 @@ EOT;
     /**
      * @test
      */
-    public function it_allows_updating_brand()
+    public function it_allows_updating_brand(): void
     {
         $entities = $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
@@ -444,7 +446,7 @@ EOT;
      * @param BrandInterface|string $brand
      * @return string
      */
-    private function getBrandUrl($brand = '')
+    private function getBrandUrl($brand = ''): string
     {
         return sprintf(
             '/api/v1/brands/%s',

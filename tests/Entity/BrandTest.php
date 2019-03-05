@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class BrandTest extends TestCase
 {
-    public function testInitialState()
+    public function testInitialState(): void
     {
         $brand = new Brand();
         $this->assertEquals(null, $brand->getId());
@@ -19,7 +19,7 @@ class BrandTest extends TestCase
         $this->assertInstanceOf(ArrayCollection::class, $brand->getImages());
     }
 
-    public function testMutability()
+    public function testMutability(): void
     {
         $brand = new Brand();
         $brand->setName('name');

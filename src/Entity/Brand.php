@@ -15,12 +15,12 @@ class Brand implements BrandInterface
     protected $id;
 
     /**
-     * @var string
+     * @var string|null
      */
     protected $slug;
 
     /**
-     * @var string
+     * @var string|null
      */
     protected $name;
 
@@ -57,7 +57,7 @@ class Brand implements BrandInterface
     /**
      * {@inheritdoc}
      */
-    public function setSlug(string $slug): void
+    public function setSlug(?string $slug): void
     {
         $this->slug = $slug;
     }
@@ -73,8 +73,24 @@ class Brand implements BrandInterface
     /**
      * {@inheritdoc}
      */
-    public function setName(string $name): void
+    public function setName(?string $name): void
     {
         $this->name = $name;
+    }
+
+    public function addProduct(ProductInterface $product): void
+    {
+        if (!$this->hasProduct($product)) {
+            $product->setBrand($this);
+            $this->products->add($product);
+        }
+    }
+
+    public function removeProduct(ProductInterface $product): void
+    {
+        if ($this->hasProduct($product)) {
+            $product->setBrand(null);
+            $this->products->removeElement($product);
+        }
     }
 }

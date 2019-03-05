@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection TraitsPropertiesConflictsInspection */
+
 declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin;

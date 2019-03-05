@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpUnusedParameterInspection */
+
 declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
@@ -27,6 +29,9 @@ final class BrandChoiceType extends AbstractType
         $this->brandRepository = $brandRepository;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if ($options['multiple']) {
@@ -34,7 +39,10 @@ final class BrandChoiceType extends AbstractType
         }
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    /**
+     * {@inheritdoc}
+     */
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'choices' => function (Options $options) {
@@ -46,11 +54,17 @@ final class BrandChoiceType extends AbstractType
         ]);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getParent(): string
     {
         return ChoiceType::class;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getBlockPrefix(): string
     {
         return 'loevgaard_sylius_brand_choice';

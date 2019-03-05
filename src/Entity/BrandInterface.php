@@ -21,22 +21,22 @@ interface BrandInterface extends ResourceInterface, ProductsAwareInterface, Imag
     public function getId(): ?int;
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getSlug(): ?string;
 
     /**
-     * @param string $slug
+     * @param string|null $slug
      */
-    public function setSlug(string $slug): void;
+    public function setSlug(?string $slug): void;
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string;
 
     /**
-     * @param string $name
+     * @param string|null $name
      */
-    public function setName(string $name): void;
+    public function setName(?string $name): void;
 }

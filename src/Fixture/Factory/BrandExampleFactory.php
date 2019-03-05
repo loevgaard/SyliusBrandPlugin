@@ -8,7 +8,6 @@ use Loevgaard\SyliusBrandPlugin\Assigner\ProductsAssignerInterface;
 use Loevgaard\SyliusBrandPlugin\Entity\BrandImageInterface;
 use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\AbstractExampleFactory;
-use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Core\Uploader\ImageUploaderInterface;
@@ -16,7 +15,7 @@ use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-final class BrandExampleFactory extends AbstractExampleFactory implements ExampleFactoryInterface
+final class BrandExampleFactory extends AbstractExampleFactory
 {
     /** @var OptionsResolver */
     private $optionsResolver;

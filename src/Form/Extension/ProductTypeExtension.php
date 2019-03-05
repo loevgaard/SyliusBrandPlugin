@@ -14,7 +14,7 @@ class ProductTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->add('brand', BrandAutocompleteChoiceType::class, [
             'placeholder' => 'loevgaard_sylius_brand.form.product.select_brand',

@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpUnusedLocalVariableInspection */
+
 declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\DependencyInjection;

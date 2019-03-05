@@ -6,11 +6,12 @@ namespace Loevgaard\SyliusBrandPlugin\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Sylius\Component\Core\Model\ProductInterface;
 
 trait ProductsAwareTrait
 {
-    /** @var Collection|BrandAwareInterface[]|ProductInterface[] */
+    /**
+     * @var Collection|ProductInterface[]
+     */
     protected $products;
 
     /**
@@ -40,7 +41,7 @@ trait ProductsAwareTrait
     /**
      * {@inheritdoc}
      */
-    public function hasProduct(BrandAwareInterface $product): bool
+    public function hasProduct(ProductInterface $product): bool
     {
         return $this->products->contains($product);
     }
@@ -48,23 +49,10 @@ trait ProductsAwareTrait
     /**
      * {@inheritdoc}
      */
-    public function addProduct(BrandAwareInterface $product): void
-    {
-        if (false === $this->hasProduct($product)) {
-            /** @var ProductsAwareInterface $this */
-            $product->setBrand($this);
-            $this->products->add($product);
-        }
-    }
+    abstract public function addProduct(ProductInterface $product): void;
 
     /**
      * {@inheritdoc}
      */
-    public function removeProduct(BrandAwareInterface $product): void
-    {
-        if (true === $this->hasProduct($product)) {
-            $product->setBrand(null);
-            $this->products->removeElement($product);
-        }
-    }
+    abstract public function removeProduct(ProductInterface $product): void;
 }

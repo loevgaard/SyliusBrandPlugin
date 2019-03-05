@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpDocSignatureInspection */
 
 declare(strict_types=1);
 
@@ -30,7 +30,7 @@ final class BrandContext implements Context
     /**
      * @Given The store has a brand :brandName
      */
-    public function storeHasABrand($brandName)
+    public function storeHasABrand($brandName): void
     {
         $brand = $this->createBrand($brandName);
 

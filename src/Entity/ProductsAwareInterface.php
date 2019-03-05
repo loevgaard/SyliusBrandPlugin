@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Loevgaard\SyliusBrandPlugin\Entity;
 
 use Doctrine\Common\Collections\Collection;
-use Sylius\Component\Core\Model\ProductInterface;
 
 interface ProductsAwareInterface
 {
@@ -17,24 +16,24 @@ interface ProductsAwareInterface
     public function hasProducts(): bool;
 
     /**
-     * @return Collection|BrandAwareInterface[]|ProductInterface[]
+     * @return Collection|ProductInterface[]
      */
     public function getProducts(): Collection;
 
     /**
-     * @param BrandAwareInterface $product
+     * @param ProductInterface $product
      *
      * @return bool
      */
-    public function hasProduct(BrandAwareInterface $product): bool;
+    public function hasProduct(ProductInterface $product): bool;
 
     /**
-     * @param BrandAwareInterface $product
+     * @param ProductInterface $product
      */
-    public function addProduct(BrandAwareInterface $product): void;
+    public function addProduct(ProductInterface $product): void;
 
     /**
-     * @param BrandAwareInterface $product
+     * @param ProductInterface $product
      */
-    public function removeProduct(BrandAwareInterface $product): void;
+    public function removeProduct(ProductInterface $product): void;
 }

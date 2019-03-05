@@ -16,6 +16,8 @@ interface BrandRepositoryInterface extends RepositoryInterface
     public function createListQueryBuilder(): QueryBuilder;
 
     /**
+     * @param string $phrase
+     *
      * @return array|BrandInterface[]
      */
     public function findByPhrase(string $phrase): array;
