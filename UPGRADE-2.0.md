@@ -8,11 +8,28 @@ The first step is upgrading Plugin with Composer
 
 ### Replace classnames
 
-- Replace plugin's `Entity` to `Model`
+- Replace plugin's `Entity` to `Model` with your editor's
+  Find & Replace function 
+  (in case you used them somewhere in your application):
+  
+  `Loevgaard\SyliusBrandPlugin\Entity` > `Loevgaard\SyliusBrandPlugin\Model`
 
 ### Replace imported config
 
-- Replace `config/config.yml` > `config/app/config.yml`
+- Import `config/app/config.yml` rather than `config/config.yml` (which no longer exists)
+
+  `- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/config.yml" }` > `- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yml" }`
+
+### Add new (optional) config 
+
+If you wish to display Brand column at Product list grid (`sylius_admin_product`) at Admin:
+
+```yaml
+# src/config/services.yaml
+imports:
+    # ...
+    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yml" }
+``` 
 
 ### Update your `Product` entity
 
