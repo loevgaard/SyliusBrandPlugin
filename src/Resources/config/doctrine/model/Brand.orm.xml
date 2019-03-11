@@ -16,8 +16,8 @@
             </cascade>
         </one-to-many>
         <one-to-many field="products" target-entity="Sylius\Component\Product\Model\ProductInterface" mapped-by="brand" fetch="EXTRA_LAZY" />
-        <field name="slug" type="string" length="191" unique="true" nullable="false" />
-        <field name="name" type="string" length="191" nullable="false" />
+        <field name="slug" type="string" unique="true" />
+        <field name="name" type="string" />
     </mapped-superclass>
 
 </doctrine-mapping>

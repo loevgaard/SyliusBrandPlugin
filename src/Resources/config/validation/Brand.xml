@@ -17,7 +17,7 @@
                 <option name="groups">loevgaard_sylius_brand</option>
             </constraint>
             <constraint name="Length">
-                <option name="max">191</option>
+                <option name="max">255</option>
                 <option name="maxMessage">loevgaard_sylius_brand.brand.slug.max_length</option>
                 <option name="groups">loevgaard_sylius_brand</option>
             </constraint>
@@ -35,7 +35,7 @@
             </constraint>
             <constraint name="Length">
                 <option name="min">2</option>
-                <option name="max">191</option>
+                <option name="max">255</option>
                 <option name="minMessage">loevgaard_sylius_brand.brand.name.min_length</option>
                 <option name="maxMessage">loevgaard_sylius_brand.brand.name.max_length</option>
                 <option name="groups">loevgaard_sylius_brand</option>
