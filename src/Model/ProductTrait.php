@@ -9,7 +9,7 @@ trait ProductTrait
     protected $brand;
 
     /**
-     * {@inheritdoc}
+     * @return BrandInterface|null
      */
     public function getBrand(): ?BrandInterface
     {
@@ -17,7 +17,7 @@ trait ProductTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @param BrandInterface|null $brand
      */
     public function setBrand(?BrandInterface $brand): void
     {
