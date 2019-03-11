@@ -14,7 +14,6 @@
     </parameters>
 
     <services>
-        <defaults public="false" />
 
         <service id="loevgaard_sylius_brand.form.extension.type.product"
                  class="Loevgaard\SyliusBrandPlugin\Form\Extension\ProductTypeExtension">
