@@ -82,7 +82,7 @@ loevgaard_sylius_brand:
     resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yml"
 ```
 
-### Step 4: Extends entities
+### Step 4: Extend services and entities
 
 #### Extend `Product` 
 
