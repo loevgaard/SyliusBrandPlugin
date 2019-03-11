@@ -15,9 +15,9 @@ class CreateBrandPage extends BaseCreatePage
         $this->getElement('name')->setValue($name);
     }
 
-    public function specifySlug($slug): void
+    public function specifyCode($code): void
     {
-        $this->getElement('slug')->setValue($slug);
+        $this->getElement('code')->setValue($code);
     }
 
     /**
@@ -27,7 +27,7 @@ class CreateBrandPage extends BaseCreatePage
     {
         return array_merge(parent::getDefinedElements(), [
             'name' => '#loevgaard_sylius_brand_brand_name',
-            'slug' => '#loevgaard_sylius_brand_brand_slug',
+            'code' => '#loevgaard_sylius_brand_brand_code',
         ]);
     }
 }

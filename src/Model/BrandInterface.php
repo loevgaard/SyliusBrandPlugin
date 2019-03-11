@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Model;
 
+use Sylius\Component\Resource\Model\CodeAwareInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 
-interface BrandInterface extends ResourceInterface, ProductsAwareInterface, ImagesAwareInterface
+interface BrandInterface extends ResourceInterface, CodeAwareInterface, ProductsAwareInterface, ImagesAwareInterface
 {
     /**
      * Returns the name of the brand
@@ -19,16 +20,6 @@ interface BrandInterface extends ResourceInterface, ProductsAwareInterface, Imag
      * @return int
      */
     public function getId(): ?int;
-
-    /**
-     * @return string|null
-     */
-    public function getSlug(): ?string;
-
-    /**
-     * @param string|null $slug
-     */
-    public function setSlug(?string $slug): void;
 
     /**
      * @return string|null

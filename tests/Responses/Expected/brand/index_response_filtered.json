@@ -18,7 +18,7 @@
         "items": [
             {
                 "id": "@integer@",
-                "slug": "sylius",
+                "code": "sylius",
                 "name": "Sylius",
                 "_links": {
                     "self": {

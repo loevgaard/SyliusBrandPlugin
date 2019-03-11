@@ -10,9 +10,9 @@ sylius_grid:
             sorting:
                 name: asc
             fields:
-                slug:
+                code:
                     type: string
-                    label: loevgaard_sylius_brand.ui.slug
+                    label: loevgaard_sylius_brand.ui.code
                     sortable: ~
                 name:
                     type: string
@@ -22,4 +22,4 @@ sylius_grid:
                 search:
                     type: string
                     options:
-                        fields: [slug, name]
+                        fields: [code, name]

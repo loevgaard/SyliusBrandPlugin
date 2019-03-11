@@ -19,7 +19,7 @@
     ],
     "brand": {
         "id": "@integer@",
-        "slug": "setono",
+        "code": "setono",
         "name": "Setono",
         "images": "@array@",
         "_links": {

@@ -7,7 +7,7 @@ sylius_grid:
                     class: "%loevgaard_sylius_brand.model.brand_image.class%"
                     repository:
                         method: createListQueryBuilder
-                        arguments: [$slug]
+                        arguments: [$code]
             fields:
                 type:
                     type: string

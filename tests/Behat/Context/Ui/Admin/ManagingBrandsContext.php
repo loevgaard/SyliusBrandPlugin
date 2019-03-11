@@ -55,11 +55,11 @@ final class ManagingBrandsContext implements Context
     }
 
     /**
-     * @When I set its slug to :slug
+     * @When I set its code to :code
      */
-    public function iSetItsSlugTo($slug): void
+    public function iSetItsCodeTo($code): void
     {
-        $this->createBrandPage->specifySlug($slug);
+        $this->createBrandPage->specifyCode($code);
     }
 
     /**

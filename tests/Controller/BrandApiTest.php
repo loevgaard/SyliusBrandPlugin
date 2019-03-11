@@ -85,7 +85,7 @@ final class BrandApiTest extends AbstractApiTestCase
             'resources/brands.yml',
         ]);
 
-        $this->client->request('GET', $this->getBrandUrl(), ['sorting' => ['slug' => 'desc']], [], static::$authorizedHeaderWithAccept);
+        $this->client->request('GET', $this->getBrandUrl(), ['sorting' => ['code' => 'desc']], [], static::$authorizedHeaderWithAccept);
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'brand/index_response_sorted');
     }
@@ -248,26 +248,26 @@ final class BrandApiTest extends AbstractApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allow_to_create_brand_with_too_long_name_and_slug(): void
+    public function it_does_not_allow_to_create_brand_with_too_long_name_and_code(): void
     {
         $this->loadDefaultFixtureFiles([
             'authentication/api_administrator.yml',
         ]);
 
-        $longString = str_repeat('s', 192);
+        $longString = str_repeat('s', 256);
 
         $data =
 <<<EOT
         {
             "name": "{$longString}",
-            "slug": "{$longString}"
+            "code": "{$longString}"
         }
 EOT;
 
         $this->client->request('POST', $this->getBrandUrl(), [], [], static::$authorizedHeaderWithContentType, $data);
 
         $response = $this->client->getResponse();
-        $this->assertResponse($response, 'brand/create_with_long_name_and_slug_validation_fail_response', Response::HTTP_BAD_REQUEST);
+        $this->assertResponse($response, 'brand/create_with_long_name_and_code_validation_fail_response', Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -283,7 +283,7 @@ EOT;
             <<<EOT
         {
             "name": "s",
-            "slug": "valid-slug"
+            "code": "valid-code"
         }
 EOT;
 
@@ -306,7 +306,7 @@ EOT;
             <<<EOT
         {
             "name": "Brand name",
-            "slug": "brand-slug"
+            "code": "brand-code"
         }
 EOT;
 
@@ -329,7 +329,7 @@ EOT;
 <<<EOT
         {
             "name": "PHP",
-            "slug": "php",
+            "code": "php",
             "images": [
                 {
                     "type": "logo"
@@ -424,11 +424,11 @@ EOT;
             'resources/brands.yml',
         ]);
 
+        # Code field is not updatable
         $data =
 <<<EOT
         {
-              "name": "Updated name",
-              "slug": "updated-slug"
+              "name": "Updated name"
         }
 EOT;
         $this->client->request('PUT', $this->getBrandUrl($entities['brand_symfony']), [], [], static::$authorizedHeaderWithContentType, $data);
@@ -436,7 +436,7 @@ EOT;
 
         $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
 
-        $this->client->request('GET', $this->getBrandUrl('updated-slug'), [], [], static::$authorizedHeaderWithAccept);
+        $this->client->request('GET', $this->getBrandUrl($entities['brand_symfony']), [], [], static::$authorizedHeaderWithAccept);
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'brand/show_after_update_response');
@@ -450,7 +450,7 @@ EOT;
     {
         return sprintf(
             '/api/v1/brands/%s',
-            $brand instanceof BrandInterface ? $brand->getSlug() : $brand
+            $brand instanceof BrandInterface ? $brand->getCode() : $brand
         );
     }
 }

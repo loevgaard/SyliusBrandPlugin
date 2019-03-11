@@ -43,7 +43,7 @@ final class BrandContext implements Context
         $brand = $this->brandFactory->createNew();
 
         $brand->setName($name);
-        $brand->setSlug(strtolower($name));
+        $brand->setCode(strtolower($name));
 
         return $brand;
     }

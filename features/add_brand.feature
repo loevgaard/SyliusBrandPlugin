@@ -11,7 +11,7 @@ Feature: Adding a new brand
   Scenario: Adding a new brand
     Given I want to create a new brand
     When I name it "Diesel"
-    And I set its slug to "diesel"
+    And I set its code to "diesel"
     And I add it
     Then I should be notified that it has been successfully created
     And the brand "Diesel" should appear in the store

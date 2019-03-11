@@ -188,7 +188,7 @@ $ php bin/console doctrine:migrations:migrate
                             custom:
                                 flux:
                                     name: 'My brand'
-                                    slug: 'my-brand'
+                                    code: 'my-brand'
                                     images:
                                       - type: logo
                                         path: logos/my-brand.jpg

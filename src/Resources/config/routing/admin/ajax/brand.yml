@@ -12,7 +12,7 @@ loevgaard_sylius_brand_admin_ajax_brands_by_phrase:
                 arguments:
                     phrase: $phrase
 
-loevgaard_sylius_brand_admin_ajax_brand_by_slug:
+loevgaard_sylius_brand_admin_ajax_brand_by_code:
     path: /
     methods: [GET]
     defaults:
@@ -23,4 +23,4 @@ loevgaard_sylius_brand_admin_ajax_brand_by_slug:
             permission: true
             repository:
                 method: findBy
-                arguments: [slug: $slug]
+                arguments: [code: $code]

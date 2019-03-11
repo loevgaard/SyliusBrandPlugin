@@ -1,12 +1,12 @@
 Loevgaard\SyliusBrandPlugin\Model\Brand:
     brand_setono:
-        slug: "setono"
+        code: "setono"
         name: "Setono"
     brand_sylius:
-        slug: "sylius"
+        code: "sylius"
         name: "Sylius"
     brand_symfony:
-        slug: "symfony"
+        code: "symfony"
         name: "Symfony"
         
 Loevgaard\SyliusBrandPlugin\Model\BrandImage:

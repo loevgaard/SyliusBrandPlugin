@@ -1,10 +1,10 @@
 loevgaard_sylius_brand_shop_brand_show:
-    path: /brand/{slug}
+    path: /brand/{code}
     methods: [GET]
     defaults:
         _controller: loevgaard_sylius_brand.controller.brand:showAction
         _sylius:
             repository:
-                method: findOneBySlug
+                method: findOneByCode
                 arguments:
-                    - $slug
+                    - $code

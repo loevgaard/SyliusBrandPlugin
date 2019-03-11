@@ -24,7 +24,7 @@
         "items": [
             {
                 "id": "@integer@",
-                "slug": "brand-12",
+                "code": "brand-12",
                 "name": "Brand 12",
                 "_links": {
                     "self": {
@@ -40,7 +40,7 @@
             },
             {
                 "id": "@integer@",
-                "slug": "brand-13",
+                "code": "brand-13",
                 "name": "Brand 13",
                 "_links": {
                     "self": {
@@ -56,7 +56,7 @@
             },
             {
                 "id": "@integer@",
-                "slug": "brand-14",
+                "code": "brand-14",
                 "name": "Brand 14",
                 "_links": {
                     "self": {

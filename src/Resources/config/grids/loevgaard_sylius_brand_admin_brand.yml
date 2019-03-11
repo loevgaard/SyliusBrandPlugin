@@ -20,15 +20,15 @@ sylius_grid:
                     type: string
                     label: loevgaard_sylius_brand.ui.name
                     sortable: ~
-                slug:
+                code:
                     type: string
-                    label: loevgaard_sylius_brand.ui.slug
+                    label: loevgaard_sylius_brand.ui.code
                     sortable: ~
             filters:
                 search:
                     type: string
                     options:
-                        fields: [slug, name]
+                        fields: [code, name]
             actions:
                 main:
                     create:

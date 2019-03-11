@@ -326,7 +326,7 @@ EOT;
     private function getBrandImageUrl(BrandInterface $brand, $brandImage = ''): string
     {
         return sprintf('/api/v1/brands/%s/images/%s',
-            $brand->getSlug(),
+            $brand->getCode(),
             $brandImage instanceof BrandImageInterface ? $brandImage->getId() : $brandImage
         );
     }
@@ -340,7 +340,7 @@ EOT;
     {
         return sprintf(
             '/api/v1/brands/%s/images/by-type/%s',
-            $brand->getSlug(),
+            $brand->getCode(),
             $type
         );
     }

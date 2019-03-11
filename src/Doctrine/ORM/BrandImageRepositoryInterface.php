@@ -11,11 +11,11 @@ use Sylius\Component\Resource\Repository\RepositoryInterface;
 interface BrandImageRepositoryInterface extends RepositoryInterface
 {
     /**
-     * @param string $brandSlug
+     * @param string $brandCode
      *
      * @return QueryBuilder
      */
-    public function createListQueryBuilder(string $brandSlug): QueryBuilder;
+    public function createListQueryBuilder(string $brandCode): QueryBuilder;
 
     /**
      * @param BrandInterface $brand

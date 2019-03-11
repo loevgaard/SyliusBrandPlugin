@@ -7,7 +7,7 @@ Loevgaard\SyliusBrandPlugin\Model\Brand:
             type: integer
             xml_attribute: true
             groups: [Default, Detailed, Autocomplete]
-        slug:
+        code:
             expose: true
             type: string
             groups: [Default, Detailed, Autocomplete]
@@ -24,13 +24,13 @@ Loevgaard\SyliusBrandPlugin\Model\Brand:
             href:
                 route: loevgaard_sylius_brand_admin_api_brand_show
                 parameters:
-                    slug: expr(object.getSlug())
+                    code: expr(object.getCode())
                     version: 1
         -   rel: images
             href:
                 route: loevgaard_sylius_brand_admin_api_brand_image_index
                 parameters:
-                    slug: expr(object.getSlug())
+                    code: expr(object.getCode())
                     version: 1
             exclusion:
                 groups: [Default]
@@ -38,7 +38,7 @@ Loevgaard\SyliusBrandPlugin\Model\Brand:
             href:
                 route: loevgaard_sylius_brand_admin_api_brand_product_index
                 parameters:
-                    slug: expr(object.getSlug())
+                    code: expr(object.getCode())
                     version: 1
             exclusion:
                 groups: [Default, Detailed]

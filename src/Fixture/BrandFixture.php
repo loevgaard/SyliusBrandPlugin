@@ -27,7 +27,7 @@ final class BrandFixture extends AbstractResourceFixture
         $resourceNode
             ->children()
                 ->scalarNode('name')->cannotBeEmpty()->end()
-                ->scalarNode('slug')->cannotBeEmpty()->end()
+                ->scalarNode('code')->cannotBeEmpty()->end()
                 ->arrayNode('images')->variablePrototype()->end()->end()
                 ->arrayNode('products')->scalarPrototype()->end()->end()
         ;

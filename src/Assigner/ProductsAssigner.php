@@ -18,7 +18,7 @@ final class ProductsAssigner implements ProductsAssignerInterface
             if (!$product instanceof ProductInterface) {
                 throw new \RuntimeException(sprintf(
                     "Some product was not found to assign to brand '%s'",
-                    $brand->getSlug()
+                    $brand->getCode()
                 ));
             }
 

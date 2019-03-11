@@ -63,7 +63,7 @@ final class ProductApiTest extends AbstractApiTestCase
 <<<EOT
         {
             "code": "SETONO_BIG_MUG",
-            "brand": "{$brand->getSlug()}"
+            "brand": "{$brand->getCode()}"
         }
 EOT;
 
@@ -114,7 +114,7 @@ EOT;
         $data =
 <<<EOT
         {
-            "brand": "{$brand->getSlug()}"
+            "brand": "{$brand->getCode()}"
         }
 EOT;
 
@@ -145,7 +145,7 @@ EOT;
         $data =
 <<<EOT
         {
-            "brand": "{$brand->getSlug()}"
+            "brand": "{$brand->getCode()}"
         }
 EOT;
 

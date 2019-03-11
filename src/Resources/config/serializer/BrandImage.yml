@@ -6,6 +6,6 @@ Loevgaard\SyliusBrandPlugin\Model\BrandImage:
             href:
                 route: loevgaard_sylius_brand_admin_api_brand_image_show
                 parameters:
-                    slug: expr(object.getOwner().getSlug())
+                    code: expr(object.getOwner().getCode())
                     id: expr(object.getId())
                     version: 1

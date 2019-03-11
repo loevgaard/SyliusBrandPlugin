@@ -1,10 +1,10 @@
 loevgaard_sylius_brand:
     brand:
-        slug:
-            max_length: Brand slug must not be longer than {{ limit }} characters|Brand slug must not be longer than {{ limit }} characters.
-            not_blank: Please enter brand slug.
-            regex: Brand slug can only be comprised of letters, numbers, dashes and underscores.
-            unique: Brand slug must be unique.
+        code:
+            max_length: Brand code must not be longer than {{ limit }} characters|Brand code must not be longer than {{ limit }} characters.
+            not_blank: Please enter brand code.
+            regex: Brand code can only be comprised of letters, numbers, dashes and underscores.
+            unique: Brand code must be unique.
         name:
             max_length: Brand name must not be longer than {{ limit }} characters|Brand name must not be longer than {{ limit }} characters.
             min_length: Brand name must be at least {{ limit }} characters long|Brand name must be at least {{ limit }} characters long.

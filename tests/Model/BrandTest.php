@@ -15,7 +15,7 @@ class BrandTest extends TestCase
         $brand = new Brand();
         $this->assertEquals(null, $brand->getId());
         $this->assertEquals(null, $brand->getName());
-        $this->assertEquals(null, $brand->getSlug());
+        $this->assertEquals(null, $brand->getCode());
         $this->assertInstanceOf(ArrayCollection::class, $brand->getImages());
     }
 
@@ -23,10 +23,10 @@ class BrandTest extends TestCase
     {
         $brand = new Brand();
         $brand->setName('name');
-        $brand->setSlug('slug');
+        $brand->setCode('code');
 
         $this->assertEquals(null, $brand->getId());
         $this->assertEquals('name', $brand->getName());
-        $this->assertEquals('slug', $brand->getSlug());
+        $this->assertEquals('code', $brand->getCode());
     }
 }

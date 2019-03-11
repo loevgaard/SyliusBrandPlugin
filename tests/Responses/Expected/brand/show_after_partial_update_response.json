@@ -1,6 +1,6 @@
 {
     "id": "@integer@",
-    "slug": "symfony",
+    "code": "symfony",
     "name": "Updated name",
     "images": [],
     "_links": {

@@ -8,9 +8,9 @@
                     "Please enter brand name."
                 ]
             },
-            "slug": {
+            "code": {
                 "errors": [
-                    "Please enter brand slug."
+                    "Please enter brand code."
                 ]
             },
             "images": {}

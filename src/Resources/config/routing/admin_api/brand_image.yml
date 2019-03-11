@@ -15,7 +15,7 @@ loevgaard_sylius_brand_admin_api_brand_image:
         vars:
             route:
                 parameters:
-                    slug: $slug
+                    code: $code
     type: sylius.resource_api
 
 loevgaard_sylius_brand_admin_api_brand_image_index_by_type:
@@ -30,7 +30,7 @@ loevgaard_sylius_brand_admin_api_brand_image_index_by_type:
             repository:
                 method: createPaginatorForBrandAndType
                 arguments:
-                    - expr:notFoundOnNull(service('loevgaard_sylius_brand.repository.brand').findOneBySlug($slug))
+                    - expr:notFoundOnNull(service('loevgaard_sylius_brand.repository.brand').findOneByCode($code))
                     - $type
 
 loevgaard_sylius_brand_admin_api_brand_image_create:
@@ -46,4 +46,4 @@ loevgaard_sylius_brand_admin_api_brand_image_create:
             factory:
                 method: createForBrand
                 arguments:
-                    - expr:notFoundOnNull(service('loevgaard_sylius_brand.repository.brand').findOneBySlug($slug))
+                    - expr:notFoundOnNull(service('loevgaard_sylius_brand.repository.brand').findOneByCode($code))

@@ -13,12 +13,12 @@ class BrandImageRepository extends EntityRepository implements BrandImageReposit
     /**
      * {@inheritdoc}
      */
-    public function createListQueryBuilder(string $brandSlug): QueryBuilder
+    public function createListQueryBuilder(string $brandCode): QueryBuilder
     {
         return $this->createQueryBuilder('o')
             ->addSelect('brand')
-            ->innerJoin('o.owner', 'brand', 'WITH', 'brand.slug = :brandSlug')
-            ->setParameter('brandSlug', $brandSlug)
+            ->innerJoin('o.owner', 'brand', 'WITH', 'brand.code = :brandCode')
+            ->setParameter('brandCode', $brandCode)
             ;
     }
 

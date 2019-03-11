@@ -6,7 +6,7 @@
 # loevgaard_sylius_brand_admin_api_brand_delete
 loevgaard_sylius_brand_admin_api_brand:
     resource: |
-        identifier: slug
+        identifier: code
         alias: loevgaard_sylius_brand.brand
         section: admin_api
         except: ['bulkDelete']
@@ -14,15 +14,15 @@ loevgaard_sylius_brand_admin_api_brand:
         form: Loevgaard\SyliusBrandPlugin\Form\Type\BrandType
         serialization_version: $version
         criteria:
-            slug: $slug
+            code: $code
     type: sylius.resource_api
 
 loevgaard_sylius_brand_admin_api_brand_image:
     resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin_api/brand_image.yml"
-    prefix: /brands/{slug}
+    prefix: /brands/{code}
 
 loevgaard_sylius_brand_admin_api_brand_product_index:
-    path: /brands/{slug}/products/
+    path: /brands/{code}/products/
     methods: [GET]
     defaults:
         _controller: sylius.controller.product:indexAction
@@ -33,4 +33,4 @@ loevgaard_sylius_brand_admin_api_brand_product_index:
             repository:
                 method: createPaginatorForBrand
                 arguments:
-                    - expr:notFoundOnNull(service('loevgaard_sylius_brand.repository.brand').findOneBySlug($slug))
+                    - expr:notFoundOnNull(service('loevgaard_sylius_brand.repository.brand').findOneByCode($code))

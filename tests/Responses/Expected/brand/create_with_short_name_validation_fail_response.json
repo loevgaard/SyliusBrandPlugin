@@ -8,7 +8,7 @@
                     "Brand name must be at least 2 characters long."
                 ]
             },
-            "slug": {},
+            "code": {},
             "images": {}
         }
     }

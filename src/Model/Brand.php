@@ -21,7 +21,7 @@ class Brand implements BrandInterface
     /**
      * @var string|null
      */
-    protected $slug;
+    protected $code;
 
     /**
      * @var string|null
@@ -51,19 +51,19 @@ class Brand implements BrandInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
-    public function getSlug(): ?string
+    public function getCode(): ?string
     {
-        return $this->slug;
+        return $this->code;
     }
 
     /**
-     * {@inheritdoc}
+     * @param string $code
      */
-    public function setSlug(?string $slug): void
+    public function setCode(?string $code): void
     {
-        $this->slug = $slug;
+        $this->code = $code;
     }
 
     /**

@@ -69,8 +69,8 @@ final class BrandExampleFactory extends AbstractExampleFactory
         $resolver
             ->setRequired('name')
             ->setAllowedTypes('name', 'string')
-            ->setRequired('slug')
-            ->setAllowedTypes('slug', 'string')
+            ->setRequired('code')
+            ->setAllowedTypes('code', 'string')
 
             ->setDefault('images', [])
             ->setAllowedTypes('images', 'array')
@@ -91,7 +91,7 @@ final class BrandExampleFactory extends AbstractExampleFactory
         /** @var BrandInterface $brand */
         $brand = $this->brandFactory->createNew();
         $brand->setName($options['name']);
-        $brand->setSlug($options['slug']);
+        $brand->setCode($options['code']);
 
         $this->createImages($brand, $options);
 

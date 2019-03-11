@@ -4,7 +4,7 @@
     "path": "\/sylius-logo.jpg",
     "owner": {
         "id": "@integer@",
-        "slug": "sylius",
+        "code": "sylius",
         "name": "Sylius",
         "images": [],
         "_links": {

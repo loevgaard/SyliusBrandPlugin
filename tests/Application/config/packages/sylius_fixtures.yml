@@ -20,7 +20,7 @@ sylius_fixtures:
                         custom:
                             brand_setono:
                                 name: Setono
-                                slug: setono
+                                code: setono
                                 images:
                                     - type: logo
                                       path: fixtures/images/logos/setono.jpg
@@ -32,7 +32,7 @@ sylius_fixtures:
                                   - setono-macbook-sticker
                             brand_sylius:
                                 name: Sylius
-                                slug: sylius
+                                code: sylius
                                 images:
                                     - type: logo
                                       path: fixtures/images/logos/sylius.png

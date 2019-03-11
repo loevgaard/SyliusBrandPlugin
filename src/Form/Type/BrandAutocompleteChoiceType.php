@@ -20,7 +20,7 @@ final class BrandAutocompleteChoiceType extends AbstractType
         $resolver->setDefaults([
             'resource' => 'loevgaard_sylius_brand.brand',
             'choice_name' => 'name',
-            'choice_value' => 'slug',
+            'choice_value' => 'code',
         ]);
     }
 

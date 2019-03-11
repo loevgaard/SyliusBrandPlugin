@@ -48,7 +48,7 @@ final class BrandChoiceType extends AbstractType
             'choices' => function (Options $options) {
                 return $this->brandRepository->findAll();
             },
-            'choice_value' => 'slug',
+            'choice_value' => 'code',
             'choice_label' => 'name',
             'choice_translation_domain' => false,
         ]);

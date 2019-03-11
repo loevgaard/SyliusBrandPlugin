@@ -7,22 +7,22 @@
     <class name="Loevgaard\SyliusBrandPlugin\Model\Brand">
 
         <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
-            <option name="fields">slug</option>
-            <option name="message">loevgaard_sylius_brand.brand.slug.unique</option>
+            <option name="fields">code</option>
+            <option name="message">loevgaard_sylius_brand.brand.code.unique</option>
             <option name="groups">loevgaard_sylius_brand</option>
         </constraint>
-        <property name="slug">
+        <property name="code">
             <constraint name="NotBlank">
-                <option name="message">loevgaard_sylius_brand.brand.slug.not_blank</option>
+                <option name="message">loevgaard_sylius_brand.brand.code.not_blank</option>
                 <option name="groups">loevgaard_sylius_brand</option>
             </constraint>
             <constraint name="Length">
                 <option name="max">255</option>
-                <option name="maxMessage">loevgaard_sylius_brand.brand.slug.max_length</option>
+                <option name="maxMessage">loevgaard_sylius_brand.brand.code.max_length</option>
                 <option name="groups">loevgaard_sylius_brand</option>
             </constraint>
             <constraint name="Regex">
-                <option name="message">loevgaard_sylius_brand.brand.slug.regex</option>
+                <option name="message">loevgaard_sylius_brand.brand.code.regex</option>
                 <option name="pattern">/^[\w-]*$/</option>
                 <option name="groups">loevgaard_sylius_brand</option>
             </constraint>

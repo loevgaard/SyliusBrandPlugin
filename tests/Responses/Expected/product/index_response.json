@@ -31,7 +31,7 @@
                 ],
                 "brand": {
                     "id": "@integer@",
-                    "slug": "setono",
+                    "code": "setono",
                     "name": "Setono",
                     "_links": {
                         "self": {
@@ -62,7 +62,7 @@
                 ],
                 "brand": {
                     "id": "@integer@",
-                    "slug": "setono",
+                    "code": "setono",
                     "name": "Setono",
                     "_links": {
                         "self": {
@@ -93,7 +93,7 @@
                 ],
                 "brand": {
                     "id": "@integer@",
-                    "slug": "sylius",
+                    "code": "sylius",
                     "name": "Sylius",
                     "_links": {
                         "self": {

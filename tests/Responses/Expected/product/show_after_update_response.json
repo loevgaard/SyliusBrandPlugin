@@ -13,7 +13,7 @@
     "images": "@array@",
     "brand": {
         "id": "@integer@",
-        "slug": "sylius",
+        "code": "sylius",
         "name": "Sylius",
         "images": "@array@",
         "_links": {

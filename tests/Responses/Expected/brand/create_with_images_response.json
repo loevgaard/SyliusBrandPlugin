@@ -1,6 +1,6 @@
 {
     "id": "@integer@",
-    "slug": "php",
+    "code": "php",
     "name": "PHP",
     "images": [
         {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
 
+use Sylius\Bundle\ResourceBundle\Form\EventSubscriber\AddCodeFormSubscriber;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -17,11 +18,11 @@ final class BrandType extends AbstractResourceType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->addEventSubscriber(new AddCodeFormSubscriber(null, [
+                'label' => 'loevgaard_sylius_brand.form.brand.code',
+            ]))
             ->add('name', TextType::class, [
                 'label' => 'loevgaard_sylius_brand.form.brand.name',
-            ])
-            ->add('slug', TextType::class, [
-                'label' => 'loevgaard_sylius_brand.form.brand.slug',
             ])
             ->add('images', CollectionType::class, [
                 'entry_type' => BrandImageType::class,
