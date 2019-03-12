@@ -84,48 +84,72 @@ loevgaard_sylius_brand:
 
 ### Step 4: Extend services and entities
 
-#### Extend `Product` 
+#### Extend `Product`
 
-```php
-<?php
-// src/Model/Product.php
+- If you use `annotations` mapping:
 
-declare(strict_types=1);
-
-namespace App\Model;
-
-use Loevgaard\SyliusBrandPlugin\Model\ProductTrait;
-use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
-use Sylius\Component\Core\Model\Product as BaseProduct;
-
-class Product extends BaseProduct implements LoevgaardSyliusBrandPluginProductInterface
-{
-    use ProductTrait;
+    ```php
+    <?php
     
-    // ...
-}
-```
+    declare(strict_types=1);
+    
+    namespace App\Entity;
+    
+    use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
+    use Loevgaard\SyliusBrandPlugin\Model\ProductTrait;
+    use Sylius\Component\Core\Model\Product as BaseProduct;
+    use Doctrine\ORM\Mapping as ORM;
+    
+    /**
+     * @ORM\Entity
+     * @ORM\Table(name="sylius_product")
+     */
+    class Product extends BaseProduct implements LoevgaardSyliusBrandPluginProductInterface
+    {
+        use ProductTrait;
+    }
+    ```
+    
+- If you use `xml` mapping:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- config/doctrine/model/Product.orm.xml -->
-
-<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
-                                      http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-
-    <mapped-superclass name="App\Model\Product" table="sylius_product">
-        <many-to-one field="brand" target-entity="Loevgaard\SyliusBrandPlugin\Model\Brand" inversed-by="products">
-            <join-column name="brand_id" on-delete="SET NULL" />
-        </many-to-one>
-    </mapped-superclass>
-
-</doctrine-mapping>
-```
-
-**NOTE:** If you haven't extended the `Product` entity yet, follow the [customization instructions](https://docs.sylius.com/en/1.3/customization/model.html) first because you need to add a bit more configuration.
+    ```php
+    <?php
+    // src/Model/Product.php
+    
+    declare(strict_types=1);
+    
+    namespace App\Model;
+    
+    use Loevgaard\SyliusBrandPlugin\Model\ProductTrait;
+    use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
+    use Sylius\Component\Core\Model\Product as BaseProduct;
+    
+    class Product extends BaseProduct implements LoevgaardSyliusBrandPluginProductInterface
+    {
+        use ProductTrait;
+        
+        // ...
+    }
+    ```
+    
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    
+    <!-- config/doctrine/model/Product.orm.xml -->
+    
+    <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                                          http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    
+        <mapped-superclass name="App\Model\Product" table="sylius_product">
+            <many-to-one field="brand" target-entity="Loevgaard\SyliusBrandPlugin\Model\Brand" inversed-by="products">
+                <join-column name="brand_id" on-delete="SET NULL" />
+            </many-to-one>
+        </mapped-superclass>
+    
+    </doctrine-mapping>
+    ```
 
 #### Extend `ProductRepository`
 

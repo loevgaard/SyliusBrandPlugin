@@ -17,9 +17,9 @@ doctrine:
         auto_generate_proxy_classes: '%kernel.debug%'
         auto_mapping: true
         mappings:
-            Tests:
+            App:
                 is_bundle: false
-                type: xml
-                dir: '%kernel.project_dir%/config/doctrine/model'
+                type: annotation
+                dir: '%kernel.project_dir%/Model'
                 prefix: 'Tests\Loevgaard\SyliusBrandPlugin\Application\Model'
                 alias: App
