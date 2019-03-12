@@ -6,6 +6,31 @@ The first step is upgrading Plugin with Composer
 
 - `composer require loevgaard/sylius-brand-plugin:^2.0`
 
+### Change or remove `Product/Tab/_details.html.twig`
+
+In version 2, we injecting `form_row(form.brand, ...)` automatically to
+Product form view (it placed at `src/Resources/views/Admin/Product/_brand.html.twig`)
+via events into separate tab.
+
+So you should remove that from your template or even remove whole template. 
+Otherwise you will receive `Variable "remote_url" does not exists.` error.
+
+Choose your option:
+
+- Remove whole template if you doesn't have any other customizations in this template
+  except ones that was required in `1.3.X` version of plugin:  
+
+    ```bash
+    $ rm templates/bundles/SyliusAdminBundle/views/Product/Tab/_details.html.twig
+    ```
+
+- Or remove next line from your `templates/bundles/SyliusAdminBundle/views/Product/Tab/_details.html.twig`
+  if you still need that template (e.g. you have some other customizations in it):
+
+    ```twig
+    {{ form_row(form.brand) }} {# This is the only change made to this file #}
+    ```
+
 ### Replace classnames
 
 - Replace plugin's `Entity` to `Model` with your editor's
