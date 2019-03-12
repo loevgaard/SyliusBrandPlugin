@@ -1,7 +1,5 @@
 <?php
 
-/** @noinspection PhpUnhandledExceptionInspection */
-
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Behat\Page\Admin\Brand;

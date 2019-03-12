@@ -1,8 +1,5 @@
 <?php
 
-/** @noinspection PhpUnhandledExceptionInspection */
-/** @noinspection PhpDocSignatureInspection */
-
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Ui\Admin;

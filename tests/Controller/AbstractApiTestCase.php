@@ -1,9 +1,5 @@
 <?php
 
-/** @noinspection PhpUnhandledExceptionInspection */
-/** @noinspection PhpDocMissingThrowsInspection */
-/** @noinspection ReturnTypeCanBeDeclaredInspection */
-
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Controller;
@@ -88,7 +84,6 @@ abstract class AbstractApiTestCase extends JsonApiTestCase
      */
     private function getCalledClassFolder()
     {
-        /** @noinspection ClassConstantCanBeUsedInspection */
         $calledClass = get_called_class();
         $calledClassFolder = dirname((new \ReflectionClass($calledClass))->getFileName());
 

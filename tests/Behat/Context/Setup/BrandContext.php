@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpDocSignatureInspection */
+<?php
 
 declare(strict_types=1);
 

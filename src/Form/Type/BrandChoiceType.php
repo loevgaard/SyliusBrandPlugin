@@ -1,7 +1,5 @@
 <?php
 
-/** @noinspection PhpUnusedParameterInspection */
-
 declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;

@@ -1,7 +1,5 @@
 <?php
 
-/** @noinspection PhpDocSignatureInspection */
-
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Transform;
@@ -28,7 +26,6 @@ final class BrandContext implements Context
      */
     public function getBrandByName($brandName)
     {
-        /** @noinspection PhpUndefinedMethodInspection */
         $brands = $this->brandRepository->findByName($brandName);
 
         Assert::eq(
