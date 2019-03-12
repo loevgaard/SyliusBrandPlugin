@@ -10,9 +10,9 @@ loevgaard_sylius_brand:
     image: Image
   form:
     brand:
-      name: Nom
+      name: Name
       code: Code
       images: Images
     product:
       brand: Marque
-      select_brand: Sélectionnez la marque ...
+      select_brand: Sélectionnez la marque...
