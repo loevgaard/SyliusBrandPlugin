@@ -4,6 +4,7 @@ loevgaard_sylius_brand:
         code: Code
         brand: Brand
         brands: Brands
+        brands_product_list: List products
         edit_brand: Edit brand
         new_brand: New brand
         image: Image
