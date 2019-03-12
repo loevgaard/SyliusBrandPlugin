@@ -1,4 +1,7 @@
 sylius_grid:
+    templates:
+        action:
+            brands_product_list: "@LoevgaardSyliusBrandPlugin/Grid/Action/brandsProductList.html.twig"
     grids:
         loevgaard_sylius_brand_admin_brand:
             driver:
@@ -36,5 +39,8 @@ sylius_grid:
                 item:
                     update:
                         type: update
+                    brands_product_list:
+                        type: brands_product_list
+                        label: loevgaard_sylius_brand.ui.brands_product_list
                     delete:
                         type: delete
