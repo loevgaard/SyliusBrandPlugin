@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="loevgaard_sylius_brand.fixture.brand"
+                 class="Loevgaard\SyliusBrandPlugin\Fixture\BrandFixture">
+            <argument type="service" id="loevgaard_sylius_brand.manager.brand"/>
+            <argument type="service" id="loevgaard_sylius_brand.fixture.example_factory.brand"/>
+            <tag name="sylius_fixtures.fixture"/>
+        </service>
+
+        <service id="loevgaard_sylius_brand.fixture.example_factory.brand"
+                 class="Loevgaard\SyliusBrandPlugin\Fixture\Factory\BrandExampleFactory">
+            <argument type="service" id="sylius.repository.product"/>
+            <argument type="service" id="loevgaard_sylius_brand.assigner.products"/>
+            <argument type="service" id="loevgaard_sylius_brand.factory.brand"/>
+            <argument type="service" id="loevgaard_sylius_brand.factory.brand_image"/>
+            <argument type="service" id="sylius.image_uploader"/>
+        </service>
+
+    </services>
+
+</container>

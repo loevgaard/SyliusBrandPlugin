@@ -2,7 +2,7 @@
 loevgaard_sylius_brand:
   ui:
     name: Naam
-    slug: Slug
+    code: Code
     brand: Merk
     brands: Merken
     edit_brand: Merk aanpassen
@@ -11,7 +11,7 @@ loevgaard_sylius_brand:
   form:
     brand:
       name: Name
-      slug: Slug
+      code: Code
       images: Foto's
     product:
       brand: Merk

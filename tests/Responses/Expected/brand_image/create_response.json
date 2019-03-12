@@ -1,0 +1,27 @@
+{
+    "id": "@integer@",
+    "type": "logo",
+    "path": "@string@.endsWith('.png')",
+    "owner": {
+        "id": "@integer@",
+        "code": "sylius",
+        "name": "Sylius",
+        "images": "@array@",
+        "_links": {
+            "self": {
+                "href": "\/api\/v1\/brands\/sylius"
+            },
+            "images": {
+                "href": "\/api\/v1\/brands\/sylius\/images\/"
+            },
+            "products": {
+                "href": "\/api\/v1\/brands\/sylius\/products\/"
+            }
+        }
+    },
+    "_links": {
+        "self": {
+            "href": "@string@.startsWith('/api/v1/brands/sylius/images/')"
+        }
+    }
+}

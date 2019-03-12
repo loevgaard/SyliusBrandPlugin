@@ -4,10 +4,12 @@ parameters:
     locale: en_US
 
 imports:
-- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/config.yml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yml" }
 
 sylius_product:
     resources:
         product:
             classes:
-                model: Tests\Loevgaard\SyliusBrandPlugin\Application\Entity\Product
+                model: Tests\Loevgaard\SyliusBrandPlugin\Application\Model\Product
+                repository: Tests\Loevgaard\SyliusBrandPlugin\Application\Doctrine\ORM\ProductRepository

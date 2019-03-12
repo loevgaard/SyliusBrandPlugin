@@ -1,17 +1,20 @@
 <?php
 
+/** @noinspection PhpDocSignatureInspection */
+
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Transform;
 
 use Behat\Behat\Context\Context;
+use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandRepositoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Webmozart\Assert\Assert;
 
 final class BrandContext implements Context
 {
     /**
-     * @var RepositoryInterface
+     * @var BrandRepositoryInterface
      */
     private $brandRepository;
 
@@ -25,6 +28,7 @@ final class BrandContext implements Context
      */
     public function getBrandByName($brandName)
     {
+        /** @noinspection PhpUndefinedMethodInspection */
         $brands = $this->brandRepository->findByName($brandName);
 
         Assert::eq(

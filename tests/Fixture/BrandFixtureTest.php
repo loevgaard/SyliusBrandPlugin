@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpParamsInspection */
+
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Fixture;

@@ -1,0 +1,15 @@
+sylius_grid:
+    grids:
+        sylius_admin_product:
+            fields:
+                brand:
+                    type: twig
+                    label: loevgaard_sylius_brand.ui.brand
+                    options:
+                        template: "@LoevgaardSyliusBrandPlugin/Grid/Field/brand.html.twig"
+            filters:
+                brand:
+                    type: entity
+                    label: loevgaard_sylius_brand.ui.brand
+                    form_options:
+                        class: "%loevgaard_sylius_brand.model.brand.class%"

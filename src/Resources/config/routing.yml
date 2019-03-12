@@ -1,9 +1,13 @@
-shop:
-    resource: "routing/shop.yml"
+loevgaard_sylius_brand_shop:
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/shop.yml"
     prefix: /{_locale}
     requirements:
         _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
 
-admin:
-    resource: "routing/admin.yml"
+loevgaard_sylius_brand_admin:
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin.yml"
     prefix: /admin
+
+loevgaard_sylius_brand_admin_api:
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin_api.yml"
+    prefix: /api/v{version}

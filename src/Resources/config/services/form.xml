@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="loevgaard_sylius_brand.form.type.brand.validation_groups" type="collection">
+            <parameter>loevgaard_sylius_brand</parameter>
+        </parameter>
+        <parameter key="loevgaard_sylius_brand.form.type.brand_image.validation_groups" type="collection">
+            <parameter>loevgaard_sylius_brand</parameter>
+        </parameter>
+    </parameters>
+
+    <services>
+
+        <service id="loevgaard_sylius_brand.form.extension.type.product"
+                 class="Loevgaard\SyliusBrandPlugin\Form\Extension\ProductTypeExtension">
+            <argument>%loevgaard_sylius_brand.model.brand.class%</argument>
+
+            <tag name="form.type_extension" extended_type="Sylius\Bundle\ProductBundle\Form\Type\ProductType"/>
+        </service>
+
+        <service id="loevgaard_sylius_brand.form.extension.type.api_product"
+                 class="Loevgaard\SyliusBrandPlugin\Form\Extension\Api\ProductTypeExtension">
+            <argument>%loevgaard_sylius_brand.model.brand.class%</argument>
+
+            <tag name="form.type_extension" extended_type="Sylius\Bundle\AdminApiBundle\Form\Type\ProductType"/>
+        </service>
+
+        <service id="loevgaard_sylius_brand.form.type.brand_choice"
+                 class="Loevgaard\SyliusBrandPlugin\Form\Type\BrandChoiceType">
+            <argument type="service" id="loevgaard_sylius_brand.repository.brand"/>
+
+            <tag name="form.type" alias="loevgaard_sylius_brand_choice"/>
+        </service>
+
+        <service id="loevgaard_sylius_brand.form.type.brand_autocomplete_choice"
+                 class="Loevgaard\SyliusBrandPlugin\Form\Type\BrandAutocompleteChoiceType">
+
+            <tag name="form.type" alias="loevgaard_sylius_brand_autocomplete_choice"/>
+        </service>
+
+        <service id="loevgaard_sylius_brand.form.type.brand"
+                 class="Loevgaard\SyliusBrandPlugin\Form\Type\BrandType">
+            <argument>%loevgaard_sylius_brand.model.brand.class%</argument>
+            <argument>%loevgaard_sylius_brand.form.type.brand.validation_groups%</argument>
+
+            <tag name="form.type"/>
+        </service>
+
+        <service id="loevgaard_sylius_brand.form.type.brand_image"
+                 class="Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType">
+            <argument>%loevgaard_sylius_brand.model.brand_image.class%</argument>
+            <argument>%loevgaard_sylius_brand.form.type.brand_image.validation_groups%</argument>
+
+            <tag name="form.type"/>
+        </service>
+
+    </services>
+
+</container>

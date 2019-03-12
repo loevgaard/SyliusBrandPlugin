@@ -1,0 +1,19 @@
+{
+    "code": 400,
+    "message": "Validation Failed",
+    "errors": {
+        "children": {
+            "name": {
+                "errors": [
+                    "Please enter brand name."
+                ]
+            },
+            "code": {
+                "errors": [
+                    "Please enter brand code."
+                ]
+            },
+            "images": {}
+        }
+    }
+}

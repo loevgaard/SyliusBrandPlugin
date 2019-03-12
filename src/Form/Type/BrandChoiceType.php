@@ -1,10 +1,11 @@
 <?php
 
+/** @noinspection PhpUnusedParameterInspection */
+
 declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
 
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Bridge\Doctrine\Form\DataTransformer\CollectionToArrayTransformer;
 use Symfony\Component\Form\AbstractType;
@@ -28,6 +29,9 @@ final class BrandChoiceType extends AbstractType
         $this->brandRepository = $brandRepository;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if ($options['multiple']) {
@@ -35,29 +39,32 @@ final class BrandChoiceType extends AbstractType
         }
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    /**
+     * {@inheritdoc}
+     */
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'choices' => function (Options $options): array {
-                $brands = $this->brandRepository->findBy([], ['name' => 'ASC']);
-
-                $choices = [];
-
-                /** @var BrandInterface $brand */
-                foreach ($brands as $brand) {
-                    $choices[$brand->getName()] = $brand;
-                }
-
-                return $choices;
+            'choices' => function (Options $options) {
+                return $this->brandRepository->findAll();
             },
+            'choice_value' => 'code',
+            'choice_label' => 'name',
+            'choice_translation_domain' => false,
         ]);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getParent(): string
     {
         return ChoiceType::class;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getBlockPrefix(): string
     {
         return 'loevgaard_sylius_brand_choice';

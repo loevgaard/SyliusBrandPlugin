@@ -1,0 +1,38 @@
+{
+    "name": "Setono mug",
+    "id": "@integer@",
+    "code": "SETONO_MUG",
+    "attributes": [],
+    "options": [],
+    "associations": [],
+    "translations": "@array@",
+    "productTaxons": [],
+    "channels": [],
+    "reviews": [],
+    "averageRating": 0,
+    "images": [
+        {
+            "id": "@integer@",
+            "type": "thumbnail",
+            "path": "\/setono-mug-thumbnail.jpg"
+        }
+    ],
+    "brand": {
+        "id": "@integer@",
+        "code": "setono",
+        "name": "Setono",
+        "images": "@array@",
+        "_links": {
+            "self": {
+                "href": "\/api\/v1\/brands\/setono"
+            },
+            "images": {
+                "href": "\/api\/v1\/brands\/setono\/images\/"
+            },
+            "products": {
+                "href": "\/api\/v1\/brands\/setono\/products\/"
+            }
+        }
+    },
+    "_links": "@array@"
+}

@@ -1,0 +1,19 @@
+{
+    "code": 400,
+    "message": "Validation Failed",
+    "errors": {
+        "children": {
+            "name": {
+                "errors": [
+                    "Brand name must not be longer than 255 characters."
+                ]
+            },
+            "code": {
+                "errors": [
+                    "Brand code must not be longer than 255 characters."
+                ]
+            },
+            "images": {}
+        }
+    }
+}

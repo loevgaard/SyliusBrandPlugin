@@ -1,0 +1,4 @@
+Loevgaard\SyliusBrandPlugin\Model\Brand:
+    brand_{1..20}:
+         code: brand-<current()>
+         name: Brand <current()>

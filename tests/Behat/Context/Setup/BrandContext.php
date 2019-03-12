@@ -1,11 +1,11 @@
-<?php
+<?php /** @noinspection PhpDocSignatureInspection */
 
 declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Setup;
 
 use Behat\Behat\Context\Context;
-use Loevgaard\SyliusBrandPlugin\Entity\BrandInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 
@@ -30,7 +30,7 @@ final class BrandContext implements Context
     /**
      * @Given The store has a brand :brandName
      */
-    public function storeHasABrand($brandName)
+    public function storeHasABrand($brandName): void
     {
         $brand = $this->createBrand($brandName);
 
@@ -43,7 +43,7 @@ final class BrandContext implements Context
         $brand = $this->brandFactory->createNew();
 
         $brand->setName($name);
-        $brand->setSlug(strtolower($name));
+        $brand->setCode(strtolower($name));
 
         return $brand;
     }

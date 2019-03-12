@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection NullPointerExceptionInspection */
+
 declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Fixture;
@@ -25,9 +27,9 @@ final class BrandFixture extends AbstractResourceFixture
         $resourceNode
             ->children()
                 ->scalarNode('name')->cannotBeEmpty()->end()
-                ->scalarNode('slug')->cannotBeEmpty()->end()
-                ->arrayNode('products')
-                    ->scalarPrototype()->end()
-                ->end();
+                ->scalarNode('code')->cannotBeEmpty()->end()
+                ->arrayNode('images')->variablePrototype()->end()->end()
+                ->arrayNode('products')->scalarPrototype()->end()->end()
+        ;
     }
 }

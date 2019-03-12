@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
+
+    <class name="Loevgaard\SyliusBrandPlugin\Model\Brand">
+
+        <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
+            <option name="fields">code</option>
+            <option name="message">loevgaard_sylius_brand.brand.code.unique</option>
+            <option name="groups">loevgaard_sylius_brand</option>
+        </constraint>
+        <property name="code">
+            <constraint name="NotBlank">
+                <option name="message">loevgaard_sylius_brand.brand.code.not_blank</option>
+                <option name="groups">loevgaard_sylius_brand</option>
+            </constraint>
+            <constraint name="Length">
+                <option name="max">255</option>
+                <option name="maxMessage">loevgaard_sylius_brand.brand.code.max_length</option>
+                <option name="groups">loevgaard_sylius_brand</option>
+            </constraint>
+            <constraint name="Regex">
+                <option name="message">loevgaard_sylius_brand.brand.code.regex</option>
+                <option name="pattern">/^[\w-]*$/</option>
+                <option name="groups">loevgaard_sylius_brand</option>
+            </constraint>
+        </property>
+
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">loevgaard_sylius_brand.brand.name.not_blank</option>
+                <option name="groups">loevgaard_sylius_brand</option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="max">255</option>
+                <option name="minMessage">loevgaard_sylius_brand.brand.name.min_length</option>
+                <option name="maxMessage">loevgaard_sylius_brand.brand.name.max_length</option>
+                <option name="groups">loevgaard_sylius_brand</option>
+            </constraint>
+        </property>
+
+        <property name="images">
+            <constraint name="Valid" />
+        </property>
+    </class>
+
+</constraint-mapping>

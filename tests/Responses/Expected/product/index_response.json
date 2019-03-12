@@ -1,0 +1,114 @@
+{
+    "page": 1,
+    "limit": 10,
+    "pages": 1,
+    "total": 3,
+    "_links": {
+        "self": {
+            "href": "\/api\/v1\/products\/?page=1&limit=10"
+        },
+        "first": {
+            "href": "\/api\/v1\/products\/?page=1&limit=10"
+        },
+        "last": {
+            "href": "\/api\/v1\/products\/?page=1&limit=10"
+        }
+    },
+    "_embedded": {
+        "items": [
+            {
+                "name": "Setono mug",
+                "id": "@integer@",
+                "code": "SETONO_MUG",
+                "options": [],
+                "averageRating": 0,
+                "images": [
+                    {
+                        "id": "@integer@",
+                        "type": "thumbnail",
+                        "path": "\/setono-mug-thumbnail.jpg"
+                    }
+                ],
+                "brand": {
+                    "id": "@integer@",
+                    "code": "setono",
+                    "name": "Setono",
+                    "_links": {
+                        "self": {
+                            "href": "\/api\/v1\/brands\/setono"
+                        },
+                        "images": {
+                            "href": "\/api\/v1\/brands\/setono\/images\/"
+                        },
+                        "products": {
+                            "href": "\/api\/v1\/brands\/setono\/products\/"
+                        }
+                    }
+                },
+                "_links": "@array@"
+            },
+            {
+                "name": "Setono sticker",
+                "id": "@integer@",
+                "code": "SETONO_STICKER",
+                "options": [],
+                "averageRating": 0,
+                "images": [
+                    {
+                        "id": "@integer@",
+                        "type": "thumbnail",
+                        "path": "\/setono-sticker-thumbnail.jpg"
+                    }
+                ],
+                "brand": {
+                    "id": "@integer@",
+                    "code": "setono",
+                    "name": "Setono",
+                    "_links": {
+                        "self": {
+                            "href": "\/api\/v1\/brands\/setono"
+                        },
+                        "images": {
+                            "href": "\/api\/v1\/brands\/setono\/images\/"
+                        },
+                        "products": {
+                            "href": "\/api\/v1\/brands\/setono\/products\/"
+                        }
+                    }
+                },
+                "_links": "@array@"
+            },
+            {
+                "name": "Setono sticker",
+                "id": "@integer@",
+                "code": "SYLIUS_STICKER",
+                "options": [],
+                "averageRating": 0,
+                "images": [
+                    {
+                        "id": "@integer@",
+                        "type": "thumbnail",
+                        "path": "\/sylius-sticker-thumbnail.jpg"
+                    }
+                ],
+                "brand": {
+                    "id": "@integer@",
+                    "code": "sylius",
+                    "name": "Sylius",
+                    "_links": {
+                        "self": {
+                            "href": "\/api\/v1\/brands\/sylius"
+                        },
+                        "images": {
+                            "href": "\/api\/v1\/brands\/sylius\/images\/"
+                        },
+                        "products": {
+                            "href": "\/api\/v1\/brands\/sylius\/products\/"
+                        }
+                    }
+                },
+                "_links": "@array@"
+            }
+        ]
+    }
+}

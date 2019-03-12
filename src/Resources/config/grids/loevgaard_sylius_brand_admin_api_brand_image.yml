@@ -1,0 +1,15 @@
+sylius_grid:
+    grids:
+        loevgaard_sylius_brand_admin_api_brand_image:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%loevgaard_sylius_brand.model.brand_image.class%"
+                    repository:
+                        method: createListQueryBuilder
+                        arguments: [$code]
+            fields:
+                type:
+                    type: string
+                    label: sylius.ui.type
+                    sortable: ~

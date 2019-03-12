@@ -1,0 +1,17 @@
+{
+    "id": "@integer@",
+    "code": "brand-code",
+    "name": "Brand name",
+    "images": [],
+    "_links": {
+        "self": {
+            "href": "\/api\/v1\/brands\/brand-code"
+        },
+        "images": {
+            "href": "\/api\/v1\/brands\/brand-code\/images\/"
+        },
+        "products": {
+            "href": "\/api\/v1\/brands\/brand-code\/products\/"
+        }
+    }
+}

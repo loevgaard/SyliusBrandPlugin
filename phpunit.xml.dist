@@ -5,16 +5,24 @@
          backupGlobals="false"
          colors="true"
          bootstrap="tests/Application/config/bootstrap.php">
+
     <testsuites>
         <testsuite name="LoevgaardSyliusBrandPlugin Test Suite">
             <directory>tests</directory>
         </testsuite>
-        <env name="APP_ENV" value="test"/>
-        <env name="SHELL_VERBOSITY" value="-1" />
     </testsuites>
 
     <php>
-        <server name="KERNEL_CLASS_PATH" value="/tests/Application/AppKernel.php" />
+        <ini name="error_reporting" value="-1" />
+
+        <env name="APP_ENV" value="test"/>
+        <env name="SHELL_VERBOSITY" value="-1" />
+
         <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
+        <server name="ESCAPE_JSON" value="true" />
+
+        <server name="KERNEL_CLASS" value="Tests\Loevgaard\SyliusBrandPlugin\Application\Kernel" />
+        <server name="EXPECTED_RESPONSE_DIR" value="../Responses/Expected" />
+        <server name="FIXTURES_DIR" value="../DataFixtures/ORM" />
     </php>
 </phpunit>
