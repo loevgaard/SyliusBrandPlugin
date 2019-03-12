@@ -244,10 +244,11 @@ To run test application to play with just type `composer try`.
 
 * Make requests:
 
-   (`GET` requests indexing/showing resources shown here, 
+   (`GET` requests indexing/showing resources shown here as an example, 
    see `tests/Controller/*ApiTest.php` to discover more details
-   about how to communicate with API and create `BrandImages` 
-   with actual files)
+   about creating/updating/removing brand-related resources,
+   creating new products with brand attached to it, 
+   uploading image files for `BrandImages` via API)
 
    To Brands admin API:
 
