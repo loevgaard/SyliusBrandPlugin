@@ -18,7 +18,7 @@ loevgaard_sylius_brand_admin_api_brand:
     type: sylius.resource_api
 
 loevgaard_sylius_brand_admin_api_brand_image:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin_api/brand_image.yml"
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin_api/brand_image.yaml"
     prefix: /brands/{code}
 
 loevgaard_sylius_brand_admin_api_brand_product_index:

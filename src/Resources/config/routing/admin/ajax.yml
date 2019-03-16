@@ -1,3 +1,0 @@
-loevgaard_sylius_brand_admin_ajax_brand:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin/ajax/brand.yml"
-    prefix: /brand/

@@ -69,17 +69,17 @@ return [
 
 imports:
     # ...
-    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yaml" }
 
     # If you want to see Brand column at admin products list - uncomment next line
-    # - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yml" }
+    # - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yaml" }
 ```
 
 ```yaml
 # config/routes/loevgaard_sylius_brand.yaml
 
 loevgaard_sylius_brand:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yml"
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yaml"
 ```
 
 ### Step 4: Extend services and entities
@@ -176,7 +176,7 @@ class ProductRepository extends BaseProductRepository implements ProductReposito
 #### Configure
 
 ```yaml
-config/sylius_product.yml
+config/services.yaml
 
 sylius_product:
     resources:
@@ -222,7 +222,7 @@ $ php bin/console doctrine:migrations:migrate
                                       - product_code_3
     ```
 
-    See example at `tests/Application/config/packages/sylius_fixtures.yml`.
+    See example at `tests/Application/config/packages/sylius_fixtures.yaml`.
 
  3. Load your fixtures
 

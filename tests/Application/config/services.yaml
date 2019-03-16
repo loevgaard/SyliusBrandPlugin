@@ -4,8 +4,8 @@ parameters:
     locale: en_US
 
 imports:
-    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yml" }
-    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yaml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yaml" }
 
 sylius_product:
     resources:

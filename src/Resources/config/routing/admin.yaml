@@ -1,5 +1,5 @@
 loevgaard_sylius_brand_admin_ajax:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin/ajax.yml"
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin/ajax.yaml"
     prefix: /ajax
 
 loevgaard_sylius_brand_admin_brand:

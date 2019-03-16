@@ -41,19 +41,19 @@ Choose your option:
 
 ### Replace imported config
 
-- Import `config/app/config.yml` rather than `config/config.yml` (which no longer exists)
+- Import `config/app/config.yaml` rather than `config/config.yml` (which no longer exists)
 
-  `- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/config.yml" }` > `- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yml" }`
+  `- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/config.yml" }` > `- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yaml" }`
 
 ### Add new (optional) config 
 
 If you wish to display Brand column at Product list grid (`sylius_admin_product`) at Admin:
 
 ```yaml
-# src/config/services.yaml
+# config/services.yaml
 imports:
     # ...
-    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yaml" }
 ``` 
 
 ### Update your `Product` entity
