@@ -23,6 +23,8 @@ Brand admin pages:
 
 ![Screenshot showing brand admin update page](docs/images/admin-brand-update.png)
 
+![Screenshot showing brand admin media tab at update page](docs/images/admin-brand-update-tab-media.png)
+
 Products admin pages:
 
 ![Screenshot showing product admin index page with brand filter](docs/images/admin-product-index-filter-with-brand.png)
