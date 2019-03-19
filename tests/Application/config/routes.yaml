@@ -1,2 +1,0 @@
-loevgaard_sylius_brand:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yaml"
