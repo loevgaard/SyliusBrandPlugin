@@ -13,4 +13,4 @@ loevgaard_sylius_brand:
   brand_image:
     file:
       max_size: Das Bild ist zu groß - {{ size }}-{{ suffix }}. Maximal zulässige Größe ist {{ limit }}{{ suffix }}.
-      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+      upload_ini_size: Das Bild ist zu groß. Maximal zulässige Größe ist {{ limit }}{{ suffix }}.
