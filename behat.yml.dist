@@ -47,6 +47,6 @@ default:
                 - "features"
             contexts:
                 - "sylius.behat.context.setup.admin_security"
-                - "loevgaard_sylius_barcode.behat.context.setup.brand"
-                - "loevgaard_sylius_barcode.behat.context.transform.brand"
-                - "loevgaard_sylius_barcode.behat.context.ui.admin.managing_brands"
+                - "loevgaard_sylius_brand.behat.context.setup.brand"
+                - "loevgaard_sylius_brand.behat.context.transform.brand"
+                - "loevgaard_sylius_brand.behat.context.ui.admin.managing_brands"
