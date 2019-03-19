@@ -198,10 +198,22 @@ $ php bin/console doctrine:migrations:migrate
 
 ## Fixtures
 
- 1. Add a new yaml file to the folder `config/packages` and name it as you wish, e.g. `my_own_fixtures.yaml`.
+- Include prefedined brand fixtures to play with on your dev environment:
 
- 2. Fill this yaml with your own brand fixtures and don't forget to declare the definition of
-   your product(s) before this brand definition or use existing product(s) code.
+    ```yaml
+    # config/packages/loevgaard_sylius_brand.yaml
+    
+    imports:
+        - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/fixtures.yaml" }
+    ```
+
+- Or write your own:
+
+  - Add a new yaml file to the folder `config/packages` and name it as you wish, e.g. `my_own_fixtures.yaml`.
+
+  - Fill this yaml with your own brand fixtures and don't forget to declare the definition of
+    your product(s) before this brand definition or use existing product(s) code.
+    
     ```
     # config/packages/my_own_fixtures.yaml
     
@@ -224,7 +236,7 @@ $ php bin/console doctrine:migrations:migrate
                                       - product_code_3
     ```
 
-    See example at `tests/Application/config/packages/sylius_fixtures.yaml`.
+    See example at `src/Resources/config/app/fixtures.yaml`.
 
  3. Load your fixtures
 
