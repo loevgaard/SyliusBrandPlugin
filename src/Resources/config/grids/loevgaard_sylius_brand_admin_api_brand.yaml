@@ -5,8 +5,6 @@ sylius_grid:
                 name: doctrine/orm
                 options:
                     class: "%loevgaard_sylius_brand.model.brand.class%"
-                    repository:
-                        method: createListQueryBuilder
             sorting:
                 name: asc
             fields:
