@@ -96,9 +96,9 @@ loevgaard_sylius_brand:
     declare(strict_types=1);
     
     namespace App\Entity;
-    
+
     use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
-    use Loevgaard\SyliusBrandPlugin\Model\ProductTrait;
+    use Loevgaard\SyliusBrandPlugin\Model\ProductTrait as LoevgaardSyliusBrandPluginProductTrait;
     use Sylius\Component\Core\Model\Product as BaseProduct;
     use Doctrine\ORM\Mapping as ORM;
     
@@ -108,7 +108,7 @@ loevgaard_sylius_brand:
      */
     class Product extends BaseProduct implements LoevgaardSyliusBrandPluginProductInterface
     {
-        use ProductTrait;
+        use LoevgaardSyliusBrandPluginProductTrait;
     }
     ```
     
@@ -122,13 +122,13 @@ loevgaard_sylius_brand:
     
     namespace App\Model;
     
-    use Loevgaard\SyliusBrandPlugin\Model\ProductTrait;
     use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
+    use Loevgaard\SyliusBrandPlugin\Model\ProductTrait as LoevgaardSyliusBrandPluginProductTrait;
     use Sylius\Component\Core\Model\Product as BaseProduct;
     
     class Product extends BaseProduct implements LoevgaardSyliusBrandPluginProductInterface
     {
-        use ProductTrait;
+        use LoevgaardSyliusBrandPluginProductTrait;
         
         // ...
     }
@@ -157,19 +157,19 @@ loevgaard_sylius_brand:
 
 ```php
 <?php
-# Doctrine/ORM/ProductRepository.php
+# src/Doctrine/ORM/ProductRepository.php
 
 declare(strict_types=1);
 
 namespace App\Doctrine\ORM;
 
-use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\ProductRepositoryInterface;
-use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\ProductRepositoryTrait;
+use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\ProductRepositoryInterface as LoevgaardSyliusBrandPluginProductRepositoryInterface;
+use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\ProductRepositoryTrait as LoevgaardSyliusBrandPluginProductRepositoryTrait;
 use Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository as BaseProductRepository;
 
-class ProductRepository extends BaseProductRepository implements ProductRepositoryInterface
+class ProductRepository extends BaseProductRepository implements LoevgaardSyliusBrandPluginProductRepositoryInterface
 {
-    use ProductRepositoryTrait;
+    use LoevgaardSyliusBrandPluginProductRepositoryTrait;
 
     // ...
 }
