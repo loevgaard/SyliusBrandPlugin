@@ -145,7 +145,7 @@ loevgaard_sylius_brand:
                                           http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
     
         <mapped-superclass name="App\Model\Product" table="sylius_product">
-            <many-to-one field="brand" target-entity="Loevgaard\SyliusBrandPlugin\Model\Brand" inversed-by="products">
+            <many-to-one field="brand" target-entity="Loevgaard\SyliusBrandPlugin\Model\BrandInterface" inversed-by="products">
                 <join-column name="brand_id" on-delete="SET NULL" />
             </many-to-one>
         </mapped-superclass>
