@@ -5,13 +5,13 @@ loevgaard_sylius_brand:
     code: Code
     brand: Marque
     brands: Marques
-    brands_product_list: List products
+    brands_product_list: Voir les produits
     edit_brand: Modifier la marque
     new_brand: Nouvelle marque
     image: Image
   form:
     brand:
-      name: Name
+      name: Nom
       code: Code
       images: Images
     product:
