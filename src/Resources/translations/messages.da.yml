@@ -5,6 +5,7 @@ loevgaard_sylius_brand:
     code: Code
     brand: Mærke
     brands: Mærker
+    brands_product_list: List products
     edit_brand: Rediger mærke
     new_brand: Nyt mærke
     image: Billede

@@ -5,6 +5,7 @@ loevgaard_sylius_brand:
     code: Code
     brand: Marque
     brands: Marques
+    brands_product_list: Voir les produits
     edit_brand: Modifier la marque
     new_brand: Nouvelle marque
     image: Image
@@ -15,4 +16,4 @@ loevgaard_sylius_brand:
       images: Images
     product:
       brand: Marque
-      select_brand: Sélectionnez la marque ...
+      select_brand: Sélectionnez la marque...
