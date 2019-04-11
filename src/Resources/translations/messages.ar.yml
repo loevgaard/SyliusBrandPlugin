@@ -7,13 +7,13 @@ loevgaard_sylius_brand:
     brands: العلامات التجارية
     brands_product_list: قائمة العلامات التجارية
     edit_brand: تعديل العلامة التجارية
-    new_brand: New brand
-    image: Image
+    new_brand: علامة تجارية جديدة
+    image: الصورة
   form:
     brand:
-      name: Name
-      code: Code
-      images: Images
+      name: الاسم
+      code: الرمز
+      images: الصور
     product:
-      brand: Brand
-      select_brand: Select brand...
+      brand: العلامة التجارية
+      select_brand: حدد العلامة التجارية...
