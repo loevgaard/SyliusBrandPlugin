@@ -2,10 +2,10 @@
 loevgaard_sylius_brand:
   brand:
     code:
-      max_length: Brand code must not be longer than {{ limit }} characters|Brand code must not be longer than {{ limit }} characters.
-      not_blank: Please enter brand code.
-      regex: Brand code can only be comprised of letters, numbers, dashes and underscores.
-      unique: Brand code must be unique.
+      max_length: يجب ألا يكون رمز العلامة التجارية أطول من {{ limit }} أحرف|رموز العلامة التجارية يجب أن لا يكون أطول من {{ limit }} أحرف.
+      not_blank: الرجاء إدخال رمز العلامة التجارية.
+      regex: رمز العلامة التجارية يمكن أن يتألف فقط من الحروف والأرقام، والشرطات وتسطيرات أسفل السطر.
+      unique: رمز العلامة التجارية يجب أن تكون فريدة من نوعها.
     name:
       max_length: Brand name must not be longer than {{ limit }} characters|Brand name must not be longer than {{ limit }} characters.
       min_length: Brand name must be at least {{ limit }} characters long|Brand name must be at least {{ limit }} characters long.
