@@ -7,10 +7,10 @@ loevgaard_sylius_brand:
       regex: رمز العلامة التجارية يمكن أن يتألف فقط من الحروف والأرقام، والشرطات وتسطيرات أسفل السطر.
       unique: رمز العلامة التجارية يجب أن تكون فريدة من نوعها.
     name:
-      max_length: Brand name must not be longer than {{ limit }} characters|Brand name must not be longer than {{ limit }} characters.
-      min_length: Brand name must be at least {{ limit }} characters long|Brand name must be at least {{ limit }} characters long.
-      not_blank: Please enter brand name.
+      max_length: يجب ألا يكون اسم العلامة التجارية أطول من {{ limit }} أحرف|رمز العلامة التجارية يجب أن لا يكون أطول من {{ limit }} أحرف.
+      min_length: يجب أن يكون اسم العلامة التجارية على الأقل {{ limit }} أحرف|اسم العلامة التجارية يجب أن يكون على الأقل {{ limit }} أحرف.
+      not_blank: الرجاء إدخال أسم العلامة التجارية.
   brand_image:
     file:
-      max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
-      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+      max_size: حجم الصورة كبير جداً- {{ size }}{{ suffix }}. الحد الأقصى المسموح به للحجم هو {{ limit }}{{ suffix }}.
+      upload_ini_size: حجم الصورة كبير جداً- {{ size }}{{ suffix }}. الحد الأقصى المسموح به للحجم هو {{ limit }}{{ suffix }}.
