@@ -10,7 +10,7 @@
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
-        <one-to-many field="images" target-entity="Loevgaard\SyliusBrandPlugin\Model\BrandImage" mapped-by="owner" orphan-removal="true">
+        <one-to-many field="images" target-entity="Loevgaard\SyliusBrandPlugin\Model\BrandImageInterface" mapped-by="owner" orphan-removal="true">
             <cascade>
                 <cascade-all/>
             </cascade>
