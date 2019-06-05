@@ -1,3 +1,14 @@
 imports:
     - { resource: "../../Behat/Resources/services.xml" }
     - { resource: "../../../vendor/sylius/sylius/src/Sylius/Behat/Resources/config/services.xml" }
+
+# todo remove this when this PR is merged https://github.com/Sylius/Sylius/pull/10426
+services:
+    test.client:
+        class: Symfony\Component\HttpKernel\Client
+        public: true
+        arguments:
+            - "@kernel"
+            - "%test.client.parameters%"
+            - "@test.client.history"
+            - "@test.client.cookiejar"
