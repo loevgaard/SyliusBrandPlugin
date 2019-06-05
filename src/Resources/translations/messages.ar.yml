@@ -1,19 +1,19 @@
 ---
 loevgaard_sylius_brand:
   ui:
-    name: Name
-    code: Code
-    brand: Brand
-    brands: Brands
-    brands_product_list: List products
-    edit_brand: Edit brand
-    new_brand: New brand
-    image: Image
+    name: الاسم
+    code: الرمز
+    brand: العلامة التجارية
+    brands: العلامات التجارية
+    brands_product_list: قائمة العلامات التجارية
+    edit_brand: تعديل العلامة التجارية
+    new_brand: علامة تجارية جديدة
+    image: الصورة
   form:
     brand:
-      name: Name
-      code: Code
-      images: Images
+      name: الاسم
+      code: الرمز
+      images: الصور
     product:
-      brand: Brand
-      select_brand: Select brand...
+      brand: العلامة التجارية
+      select_brand: حدد العلامة التجارية...
