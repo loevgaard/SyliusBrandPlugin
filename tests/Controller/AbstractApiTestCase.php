@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Loevgaard\SyliusBrandPlugin\Controller;
 
-use Lakion\ApiTestCase\JsonApiTestCase;
-use Lakion\ApiTestCase\PathBuilder;
+use ApiTestCase\JsonApiTestCase;
+use ApiTestCase\PathBuilder;
 
 abstract class AbstractApiTestCase extends JsonApiTestCase
 {
