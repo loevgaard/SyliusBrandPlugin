@@ -22,12 +22,10 @@ final class BrandFixture extends AbstractResourceFixture
      */
     protected function configureResourceNode(ArrayNodeDefinition $resourceNode): void
     {
-        $resourceNode
-            ->children()
-                ->scalarNode('name')->cannotBeEmpty()->end()
-                ->scalarNode('code')->cannotBeEmpty()->end()
-                ->arrayNode('images')->variablePrototype()->end()->end()
-                ->arrayNode('products')->scalarPrototype()->end()->end()
-        ;
+        $node = $resourceNode->children();
+        $node->scalarNode('name')->cannotBeEmpty();
+        $node->scalarNode('code')->cannotBeEmpty();
+        $node->arrayNode('images')->variablePrototype();
+        $node->arrayNode('products')->scalarPrototype();
     }
 }
