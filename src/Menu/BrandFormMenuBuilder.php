@@ -8,9 +8,9 @@ use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Loevgaard\SyliusBrandPlugin\Event\BrandMenuBuilderEvent;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
-use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractsEventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy;
+use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractsEventDispatcherInterface;
 
 final class BrandFormMenuBuilder
 {
@@ -29,7 +29,8 @@ final class BrandFormMenuBuilder
         if (class_exists('Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy')) {
             /**
              * It could return null only if we pass null, but we pass not null in any case
-             * @var ContractsEventDispatcherInterface $eventDispatcher
+             *
+             * @var ContractsEventDispatcherInterface
              */
             $eventDispatcher = LegacyEventDispatcherProxy::decorate($eventDispatcher);
         }
