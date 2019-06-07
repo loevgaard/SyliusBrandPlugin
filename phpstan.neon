@@ -12,7 +12,7 @@ parameters:
     excludes_analyse:
         # Makes PHPStan crash
         - 'src/DependencyInjection/Configuration.php'
-        - 'src/Fixture/BrandFixture.php'
+        - 'src/Menu/BrandFormMenuBuilder.php'
 
         # Test dependencies
         - 'tests/Application/app/**.php'

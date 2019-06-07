@@ -44,6 +44,7 @@
         "symfony/browser-kit": "^3.4 || ^4.1",
         "symfony/debug-bundle": "^3.4 || ^4.1",
         "symfony/dotenv": "^4.2",
+        "symfony/event-dispatcher": "^3.4 || ^4.1",
         "symfony/intl": "^3.4 || ^4.1",
         "symfony/web-profiler-bundle": "^3.4 || ^4.1",
         "symfony/web-server-bundle": "^3.4 || ^4.1"
@@ -79,8 +80,7 @@
             "@ensure-assets-compiled"
         ],
         "behat": [
-            "SYMFONY_ENV=test composer ensure-database-created",
-            "SYMFONY_ENV=test composer ensure-schema-updated",
+            "SYMFONY_ENV=test composer ensure-database-ready",
             "SYMFONY_ENV=test composer ensure-env-copied",
             "./vendor/bin/behat --tags=\"~@javascript\" --no-interaction --format=progress"
         ],
@@ -92,6 +92,10 @@
         "ensure-assets-compiled": "[[ -d tests/Application/public/assets ]] || (cd tests/Application && yarn build && composer ensure-env-copied && bin/console assets:install public -e ${SYMFONY_ENV:-'dev'})",
         "ensure-assets-installed": "[[ -d tests/Application/node_modules ]] || (cd tests/Application && yarn install)",
         "ensure-database-created": "composer ensure-env-copied && (cd tests/Application && bin/console doctrine:database:create --if-not-exists -e ${SYMFONY_ENV:-'dev'})",
+        "ensure-database-ready": [
+            "@ensure-database-created",
+            "@ensure-schema-updated"
+        ],
         "ensure-env-copied": "([[ ${SYMFONY_ENV:-'dev'} == 'dev' ]] && composer ensure-env-dev-copied) || ([[ ${SYMFONY_ENV:-'dev'} == 'test' ]] && composer ensure-env-test-copied) || echo 'Unknown environment ${SYMFONY_ENV}'",
         "ensure-env-dev-copied": "(cd tests/Application && ([[ -f .env.dev.local ]] || cp .env  .env.dev.local))",
         "ensure-env-test-copied": "(cd tests/Application && ([[ -f .env.test.local ]] || cp .env.test .env.test.local))",
@@ -100,12 +104,14 @@
         "ensure-vendors-installed": "[[ -f vendor/autoload.php ]] || php -d memory_limit=-1 /usr/local/bin/composer install",
         "fix-style": "./vendor/bin/ecs check src --fix",
         "fixtures": [
-            "@ensure-database-created",
-            "@ensure-schema-updated",
+            "@ensure-database-ready",
             "(cd tests/Application && bin/console sylius:fixtures:load --no-interaction -e ${SYMFONY_ENV:-'dev'})"
         ],
         "phpspec": "./vendor/bin/phpspec run -vvv",
-        "phpunit": "./vendor/bin/phpunit",
+        "phpunit": [
+            "SYMFONY_ENV=test composer ensure-database-ready",
+            "php -d memory_limit=-1 ./vendor/bin/phpunit"
+        ],
         "run": [
             "@ensure-env-copied",
             "(cd tests/Application && bin/console server:run -d public -e ${SYMFONY_ENV:-'dev'})"

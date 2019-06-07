@@ -9,3 +9,11 @@ sylius_product:
             classes:
                 model: Tests\Loevgaard\SyliusBrandPlugin\Application\Model\Product
                 repository: Tests\Loevgaard\SyliusBrandPlugin\Application\Doctrine\ORM\ProductRepository
+
+services:
+    app.listener.admin.brand_form_menu_builder:
+        class: Tests\Loevgaard\SyliusBrandPlugin\Application\Menu\AdminBrandFormMenuListener
+        tags:
+            - name: kernel.event_listener
+              event: loevgaard_sylius_brand.menu.admin.brand.form
+              method: addItems
