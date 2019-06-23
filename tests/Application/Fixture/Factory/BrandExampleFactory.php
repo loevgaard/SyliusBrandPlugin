@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\Loevgaard\SyliusBrandPlugin\Application\Fixture\Factory;
 
 use Loevgaard\SyliusBrandPlugin\Fixture\Factory\BrandExampleFactory as BaseBrandExampleFactory;
-use Loevgaard\SyliusBrandPlugin\Model\BrandImageInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\OptionsResolver\OptionsResolver;
