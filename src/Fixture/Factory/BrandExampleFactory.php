@@ -15,7 +15,7 @@ use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-final class BrandExampleFactory extends AbstractExampleFactory
+class BrandExampleFactory extends AbstractExampleFactory
 {
     /** @var OptionsResolver */
     private $optionsResolver;

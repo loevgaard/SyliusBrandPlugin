@@ -7,7 +7,7 @@ namespace Loevgaard\SyliusBrandPlugin\Fixture;
 use Sylius\Bundle\CoreBundle\Fixture\AbstractResourceFixture;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
-final class BrandFixture extends AbstractResourceFixture
+class BrandFixture extends AbstractResourceFixture
 {
     /**
      * {@inheritdoc}
