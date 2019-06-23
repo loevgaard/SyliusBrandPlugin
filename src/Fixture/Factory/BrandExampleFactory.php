@@ -18,13 +18,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class BrandExampleFactory extends AbstractExampleFactory
 {
     /** @var OptionsResolver */
-    private $optionsResolver;
+    protected $optionsResolver;
 
     /** @var ProductRepositoryInterface */
-    private $productRepository;
+    protected $productRepository;
 
     /** @var ProductsAssignerInterface */
-    private $productAssigner;
+    protected $productAssigner;
 
     /** @var FactoryInterface */
     protected $brandFactory;
@@ -33,7 +33,7 @@ class BrandExampleFactory extends AbstractExampleFactory
     protected $productImageFactory;
 
     /** @var ImageUploaderInterface */
-    private $imageUploader;
+    protected $imageUploader;
 
     /**
      * @param ProductRepositoryInterface $productRepository
@@ -104,7 +104,7 @@ class BrandExampleFactory extends AbstractExampleFactory
      * @param BrandInterface $brand
      * @param array $options
      */
-    private function createImages(BrandInterface $brand, array $options): void
+    protected function createImages(BrandInterface $brand, array $options): void
     {
         foreach ($options['images'] as $image) {
             $imagePath = $image['path'];
