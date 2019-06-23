@@ -1,0 +1,9 @@
+{% form_theme form 'Admin/Form/imagesTheme.html.twig' %}
+
+<div class="ui tab" data-tab="media">
+    <h3 class="ui dividing header">{{ 'sylius.ui.media'|trans }}</h3>
+    <br>
+    {{ form_row(form.images, {'label': false}) }}
+
+    {{ sonata_block_render_event('loevgaard_sylius_brand.admin.brand.' ~ action ~ '.tab_media', {'form': form}) }}
+</div>

@@ -1,0 +1,42 @@
+sylius_fixtures:
+    suites:
+        default:
+            fixtures:
+                product:
+                    options:
+                        custom:
+                            product_setono_mug:
+                                name: Setono Mug
+                                code: setono-mug
+                                main_taxon: mugs
+                                taxons: [mugs]
+                            product_setono_macbook_sticker:
+                                name: Setono Macbook Sticker
+                                code: setono-macbook-sticker
+                                main_taxon: stickers
+                                taxons: [stickers]
+                app_brand:
+                    options:
+                        custom:
+                            brand_setono:
+                                name: Setono
+                                description: We create ecommerce solutions that rock
+                                code: setono
+                                images:
+                                    - type: logo
+                                      path: fixtures/images/logos/setono.jpg
+                                      alt: Setono logo
+                                    - path: fixtures/images/logos/setono.jpg
+                                      alt: Another Setono logo
+                                    - type: logo
+                                      path: fixtures/images/logos/setono.jpg
+                                products:
+                                  - setono-mug
+                                  - setono-macbook-sticker
+                            brand_sylius:
+                                name: Sylius
+                                code: sylius
+                                images:
+                                    - type: logo
+                                      path: fixtures/images/logos/sylius.png
+                                      alt: Sylius logo

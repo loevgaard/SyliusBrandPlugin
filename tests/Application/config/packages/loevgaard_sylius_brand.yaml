@@ -1,4 +1,17 @@
 imports:
     - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yaml" }
     - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yaml" }
-    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/fixtures.yaml" }
+
+    # Here we want to use customized fixtures with brand descriptions and 
+    # brand image alternative texts rather than standard plugin's fixtures
+    # - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/fixtures.yaml" }
+    - { resource: "../fixtures.yaml" }
+
+loevgaard_sylius_brand:
+    resources:
+        brand:
+            classes:
+                model: Tests\Loevgaard\SyliusBrandPlugin\Application\Model\Brand
+        brand_image:
+            classes:
+                model: Tests\Loevgaard\SyliusBrandPlugin\Application\Model\BrandImage

@@ -1,0 +1,14 @@
+<div class="ui active tab" data-tab="test">
+    <h3 class="ui dividing header">{{ 'app.ui.tab.test'|trans }}</h3>
+    {{ form_errors(form) }}
+
+    <div class="ui two column stackable grid">
+        <div class="column">
+            <div class="ui segment">
+                Test tab content
+            </div>
+        </div>
+    </div>
+
+    {{ sonata_block_render_event('app.admin.brand.' ~ action ~ '.tab_test', {'form': form}) }}
+</div>
