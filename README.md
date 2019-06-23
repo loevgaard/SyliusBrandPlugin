@@ -261,6 +261,11 @@ To run test application to play with just type `composer try`.
   admin form like you usually do with `Product` form via
   `sylius.menu.admin.product.form` event.
 
+### Entities/fixtures/templates override
+
+See basic [example](https://github.com/loevgaard/SyliusBrandPlugin/commit/d4eff7cb8efac6438db0fd2045cbe4262ce26ce1)
+where `description` field was added to `Brand` and `alt` field was added to `BrandImage`.
+
 ## Testing
 
 ### Play with API
