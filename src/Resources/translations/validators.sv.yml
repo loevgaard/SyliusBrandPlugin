@@ -2,15 +2,15 @@
 loevgaard_sylius_brand:
   brand:
     code:
-      max_length: Brand code must not be longer than {{ limit }} characters|Brand code must not be longer than {{ limit }} characters.
-      not_blank: Please enter brand code.
-      regex: Brand code can only be comprised of letters, numbers, dashes and underscores.
-      unique: Brand code must be unique.
+      max_length: Varumärkets kod får inte vara längre än {{ limit }} tecken|Varumärkets kod får inte vara längre än {{ limit }} tecken.
+      not_blank: Var vänlig ange en varumärkeskod.
+      regex: Varumärkets kod får bara innehålla bokstäver, siffror, bindestreck och understreck.
+      unique: Varumärkets kod måste vara unik.
     name:
-      max_length: Brand name must not be longer than {{ limit }} characters|Brand name must not be longer than {{ limit }} characters.
-      min_length: Brand name must be at least {{ limit }} characters long|Brand name must be at least {{ limit }} characters long.
-      not_blank: Please enter brand name.
+      max_length: Varumärkets namn får inte vara längre än {{ limit }} tecken|Varumärkets namn får inte vara längre än {{ limit }} tecken.
+      min_length: Varumärkets namn måste vara minst {{ limit }} tecken långt|Varumärkets namn måste vara minst {{ limit }} tecken långt.
+      not_blank: Var vänlig ange varumärkets namn.
   brand_image:
     file:
-      max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
-      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+      max_size: Bilden är för stor - {{ size }}{{ suffix }}. Den största tillåtna filstorleken är {{ limit }}{{ suffix }}.
+      upload_ini_size: Bilden är för stor. Den största tillåtna filstorleken är {{ limit }}{{ suffix }}.
