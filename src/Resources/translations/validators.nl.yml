@@ -12,5 +12,5 @@ loevgaard_sylius_brand:
       not_blank: Geef een merknaam op.
   brand_image:
     file:
-      max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
-      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+      max_size: De afbeelding is te groot - {{ size }}{{ suffix }}. Maximaal toegestane grootte is {{ limit }}{{ suffix }}.
+      upload_ini_size: De afbeelding is te groot. De maximaal toegestane grootte is {{ limit }}{{ suffix }}.
