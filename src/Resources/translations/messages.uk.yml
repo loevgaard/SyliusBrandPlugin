@@ -7,7 +7,7 @@ loevgaard_sylius_brand:
     brands: Бренди
     brands_product_list: Список продуктів
     edit_brand: Редагувати бренд
-    new_brand: New brand
+    new_brand: Створити бренд
     image: Зображення
   form:
     brand:
