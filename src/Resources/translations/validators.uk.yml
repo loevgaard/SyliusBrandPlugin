@@ -3,9 +3,9 @@ loevgaard_sylius_brand:
   brand:
     code:
       max_length: Brand code must not be longer than {{ limit }} characters|Brand code must not be longer than {{ limit }} characters.
-      not_blank: Please enter brand code.
+      not_blank: Будь ласка введіть код бреду.
       regex: Brand code can only be comprised of letters, numbers, dashes and underscores.
-      unique: Brand code must be unique.
+      unique: Код бренду має бути унікальним.
     name:
       max_length: Brand name must not be longer than {{ limit }} characters|Brand name must not be longer than {{ limit }} characters.
       min_length: Brand name must be at least {{ limit }} characters long|Brand name must be at least {{ limit }} characters long.
