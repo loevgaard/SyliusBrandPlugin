@@ -2,15 +2,15 @@
 loevgaard_sylius_brand:
   brand:
     code:
-      max_length: Brand code must not be longer than {{ limit }} characters|Brand code must not be longer than {{ limit }} characters.
+      max_length: Код бренду не може бути довшим за {{ limit }} символів|Код бренду не може бути довшим за {{ limit }} символів.
       not_blank: Будь ласка введіть код бреду.
       regex: Brand code can only be comprised of letters, numbers, dashes and underscores.
       unique: Код бренду має бути унікальним.
     name:
       max_length: Brand name must not be longer than {{ limit }} characters|Brand name must not be longer than {{ limit }} characters.
       min_length: Brand name must be at least {{ limit }} characters long|Brand name must be at least {{ limit }} characters long.
-      not_blank: Please enter brand name.
+      not_blank: Будь ласка введіть назву бреду.
   brand_image:
     file:
       max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
-      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+      upload_ini_size: Зображення завелике. Максимальний дозволений розмір {{ limit }}{{ suffix }}.
