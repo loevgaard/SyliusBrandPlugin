@@ -1,3 +1,9 @@
 app:
     ui:
-        test: Test tab
+        tab:
+            test: Test tab
+    form:
+        brand:
+            description: Description
+        brand_image:
+            alt: Alternative text

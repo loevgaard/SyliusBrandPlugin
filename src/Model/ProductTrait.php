@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 trait ProductTrait
 {
     /**
-     * @var BrandInterface
+     * @var BrandInterface|null
      *
      * @ORM\ManyToOne(targetEntity="\Loevgaard\SyliusBrandPlugin\Model\BrandInterface", cascade={"persist"}, fetch="EAGER", inversedBy="products")
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="id", onDelete="SET NULL")

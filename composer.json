@@ -73,7 +73,7 @@
         ],
         "analyse": [
             "@ensure-test-container-exists",
-            "./vendor/bin/phpstan analyse -c phpstan.neon -l max src"
+            "./vendor/bin/phpstan analyse -c phpstan.neon -l max src tests/Application/Doctrine tests/Application/Fixture tests/Application/Form tests/Application/Menu tests/Application/Model"
         ],
         "assets": [
             "@ensure-assets-installed",
@@ -84,7 +84,7 @@
             "SYMFONY_ENV=test composer ensure-env-copied",
             "./vendor/bin/behat --tags=\"~@javascript\" --no-interaction --format=progress"
         ],
-        "check-style": "./vendor/bin/ecs check src",
+        "check-style": "./vendor/bin/ecs check src tests/Application/Doctrine tests/Application/Fixture tests/Application/Form tests/Application/Menu tests/Application/Model",
         "checks": [
             "@check-style",
             "@analyse"
@@ -102,7 +102,7 @@
         "ensure-schema-updated": "composer ensure-env-copied && (cd tests/Application && bin/console doctrine:schema:update --force -e ${SYMFONY_ENV:-'dev'})",
         "ensure-test-container-exists": "[[ -f tests/Application/var/cache/test/ApplicationTests_Loevgaard_SyliusBrandPlugin_Application_KernelTestDebugContainer.xml ]] || (cd tests/Application && php -d memory_limit=-1 bin/console cache:clear --env=test)",
         "ensure-vendors-installed": "[[ -f vendor/autoload.php ]] || php -d memory_limit=-1 /usr/local/bin/composer install",
-        "fix-style": "./vendor/bin/ecs check src --fix",
+        "fix-style": "./vendor/bin/ecs check src tests/Application/Doctrine tests/Application/Fixture tests/Application/Form tests/Application/Menu tests/Application/Model --fix",
         "fixtures": [
             "@ensure-database-ready",
             "(cd tests/Application && bin/console sylius:fixtures:load --no-interaction -e ${SYMFONY_ENV:-'dev'})"

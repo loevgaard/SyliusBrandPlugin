@@ -17,3 +17,29 @@ services:
             - name: kernel.event_listener
               event: loevgaard_sylius_brand.menu.admin.brand.form
               method: addItems
+
+    # Form
+    app.form.extension.type.brand:
+        class: Tests\Loevgaard\SyliusBrandPlugin\Application\Form\Extension\BrandTypeExtension
+        tags:
+            - name: form.type_extension
+              extended_type: Loevgaard\SyliusBrandPlugin\Form\Type\BrandType
+
+    app.form.extension.type.brand_image:
+        class: Tests\Loevgaard\SyliusBrandPlugin\Application\Form\Extension\BrandImageTypeExtension
+        tags:
+            - name: form.type_extension
+              extended_type: Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType
+
+    # Fixture
+    app.fixture.brand:
+        class: Tests\Loevgaard\SyliusBrandPlugin\Application\Fixture\BrandFixture
+        arguments:
+            - "@loevgaard_sylius_brand.manager.brand"
+            - "@app.fixture.example_factory.brand"
+        tags:
+            - name: sylius_fixtures.fixture
+
+    app.fixture.example_factory.brand:
+        class: Tests\Loevgaard\SyliusBrandPlugin\Application\Fixture\Factory\BrandExampleFactory
+        parent: loevgaard_sylius_brand.fixture.example_factory.brand

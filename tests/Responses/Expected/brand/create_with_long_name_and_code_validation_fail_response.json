@@ -13,6 +13,7 @@
                     "Brand code must not be longer than 255 characters."
                 ]
             },
+            "description": {},
             "images": {}
         }
     }
