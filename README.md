@@ -97,10 +97,10 @@ loevgaard_sylius_brand:
     
     namespace App\Entity;
 
+    use Doctrine\ORM\Mapping as ORM;
     use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
     use Loevgaard\SyliusBrandPlugin\Model\ProductTrait as LoevgaardSyliusBrandPluginProductTrait;
     use Sylius\Component\Core\Model\Product as BaseProduct;
-    use Doctrine\ORM\Mapping as ORM;
     
     /**
      * @ORM\Entity
@@ -184,7 +184,7 @@ sylius_product:
     resources:
         product:
             classes:
-                model: App\Model\Product
+                model: App\Model\Product # Or App\Entity\Product
                 repository: App\Doctrine\ORM\ProductRepository
 
 ```  
