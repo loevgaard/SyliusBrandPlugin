@@ -228,8 +228,12 @@ $ php bin/console doctrine:migrations:migrate
                                     name: 'My brand'
                                     code: 'my-brand'
                                     images:
-                                      - type: logo
-                                        path: logos/my-brand.jpg
+                                        local_image:
+                                            type: logo
+                                            path: images/my-brand/logo.jpg
+                                        3rd_party_plugin_image:
+                                            type: black-and-white
+                                            path: '@SomePlugin/images/my-brand/black-and-white.jpg'
                                     products:
                                       - product_code_1
                                       - product_code_2

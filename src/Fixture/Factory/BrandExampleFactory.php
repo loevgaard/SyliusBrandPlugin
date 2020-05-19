@@ -12,6 +12,7 @@ use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Core\Uploader\ImageUploaderInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
+use Symfony\Component\Config\FileLocatorInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -35,12 +36,16 @@ class BrandExampleFactory extends AbstractExampleFactory
     /** @var ImageUploaderInterface */
     protected $imageUploader;
 
+    /** @var FileLocatorInterface */
+    protected $fileLocator;
+
     public function __construct(
         ProductRepositoryInterface $productRepository,
         ProductsAssignerInterface $productAssigner,
         FactoryInterface $brandFactory,
         FactoryInterface $productImageFactory,
-        ImageUploaderInterface $imageUploader
+        ImageUploaderInterface $imageUploader,
+        FileLocatorInterface $fileLocator
     ) {
         $this->productRepository = $productRepository;
         $this->productAssigner = $productAssigner;
@@ -94,6 +99,10 @@ class BrandExampleFactory extends AbstractExampleFactory
             $imagePath = $image['path'];
             $imageType = $image['type'] ?? null;
 
+            $imagePath = $this->fileLocator->locate($imagePath);
+            if (is_array($imagePath)) {
+                $imagePath = $imagePath[array_key_first($imagePath)];
+            }
             $uploadedImage = new UploadedFile($imagePath, basename($imagePath));
 
             /** @var BrandImageInterface $brandImage */
