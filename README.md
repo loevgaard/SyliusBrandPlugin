@@ -224,7 +224,7 @@ $ php bin/console doctrine:migrations:migrate
                     loevgaard_sylius_brand_plugin_brand:
                         options:
                             custom:
-                                flux:
+                                my_brand:
                                     name: 'My brand'
                                     code: 'my-brand'
                                     images:
