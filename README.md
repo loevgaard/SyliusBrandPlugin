@@ -237,7 +237,7 @@ $ php bin/console doctrine:migrations:migrate
                                             path: images/my-brand/logo.jpg
                                         3rd_party_plugin_image:
                                             type: black-and-white
-                                            path: '@SomePlugin/images/my-brand/black-and-white.jpg'
+                                            path: '@SomePlugin/Resources/images/my-brand/black-and-white.jpg'
                                     products:
                                       - product_code_1
                                       - product_code_2
