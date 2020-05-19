@@ -20,6 +20,7 @@
             <argument type="service" id="loevgaard_sylius_brand.factory.brand"/>
             <argument type="service" id="loevgaard_sylius_brand.factory.brand_image"/>
             <argument type="service" id="sylius.image_uploader"/>
+            <argument type="service" id="file_locator" />
         </service>
 
     </services>

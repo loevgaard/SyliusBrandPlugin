@@ -12,19 +12,20 @@ use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Core\Uploader\ImageUploaderInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
+use Symfony\Component\Config\FileLocatorInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class BrandExampleFactory extends AbstractExampleFactory
 {
     /** @var OptionsResolver */
-    private $optionsResolver;
+    protected $optionsResolver;
 
     /** @var ProductRepositoryInterface */
-    private $productRepository;
+    protected $productRepository;
 
     /** @var ProductsAssignerInterface */
-    private $productAssigner;
+    protected $productAssigner;
 
     /** @var FactoryInterface */
     protected $brandFactory;
@@ -33,21 +34,18 @@ class BrandExampleFactory extends AbstractExampleFactory
     protected $productImageFactory;
 
     /** @var ImageUploaderInterface */
-    private $imageUploader;
+    protected $imageUploader;
 
-    /**
-     * @param ProductRepositoryInterface $productRepository
-     * @param ProductsAssignerInterface $productAssigner
-     * @param FactoryInterface $brandFactory
-     * @param FactoryInterface $productImageFactory
-     * @param ImageUploaderInterface $imageUploader
-     */
+    /** @var FileLocatorInterface */
+    protected $fileLocator;
+
     public function __construct(
         ProductRepositoryInterface $productRepository,
         ProductsAssignerInterface $productAssigner,
         FactoryInterface $brandFactory,
         FactoryInterface $productImageFactory,
-        ImageUploaderInterface $imageUploader
+        ImageUploaderInterface $imageUploader,
+        FileLocatorInterface $fileLocator
     ) {
         $this->productRepository = $productRepository;
         $this->productAssigner = $productAssigner;
@@ -55,15 +53,13 @@ class BrandExampleFactory extends AbstractExampleFactory
 
         $this->productImageFactory = $productImageFactory;
         $this->imageUploader = $imageUploader;
+        $this->fileLocator = $fileLocator;
 
         $this->optionsResolver = new OptionsResolver();
 
         $this->configureOptions($this->optionsResolver);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
@@ -81,9 +77,6 @@ class BrandExampleFactory extends AbstractExampleFactory
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function create(array $options = []): BrandInterface
     {
         $options = $this->optionsResolver->resolve($options);
@@ -100,16 +93,16 @@ class BrandExampleFactory extends AbstractExampleFactory
         return $brand;
     }
 
-    /**
-     * @param BrandInterface $brand
-     * @param array $options
-     */
-    private function createImages(BrandInterface $brand, array $options): void
+    protected function createImages(BrandInterface $brand, array $options): void
     {
         foreach ($options['images'] as $image) {
             $imagePath = $image['path'];
             $imageType = $image['type'] ?? null;
 
+            $imagePath = $this->fileLocator->locate($imagePath);
+            if (is_array($imagePath)) {
+                $imagePath = $imagePath[array_key_first($imagePath)];
+            }
             $uploadedImage = new UploadedFile($imagePath, basename($imagePath));
 
             /** @var BrandImageInterface $brandImage */
