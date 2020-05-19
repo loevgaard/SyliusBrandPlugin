@@ -18,13 +18,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class BrandExampleFactory extends AbstractExampleFactory
 {
     /** @var OptionsResolver */
-    private $optionsResolver;
+    protected $optionsResolver;
 
     /** @var ProductRepositoryInterface */
-    private $productRepository;
+    protected $productRepository;
 
     /** @var ProductsAssignerInterface */
-    private $productAssigner;
+    protected $productAssigner;
 
     /** @var FactoryInterface */
     protected $brandFactory;
@@ -33,15 +33,8 @@ class BrandExampleFactory extends AbstractExampleFactory
     protected $productImageFactory;
 
     /** @var ImageUploaderInterface */
-    private $imageUploader;
+    protected $imageUploader;
 
-    /**
-     * @param ProductRepositoryInterface $productRepository
-     * @param ProductsAssignerInterface $productAssigner
-     * @param FactoryInterface $brandFactory
-     * @param FactoryInterface $productImageFactory
-     * @param ImageUploaderInterface $imageUploader
-     */
     public function __construct(
         ProductRepositoryInterface $productRepository,
         ProductsAssignerInterface $productAssigner,
@@ -55,15 +48,13 @@ class BrandExampleFactory extends AbstractExampleFactory
 
         $this->productImageFactory = $productImageFactory;
         $this->imageUploader = $imageUploader;
+        $this->fileLocator = $fileLocator;
 
         $this->optionsResolver = new OptionsResolver();
 
         $this->configureOptions($this->optionsResolver);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
@@ -81,9 +72,6 @@ class BrandExampleFactory extends AbstractExampleFactory
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function create(array $options = []): BrandInterface
     {
         $options = $this->optionsResolver->resolve($options);
@@ -100,11 +88,7 @@ class BrandExampleFactory extends AbstractExampleFactory
         return $brand;
     }
 
-    /**
-     * @param BrandInterface $brand
-     * @param array $options
-     */
-    private function createImages(BrandInterface $brand, array $options): void
+    protected function createImages(BrandInterface $brand, array $options): void
     {
         foreach ($options['images'] as $image) {
             $imagePath = $image['path'];
