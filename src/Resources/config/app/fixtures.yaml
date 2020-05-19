@@ -2,19 +2,21 @@ sylius_fixtures:
     suites:
         default:
             fixtures:
+
                 product:
                     options:
                         custom:
-                            product_setono_mug:
-                                name: Setono Mug
-                                code: setono-mug
-                                main_taxon: mugs
-                                taxons: [mugs]
+                            product_setono_cap:
+                                name: Setono Cap
+                                code: setono-cap
+                                main_taxon: caps
+                                taxons: [caps]
                             product_setono_macbook_sticker:
-                                name: Setono Macbook Sticker
-                                code: setono-macbook-sticker
-                                main_taxon: stickers
-                                taxons: [stickers]
+                                name: Setono T-Shirt
+                                code: setono-t_shirt
+                                main_taxon: t_shirts
+                                taxons: [t_shirts]
+
                 loevgaard_sylius_brand_plugin_brand:
                     options:
                         custom:
@@ -28,8 +30,8 @@ sylius_fixtures:
                                     - type: logo
                                       path: fixtures/images/logos/setono.jpg
                                 products:
-                                  - setono-mug
-                                  - setono-macbook-sticker
+                                    - setono-cap
+                                    - setono-t_shirt
                             brand_sylius:
                                 name: Sylius
                                 code: sylius
