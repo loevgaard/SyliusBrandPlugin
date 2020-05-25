@@ -4,6 +4,7 @@ loevgaard_sylius_brand_shop_brand_show:
     defaults:
         _controller: loevgaard_sylius_brand.controller.brand:showAction
         _sylius:
+            template: "@LoevgaardSyliusBrandPlugin/Shop/Brand/show.html.twig"
             repository:
                 method: findOneByCode
                 arguments:
