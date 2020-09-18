@@ -1,19 +1,19 @@
 ---
 loevgaard_sylius_brand:
   ui:
-    name: Name
-    code: Code
-    brand: Brand
-    brands: Brands
-    brands_product_list: List products
-    edit_brand: Edit brand
-    new_brand: New brand
-    image: Image
+    name: Název
+    code: Kód
+    brand: Značka
+    brands: Značky
+    brands_product_list: Zobrazit produkty
+    edit_brand: Upravit značku
+    new_brand: Nová značka
+    image: Obrázek
   form:
     brand:
-      name: Name
-      code: Code
-      images: Images
+      name: Název
+      code: Kód
+      images: Obrázky
     product:
-      brand: Brand
-      select_brand: Select brand...
+      brand: Značka
+      select_brand: Vybrat značku...

@@ -1,19 +1,19 @@
 ---
 loevgaard_sylius_brand:
   ui:
-    name: Name
-    code: Code
-    brand: Brand
-    brands: Brands
-    brands_product_list: List products
-    edit_brand: Edit brand
-    new_brand: New brand
-    image: Image
+    name: Назва
+    code: Код
+    brand: Бренд
+    brands: Бренди
+    brands_product_list: Список продуктів
+    edit_brand: Редагувати бренд
+    new_brand: Створити бренд
+    image: Зображення
   form:
     brand:
-      name: Name
-      code: Code
-      images: Images
+      name: Назва
+      code: Код
+      images: Зображення
     product:
-      brand: Brand
-      select_brand: Select brand...
+      brand: Бренд
+      select_brand: Виберіть бренд...

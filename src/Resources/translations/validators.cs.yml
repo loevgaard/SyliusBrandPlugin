@@ -2,15 +2,15 @@
 loevgaard_sylius_brand:
   brand:
     code:
-      max_length: Brand code must not be longer than {{ limit }} characters|Brand code must not be longer than {{ limit }} characters.
-      not_blank: Please enter brand code.
-      regex: Brand code can only be comprised of letters, numbers, dashes and underscores.
-      unique: Brand code must be unique.
+      max_length: Kód značky nesmí být delší než {{ limit }} znaků|Kód značky nesmí být delší než {{ limit }} znaků.
+      not_blank: Zadejte kód značky.
+      regex: Kód značky může obsahovat pouze písmena, číslice, pomlčky a podtržítka.
+      unique: Kód značky musí být unikátní.
     name:
-      max_length: Brand name must not be longer than {{ limit }} characters|Brand name must not be longer than {{ limit }} characters.
-      min_length: Brand name must be at least {{ limit }} characters long|Brand name must be at least {{ limit }} characters long.
-      not_blank: Please enter brand name.
+      max_length: Název značky nesmí být delší než {{ limit }} znaků|Název značky nesmí být delší než {{ limit }} znaků.
+      min_length: Název značky musí být delší než {{ limit }} znaky|Název musí být delší než {{ limit }} znaky.
+      not_blank: Zadejte název značky.
   brand_image:
     file:
-      max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
-      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+      max_size: Obrázek je příliš velký - {{ size }}{{ suffix }}. Maximální povolená velikost je {{ limit }}{{ suffix }}.
+      upload_ini_size: Obrázek je příliš velký. Maximální povolená velikost je {{ limit }}{{ suffix }}.
