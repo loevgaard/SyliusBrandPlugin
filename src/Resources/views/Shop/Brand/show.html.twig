@@ -1,0 +1,17 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block title %}
+    {{ brand.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="ui breadcrumb">
+        <a href="{{ path('sylius_shop_homepage') }}" class="section">{{ 'sylius.ui.home'|trans }}</a>
+        <div class="divider"> /</div>
+        <div class="active section">{{ brand.name }}</div>
+    </div>
+
+    <h1 class="ui header">
+        {{ brand.name }}
+    </h1>
+{% endblock %}

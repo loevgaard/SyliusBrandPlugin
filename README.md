@@ -13,6 +13,8 @@ If you want to add a brand to your products this is the plugin to use. Use cases
 
 ## Screenshots
 
+<details><summary>CLICK TO SEE</summary>
+
 Menu:
 
 ![Screenshot showing admin menu](docs/images/admin-menu-with-brand.png)
@@ -32,6 +34,8 @@ Products admin pages:
 ![Screenshot showing product admin index page with brand column](docs/images/admin-product-index-brand-column.png)
 
 ![Screenshot showing brand tab at product admin update page](docs/images/admin-product-update-tab-brand.png)
+
+</details>
 
 ## Installation
 
@@ -97,10 +101,10 @@ loevgaard_sylius_brand:
     
     namespace App\Entity;
 
+    use Doctrine\ORM\Mapping as ORM;
     use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
     use Loevgaard\SyliusBrandPlugin\Model\ProductTrait as LoevgaardSyliusBrandPluginProductTrait;
     use Sylius\Component\Core\Model\Product as BaseProduct;
-    use Doctrine\ORM\Mapping as ORM;
     
     /**
      * @ORM\Entity
@@ -184,7 +188,7 @@ sylius_product:
     resources:
         product:
             classes:
-                model: App\Model\Product
+                model: App\Model\Product # Or App\Entity\Product
                 repository: App\Doctrine\ORM\ProductRepository
 
 ```  
@@ -224,12 +228,16 @@ $ php bin/console doctrine:migrations:migrate
                     loevgaard_sylius_brand_plugin_brand:
                         options:
                             custom:
-                                flux:
+                                my_brand:
                                     name: 'My brand'
                                     code: 'my-brand'
                                     images:
-                                      - type: logo
-                                        path: logos/my-brand.jpg
+                                        local_image:
+                                            type: logo
+                                            path: images/my-brand/logo.jpg
+                                        3rd_party_plugin_image:
+                                            type: black-and-white
+                                            path: '@SomePlugin/Resources/images/my-brand/black-and-white.jpg'
                                     products:
                                       - product_code_1
                                       - product_code_2

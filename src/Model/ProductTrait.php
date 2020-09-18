@@ -11,7 +11,7 @@ trait ProductTrait
     /**
      * @var BrandInterface
      *
-     * @ORM\ManyToOne(targetEntity="\Loevgaard\SyliusBrandPlugin\Model\BrandInterface", cascade={"all"}, fetch="EAGER", inversedBy="products")
+     * @ORM\ManyToOne(targetEntity="\Loevgaard\SyliusBrandPlugin\Model\BrandInterface", cascade={"persist"}, fetch="EAGER", inversedBy="products")
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="id", onDelete="SET NULL")
      */
     protected $brand;
