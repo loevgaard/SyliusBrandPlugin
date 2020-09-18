@@ -1,4 +1,4 @@
 ---
 loevgaard_sylius_brand:
   brand:
-    delete_error: 'The brand cannot be deleted. It is used by one or more products.'
+    delete_error: 'Mærket kan ikke slettes. Det bruges af et eller flere produkter'
