@@ -2,7 +2,7 @@
 loevgaard_sylius_brand:
   ui:
     name: Navn
-    code: Code
+    code: Kode
     brand: Mærke
     brands: Mærker
     brands_product_list: List products
@@ -11,8 +11,8 @@ loevgaard_sylius_brand:
     image: Billede
   form:
     brand:
-      name: Name
-      code: Code
+      name: Navn
+      code: Kode
       images: Billeder
     product:
       brand: Mærke
