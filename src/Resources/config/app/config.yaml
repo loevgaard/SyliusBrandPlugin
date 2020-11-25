@@ -1,8 +1,3 @@
-imports:
-    - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/loevgaard_sylius_brand_admin_api_brand.yaml"
-    - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/loevgaard_sylius_brand_admin_api_brand_image.yaml"
-    - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/loevgaard_sylius_brand_admin_brand.yaml"
-
 jms_serializer:
     metadata:
         directories:

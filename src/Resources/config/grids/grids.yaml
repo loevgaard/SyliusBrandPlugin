@@ -1,0 +1,4 @@
+imports:
+    - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/admin_api/brand.yaml"
+    - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/admin_api/brand_image.yaml"
+    - "@LoevgaardSyliusBrandPlugin/Resources/config/grids/admin/brand.yaml"
