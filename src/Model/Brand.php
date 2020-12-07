@@ -28,6 +28,16 @@ class Brand implements BrandInterface
      */
     protected $name;
 
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
+
     public function __construct()
     {
         $this->__imagesAwareTraitConstruct();
@@ -80,6 +90,22 @@ class Brand implements BrandInterface
     public function setName(?string $name): void
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt(): \DateTime
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt(): \DateTime
+    {
+        return $this->updatedAt;
     }
 
     public function addProduct(ProductInterface $product): void

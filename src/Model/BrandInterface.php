@@ -30,4 +30,14 @@ interface BrandInterface extends ResourceInterface, CodeAwareInterface, Products
      * @param string|null $name
      */
     public function setName(?string $name): void;
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt(): \DateTime;
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt(): \DateTime;
 }
