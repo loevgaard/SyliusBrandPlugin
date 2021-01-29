@@ -33,7 +33,7 @@
         "matthiasnoback/symfony-config-test": "^4.0",
         "phpspec/phpspec": "^5.0",
         "phpstan/phpstan-doctrine": "^0.10",
-        "phpstan/phpstan-shim": "^0.10",
+        "phpstan/phpstan-shim": "^0.12",
         "phpstan/phpstan-symfony": "^0.10",
         "phpstan/phpstan-webmozart-assert": "^0.10",
         "phpunit/phpunit": "^8.0",
