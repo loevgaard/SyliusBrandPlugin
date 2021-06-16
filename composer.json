@@ -29,7 +29,7 @@
         "friends-of-behat/variadic-extension": "^1.1",
         "lakion/mink-debug-extension": "^1.2.3",
         "lchrusciel/api-test-case": "^4.0",
-        "localheinz/composer-normalize": "^1.2",
+        "localheinz/composer-normalize": "^2.15",
         "matthiasnoback/symfony-config-test": "^4.0",
         "phpspec/phpspec": "^5.0",
         "phpstan/phpstan-doctrine": "^0.10",
