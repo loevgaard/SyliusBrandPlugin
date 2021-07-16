@@ -6,7 +6,7 @@ loevgaard_sylius_brand_admin_brand:
     resource: |
         alias: loevgaard_sylius_brand.brand
         section: admin
-        templates: SyliusAdminBundle:Crud
+        templates: "@SyliusAdmin\\Crud"
         redirect: update
         grid: loevgaard_sylius_brand_admin_brand
         vars:
