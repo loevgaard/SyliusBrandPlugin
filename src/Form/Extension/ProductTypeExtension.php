@@ -32,9 +32,4 @@ class ProductTypeExtension extends AbstractTypeExtension
             ProductType::class,
         ];
     }
-
-    public function getExtendedType(): string
-    {
-        return ProductType::class;
-    }
 }
