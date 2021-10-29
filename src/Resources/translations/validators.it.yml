@@ -8,9 +8,9 @@ loevgaard_sylius_brand:
       unique: Il codice del brand deve essere univoco.
     name:
       max_length: Il nome del brand non può essere più lungo di {{ limit }} caratteri|Il nome del brand non può essere più lungo di {{ limit }} caratteri.
-      min_length: Brand name must be at least {{ limit }} characters long|Brand name must be at least {{ limit }} characters long.
-      not_blank: Please enter brand name.
+      min_length: Il nome del brand deve essere lungo almeno {{ limit }} caratteri|Il nome del brand deve essere lungo almeno {{ limit }} caratteri.
+      not_blank: Per favore inserire il nome del brand.
   brand_image:
     file:
-      max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
-      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+      max_size: L'immagine è troppo grande - {{ size }}{{ suffix }}. La grandezza massima permessa è {{ limit }}{{ suffix }}.
+      upload_ini_size: L'immagine è troppo grande. La grandezza massima permessa è {{ limit }}{{ suffix }}.
