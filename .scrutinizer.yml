@@ -5,6 +5,8 @@ build:
                 override:
                     - php-scrutinizer-run
     environment:
+        php:
+            version: "7.4"
         variables:
             COMPOSER_MEMORY_LIMIT: -1
 
