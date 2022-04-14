@@ -4,7 +4,6 @@
     "description": "A Sylius plugin for handling brands",
     "license": "MIT",
     "require": {
-        "php": "^7.2",
         "sylius/sylius": "^1.3"
     },
     "conflict": {
