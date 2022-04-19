@@ -4,13 +4,13 @@ loevgaard_sylius_brand:
     code:
       max_length: Prekės ženklo kodo ilgis negali viršyti {{ limit }} simbolio.|Prekės ženklo kodo ilgis negali viršyti {{ limit }} simbolių.|Prekės ženklo kodo ilgis negali viršyti {{ limit }} simbolių.
       not_blank: Įveskite prekės ženklo kodą.
-      regex: Brand code can only be comprised of letters, numbers, dashes and underscores.
-      unique: Brand code must be unique.
+      regex: Prekės ženklo kodą gali sudaryti tik lotyniškos raidės, skaitmenys, brūkšneliai ir pabraukimo simboliai.
+      unique: Prekės ženklo kodas turi būti unikalus.
     name:
-      max_length: Brand name must not be longer than {{ limit }} characters|Brand name must not be longer than {{ limit }} characters.
-      min_length: Brand name must be at least {{ limit }} characters long|Brand name must be at least {{ limit }} characters long.
-      not_blank: Please enter brand name.
+      max_length: Prekės ženklo pavadinimas negali viršyti {{ limit }} simbolio.|Prekės ženklo pavadinimas negali viršyti {{ limit }} simbolių.|Prekės ženklo pavadinimas negali viršyti {{ limit }} simbolių.
+      min_length: Prekės ženklo pavadinimą turi sudaryti bent {{ limit }} simbolis.|Prekės ženklo pavadinimą turi sudaryti bent {{ limit }} simboliai.|Prekės ženklo pavadinimą turi sudaryti bent {{ limit }} simbolių.
+      not_blank: Įveskite prekės ženklo pavadinimą.
   brand_image:
     file:
-      max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
-      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+      max_size: Šis paveikslas per didelis – {{ size }} {{ suffix }}. Maksimalus leistinas dydis yra {{ limit }} {{ suffix }}.
+      upload_ini_size: Šis paveikslas per didelis. Maksimalus leistinas dydis yra {{ limit }} {{ suffix }}.
