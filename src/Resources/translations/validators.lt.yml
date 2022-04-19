@@ -2,8 +2,8 @@
 loevgaard_sylius_brand:
   brand:
     code:
-      max_length: Brand code must not be longer than {{ limit }} characters|Brand code must not be longer than {{ limit }} characters.
-      not_blank: Please enter brand code.
+      max_length: Prekės ženklo kodo ilgis negali viršyti {{ limit }} simbolio.|Prekės ženklo kodo ilgis negali viršyti {{ limit }} simbolių.|Prekės ženklo kodo ilgis negali viršyti {{ limit }} simbolių.
+      not_blank: Įveskite prekės ženklo kodą.
       regex: Brand code can only be comprised of letters, numbers, dashes and underscores.
       unique: Brand code must be unique.
     name:
