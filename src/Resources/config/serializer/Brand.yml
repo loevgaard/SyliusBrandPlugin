@@ -15,10 +15,6 @@ Loevgaard\SyliusBrandPlugin\Model\Brand:
             expose: true
             type: string
             groups: [Default, Detailed, Autocomplete]
-        images:
-            expose: true
-            type: array
-            groups: [Detailed]
     relations:
         -   rel: self
             href:
