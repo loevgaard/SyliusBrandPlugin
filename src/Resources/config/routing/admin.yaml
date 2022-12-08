@@ -9,6 +9,7 @@ loevgaard_sylius_brand_admin_brand:
         templates: "@SyliusAdmin\\Crud"
         redirect: update
         grid: loevgaard_sylius_brand_admin_brand
+        permission: true
         vars:
             all:
                 subheader: loevgaard_sylius_brand.ui.brand
