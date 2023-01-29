@@ -1,0 +1,19 @@
+---
+loevgaard_sylius_brand:
+  ui:
+    name: Pavadinimas
+    code: Kodas
+    brand: Prekės ženklas
+    brands: Prekių ženklai
+    brands_product_list: Peržiūrėti prekes
+    edit_brand: Prekės ženklo redagavimas
+    new_brand: Naujas prekės ženklas
+    image: Paveikslas
+  form:
+    brand:
+      name: Pavadinimas
+      code: Kodas
+      images: Paveikslai
+    product:
+      brand: Prekės ženklas
+      select_brand: Pasirinkite prekės ženklą...

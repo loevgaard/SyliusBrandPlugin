@@ -1,0 +1,16 @@
+---
+loevgaard_sylius_brand:
+  brand:
+    code:
+      max_length: Prekės ženklo kodo ilgis negali viršyti {{ limit }} simbolio.|Prekės ženklo kodo ilgis negali viršyti {{ limit }} simbolių.|Prekės ženklo kodo ilgis negali viršyti {{ limit }} simbolių.
+      not_blank: Įveskite prekės ženklo kodą.
+      regex: Prekės ženklo kodą gali sudaryti tik lotyniškos raidės, skaitmenys, brūkšneliai ir pabraukimo simboliai.
+      unique: Prekės ženklo kodas turi būti unikalus.
+    name:
+      max_length: Prekės ženklo pavadinimas negali viršyti {{ limit }} simbolio.|Prekės ženklo pavadinimas negali viršyti {{ limit }} simbolių.|Prekės ženklo pavadinimas negali viršyti {{ limit }} simbolių.
+      min_length: Prekės ženklo pavadinimą turi sudaryti bent {{ limit }} simbolis.|Prekės ženklo pavadinimą turi sudaryti bent {{ limit }} simboliai.|Prekės ženklo pavadinimą turi sudaryti bent {{ limit }} simbolių.
+      not_blank: Įveskite prekės ženklo pavadinimą.
+  brand_image:
+    file:
+      max_size: Šis paveikslas per didelis – {{ size }} {{ suffix }}. Maksimalus leistinas dydis yra {{ limit }} {{ suffix }}.
+      upload_ini_size: Šis paveikslas per didelis. Maksimalus leistinas dydis yra {{ limit }} {{ suffix }}.

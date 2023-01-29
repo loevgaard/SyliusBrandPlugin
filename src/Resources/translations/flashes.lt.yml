@@ -1,0 +1,4 @@
+---
+loevgaard_sylius_brand:
+  brand:
+    delete_error: 'Prekės ženklo pašalinti negalima – jis susietas su bent viena preke.'
