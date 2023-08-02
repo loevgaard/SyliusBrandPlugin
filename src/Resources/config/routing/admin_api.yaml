@@ -25,7 +25,7 @@ loevgaard_sylius_brand_admin_api_brand_product_index:
     path: /brands/{code}/products/
     methods: [GET]
     defaults:
-        _controller: sylius.controller.product:indexAction
+        _controller: sylius.controller.product::indexAction
         _sylius:
             serialization_version: $version
             section: admin_api
