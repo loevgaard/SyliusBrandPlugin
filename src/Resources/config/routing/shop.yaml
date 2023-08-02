@@ -2,7 +2,7 @@ loevgaard_sylius_brand_shop_brand_show:
     path: /brand/{code}
     methods: [GET]
     defaults:
-        _controller: loevgaard_sylius_brand.controller.brand:showAction
+        _controller: loevgaard_sylius_brand.controller.brand::showAction
         _sylius:
             template: "@LoevgaardSyliusBrandPlugin/Shop/Brand/show.html.twig"
             repository:

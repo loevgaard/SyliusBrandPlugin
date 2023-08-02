@@ -2,7 +2,7 @@ loevgaard_sylius_brand_admin_ajax_brands_by_phrase:
     path: /search
     methods: [GET]
     defaults:
-        _controller: loevgaard_sylius_brand.controller.brand:indexAction
+        _controller: loevgaard_sylius_brand.controller.brand::indexAction
         _format: json
         _sylius:
             serialization_groups: [Autocomplete]
@@ -16,7 +16,7 @@ loevgaard_sylius_brand_admin_ajax_brand_by_code:
     path: /
     methods: [GET]
     defaults:
-        _controller: loevgaard_sylius_brand.controller.brand:indexAction
+        _controller: loevgaard_sylius_brand.controller.brand::indexAction
         _format: json
         _sylius:
             serialization_groups: [Autocomplete]

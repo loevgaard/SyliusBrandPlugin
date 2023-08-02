@@ -22,7 +22,7 @@ loevgaard_sylius_brand_admin_api_brand_image_index_by_type:
     path: /images/by-type/{type}
     methods: [GET]
     defaults:
-        _controller: loevgaard_sylius_brand.controller.brand_image:indexAction
+        _controller: loevgaard_sylius_brand.controller.brand_image::indexAction
         _sylius:
             serialization_version: $version
             section: admin_api
