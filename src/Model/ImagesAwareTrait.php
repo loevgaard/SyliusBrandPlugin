@@ -31,9 +31,7 @@ trait ImagesAwareTrait
      */
     public function getImagesByType(string $type): Collection
     {
-        return $this->images->filter(function (ImageInterface $image) use ($type) {
-            return $type === $image->getType();
-        });
+        return $this->images->filter(fn (ImageInterface $image) => $type === $image->getType());
     }
 
     /**

@@ -11,12 +11,8 @@ use Webmozart\Assert\Assert;
 
 final class ImageUploadListener
 {
-    /** @var ImageUploaderInterface */
-    private $uploader;
-
-    public function __construct(ImageUploaderInterface $uploader)
+    public function __construct(private readonly ImageUploaderInterface $uploader)
     {
-        $this->uploader = $uploader;
     }
 
     public function uploadImage(ResourceControllerEvent $event): void

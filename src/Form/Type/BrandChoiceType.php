@@ -14,12 +14,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class BrandChoiceType extends AbstractType
 {
-    /** @var RepositoryInterface */
-    private $brandRepository;
-
-    public function __construct(RepositoryInterface $brandRepository)
+    public function __construct(private readonly RepositoryInterface $brandRepository)
     {
-        $this->brandRepository = $brandRepository;
     }
 
     /**
@@ -38,9 +34,7 @@ final class BrandChoiceType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'choices' => function (Options $options) {
-                return $this->brandRepository->findAll();
-            },
+            'choices' => fn (Options $options) => $this->brandRepository->findAll(),
             'choice_value' => 'code',
             'choice_label' => 'name',
             'choice_translation_domain' => false,

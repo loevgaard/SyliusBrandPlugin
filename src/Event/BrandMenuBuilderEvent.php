@@ -11,14 +11,9 @@ use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
 
 class BrandMenuBuilderEvent extends MenuBuilderEvent
 {
-    /** @var BrandInterface */
-    private $brand;
-
-    public function __construct(FactoryInterface $factory, ItemInterface $menu, BrandInterface $brand)
+    public function __construct(FactoryInterface $factory, ItemInterface $menu, private readonly BrandInterface $brand)
     {
         parent::__construct($factory, $menu);
-
-        $this->brand = $brand;
     }
 
     public function getBrand(): BrandInterface

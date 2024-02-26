@@ -10,12 +10,8 @@ use Sylius\Component\Resource\Factory\FactoryInterface;
 
 class BrandImageFactory implements BrandImageFactoryInterface
 {
-    /** @var FactoryInterface */
-    private $factory;
-
-    public function __construct(FactoryInterface $factory)
+    public function __construct(private readonly FactoryInterface $factory)
     {
-        $this->factory = $factory;
     }
 
     /**
