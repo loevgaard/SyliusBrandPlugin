@@ -12,6 +12,7 @@
         "sylius/admin-bundle": "^1.0",
         "sylius/core": "^1.0",
         "sylius/core-bundle": "^1.0",
+        "sylius/product-bundle": "^1.0",
         "sylius/resource-bundle": "^1.6",
         "sylius/ui-bundle": "^1.0",
         "symfony/config": "^5.4",
@@ -25,6 +26,7 @@
     },
     "require-dev": {
         "setono/code-quality-pack": "^2.7",
+        "sylius/admin-api-bundle": "^1.11",
         "sylius/sylius": "~1.11.15"
     },
     "minimum-stability": "dev",

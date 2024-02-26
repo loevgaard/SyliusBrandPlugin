@@ -1,0 +1,20 @@
+{
+  "symbol-whitelist": [
+    "null",
+    "true",
+    "false",
+    "static",
+    "self",
+    "parent",
+    "array",
+    "string",
+    "int",
+    "float",
+    "bool",
+    "iterable",
+    "callable",
+    "void",
+    "object",
+    "Sylius\\Bundle\\AdminApiBundle\\Form\\Type\\ProductType"
+  ]
+}
