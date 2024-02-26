@@ -6,6 +6,7 @@
     "require": {
         "php": ">=8.1",
         "doctrine/collections": "^1.8",
+        "doctrine/orm": "^2.15",
         "fakerphp/faker": "^1.23",
         "knplabs/knp-menu": "^3.4",
         "psr/event-dispatcher": "^1.0",
