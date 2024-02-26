@@ -348,7 +348,7 @@ EOT;
                 ['file' => new UploadedFile(sprintf('%s/../Resources/fixtures/php-logo-transparent-background.png', __DIR__), 'php-logo-transparent-background')],
             ]],
             static::$authorizedHeaderWithContentType,
-            $data
+            $data,
         );
 
         $response = $this->client->getResponse();
@@ -396,7 +396,6 @@ EOT;
         $this->assertResponse($response, 'brand/show_after_partial_update_response');
     }
 
-
     /**
      * @test
      */
@@ -422,7 +421,7 @@ EOT;
             'resources/brands.yml',
         ]);
 
-        # Code field is not updatable
+        // Code field is not updatable
         $data =
 <<<EOT
         {
@@ -442,13 +441,12 @@ EOT;
 
     /**
      * @param BrandInterface|string $brand
-     * @return string
      */
     private function getBrandUrl($brand = ''): string
     {
         return sprintf(
             '/api/v1/brands/%s',
-            $brand instanceof BrandInterface ? $brand->getCode() : $brand
+            $brand instanceof BrandInterface ? $brand->getCode() : $brand,
         );
     }
 }

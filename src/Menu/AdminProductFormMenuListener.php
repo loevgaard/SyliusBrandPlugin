@@ -8,9 +8,6 @@ use Sylius\Bundle\AdminBundle\Event\ProductMenuBuilderEvent;
 
 final class AdminProductFormMenuListener
 {
-    /**
-     * @param ProductMenuBuilderEvent $event
-     */
     public function addItems(ProductMenuBuilderEvent $event): void
     {
         $menu = $event->getMenu();

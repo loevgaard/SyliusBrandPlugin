@@ -36,7 +36,7 @@ final class BrandImageApiTest extends AbstractApiTestCase
             'resources/brands.yml',
         ]);
 
-        $this->client->request('GET', $this->getBrandImageUrl($entities['brand_setono'],-1), [], [], static::$authorizedHeaderWithAccept);
+        $this->client->request('GET', $this->getBrandImageUrl($entities['brand_setono'], -1), [], [], static::$authorizedHeaderWithAccept);
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'error/not_found_response', Response::HTTP_NOT_FOUND);
@@ -226,7 +226,7 @@ EOT;
             [],
             ['file' => new UploadedFile(sprintf('%s/../Resources/fixtures/php-logo.png', __DIR__), 'php-logo')],
             static::$authorizedHeaderWithContentType,
-            $data
+            $data,
         );
 
         $response = $this->client->getResponse();
@@ -317,30 +317,23 @@ EOT;
     }
 
     /**
-     * @param BrandInterface $brand
      * @param BrandImageInterface|string $brandImage
-     * @return string
      */
     private function getBrandImageUrl(BrandInterface $brand, $brandImage = ''): string
     {
-        return sprintf('/api/v1/brands/%s/images/%s',
+        return sprintf(
+            '/api/v1/brands/%s/images/%s',
             $brand->getCode(),
-            $brandImage instanceof BrandImageInterface ? $brandImage->getId() : $brandImage
+            $brandImage instanceof BrandImageInterface ? $brandImage->getId() : $brandImage,
         );
     }
 
-    /**
-     * @param BrandInterface $brand
-     * @param string $type
-     * @return string
-     */
     private function getBrandImageByTypeUrl(BrandInterface $brand, string $type): string
     {
         return sprintf(
             '/api/v1/brands/%s/images/by-type/%s',
             $brand->getCode(),
-            $type
+            $type,
         );
     }
-
 }

@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      *
      * @throws \Exception
      */

@@ -13,19 +13,13 @@ class Brand implements BrandInterface
         ImagesAwareTrait::__construct as private __imagesAwareTraitConstruct;
     }
 
-    /**
-     * @var int
-     */
+    /** @var int */
     protected $id;
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     protected $code;
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     protected $name;
 
     public function __construct()
@@ -35,7 +29,7 @@ class Brand implements BrandInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function __toString(): string
     {
@@ -43,7 +37,7 @@ class Brand implements BrandInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getId(): ?int
     {
@@ -67,7 +61,7 @@ class Brand implements BrandInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getName(): ?string
     {
@@ -75,7 +69,7 @@ class Brand implements BrandInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function setName(?string $name): void
     {

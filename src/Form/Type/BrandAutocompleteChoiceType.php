@@ -13,7 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 final class BrandAutocompleteChoiceType extends AbstractType
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
@@ -25,7 +25,7 @@ final class BrandAutocompleteChoiceType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
@@ -34,7 +34,7 @@ final class BrandAutocompleteChoiceType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getBlockPrefix(): string
     {
@@ -42,7 +42,7 @@ final class BrandAutocompleteChoiceType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getParent(): string
     {

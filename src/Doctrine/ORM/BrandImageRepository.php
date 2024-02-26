@@ -11,7 +11,7 @@ use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 class BrandImageRepository extends EntityRepository implements BrandImageRepositoryInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function createListQueryBuilder(string $brandCode): QueryBuilder
     {
@@ -19,11 +19,11 @@ class BrandImageRepository extends EntityRepository implements BrandImageReposit
             ->addSelect('brand')
             ->innerJoin('o.owner', 'brand', 'WITH', 'brand.code = :brandCode')
             ->setParameter('brandCode', $brandCode)
-            ;
+        ;
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function createPaginatorForBrandAndType(BrandInterface $brand, string $type): iterable
     {

@@ -13,19 +13,13 @@ use Webmozart\Assert\Assert;
 
 final class ManagingBrandsContext implements Context
 {
-    /**
-     * @var IndexBrandPage
-     */
+    /** @var IndexBrandPage */
     private $indexBrandPage;
 
-    /**
-     * @var CreateBrandPage
-     */
+    /** @var CreateBrandPage */
     private $createBrandPage;
 
-    /**
-     * @var UpdateBrandPage
-     */
+    /** @var UpdateBrandPage */
     private $updateBrandPage;
 
     public function __construct(IndexBrandPage $indexBrandPage, CreateBrandPage $createBrandPage, UpdateBrandPage $updateBrandPage)
@@ -76,7 +70,7 @@ final class ManagingBrandsContext implements Context
 
         Assert::true(
             $this->indexBrandPage->isSingleResourceOnPage(['name' => $brand]),
-            sprintf('Brand %s should exist but it does not', $brand)
+            sprintf('Brand %s should exist but it does not', $brand),
         );
     }
 

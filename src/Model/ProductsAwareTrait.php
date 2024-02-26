@@ -9,13 +9,11 @@ use Doctrine\Common\Collections\Collection;
 
 trait ProductsAwareTrait
 {
-    /**
-     * @var Collection|ProductInterface[]
-     */
+    /** @var Collection|ProductInterface[] */
     protected $products;
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function __construct()
     {
@@ -23,7 +21,7 @@ trait ProductsAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function hasProducts(): bool
     {
@@ -31,7 +29,7 @@ trait ProductsAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getProducts(): Collection
     {
@@ -39,7 +37,7 @@ trait ProductsAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function hasProduct(ProductInterface $product): bool
     {
@@ -47,12 +45,12 @@ trait ProductsAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     abstract public function addProduct(ProductInterface $product): void;
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     abstract public function removeProduct(ProductInterface $product): void;
 }

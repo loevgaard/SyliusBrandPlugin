@@ -10,9 +10,7 @@ use Sylius\Component\Core\Model\ImageInterface;
 
 trait ImagesAwareTrait
 {
-    /**
-     * @var Collection|ImageInterface[]
-     */
+    /** @var Collection|ImageInterface[] */
     protected $images;
 
     public function __construct()
@@ -21,7 +19,7 @@ trait ImagesAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getImages(): Collection
     {
@@ -29,7 +27,7 @@ trait ImagesAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getImagesByType(string $type): Collection
     {
@@ -39,7 +37,7 @@ trait ImagesAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function hasImages(): bool
     {
@@ -47,7 +45,7 @@ trait ImagesAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function hasImage(ImageInterface $image): bool
     {
@@ -55,7 +53,7 @@ trait ImagesAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function addImage(ImageInterface $image): void
     {
@@ -66,7 +64,7 @@ trait ImagesAwareTrait
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function removeImage(ImageInterface $image): void
     {

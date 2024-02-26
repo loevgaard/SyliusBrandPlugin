@@ -11,14 +11,10 @@ use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 final class BrandContext implements Context
 {
-    /**
-     * @var RepositoryInterface
-     */
+    /** @var RepositoryInterface */
     private $brandRepository;
 
-    /**
-     * @var FactoryInterface
-     */
+    /** @var FactoryInterface */
     private $brandFactory;
 
     public function __construct(RepositoryInterface $brandRepository, FactoryInterface $brandFactory)

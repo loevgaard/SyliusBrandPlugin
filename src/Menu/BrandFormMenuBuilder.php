@@ -30,7 +30,7 @@ final class BrandFormMenuBuilder
             /**
              * It could return null only if we pass null, but we pass not null in any case
              *
-             * @var ContractsEventDispatcherInterface
+             * @var ContractsEventDispatcherInterface $eventDispatcher
              */
             $eventDispatcher = LegacyEventDispatcherProxy::decorate($eventDispatcher);
         }
@@ -62,12 +62,12 @@ final class BrandFormMenuBuilder
         if (class_exists('Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy')) {
             $this->eventDispatcher->dispatch(
                 new BrandMenuBuilderEvent($this->factory, $menu, $options['brand']),
-                self::EVENT_NAME
+                self::EVENT_NAME,
             );
         } else {
             $this->eventDispatcher->dispatch(
                 self::EVENT_NAME,
-                new BrandMenuBuilderEvent($this->factory, $menu, $options['brand'])
+                new BrandMenuBuilderEvent($this->factory, $menu, $options['brand']),
             );
         }
 

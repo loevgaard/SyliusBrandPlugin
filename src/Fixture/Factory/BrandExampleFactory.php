@@ -45,7 +45,7 @@ class BrandExampleFactory extends AbstractExampleFactory
         FactoryInterface $brandFactory,
         FactoryInterface $productImageFactory,
         ImageUploaderInterface $imageUploader,
-        FileLocatorInterface $fileLocator
+        FileLocatorInterface $fileLocator,
     ) {
         $this->productRepository = $productRepository;
         $this->productAssigner = $productAssigner;

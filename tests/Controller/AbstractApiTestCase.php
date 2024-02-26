@@ -29,7 +29,6 @@ abstract class AbstractApiTestCase extends JsonApiTestCase
     ];
 
     /**
-     * @param array $additionalFixtureFiles
      * @return array
      */
     protected function loadDefaultFixtureFiles(array $additionalFixtureFiles = [])
@@ -37,8 +36,8 @@ abstract class AbstractApiTestCase extends JsonApiTestCase
         return $this->loadFixturesFromFile(
             array_merge(
                 $this->defaultFixtureFiles,
-                $additionalFixtureFiles
-            )
+                $additionalFixtureFiles,
+            ),
         );
     }
 
@@ -55,7 +54,7 @@ abstract class AbstractApiTestCase extends JsonApiTestCase
             $source = [$source];
         }
 
-        $source = array_map(function($filename){
+        $source = array_map(function ($filename) {
             $filename = $this->getFixtureRealPath($filename);
             $this->assertSourceExists($filename);
 
@@ -63,7 +62,7 @@ abstract class AbstractApiTestCase extends JsonApiTestCase
         }, $source);
 
         return $this->getFixtureLoader()->load($source, [
-            'persist_once'=>false
+            'persist_once' => false,
         ]);
     }
 
@@ -84,7 +83,7 @@ abstract class AbstractApiTestCase extends JsonApiTestCase
      */
     private function getCalledClassFolder()
     {
-        $calledClass = get_called_class();
+        $calledClass = static::class;
         $calledClassFolder = dirname((new \ReflectionClass($calledClass))->getFileName());
 
         $this->assertSourceExists($calledClassFolder);
@@ -117,7 +116,7 @@ abstract class AbstractApiTestCase extends JsonApiTestCase
     {
         if (null === $this->dataFixturesPath) {
             $this->dataFixturesPath = isset($_SERVER['FIXTURES_DIR']) ?
-                PathBuilder::build($this->getRootDir(), $_SERVER['FIXTURES_DIR'] ) :
+                PathBuilder::build($this->getRootDir(), $_SERVER['FIXTURES_DIR']) :
                 PathBuilder::build($this->getCalledClassFolder(), '..', 'DataFixtures', 'ORM');
         }
 
