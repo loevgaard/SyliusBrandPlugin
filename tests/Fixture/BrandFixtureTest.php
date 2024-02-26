@@ -33,9 +33,6 @@ class BrandFixtureTest extends TestCase
         $this->assertConfigurationIsValid([['custom' => [['products' => []]]]], 'custom.*.products');
     }
 
-    /**
-     * @inheritdoc
-     */
     protected function getConfiguration(): BrandFixture
     {
         return new BrandFixture(

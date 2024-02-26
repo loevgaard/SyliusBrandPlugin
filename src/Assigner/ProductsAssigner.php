@@ -9,9 +9,6 @@ use Loevgaard\SyliusBrandPlugin\Model\ProductInterface;
 
 final class ProductsAssigner implements ProductsAssignerInterface
 {
-    /**
-     * @inheritdoc
-     */
     public function assign(BrandInterface $brand, array $products): void
     {
         foreach ($products as $product) {

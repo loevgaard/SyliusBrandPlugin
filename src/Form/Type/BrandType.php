@@ -12,9 +12,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 final class BrandType extends AbstractResourceType
 {
-    /**
-     * @inheritdoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -33,9 +30,6 @@ final class BrandType extends AbstractResourceType
             ]);
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getBlockPrefix(): string
     {
         return 'loevgaard_sylius_brand_brand';

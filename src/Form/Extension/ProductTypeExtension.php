@@ -11,9 +11,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class ProductTypeExtension extends AbstractTypeExtension
 {
-    /**
-     * @inheritdoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->add('brand', BrandAutocompleteChoiceType::class, [
@@ -23,9 +20,6 @@ class ProductTypeExtension extends AbstractTypeExtension
         ]);
     }
 
-    /**
-     * @inheritdoc
-     */
     public static function getExtendedTypes(): iterable
     {
         return [

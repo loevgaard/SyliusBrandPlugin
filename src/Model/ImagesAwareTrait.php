@@ -18,43 +18,26 @@ trait ImagesAwareTrait
         $this->images = new ArrayCollection();
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getImages(): Collection
     {
         return $this->images;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getImagesByType(string $type): Collection
     {
-        return $this->images->filter(function (ImageInterface $image) use ($type) {
-            return $type === $image->getType();
-        });
+        return $this->images->filter(fn (ImageInterface $image) => $type === $image->getType());
     }
 
-    /**
-     * @inheritdoc
-     */
     public function hasImages(): bool
     {
         return !$this->images->isEmpty();
     }
 
-    /**
-     * @inheritdoc
-     */
     public function hasImage(ImageInterface $image): bool
     {
         return $this->images->contains($image);
     }
 
-    /**
-     * @inheritdoc
-     */
     public function addImage(ImageInterface $image): void
     {
         if (false === $this->hasImage($image)) {
@@ -63,9 +46,6 @@ trait ImagesAwareTrait
         }
     }
 
-    /**
-     * @inheritdoc
-     */
     public function removeImage(ImageInterface $image): void
     {
         if ($this->hasImage($image)) {

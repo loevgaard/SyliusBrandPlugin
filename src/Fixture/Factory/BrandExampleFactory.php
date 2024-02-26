@@ -103,7 +103,7 @@ class BrandExampleFactory extends AbstractExampleFactory
             if (is_array($imagePath)) {
                 $imagePath = $imagePath[array_key_first($imagePath)];
             }
-            $uploadedImage = new UploadedFile($imagePath, basename($imagePath));
+            $uploadedImage = new UploadedFile($imagePath, basename((string) $imagePath));
 
             /** @var BrandImageInterface $brandImage */
             $brandImage = $this->productImageFactory->createNew();

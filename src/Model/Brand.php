@@ -28,17 +28,11 @@ class Brand implements BrandInterface
         $this->__productsAwareTraitConstruct();
     }
 
-    /**
-     * @inheritdoc
-     */
     public function __toString(): string
     {
         return (string) $this->getName();
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getId(): ?int
     {
         return $this->id;
@@ -60,17 +54,11 @@ class Brand implements BrandInterface
         $this->code = $code;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function setName(?string $name): void
     {
         $this->name = $name;

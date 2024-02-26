@@ -17,9 +17,6 @@ trait ProductRepositoryTrait
      */
     abstract public function createQueryBuilder($alias, $indexBy = null);
 
-    /**
-     * @inheritdoc
-     */
     public function createPaginatorForBrand(BrandInterface $brand): iterable
     {
         return $this->createQueryBuilder('o')

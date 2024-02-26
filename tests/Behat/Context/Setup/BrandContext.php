@@ -11,16 +11,8 @@ use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 final class BrandContext implements Context
 {
-    /** @var RepositoryInterface */
-    private $brandRepository;
-
-    /** @var FactoryInterface */
-    private $brandFactory;
-
-    public function __construct(RepositoryInterface $brandRepository, FactoryInterface $brandFactory)
+    public function __construct(private readonly RepositoryInterface $brandRepository, private readonly FactoryInterface $brandFactory)
     {
-        $this->brandRepository = $brandRepository;
-        $this->brandFactory = $brandFactory;
     }
 
     /**

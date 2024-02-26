@@ -18,9 +18,6 @@ class CreateBrandPage extends BaseCreatePage
         $this->getElement('code')->setValue($code);
     }
 
-    /**
-     * @inheritdoc
-     */
     protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [

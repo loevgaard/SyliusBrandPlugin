@@ -16,17 +16,12 @@ final class BrandFormMenuBuilder
 {
     public const EVENT_NAME = 'loevgaard_sylius_brand.menu.admin.brand.form';
 
-    /** @var FactoryInterface */
-    private $factory;
-
     /** @var EventDispatcherInterface */
     private $eventDispatcher;
 
-    public function __construct(FactoryInterface $factory, EventDispatcherInterface $eventDispatcher)
+    public function __construct(private readonly FactoryInterface $factory, EventDispatcherInterface $eventDispatcher)
     {
-        $this->factory = $factory;
-
-        if (class_exists('Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy')) {
+        if (class_exists(\Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy::class)) {
             /**
              * It could return null only if we pass null, but we pass not null in any case
              *
@@ -59,7 +54,7 @@ final class BrandFormMenuBuilder
             ->setLabel('sylius.ui.media')
         ;
 
-        if (class_exists('Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy')) {
+        if (class_exists(\Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy::class)) {
             $this->eventDispatcher->dispatch(
                 new BrandMenuBuilderEvent($this->factory, $menu, $options['brand']),
                 self::EVENT_NAME,

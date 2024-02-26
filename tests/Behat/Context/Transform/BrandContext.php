@@ -5,18 +5,13 @@ declare(strict_types=1);
 namespace Tests\Loevgaard\SyliusBrandPlugin\Behat\Context\Transform;
 
 use Behat\Behat\Context\Context;
-use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandRepositoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Webmozart\Assert\Assert;
 
 final class BrandContext implements Context
 {
-    /** @var BrandRepositoryInterface */
-    private $brandRepository;
-
-    public function __construct(RepositoryInterface $brandRepository)
+    public function __construct(private readonly RepositoryInterface $brandRepository)
     {
-        $this->brandRepository = $brandRepository;
     }
 
     /**

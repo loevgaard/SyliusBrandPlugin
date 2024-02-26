@@ -8,9 +8,6 @@ use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
 class BrandRepository extends EntityRepository implements BrandRepositoryInterface
 {
-    /**
-     * @inheritdoc
-     */
     public function findByPhrase(string $phrase): array
     {
         return $this->createQueryBuilder('o')

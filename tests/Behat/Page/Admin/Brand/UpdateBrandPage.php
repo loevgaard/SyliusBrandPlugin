@@ -23,9 +23,6 @@ class UpdateBrandPage extends UpdatePage
         return $this->getElement('name')->getValue();
     }
 
-    /**
-     * @inheritdoc
-     */
     protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [

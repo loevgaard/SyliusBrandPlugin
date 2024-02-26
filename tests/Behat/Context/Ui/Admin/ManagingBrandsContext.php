@@ -13,20 +13,8 @@ use Webmozart\Assert\Assert;
 
 final class ManagingBrandsContext implements Context
 {
-    /** @var IndexBrandPage */
-    private $indexBrandPage;
-
-    /** @var CreateBrandPage */
-    private $createBrandPage;
-
-    /** @var UpdateBrandPage */
-    private $updateBrandPage;
-
-    public function __construct(IndexBrandPage $indexBrandPage, CreateBrandPage $createBrandPage, UpdateBrandPage $updateBrandPage)
+    public function __construct(private readonly IndexBrandPage $indexBrandPage, private readonly CreateBrandPage $createBrandPage, private readonly UpdateBrandPage $updateBrandPage)
     {
-        $this->indexBrandPage = $indexBrandPage;
-        $this->createBrandPage = $createBrandPage;
-        $this->updateBrandPage = $updateBrandPage;
     }
 
     /**

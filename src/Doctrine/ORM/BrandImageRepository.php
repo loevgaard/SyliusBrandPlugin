@@ -10,9 +10,6 @@ use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
 class BrandImageRepository extends EntityRepository implements BrandImageRepositoryInterface
 {
-    /**
-     * @inheritdoc
-     */
     public function createListQueryBuilder(string $brandCode): QueryBuilder
     {
         return $this->createQueryBuilder('o')
@@ -22,9 +19,6 @@ class BrandImageRepository extends EntityRepository implements BrandImageReposit
         ;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function createPaginatorForBrandAndType(BrandInterface $brand, string $type): iterable
     {
         $queryBuilder = $this->createQueryBuilder('o')
