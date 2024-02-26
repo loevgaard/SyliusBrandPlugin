@@ -26,8 +26,8 @@
     },
     "require-dev": {
         "setono/code-quality-pack": "^2.7",
-        "sylius/admin-api-bundle": "^1.11",
-        "sylius/sylius": "~1.11.15"
+        "sylius/sylius": "~1.11.15",
+        "psalm/plugin-phpunit": "^0.18.4"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
