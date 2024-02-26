@@ -1,8 +1,8 @@
 {
     "name": "loevgaard/sylius-brand-plugin",
-    "type": "sylius-plugin",
     "description": "A Sylius plugin for handling brands",
     "license": "MIT",
+    "type": "sylius-plugin",
     "require": {
         "php": ">=8.1",
         "doctrine/collections": "^1.8",
@@ -23,10 +23,11 @@
         "webmozart/assert": "^1.11"
     },
     "require-dev": {
-        "friendsofsymfony/oauth-server-bundle": ">2.0.0-alpha.0 ^2.0@dev",
         "setono/code-quality-pack": "^2.7",
         "sylius/sylius": "~1.11.15"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Loevgaard\\SyliusBrandPlugin\\": "src/"
@@ -40,18 +41,17 @@
             "tests/Application/Kernel.php"
         ]
     },
-    "prefer-stable": true,
-    "scripts": {
-        "analyse": "psalm",
-        "check-style": "ecs check",
-        "fix-style": "ecs check --fix",
-        "phpunit": "phpunit"
-    },
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": false,
             "ergebnis/composer-normalize": true,
             "infection/extension-installer": true
         }
+    },
+    "scripts": {
+        "analyse": "psalm",
+        "check-style": "ecs check",
+        "fix-style": "ecs check --fix",
+        "phpunit": "phpunit"
     }
 }
