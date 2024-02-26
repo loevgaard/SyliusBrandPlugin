@@ -9,7 +9,6 @@
         "doctrine/orm": "^2.14",
         "fakerphp/faker": "^1.23",
         "knplabs/knp-menu": "^3.4",
-        "sylius/admin-api-bundle": "^1.11",
         "sylius/admin-bundle": "^1.0",
         "sylius/core": "^1.0",
         "sylius/core-bundle": "^1.0",
