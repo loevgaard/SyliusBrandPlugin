@@ -1,4 +1,0 @@
-suites:
-    main:
-        namespace: Loevgaard\SyliusBrandPlugin
-        psr4_prefix: Loevgaard\SyliusBrandPlugin
