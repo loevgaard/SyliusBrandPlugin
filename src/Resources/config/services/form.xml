@@ -26,7 +26,7 @@
                  class="Loevgaard\SyliusBrandPlugin\Form\Extension\Api\ProductTypeExtension">
             <argument>%loevgaard_sylius_brand.model.brand.class%</argument>
 
-            <tag name="form.type_extension" extended_type="Sylius\Bundle\AdminApiBundle\Form\Type\ProductType"/>
+            <tag name="form.type_extension"/>
         </service>
 
         <service id="loevgaard_sylius_brand.form.type.brand_choice"
