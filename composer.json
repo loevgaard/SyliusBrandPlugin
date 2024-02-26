@@ -26,6 +26,7 @@
     },
     "require-dev": {
         "setono/code-quality-pack": "^2.7",
+        "setono/sylius-behat-pack": "^0.2.2",
         "sylius/sylius": "~1.11.15",
         "psalm/plugin-phpunit": "^0.18.4"
     },
