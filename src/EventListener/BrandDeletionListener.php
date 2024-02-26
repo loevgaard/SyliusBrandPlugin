@@ -12,8 +12,6 @@ final class BrandDeletionListener
 {
     /**
      * Prevent brand deletion if it used in product
-     *
-     * @param ResourceControllerEvent $event
      */
     public function onBrandPreDelete(ResourceControllerEvent $event): void
     {
@@ -22,7 +20,7 @@ final class BrandDeletionListener
         if (!$brand instanceof BrandInterface) {
             throw new UnexpectedTypeException(
                 $brand,
-                BrandInterface::class
+                BrandInterface::class,
             );
         }
 

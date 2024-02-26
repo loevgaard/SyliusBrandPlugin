@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Loevgaard\SyliusBrandPlugin\Fixture;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use Loevgaard\SyliusBrandPlugin\Fixture\BrandFixture;
 use Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait;
 use PHPUnit\Framework\TestCase;
-use Loevgaard\SyliusBrandPlugin\Fixture\BrandFixture;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 
 class BrandFixtureTest extends TestCase
@@ -34,13 +34,13 @@ class BrandFixtureTest extends TestCase
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function getConfiguration(): BrandFixture
     {
         return new BrandFixture(
             $this->getMockBuilder(ObjectManager::class)->getMock(),
-            $this->getMockBuilder(ExampleFactoryInterface::class)->getMock()
+            $this->getMockBuilder(ExampleFactoryInterface::class)->getMock(),
         );
     }
 }

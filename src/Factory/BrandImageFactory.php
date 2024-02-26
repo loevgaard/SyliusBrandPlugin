@@ -10,9 +10,7 @@ use Sylius\Component\Resource\Factory\FactoryInterface;
 
 class BrandImageFactory implements BrandImageFactoryInterface
 {
-    /**
-     * @var FactoryInterface
-     */
+    /** @var FactoryInterface */
     private $factory;
 
     public function __construct(FactoryInterface $factory)
@@ -21,7 +19,7 @@ class BrandImageFactory implements BrandImageFactoryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function createNew(): BrandImageInterface
     {
@@ -32,7 +30,7 @@ class BrandImageFactory implements BrandImageFactoryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function createForBrand(BrandInterface $brand): BrandImageInterface
     {

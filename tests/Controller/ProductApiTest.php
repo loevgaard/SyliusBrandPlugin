@@ -158,13 +158,12 @@ EOT;
 
     /**
      * @param ProductInterface|string $product
-     * @return string
      */
     private function getProductUrl($product = ''): string
     {
         return sprintf(
             '/api/v1/products/%s',
-            $product instanceof ProductInterface ? $product->getCode() : $product
+            $product instanceof ProductInterface ? $product->getCode() : $product,
         );
     }
 }

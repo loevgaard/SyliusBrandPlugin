@@ -16,7 +16,7 @@ class BrandImage extends Image implements BrandImageInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getBrand(): ?BrandInterface
     {
@@ -27,7 +27,7 @@ class BrandImage extends Image implements BrandImageInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function setBrand(?BrandInterface $brand): void
     {

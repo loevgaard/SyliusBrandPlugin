@@ -24,7 +24,7 @@ class UpdateBrandPage extends UpdatePage
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function getDefinedElements(): array
     {

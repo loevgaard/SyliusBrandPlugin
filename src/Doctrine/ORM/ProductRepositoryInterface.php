@@ -9,10 +9,5 @@ use Sylius\Component\Core\Repository\ProductRepositoryInterface as BaseProductRe
 
 interface ProductRepositoryInterface extends BaseProductRepositoryInterface
 {
-    /**
-     * @param BrandInterface $brand
-     *
-     * @return iterable
-     */
     public function createPaginatorForBrand(BrandInterface $brand): iterable;
 }

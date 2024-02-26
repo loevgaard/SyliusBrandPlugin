@@ -9,7 +9,7 @@ use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 class BrandRepository extends EntityRepository implements BrandRepositoryInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function findByPhrase(string $phrase): array
     {
@@ -18,6 +18,6 @@ class BrandRepository extends EntityRepository implements BrandRepositoryInterfa
             ->setParameter('phrase', '%' . $phrase . '%')
             ->getQuery()
             ->getResult()
-            ;
+        ;
     }
 }

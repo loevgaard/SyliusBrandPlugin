@@ -10,7 +10,7 @@ use Loevgaard\SyliusBrandPlugin\Model\ProductInterface;
 final class ProductsAssigner implements ProductsAssignerInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function assign(BrandInterface $brand, array $products): void
     {
@@ -18,7 +18,7 @@ final class ProductsAssigner implements ProductsAssignerInterface
             if (!$product instanceof ProductInterface) {
                 throw new \RuntimeException(sprintf(
                     "Some product was not found to assign to brand '%s'",
-                    $brand->getCode()
+                    $brand->getCode(),
                 ));
             }
 

@@ -11,9 +11,7 @@ use Webmozart\Assert\Assert;
 
 final class BrandContext implements Context
 {
-    /**
-     * @var BrandRepositoryInterface
-     */
+    /** @var BrandRepositoryInterface */
     private $brandRepository;
 
     public function __construct(RepositoryInterface $brandRepository)
@@ -31,7 +29,7 @@ final class BrandContext implements Context
         Assert::eq(
             count($brands),
             1,
-            sprintf('%d brands has been found with name "%s".', count($brands), $brandName)
+            sprintf('%d brands has been found with name "%s".', count($brands), $brandName),
         );
 
         return $brands[0];

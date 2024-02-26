@@ -9,7 +9,7 @@ use Sylius\Bundle\CoreBundle\Form\Type\ImageType;
 final class BrandImageType extends ImageType
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getBlockPrefix(): string
     {

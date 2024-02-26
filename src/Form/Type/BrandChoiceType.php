@@ -14,21 +14,16 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class BrandChoiceType extends AbstractType
 {
-    /**
-     * @var RepositoryInterface
-     */
+    /** @var RepositoryInterface */
     private $brandRepository;
 
-    /**
-     * @param RepositoryInterface $brandRepository
-     */
     public function __construct(RepositoryInterface $brandRepository)
     {
         $this->brandRepository = $brandRepository;
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -38,7 +33,7 @@ final class BrandChoiceType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
@@ -53,7 +48,7 @@ final class BrandChoiceType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getParent(): string
     {
@@ -61,7 +56,7 @@ final class BrandChoiceType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getBlockPrefix(): string
     {

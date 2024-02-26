@@ -12,7 +12,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 class ProductTypeExtension extends AbstractTypeExtension
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -24,7 +24,7 @@ class ProductTypeExtension extends AbstractTypeExtension
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public static function getExtendedTypes(): iterable
     {

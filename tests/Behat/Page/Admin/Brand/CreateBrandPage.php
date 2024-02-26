@@ -19,7 +19,7 @@ class CreateBrandPage extends BaseCreatePage
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function getDefinedElements(): array
     {
