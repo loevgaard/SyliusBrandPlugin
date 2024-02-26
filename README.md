@@ -1,9 +1,10 @@
 # Sylius Brand Plugin
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Latest Version][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE)
-[![Build Status][ico-travis]][link-travis]
-[![Quality Score][ico-code-quality]][link-code-quality]
+[![Build Status][ico-github-actions]][link-github-actions]
+[![Code Coverage][ico-code-coverage]][link-code-coverage]
+[![Mutation testing][ico-infection]][link-infection]
 
 <a href="https://sylius.com/plugins/" target="_blank"><img src="https://sylius.com/assets/badge-approved-by-sylius.png" width="100"></a>
 
@@ -353,11 +354,13 @@ We use the same service as Sylius for translating, namely [Crowdin](https://crow
 
 Thanks!
 
-[ico-version]: https://img.shields.io/packagist/v/loevgaard/sylius-brand-plugin.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/loevgaard/SyliusBrandPlugin/master.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/loevgaard/SyliusBrandPlugin.svg?style=flat-square
+[ico-version]: https://poser.pugx.org/loevgaard/sylius-brand-plugin/v/stable
+[ico-license]: https://poser.pugx.org/loevgaard/sylius-brand-plugin/license
+[ico-github-actions]: https://github.com/loevgaard/SyliusBrandPlugin/workflows/build/badge.svg
+[ico-code-coverage]: https://codecov.io/gh/loevgaard/SyliusBrandPlugin/graph/badge.svg
+[ico-infection]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FSetono%2FSyliusPluginSkeleton%2F3.x
 
 [link-packagist]: https://packagist.org/packages/loevgaard/sylius-brand-plugin
-[link-travis]: https://travis-ci.org/loevgaard/SyliusBrandPlugin
-[link-code-quality]: https://scrutinizer-ci.com/g/loevgaard/SyliusBrandPlugin
+[link-github-actions]: https://github.com/loevgaard/SyliusBrandPlugin/actions
+[link-code-coverage]: https://codecov.io/gh/loevgaard/SyliusBrandPlugin
+[link-infection]: https://dashboard.stryker-mutator.io/reports/github.com/loevgaard/SyliusBrandPlugin/3.x
