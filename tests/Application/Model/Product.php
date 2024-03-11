@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Loevgaard\SyliusBrandPlugin\Application\Model;
+namespace Loevgaard\SyliusBrandPlugin\Tests\Application\Model;
 
 use Doctrine\ORM\Mapping as ORM;
 use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;

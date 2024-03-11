@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Loevgaard\SyliusBrandPlugin\Controller;
+namespace Loevgaard\SyliusBrandPlugin\Tests\Controller;
 
 use ApiTestCase\JsonApiTestCase;
 use ApiTestCase\PathBuilder;

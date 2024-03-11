@@ -25,9 +25,27 @@
         "webmozart/assert": "^1.11"
     },
     "require-dev": {
+        "api-platform/core": "^2.7.16",
+        "babdev/pagerfanta-bundle": "^3.8",
+        "behat/behat": "^3.14",
+        "doctrine/doctrine-bundle": "^2.0",
+        "infection/infection": "^0.27.9",
+        "jms/serializer-bundle": "^4.2",
+        "lexik/jwt-authentication-bundle": "^2.17",
+        "matthiasnoback/symfony-config-test": "^4.3 || ^5.1",
+        "matthiasnoback/symfony-dependency-injection-test": "^4.3 || ^5.0",
+        "phpunit/phpunit": "^9.6",
+        "psalm/plugin-phpunit": "^0.18",
         "setono/code-quality-pack": "^2.7",
         "sylius/sylius": "~1.11.15",
-        "psalm/plugin-phpunit": "^0.18.4"
+        "symfony/debug-bundle": "^5.4 || ^6.4 || ^7.0",
+        "symfony/dotenv": "^5.4 || ^6.4 || ^7.0",
+        "symfony/intl": "^5.4 || ^6.4 || ^7.0",
+        "symfony/property-info": "^5.4 || ^6.4 || ^7.0",
+        "symfony/serializer": "^5.4 || ^6.4 || ^7.0",
+        "symfony/web-profiler-bundle": "^5.4 || ^6.4 || ^7.0",
+        "symfony/webpack-encore-bundle": "^1.17",
+        "willdurand/negotiation": "^3.1"
     },
     "prefer-stable": true,
     "autoload": {
@@ -37,7 +55,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Loevgaard\\SyliusBrandPlugin\\": "tests/"
+            "Loevgaard\\SyliusBrandPlugin\\Tests\\": "tests/"
         },
         "classmap": [
             "tests/Application/Kernel.php"

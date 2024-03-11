@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Loevgaard\SyliusBrandPlugin\Controller;
+namespace Loevgaard\SyliusBrandPlugin\Tests\Controller;
 
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;

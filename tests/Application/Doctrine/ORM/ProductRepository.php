@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Loevgaard\SyliusBrandPlugin\Application\Doctrine\ORM;
+namespace Loevgaard\SyliusBrandPlugin\Tests\Application\Doctrine\ORM;
 
 use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\ProductRepositoryInterface;
 use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\ProductRepositoryTrait;

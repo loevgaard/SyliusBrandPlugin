@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
-use Tests\Loevgaard\SyliusBrandPlugin\Application\Kernel;
+use Loevgaard\SyliusBrandPlugin\Tests\Application\Kernel;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 

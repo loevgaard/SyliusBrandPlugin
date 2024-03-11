@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Loevgaard\SyliusBrandPlugin\Fixture;
+namespace Loevgaard\SyliusBrandPlugin\Tests\Fixture;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Loevgaard\SyliusBrandPlugin\Fixture\BrandFixture;

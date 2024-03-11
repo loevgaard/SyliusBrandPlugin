@@ -19,7 +19,7 @@
     <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
     <server name="ESCAPE_JSON" value="true" />
 
-    <server name="KERNEL_CLASS" value="Tests\Loevgaard\SyliusBrandPlugin\Application\Kernel" />
+    <server name="KERNEL_CLASS" value="Loevgaard\SyliusBrandPlugin\Tests\Application\Kernel" />
     <server name="EXPECTED_RESPONSE_DIR" value="../Responses/Expected" />
     <server name="FIXTURES_DIR" value="../DataFixtures/ORM" />
 </php>

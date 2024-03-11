@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Loevgaard\SyliusBrandPlugin\Application\Menu;
+namespace Loevgaard\SyliusBrandPlugin\Tests\Application\Menu;
 
 use Loevgaard\SyliusBrandPlugin\Event\BrandMenuBuilderEvent;
 
