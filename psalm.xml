@@ -4,7 +4,7 @@
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
     phpVersion="8.1"
-    errorLevel="1"
+    errorLevel="4"
     findUnusedBaselineEntry="false"
     findUnusedPsalmSuppress="false"
     findUnusedCode="false"
@@ -28,4 +28,12 @@
         <function name="var_dump"/>
         <function name="print_r"/>
     </forbiddenFunctions>
+    <issueHandlers>
+        <MissingTemplateParam>
+            <errorLevel type="suppress">
+                <directory name="src/Doctrine/ORM"/>
+                <directory name="src/Factory"/>
+            </errorLevel>
+        </MissingTemplateParam>
+    </issueHandlers>
 </psalm>

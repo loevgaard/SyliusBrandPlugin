@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Tests\Fixture;
 
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Loevgaard\SyliusBrandPlugin\Fixture\BrandFixture;
 use Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait;
 use PHPUnit\Framework\TestCase;

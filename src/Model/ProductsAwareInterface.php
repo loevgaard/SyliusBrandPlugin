@@ -11,7 +11,7 @@ interface ProductsAwareInterface
     public function hasProducts(): bool;
 
     /**
-     * @return Collection|ProductInterface[]
+     * @return Collection<array-key, ProductInterface>
      */
     public function getProducts(): Collection;
 

@@ -9,8 +9,8 @@ use Doctrine\Common\Collections\Collection;
 
 trait ProductsAwareTrait
 {
-    /** @var Collection|ProductInterface[] */
-    protected $products;
+    /** @var Collection<array-key, ProductInterface> */
+    protected Collection $products;
 
     public function __construct()
     {
