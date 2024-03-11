@@ -9,79 +9,46 @@ use ApiTestCase\PathBuilder;
 
 abstract class AbstractApiTestCase extends JsonApiTestCase
 {
-    protected $defaultFixtureFiles = [];
+    protected array $defaultFixtureFiles = [];
 
-    /** @var array */
-    protected static $headerWithContentType = [
+    protected static array $headerWithContentType = [
         'CONTENT_TYPE' => 'application/json',
     ];
 
-    /** @var array */
-    protected static $authorizedHeaderWithContentType = [
+    protected static array $authorizedHeaderWithContentType = [
         'HTTP_Authorization' => 'Bearer SampleTokenNjZkNjY2MDEwMTAzMDkxMGE0OTlhYzU3NzYyMTE0ZGQ3ODcyMDAwM2EwMDZjNDI5NDlhMDdlMQ',
         'CONTENT_TYPE' => 'application/json',
     ];
 
-    /** @var array */
-    protected static $authorizedHeaderWithAccept = [
+    protected static array $authorizedHeaderWithAccept = [
         'HTTP_Authorization' => 'Bearer SampleTokenNjZkNjY2MDEwMTAzMDkxMGE0OTlhYzU3NzYyMTE0ZGQ3ODcyMDAwM2EwMDZjNDI5NDlhMDdlMQ',
         'ACCEPT' => 'application/json',
     ];
 
-    /**
-     * @return array
-     */
-    protected function loadDefaultFixtureFiles(array $additionalFixtureFiles = [])
+    protected function loadDefaultFixtureFiles(array $additionalFixtureFiles = []): array
     {
-        return $this->loadFixturesFromFile(
-            array_merge(
-                $this->defaultFixtureFiles,
-                $additionalFixtureFiles,
-            ),
+        $fixtureFiles = array_merge(
+            $this->defaultFixtureFiles,
+            $additionalFixtureFiles,
         );
-    }
 
-    /**
-     * Support loading array of fixtures files
-     *
-     * @param string|array $source
-     *
-     * @return array
-     */
-    protected function loadFixturesFromFile($source)
-    {
-        if (!is_array($source)) {
-            $source = [$source];
+        $entities = [];
+
+        foreach ($fixtureFiles as $fixtureFile) {
+            $entities[] = $this->loadFixturesFromFile($fixtureFile);
         }
 
-        $source = array_map(function ($filename) {
-            $filename = $this->getFixtureRealPath($filename);
-            $this->assertSourceExists($filename);
-
-            return $filename;
-        }, $source);
-
-        return $this->getFixtureLoader()->load($source, [
-            'persist_once' => false,
-        ]);
+        return array_merge(...$entities);
     }
 
-    /**
-     * @param string $source
-     *
-     * @return string
-     */
-    private function getFixtureRealPath($source)
+    private function getFixtureRealPath(string $source): string
     {
         $baseDirectory = $this->getFixturesFolder();
 
         return PathBuilder::build($baseDirectory, $source);
     }
 
-    /**
-     * @return string
-     */
-    private function getCalledClassFolder()
+    private function getCalledClassFolder(): string
     {
         $calledClass = static::class;
         $calledClassFolder = dirname((new \ReflectionClass($calledClass))->getFileName());
@@ -91,28 +58,19 @@ abstract class AbstractApiTestCase extends JsonApiTestCase
         return $calledClassFolder;
     }
 
-    /**
-     * @param string $source
-     */
-    private function assertSourceExists($source)
+    private function assertSourceExists(string $source): void
     {
         if (!file_exists($source)) {
             throw new \RuntimeException(sprintf('File %s does not exist', $source));
         }
     }
 
-    /**
-     * @return string
-     */
-    private function getRootDir()
+    private function getRootDir(): string
     {
         return $this->get('kernel')->getRootDir();
     }
 
-    /**
-     * @return string
-     */
-    private function getFixturesFolder()
+    private function getFixturesFolder(): string
     {
         if (null === $this->dataFixturesPath) {
             $this->dataFixturesPath = isset($_SERVER['FIXTURES_DIR']) ?
