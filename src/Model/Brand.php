@@ -13,14 +13,11 @@ class Brand implements BrandInterface
         ImagesAwareTrait::__construct as private __imagesAwareTraitConstruct;
     }
 
-    /** @var int */
-    protected $id;
+    protected ?int $id = null;
 
-    /** @var string|null */
-    protected $code;
+    protected ?string $code;
 
-    /** @var string|null */
-    protected $name;
+    protected ?string $name;
 
     public function __construct()
     {
@@ -38,17 +35,11 @@ class Brand implements BrandInterface
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getCode(): ?string
     {
         return $this->code;
     }
 
-    /**
-     * @param string $code
-     */
     public function setCode(?string $code): void
     {
         $this->code = $code;

@@ -14,9 +14,6 @@ interface BrandInterface extends ResourceInterface, CodeAwareInterface, Products
      */
     public function __toString(): string;
 
-    /**
-     * @return int
-     */
     public function getId(): ?int;
 
     public function getName(): ?string;
