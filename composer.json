@@ -55,6 +55,7 @@
         "theofidry/alice-data-fixtures": "^1.6",
         "willdurand/negotiation": "^3.1"
     },
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
