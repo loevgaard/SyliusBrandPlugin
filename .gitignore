@@ -11,3 +11,4 @@
 /.php-version
 /php.ini
 /.claude/*.local.json
+/tests/Application/config/reference.php

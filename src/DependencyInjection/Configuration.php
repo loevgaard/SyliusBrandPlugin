@@ -11,7 +11,6 @@ use Loevgaard\SyliusBrandPlugin\Form\Type\BrandType;
 use Loevgaard\SyliusBrandPlugin\Model\Brand;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImage;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
-use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Sylius\Component\Resource\Factory\Factory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -25,12 +24,6 @@ final class Configuration implements ConfigurationInterface
 
         /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
-
-        $rootNode
-            ->addDefaultsIfNotSet()
-            ->children()
-                ->scalarNode('driver')->defaultValue(SyliusResourceBundle::DRIVER_DOCTRINE_ORM)->setDeprecated()->end()
-        ;
 
         $this->addResourcesSection($rootNode);
 

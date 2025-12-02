@@ -3,9 +3,7 @@
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-
     <services>
-
         <service id="loevgaard_sylius_brand.fixture.brand"
                  class="Loevgaard\SyliusBrandPlugin\Fixture\BrandFixture">
             <argument type="service" id="loevgaard_sylius_brand.manager.brand"/>
@@ -19,10 +17,8 @@
             <argument type="service" id="loevgaard_sylius_brand.assigner.products"/>
             <argument type="service" id="loevgaard_sylius_brand.factory.brand"/>
             <argument type="service" id="loevgaard_sylius_brand.factory.brand_image"/>
-            <argument type="service" id="sylius.image_uploader"/>
-            <argument type="service" id="file_locator" />
+            <argument type="service" id="Sylius\Component\Core\Uploader\ImageUploaderInterface"/>
+            <argument type="service" id="file_locator"/>
         </service>
-
     </services>
-
 </container>

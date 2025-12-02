@@ -7,7 +7,7 @@ sylius_product:
     resources:
         product:
             classes:
-                model: Loevgaard\SyliusBrandPlugin\Tests\Application\Model\Product
+                model: Loevgaard\SyliusBrandPlugin\Tests\Application\Entity\Product
                 repository: Loevgaard\SyliusBrandPlugin\Tests\Application\Doctrine\ORM\ProductRepository
 
 services:
