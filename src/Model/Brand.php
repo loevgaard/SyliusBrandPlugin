@@ -4,25 +4,24 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Sylius\Component\Core\Model\ImageInterface;
+
 class Brand implements BrandInterface
 {
-    use ProductsAwareTrait {
-        ProductsAwareTrait::__construct as private __productsAwareTraitConstruct;
-    }
-    use ImagesAwareTrait {
-        ImagesAwareTrait::__construct as private __imagesAwareTraitConstruct;
-    }
-
     protected ?int $id = null;
 
     protected ?string $code = null;
 
     protected ?string $name = null;
 
+    /** @var Collection<array-key, ImageInterface> */
+    protected Collection $images;
+
     public function __construct()
     {
-        $this->__imagesAwareTraitConstruct();
-        $this->__productsAwareTraitConstruct();
+        $this->images = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -55,19 +54,39 @@ class Brand implements BrandInterface
         $this->name = $name;
     }
 
-    public function addProduct(ProductInterface $product): void
+    public function getImages(): Collection
     {
-        if (!$this->hasProduct($product)) {
-            $product->setBrand($this);
-            $this->products->add($product);
+        return $this->images;
+    }
+
+    public function getImagesByType(string $type): Collection
+    {
+        return $this->images->filter(fn (ImageInterface $image) => $type === $image->getType());
+    }
+
+    public function hasImages(): bool
+    {
+        return !$this->images->isEmpty();
+    }
+
+    public function hasImage(ImageInterface $image): bool
+    {
+        return $this->images->contains($image);
+    }
+
+    public function addImage(ImageInterface $image): void
+    {
+        if (false === $this->hasImage($image)) {
+            $image->setOwner($this);
+            $this->images->add($image);
         }
     }
 
-    public function removeProduct(ProductInterface $product): void
+    public function removeImage(ImageInterface $image): void
     {
-        if ($this->hasProduct($product)) {
-            $product->setBrand(null);
-            $this->products->removeElement($product);
+        if ($this->hasImage($image)) {
+            $image->setOwner(null);
+            $this->images->removeElement($image);
         }
     }
 }

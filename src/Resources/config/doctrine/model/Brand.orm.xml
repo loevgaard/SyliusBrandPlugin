@@ -17,6 +17,5 @@
                 <cascade-all/>
             </cascade>
         </one-to-many>
-        <one-to-many field="products" target-entity="Sylius\Component\Product\Model\ProductInterface" mapped-by="brand" fetch="EXTRA_LAZY"/>
     </mapped-superclass>
 </doctrine-mapping>

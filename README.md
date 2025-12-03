@@ -103,7 +103,7 @@ loevgaard_sylius_brand:
 
     use Doctrine\ORM\Mapping as ORM;
     use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
-    use Loevgaard\SyliusBrandPlugin\Model\ProductTrait as LoevgaardSyliusBrandPluginProductTrait;
+    use Loevgaard\SyliusBrandPlugin\Model\BrandAwareTrait as LoevgaardSyliusBrandPluginProductTrait;
     use Sylius\Component\Core\Model\Product as BaseProduct;
     
     /**
@@ -127,7 +127,7 @@ loevgaard_sylius_brand:
     namespace App\Model;
     
     use Loevgaard\SyliusBrandPlugin\Model\ProductInterface as LoevgaardSyliusBrandPluginProductInterface;
-    use Loevgaard\SyliusBrandPlugin\Model\ProductTrait as LoevgaardSyliusBrandPluginProductTrait;
+    use Loevgaard\SyliusBrandPlugin\Model\BrandAwareTrait as LoevgaardSyliusBrandPluginProductTrait;
     use Sylius\Component\Core\Model\Product as BaseProduct;
     
     class Product extends BaseProduct implements LoevgaardSyliusBrandPluginProductInterface

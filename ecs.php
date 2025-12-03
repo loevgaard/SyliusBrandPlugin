@@ -11,6 +11,7 @@ return static function (ECSConfig $config): void {
         'tests',
     ]);
     $config->skip([
+        'tests/Application/config/reference.php',
         'tests/Application/node_modules/**',
         'tests/Application/var/**',
     ]);

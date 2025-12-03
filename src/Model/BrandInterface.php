@@ -4,16 +4,12 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Model;
 
+use Sylius\Component\Core\Model\ImagesAwareInterface;
 use Sylius\Component\Resource\Model\CodeAwareInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 
-interface BrandInterface extends ResourceInterface, CodeAwareInterface, ProductsAwareInterface, ImagesAwareInterface
+interface BrandInterface extends ResourceInterface, CodeAwareInterface, ImagesAwareInterface, \Stringable
 {
-    /**
-     * Returns the name of the brand
-     */
-    public function __toString(): string;
-
     public function getId(): ?int;
 
     public function getName(): ?string;

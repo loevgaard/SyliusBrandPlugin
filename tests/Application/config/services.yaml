@@ -3,13 +3,6 @@
 parameters:
     locale: en_US
 
-sylius_product:
-    resources:
-        product:
-            classes:
-                model: Loevgaard\SyliusBrandPlugin\Tests\Application\Entity\Product
-                repository: Loevgaard\SyliusBrandPlugin\Tests\Application\Doctrine\ORM\ProductRepository
-
 services:
     app.listener.admin.brand_form_menu_builder:
         class: Loevgaard\SyliusBrandPlugin\Tests\Application\Menu\AdminBrandFormMenuListener

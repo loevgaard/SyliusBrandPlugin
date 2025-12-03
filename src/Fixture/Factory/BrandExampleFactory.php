@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Fixture\Factory;
 
-use Loevgaard\SyliusBrandPlugin\Assigner\ProductsAssignerInterface;
+use Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImageInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\AbstractExampleFactory;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
+use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Core\Uploader\ImageUploaderInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
@@ -20,10 +21,8 @@ class BrandExampleFactory extends AbstractExampleFactory
 {
     protected OptionsResolver $optionsResolver;
 
-    /** @var ProductRepositoryInterface<\Sylius\Component\Core\Model\ProductInterface> */
+    /** @var ProductRepositoryInterface<ProductInterface> */
     protected ProductRepositoryInterface $productRepository;
-
-    protected ProductsAssignerInterface $productAssigner;
 
     /** @var FactoryInterface<BrandInterface> */
     protected FactoryInterface $brandFactory;
@@ -36,20 +35,18 @@ class BrandExampleFactory extends AbstractExampleFactory
     protected FileLocatorInterface $fileLocator;
 
     /**
-     * @param ProductRepositoryInterface<\Sylius\Component\Core\Model\ProductInterface> $productRepository
+     * @param ProductRepositoryInterface<ProductInterface> $productRepository
      * @param FactoryInterface<BrandInterface> $brandFactory
      * @param FactoryInterface<BrandImageInterface> $productImageFactory
      */
     public function __construct(
         ProductRepositoryInterface $productRepository,
-        ProductsAssignerInterface $productAssigner,
         FactoryInterface $brandFactory,
         FactoryInterface $productImageFactory,
         ImageUploaderInterface $imageUploader,
         FileLocatorInterface $fileLocator,
     ) {
         $this->productRepository = $productRepository;
-        $this->productAssigner = $productAssigner;
         $this->brandFactory = $brandFactory;
 
         $this->productImageFactory = $productImageFactory;
@@ -81,7 +78,7 @@ class BrandExampleFactory extends AbstractExampleFactory
     /** @param array<string, mixed> $options */
     public function create(array $options = []): BrandInterface
     {
-        /** @var array{name: string, code: string, images: array<array{path: string, type?: string|null}>, products: list<\Loevgaard\SyliusBrandPlugin\Model\ProductInterface>} $options */
+        /** @var array{name: string, code: string, images: array<array{path: string, type?: string|null}>, products: list<BrandAwareInterface>} $options */
         $options = $this->optionsResolver->resolve($options);
 
         /** @var BrandInterface $brand */
@@ -91,7 +88,9 @@ class BrandExampleFactory extends AbstractExampleFactory
 
         $this->createImages($brand, $options);
 
-        $this->productAssigner->assign($brand, $options['products']);
+        foreach ($options['products'] as $product) {
+            $product->setBrand($brand);
+        }
 
         return $brand;
     }
