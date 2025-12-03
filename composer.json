@@ -11,16 +11,14 @@
         "symfony/http-kernel": "^6.4 || ^7.4"
     },
     "require-dev": {
-        "api-platform/symfony": "^4.1.8",
-        "payum/core": "^1.7.5",
         "setono/sylius-plugin-pack": "~2.1.0",
-        "symfony/debug-bundle": "^6.4 || ^7.2",
-        "symfony/dotenv": "^6.4 || ^7.2",
-        "symfony/intl": "^6.4 || ^7.2",
-        "symfony/property-info": "^6.4 || ^7.2",
-        "symfony/serializer": "^6.4 || ^7.2",
-        "symfony/web-profiler-bundle": "^6.4 || ^7.2",
-        "symfony/webpack-encore-bundle": "^2.2"
+        "symfony/debug-bundle": "^6.4 || ^7.4",
+        "symfony/dotenv": "^6.4 || ^7.4",
+        "symfony/intl": "^6.4 || ^7.4",
+        "symfony/property-info": "^6.4 || ^7.4",
+        "symfony/serializer": "^6.4 || ^7.4",
+        "symfony/web-profiler-bundle": "^6.4 || ^7.4",
+        "symfony/webpack-encore-bundle": "^2.4"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
