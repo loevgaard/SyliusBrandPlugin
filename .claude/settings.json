@@ -1,7 +1,11 @@
 {
-  "permissions": {
-    "defaultMode": "acceptEdits",
-    "allow": [],
-    "deny": []
-  }
+    "permissions": {
+        "defaultMode": "acceptEdits",
+        "allow": [],
+        "deny": []
+    },
+    "enabledMcpjsonServers": [
+        "playwright"
+    ],
+    "enableAllProjectMcpServers": true
 }
