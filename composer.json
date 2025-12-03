@@ -20,6 +20,7 @@
         "webmozart/assert": "^1.12"
     },
     "require-dev": {
+        "payum/core": "^1.7.6",
         "setono/sylius-plugin-pack": "~2.1.0",
         "symfony/debug-bundle": "^6.4 || ^7.4",
         "symfony/dotenv": "^6.4 || ^7.4",
