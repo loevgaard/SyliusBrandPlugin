@@ -15,9 +15,9 @@ class Brand implements BrandInterface
 
     protected ?int $id = null;
 
-    protected ?string $code;
+    protected ?string $code = null;
 
-    protected ?string $name;
+    protected ?string $name = null;
 
     public function __construct()
     {

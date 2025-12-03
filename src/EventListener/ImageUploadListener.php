@@ -9,9 +9,9 @@ use Sylius\Component\Core\Model\ImageInterface;
 use Sylius\Component\Core\Uploader\ImageUploaderInterface;
 use Webmozart\Assert\Assert;
 
-final class ImageUploadListener
+final readonly class ImageUploadListener
 {
-    public function __construct(private readonly ImageUploaderInterface $uploader)
+    public function __construct(private ImageUploaderInterface $uploader)
     {
     }
 

@@ -10,15 +10,12 @@ use Loevgaard\SyliusBrandPlugin\Event\BrandMenuBuilderEvent;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-final class BrandFormMenuBuilder
+final readonly class BrandFormMenuBuilder
 {
     public const EVENT_NAME = 'loevgaard_sylius_brand.menu.admin.brand.form';
 
-    private EventDispatcherInterface $eventDispatcher;
-
-    public function __construct(private readonly FactoryInterface $factory, EventDispatcherInterface $eventDispatcher)
+    public function __construct(private FactoryInterface $factory, private EventDispatcherInterface $eventDispatcher)
     {
-        $this->eventDispatcher = $eventDispatcher;
     }
 
     public function createMenu(array $options = []): ItemInterface
