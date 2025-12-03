@@ -73,6 +73,7 @@ jobs:
                 php-version:
                     - "8.2"
                     - "8.3"
+                    - "8.4"
 
                 dependencies:
                     - "lowest"
@@ -80,7 +81,7 @@ jobs:
                 
                 symfony:
                     - "~6.4.0"
-                    - "~7.2.0"
+                    - "~7.4.0"
 
         steps:
             -   name: "Checkout"
@@ -120,14 +121,15 @@ jobs:
                 php-version:
                     - "8.2"
                     - "8.3"
+                    - "8.4"
 
                 dependencies:
                     - "lowest"
                     - "highest"
-
+                
                 symfony:
                     - "~6.4.0"
-                    - "~7.2.0"
+                    - "~7.4.0"
 
         steps:
             -   name: "Checkout"
@@ -164,14 +166,15 @@ jobs:
                 php-version:
                     - "8.2"
                     - "8.3"
-                
+                    - "8.4"
+
                 dependencies:
                     - "lowest"
                     - "highest"
-
+                
                 symfony:
                     - "~6.4.0"
-                    - "~7.2.0"
+                    - "~7.4.0"
 
         steps:
             -   name: "Checkout"
@@ -205,6 +208,7 @@ jobs:
                 php-version:
                     - "8.2"
                     - "8.3"
+                    - "8.4"
 
                 dependencies:
                     - "lowest"
@@ -212,7 +216,7 @@ jobs:
                 
                 symfony:
                     - "~6.4.0"
-                    - "~7.2.0"
+                    - "~7.4.0"
 
         steps:
             -   name: "Start MySQL"
@@ -256,7 +260,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "8.3"
+                    - "8.4"
 
                 dependencies:
                     - "highest"
@@ -290,7 +294,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "8.3"
+                    - "8.4"
 
                 dependencies:
                     - "highest"
