@@ -4,32 +4,26 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
 
-use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
-use Sylius\Bundle\ResourceBundle\Form\Type\ResourceAutocompleteChoiceType;
+use Loevgaard\SyliusBrandPlugin\Model\Brand;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormInterface;
-use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\UX\Autocomplete\Form\AsEntityAutocompleteField;
+use Symfony\UX\Autocomplete\Form\BaseEntityAutocompleteType;
 
-/**
- * @extends AbstractType<BrandInterface>
- */
+#[AsEntityAutocompleteField(route: 'sylius_admin_entity_autocomplete')]
 final class BrandAutocompleteChoiceType extends AbstractType
 {
+    public function __construct(private readonly string $brandClass = Brand::class)
+    {
+    }
+
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'resource' => 'loevgaard_sylius_brand.brand',
-            'choice_name' => 'name',
-            'choice_value' => 'code',
+            'class' => $this->brandClass,
+            'choice_label' => 'name',
+            'searchable_fields' => ['name', 'code'],
         ]);
-    }
-
-    /** @param array<string, mixed> $options */
-    public function buildView(FormView $view, FormInterface $form, array $options): void
-    {
-        $view->vars['remote_criteria_type'] = 'contains';
-        $view->vars['remote_criteria_name'] = 'phrase';
     }
 
     public function getBlockPrefix(): string
@@ -39,6 +33,6 @@ final class BrandAutocompleteChoiceType extends AbstractType
 
     public function getParent(): string
     {
-        return ResourceAutocompleteChoiceType::class;
+        return BaseEntityAutocompleteType::class;
     }
 }

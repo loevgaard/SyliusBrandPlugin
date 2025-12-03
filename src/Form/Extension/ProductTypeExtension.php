@@ -11,7 +11,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class ProductTypeExtension extends AbstractTypeExtension
 {
-    /** @param array<string, mixed> $options */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->add('brand', BrandAutocompleteChoiceType::class, [
