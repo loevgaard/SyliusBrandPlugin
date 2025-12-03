@@ -1,4 +1,0 @@
----
-loevgaard_sylius_brand:
-  brand:
-    delete_error: 'Impossible de supprimer cette marque car elle est utilisée par un ou plusieurs produits.'
