@@ -10,7 +10,7 @@ use Loevgaard\SyliusBrandPlugin\Model\ProductInterface;
 interface ProductsAssignerInterface
 {
     /**
-     * @param ProductInterface[]|array $products
+     * @param list<ProductInterface> $products
      */
     public function assign(BrandInterface $brand, array $products): void;
 }
