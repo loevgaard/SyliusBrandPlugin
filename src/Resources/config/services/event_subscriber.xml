@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Loevgaard\SyliusBrandPlugin\EventSubscriber\BrandDeletionSubscriber">
+            <argument type="service" id="sylius.repository.product"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Loevgaard\SyliusBrandPlugin\EventSubscriber\ImageUploadSubscriber">
+            <argument type="service" id="Sylius\Component\Core\Uploader\ImageUploaderInterface"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</container>
