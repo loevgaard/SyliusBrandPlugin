@@ -5,10 +5,19 @@
     "type": "sylius-plugin",
     "require": {
         "php": ">=8.2",
+        "doctrine/collections": "^2.0",
+        "doctrine/orm": "^3.0",
+        "sylius/core": "^2.0",
         "sylius/core-bundle": "^2.0",
+        "sylius/product-bundle": "^2.0",
+        "sylius/resource-bundle": "^1.13",
         "symfony/config": "^6.4 || ^7.4",
         "symfony/dependency-injection": "^6.4 || ^7.4",
-        "symfony/http-kernel": "^6.4 || ^7.4"
+        "symfony/event-dispatcher": "^6.4 || ^7.4",
+        "symfony/form": "^6.4 || ^7.4",
+        "symfony/http-foundation": "^6.4 || ^7.4",
+        "symfony/options-resolver": "^6.4 || ^7.4",
+        "webmozart/assert": "^1.12"
     },
     "require-dev": {
         "setono/sylius-plugin-pack": "~2.1.0",
