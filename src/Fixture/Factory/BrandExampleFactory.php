@@ -21,38 +21,18 @@ class BrandExampleFactory extends AbstractExampleFactory
 {
     protected OptionsResolver $optionsResolver;
 
-    /** @var ProductRepositoryInterface<ProductInterface> */
-    protected ProductRepositoryInterface $productRepository;
-
-    /** @var FactoryInterface<BrandInterface> */
-    protected FactoryInterface $brandFactory;
-
-    /** @var FactoryInterface<BrandImageInterface> */
-    protected FactoryInterface $productImageFactory;
-
-    protected ImageUploaderInterface $imageUploader;
-
-    protected FileLocatorInterface $fileLocator;
-
     /**
      * @param ProductRepositoryInterface<ProductInterface> $productRepository
      * @param FactoryInterface<BrandInterface> $brandFactory
      * @param FactoryInterface<BrandImageInterface> $productImageFactory
      */
     public function __construct(
-        ProductRepositoryInterface $productRepository,
-        FactoryInterface $brandFactory,
-        FactoryInterface $productImageFactory,
-        ImageUploaderInterface $imageUploader,
-        FileLocatorInterface $fileLocator,
+        protected ProductRepositoryInterface $productRepository,
+        protected FactoryInterface $brandFactory,
+        protected FactoryInterface $productImageFactory,
+        protected ImageUploaderInterface $imageUploader,
+        protected FileLocatorInterface $fileLocator,
     ) {
-        $this->productRepository = $productRepository;
-        $this->brandFactory = $brandFactory;
-
-        $this->productImageFactory = $productImageFactory;
-        $this->imageUploader = $imageUploader;
-        $this->fileLocator = $fileLocator;
-
         $this->optionsResolver = new OptionsResolver();
 
         $this->configureOptions($this->optionsResolver);
