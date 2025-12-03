@@ -14,7 +14,9 @@ trait ProductsAwareTrait
 
     public function __construct()
     {
-        $this->products = new ArrayCollection();
+        /** @var ArrayCollection<array-key, ProductInterface> $products */
+        $products = new ArrayCollection();
+        $this->products = $products;
     }
 
     public function hasProducts(): bool
@@ -22,6 +24,7 @@ trait ProductsAwareTrait
         return $this->products->count() > 0;
     }
 
+    /** @return Collection<array-key, ProductInterface> */
     public function getProducts(): Collection
     {
         return $this->products;

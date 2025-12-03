@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
 
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Bridge\Doctrine\Form\DataTransformer\CollectionToArrayTransformer;
 use Symfony\Component\Form\AbstractType;
@@ -12,15 +13,20 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @extends AbstractType<BrandInterface>
+ */
 final class BrandChoiceType extends AbstractType
 {
+    /** @param RepositoryInterface<BrandInterface> $brandRepository */
     public function __construct(private readonly RepositoryInterface $brandRepository)
     {
     }
 
+    /** @param array<string, mixed> $options */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        if ($options['multiple']) {
+        if (true === $options['multiple']) {
             $builder->addModelTransformer(new CollectionToArrayTransformer());
         }
     }

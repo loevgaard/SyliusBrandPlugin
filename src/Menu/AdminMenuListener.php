@@ -15,7 +15,7 @@ final class AdminMenuListener
 
         $catalog = $menu->getChild('catalog');
 
-        if ($catalog) {
+        if (null !== $catalog) {
             $this->addChild($catalog);
         } else {
             $this->addChild($menu->getFirstChild());

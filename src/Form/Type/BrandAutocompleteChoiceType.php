@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
 
+use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Bundle\ResourceBundle\Form\Type\ResourceAutocompleteChoiceType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @extends AbstractType<BrandInterface>
+ */
 final class BrandAutocompleteChoiceType extends AbstractType
 {
     public function configureOptions(OptionsResolver $resolver): void
@@ -21,6 +25,7 @@ final class BrandAutocompleteChoiceType extends AbstractType
         ]);
     }
 
+    /** @param array<string, mixed> $options */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         $view->vars['remote_criteria_type'] = 'contains';

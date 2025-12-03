@@ -17,10 +17,13 @@ class BrandImage extends Image implements BrandImageInterface
 
     public function getBrand(): ?BrandInterface
     {
-        /** @var BrandInterface|null $brand */
-        $brand = $this->getOwner();
+        $owner = $this->getOwner();
 
-        return $brand;
+        if ($owner instanceof BrandInterface) {
+            return $owner;
+        }
+
+        return null;
     }
 
     public function setBrand(?BrandInterface $brand): void

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Fixture\Factory;
 
+use Faker\Factory;
+use Faker\Generator;
 use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandRepositoryInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
@@ -13,18 +15,14 @@ use Webmozart\Assert\Assert;
 
 trait BrandsAwareExampleFactoryTrait
 {
-    /** @var BrandRepositoryInterface */
-    protected $brandRepository;
+    protected BrandRepositoryInterface $brandRepository;
 
-    /** @var \Faker\Generator */
-    protected $faker;
+    protected Generator $faker;
 
     public function __construct(BrandRepositoryInterface $brandRepository)
     {
         $this->brandRepository = $brandRepository;
-        if (null === $this->faker) {
-            $this->faker = \Faker\Factory::create();
-        }
+        $this->faker = Factory::create();
     }
 
     protected function configureBrandsOptions(OptionsResolver $resolver, int $amount = 10): void
@@ -36,6 +34,7 @@ trait BrandsAwareExampleFactoryTrait
         ;
     }
 
+    /** @param array{brands: list<BrandInterface>} $resolvedOptions */
     protected function setBrandField(BrandAwareInterface $brandAware, array $resolvedOptions = []): void
     {
         $brand = $this->faker->randomElement($resolvedOptions['brands']);

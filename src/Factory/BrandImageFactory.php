@@ -10,6 +10,7 @@ use Sylius\Component\Resource\Factory\FactoryInterface;
 
 class BrandImageFactory implements BrandImageFactoryInterface
 {
+    /** @param FactoryInterface<BrandImageInterface> $factory */
     public function __construct(private readonly FactoryInterface $factory)
     {
     }
@@ -24,7 +25,6 @@ class BrandImageFactory implements BrandImageFactoryInterface
 
     public function createForBrand(BrandInterface $brand): BrandImageInterface
     {
-        /** @var BrandImageInterface $brandImage */
         $brandImage = $this->createNew();
         $brandImage->setBrand($brand);
 

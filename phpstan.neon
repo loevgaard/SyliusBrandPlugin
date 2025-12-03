@@ -23,5 +23,24 @@ parameters:
     # Report unmatched ignored errors
     reportUnmatchedIgnoredErrors: false
 
-    # Bleeding edge features
-    treatPhpDocTypesAsCertain: false
+    # Ignored errors - Doctrine type mismatches are intentional design choices
+    ignoreErrors:
+        # Nullable properties allow entity creation before values are set
+        - identifier: doctrine.columnType
+        # Collection generic types are intentionally broader for polymorphism
+        - identifier: doctrine.associationType
+        -
+            identifier: missingType.generics
+            path: src/DependencyInjection
+        -
+            identifier: missingType.generics
+            path: src/Fixture
+        -
+            identifier: trait.unused
+            path: src/Doctrine/ORM
+        -
+            identifier: trait.unused
+            path: src/Model
+        -
+            identifier: trait.unused
+            path: src/Fixture

@@ -13,10 +13,10 @@ class BrandTest extends TestCase
     public function testInitialState(): void
     {
         $brand = new Brand();
-        $this->assertEquals(null, $brand->getId());
-        $this->assertEquals(null, $brand->getName());
-        $this->assertEquals(null, $brand->getCode());
-        $this->assertInstanceOf(ArrayCollection::class, $brand->getImages());
+        self::assertNull($brand->getId());
+        self::assertNull($brand->getName());
+        self::assertNull($brand->getCode());
+        self::assertInstanceOf(ArrayCollection::class, $brand->getImages());
     }
 
     public function testMutability(): void
@@ -25,8 +25,8 @@ class BrandTest extends TestCase
         $brand->setName('name');
         $brand->setCode('code');
 
-        $this->assertEquals(null, $brand->getId());
-        $this->assertEquals('name', $brand->getName());
-        $this->assertEquals('code', $brand->getCode());
+        self::assertNull($brand->getId());
+        self::assertSame('name', $brand->getName());
+        self::assertSame('code', $brand->getCode());
     }
 }

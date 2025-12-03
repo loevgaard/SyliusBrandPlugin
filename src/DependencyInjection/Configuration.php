@@ -22,7 +22,6 @@ final class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('loevgaard_sylius_brand');
 
-        /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
 
         $this->addResourcesSection($rootNode);

@@ -7,10 +7,13 @@ namespace Loevgaard\SyliusBrandPlugin\Doctrine\ORM;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 
+/**
+ * @extends RepositoryInterface<BrandInterface>
+ */
 interface BrandRepositoryInterface extends RepositoryInterface
 {
     /**
-     * @return array|BrandInterface[]
+     * @return list<BrandInterface>
      */
     public function findByPhrase(string $phrase): array;
 }

@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Loevgaard\SyliusBrandPlugin\Doctrine\ORM;
 
 use Doctrine\ORM\QueryBuilder;
+use Loevgaard\SyliusBrandPlugin\Model\BrandImageInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
+use Pagerfanta\PagerfantaInterface;
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
 class BrandImageRepository extends EntityRepository implements BrandImageRepositoryInterface
@@ -19,7 +21,10 @@ class BrandImageRepository extends EntityRepository implements BrandImageReposit
         ;
     }
 
-    public function createPaginatorForBrandAndType(BrandInterface $brand, string $type): iterable
+    /**
+     * @return PagerfantaInterface<BrandImageInterface>
+     */
+    public function createPaginatorForBrandAndType(BrandInterface $brand, string $type): PagerfantaInterface
     {
         $queryBuilder = $this->createQueryBuilder('o')
 

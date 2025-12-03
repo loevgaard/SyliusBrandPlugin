@@ -12,8 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 trait BrandAwareExampleFactoryTrait
 {
-    /** @var BrandRepositoryInterface */
-    protected $brandRepository;
+    protected BrandRepositoryInterface $brandRepository;
 
     public function __construct(BrandRepositoryInterface $brandRepository)
     {
@@ -29,8 +28,9 @@ trait BrandAwareExampleFactoryTrait
         ;
     }
 
+    /** @param array{brand?: BrandInterface|null} $resolvedOptions */
     protected function setBrandField(BrandAwareInterface $brandAware, array $resolvedOptions = []): void
     {
-        $brandAware->setBrand($resolvedOptions['brand']);
+        $brandAware->setBrand($resolvedOptions['brand'] ?? null);
     }
 }

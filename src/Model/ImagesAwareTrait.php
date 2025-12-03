@@ -15,14 +15,18 @@ trait ImagesAwareTrait
 
     public function __construct()
     {
-        $this->images = new ArrayCollection();
+        /** @var ArrayCollection<array-key, ImageInterface> $images */
+        $images = new ArrayCollection();
+        $this->images = $images;
     }
 
+    /** @return Collection<array-key, ImageInterface> */
     public function getImages(): Collection
     {
         return $this->images;
     }
 
+    /** @return Collection<array-key, ImageInterface> */
     public function getImagesByType(string $type): Collection
     {
         return $this->images->filter(fn (ImageInterface $image) => $type === $image->getType());

@@ -18,27 +18,28 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class BrandExampleFactory extends AbstractExampleFactory
 {
-    /** @var OptionsResolver */
-    protected $optionsResolver;
+    protected OptionsResolver $optionsResolver;
 
-    /** @var ProductRepositoryInterface */
-    protected $productRepository;
+    /** @var ProductRepositoryInterface<\Sylius\Component\Core\Model\ProductInterface> */
+    protected ProductRepositoryInterface $productRepository;
 
-    /** @var ProductsAssignerInterface */
-    protected $productAssigner;
+    protected ProductsAssignerInterface $productAssigner;
 
-    /** @var FactoryInterface */
-    protected $brandFactory;
+    /** @var FactoryInterface<BrandInterface> */
+    protected FactoryInterface $brandFactory;
 
-    /** @var FactoryInterface */
-    protected $productImageFactory;
+    /** @var FactoryInterface<BrandImageInterface> */
+    protected FactoryInterface $productImageFactory;
 
-    /** @var ImageUploaderInterface */
-    protected $imageUploader;
+    protected ImageUploaderInterface $imageUploader;
 
-    /** @var FileLocatorInterface */
-    protected $fileLocator;
+    protected FileLocatorInterface $fileLocator;
 
+    /**
+     * @param ProductRepositoryInterface<\Sylius\Component\Core\Model\ProductInterface> $productRepository
+     * @param FactoryInterface<BrandInterface> $brandFactory
+     * @param FactoryInterface<BrandImageInterface> $productImageFactory
+     */
     public function __construct(
         ProductRepositoryInterface $productRepository,
         ProductsAssignerInterface $productAssigner,
@@ -77,8 +78,10 @@ class BrandExampleFactory extends AbstractExampleFactory
         ;
     }
 
+    /** @param array<string, mixed> $options */
     public function create(array $options = []): BrandInterface
     {
+        /** @var array{name: string, code: string, images: array<array{path: string, type?: string|null}>, products: list<\Loevgaard\SyliusBrandPlugin\Model\ProductInterface>} $options */
         $options = $this->optionsResolver->resolve($options);
 
         /** @var BrandInterface $brand */
@@ -93,17 +96,15 @@ class BrandExampleFactory extends AbstractExampleFactory
         return $brand;
     }
 
+    /** @param array{images: array<array{path: string, type?: string|null}>} $options */
     protected function createImages(BrandInterface $brand, array $options): void
     {
         foreach ($options['images'] as $image) {
             $imagePath = $image['path'];
             $imageType = $image['type'] ?? null;
 
-            $imagePath = $this->fileLocator->locate($imagePath);
-            if (is_array($imagePath)) {
-                $imagePath = $imagePath[array_key_first($imagePath)];
-            }
-            $uploadedImage = new UploadedFile($imagePath, basename((string) $imagePath));
+            $locatedPath = $this->fileLocator->locate($imagePath, first: true);
+            $uploadedImage = new UploadedFile($locatedPath, basename($locatedPath));
 
             /** @var BrandImageInterface $brandImage */
             $brandImage = $this->productImageFactory->createNew();

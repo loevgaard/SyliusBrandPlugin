@@ -8,6 +8,9 @@ use Loevgaard\SyliusBrandPlugin\Model\BrandImageInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 
+/**
+ * @extends FactoryInterface<BrandImageInterface>
+ */
 interface BrandImageFactoryInterface extends FactoryInterface
 {
     public function createForBrand(BrandInterface $brand): BrandImageInterface;

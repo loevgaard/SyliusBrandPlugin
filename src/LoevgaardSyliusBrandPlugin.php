@@ -12,6 +12,7 @@ final class LoevgaardSyliusBrandPlugin extends AbstractResourceBundle
 {
     use SyliusPluginTrait;
 
+    /** @return list<string> */
     public function getSupportedDrivers(): array
     {
         return [
