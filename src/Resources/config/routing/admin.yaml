@@ -1,20 +1,43 @@
-loevgaard_sylius_brand_admin_ajax:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin/ajax.yaml"
-    prefix: /ajax
+loevgaard_sylius_brand_admin_ajax_brands_by_phrase:
+    path: /ajax/brand/search
+    methods: [GET]
+    defaults:
+        _controller: loevgaard_sylius_brand.controller.brand:indexAction
+        _format: json
+        _sylius:
+            serialization_groups: [Autocomplete]
+            permission: true
+            repository:
+                method: findByPhrase
+                arguments:
+                    phrase: $phrase
+
+loevgaard_sylius_brand_admin_ajax_brand_by_code:
+    path: /ajax/brand/
+    methods: [GET]
+    defaults:
+        _controller: loevgaard_sylius_brand.controller.brand:indexAction
+        _format: json
+        _sylius:
+            serialization_groups: [Autocomplete]
+            permission: true
+            repository:
+                method: findBy
+                arguments: [code: $code]
 
 loevgaard_sylius_brand_admin_brand:
     resource: |
         alias: loevgaard_sylius_brand.brand
         section: admin
-        templates: "@SyliusAdmin\\Crud"
+        templates: '@SyliusAdmin/shared/crud'
         redirect: update
         grid: loevgaard_sylius_brand_admin_brand
         permission: true
+        except: ['show']
         vars:
             all:
                 subheader: loevgaard_sylius_brand.ui.brand
-                templates:
-                    form: "@LoevgaardSyliusBrandPlugin/Admin/Brand/_form.html.twig"
+                hook_prefix: 'loevgaard_sylius_brand.brand'
             index:
                 icon: 'file image outline'
     type: sylius.resource
