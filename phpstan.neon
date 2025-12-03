@@ -36,6 +36,9 @@ parameters:
             identifier: missingType.generics
             path: src/Fixture
         -
+            identifier: missingType.generics
+            path: src/Form
+        -
             identifier: trait.unused
             path: src/Doctrine/ORM
         -
