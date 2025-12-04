@@ -74,7 +74,7 @@ class Product extends BaseProduct implements BrandAwareInterface
 }
 ```
 
-> **Note:** The `BrandAwareTrait` already includes the Doctrine ORM mapping attributes, so you don't need to add any additional mapping configuration.
+> The `BrandAwareTrait` already includes the Doctrine ORM mapping attributes, so you don't need to add any additional mapping configuration.
 
 ### Step 5: Configure Sylius resource
 
@@ -87,6 +87,8 @@ sylius_product:
             classes:
                 model: App\Entity\Product\Product
 ```
+
+> The above configuration is most likely already done in your application.
 
 ### Step 6: Update your database schema
 
