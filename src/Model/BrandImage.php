@@ -8,13 +8,6 @@ use Sylius\Component\Core\Model\Image;
 
 class BrandImage extends Image implements BrandImageInterface
 {
-    public const TYPE_LOGO = 'logo';
-
-    public function isLogo(): bool
-    {
-        return $this->getType() === self::TYPE_LOGO;
-    }
-
     public function getBrand(): ?BrandInterface
     {
         $owner = $this->getOwner();

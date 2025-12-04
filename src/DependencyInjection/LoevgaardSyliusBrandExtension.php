@@ -9,7 +9,7 @@ use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 
 final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension implements PrependExtensionInterface
 {
@@ -17,11 +17,11 @@ final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension impl
     {
         /** @var array{resources: array<string, mixed>} $config */
         $config = $this->processConfiguration($this->getConfiguration([], $container), $configs);
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
+        $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
 
         $this->registerResources('loevgaard_sylius_brand', SyliusResourceBundle::DRIVER_DOCTRINE_ORM, $config['resources'], $container);
 
-        $loader->load('services.xml');
+        $loader->load('services.php');
     }
 
     public function prepend(ContainerBuilder $container): void
