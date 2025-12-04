@@ -1,8 +1,10 @@
 # Sylius Brand Plugin
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE)
-[![Build Status][ico-github-actions]][link-github-actions]
+[![Latest Stable Version](http://poser.pugx.org/loevgaard/sylius-brand-plugin/v)](https://packagist.org/packages/loevgaard/sylius-brand-plugin)
+[![Total Downloads](http://poser.pugx.org/loevgaard/sylius-brand-plugin/downloads)](https://packagist.org/packages/loevgaard/sylius-brand-plugin)
+[![License](http://poser.pugx.org/loevgaard/sylius-brand-plugin/license)](https://packagist.org/packages/loevgaard/sylius-brand-plugin)
+[![build](https://github.com/loevgaard/SyliusBrandPlugin/actions/workflows/build.yaml/badge.svg)](https://github.com/loevgaard/SyliusBrandPlugin/actions/workflows/build.yaml)
+[![codecov](https://codecov.io/gh/loevgaard/SyliusBrandPlugin/graph/badge.svg?token=QCEUZCJTJ7)](https://codecov.io/gh/loevgaard/SyliusBrandPlugin)
 
 <a href="https://sylius.com/plugins/" target="_blank"><img src="https://sylius.com/assets/badge-approved-by-sylius.png" width="100"></a>
 
@@ -182,10 +184,3 @@ Currently supported languages:
 - Swedish (sv)
 - Norwegian (no)
 - Finnish (fi)
-
-[ico-version]: https://img.shields.io/packagist/v/loevgaard/sylius-brand-plugin.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-github-actions]: https://img.shields.io/github/actions/workflow/status/loevgaard/SyliusBrandPlugin/build.yaml?branch=master&style=flat-square
-
-[link-packagist]: https://packagist.org/packages/loevgaard/sylius-brand-plugin
-[link-github-actions]: https://github.com/loevgaard/SyliusBrandPlugin/actions
