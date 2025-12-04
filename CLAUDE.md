@@ -133,7 +133,8 @@ Both can be customized via configuration (model, controller, repository, factory
 ### Translations
 
 Translation files in `src/Resources/translations/`:
-- **Domains**: `messages`, `flashes`, `validators` (English only currently)
+- **Domains**: `messages`, `flashes`, `validators`
+- **Languages**: English (en), German (de), French (fr), Spanish (es), Italian (it), Dutch (nl), Polish (pl), Danish (da), Swedish (sv), Norwegian (no), Finnish (fi)
 - **Key prefix**: `loevgaard_sylius_brand.*`
   - `loevgaard_sylius_brand.ui.*` - UI labels
   - `loevgaard_sylius_brand.form.*` - Form field labels

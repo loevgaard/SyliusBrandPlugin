@@ -19,4 +19,9 @@ final class LoevgaardSyliusBrandPlugin extends AbstractResourceBundle
             SyliusResourceBundle::DRIVER_DOCTRINE_ORM,
         ];
     }
+
+    public function getPath(): string
+    {
+        return \dirname(__DIR__);
+    }
 }
