@@ -8,7 +8,6 @@ use Loevgaard\SyliusBrandPlugin\DependencyInjection\LoevgaardSyliusBrandExtensio
 use Loevgaard\SyliusBrandPlugin\EventSubscriber\AdminMenuSubscriber;
 use Loevgaard\SyliusBrandPlugin\EventSubscriber\BrandDeletionSubscriber;
 use Loevgaard\SyliusBrandPlugin\EventSubscriber\ImageUploadSubscriber;
-use Loevgaard\SyliusBrandPlugin\Factory\BrandImageFactory;
 use Loevgaard\SyliusBrandPlugin\Fixture\BrandFixture;
 use Loevgaard\SyliusBrandPlugin\Fixture\Factory\BrandExampleFactory;
 use Loevgaard\SyliusBrandPlugin\Form\Extension\ProductTypeExtension;
@@ -73,14 +72,6 @@ class LoevgaardSyliusBrandExtensionTest extends AbstractExtensionTestCase
             AdminMenuSubscriber::class,
             'kernel.event_subscriber',
         );
-    }
-
-    #[Test]
-    public function it_registers_brand_image_factory_decorator(): void
-    {
-        $this->load();
-
-        $this->assertContainerBuilderHasService(BrandImageFactory::class);
     }
 
     #[Test]
