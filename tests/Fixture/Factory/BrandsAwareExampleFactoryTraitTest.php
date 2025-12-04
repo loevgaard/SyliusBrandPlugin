@@ -88,7 +88,8 @@ class BrandsAwareExampleFactoryStub
         $this->configureBrandsOptions($resolver, $amount);
     }
 
-    public function exposedSetBrandField(BrandAwareInterface $brandAware, array $resolvedOptions = []): void
+    /** @param array{brands: list<BrandInterface>} $resolvedOptions */
+    public function exposedSetBrandField(BrandAwareInterface $brandAware, array $resolvedOptions): void
     {
         $this->setBrandField($brandAware, $resolvedOptions);
     }

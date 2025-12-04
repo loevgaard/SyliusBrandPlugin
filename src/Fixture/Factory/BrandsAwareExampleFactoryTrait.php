@@ -35,7 +35,7 @@ trait BrandsAwareExampleFactoryTrait
     }
 
     /** @param array{brands: list<BrandInterface>} $resolvedOptions */
-    protected function setBrandField(BrandAwareInterface $brandAware, array $resolvedOptions = []): void
+    protected function setBrandField(BrandAwareInterface $brandAware, array $resolvedOptions): void
     {
         $brand = $this->faker->randomElement($resolvedOptions['brands']);
         Assert::isInstanceOf($brand, BrandInterface::class);

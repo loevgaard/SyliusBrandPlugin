@@ -83,8 +83,8 @@ class BrandExampleFactory extends AbstractExampleFactory
             $imagePath = $image['path'];
             $imageType = $image['type'] ?? null;
 
+            /** @var string $locatedPath */
             $locatedPath = $this->fileLocator->locate($imagePath, first: true);
-            Assert::string($locatedPath);
 
             $uploadedImage = new UploadedFile($locatedPath, basename($locatedPath));
 

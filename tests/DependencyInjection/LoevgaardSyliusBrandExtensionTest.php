@@ -32,6 +32,7 @@ class LoevgaardSyliusBrandExtensionTest extends AbstractExtensionTestCase
         ];
     }
 
+    /** @return array<string, mixed> */
     protected function getMinimalConfiguration(): array
     {
         return [
