@@ -16,10 +16,12 @@ class BrandFixture extends AbstractResourceFixture
 
     protected function configureResourceNode(ArrayNodeDefinition $resourceNode): void
     {
-        $node = $resourceNode->children();
-        $node->scalarNode('name')->cannotBeEmpty();
-        $node->scalarNode('code')->cannotBeEmpty();
-        $node->arrayNode('images')->variablePrototype();
-        $node->arrayNode('products')->scalarPrototype();
+        /** @phpstan-ignore class.notFound,method.nonObject */
+        $resourceNode->children()
+            ->scalarNode('name')->cannotBeEmpty()->end()
+            ->scalarNode('code')->cannotBeEmpty()->end()
+            ->arrayNode('images')->variablePrototype()->end()->end()
+            ->arrayNode('products')->scalarPrototype()
+        ;
     }
 }
