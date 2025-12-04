@@ -1,4 +1,5 @@
 imports:
-    - { resource: "@LoevgaardSyliusBrandPlugin/config/app/config.yaml" }
+    # Optional: Show brand column in admin product grid
     - { resource: "@LoevgaardSyliusBrandPlugin/config/grids/sylius_admin_product.yaml" }
-    - { resource: "@LoevgaardSyliusBrandPlugin/config/app/fixtures.yaml" }
+    # Optional: Load sample brand fixtures
+    - { resource: "@LoevgaardSyliusBrandPlugin/config/fixtures.yaml" }

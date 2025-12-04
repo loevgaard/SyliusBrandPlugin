@@ -71,21 +71,19 @@ return [
 ### Step 3: Configure the plugin
 
 ```yaml
-# config/packages/loevgaard_sylius_brand.yaml
-
-imports:
-    # ...
-    - { resource: "@LoevgaardSyliusBrandPlugin/config/app/config.yaml" }
-
-    # If you want to see Brand column at admin products list - uncomment next line
-    # - { resource: "@LoevgaardSyliusBrandPlugin/config/grids/sylius_admin_product.yaml" }
-```
-
-```yaml
 # config/routes/loevgaard_sylius_brand.yaml
 
 loevgaard_sylius_brand:
     resource: "@LoevgaardSyliusBrandPlugin/config/routes.yaml"
+```
+
+Optionally, to show a Brand column in the admin products list:
+
+```yaml
+# config/packages/loevgaard_sylius_brand.yaml
+
+imports:
+    - { resource: "@LoevgaardSyliusBrandPlugin/config/grids/sylius_admin_product.yaml" }
 ```
 
 ### Step 4: Extend services and entities
@@ -208,7 +206,7 @@ $ php bin/console doctrine:migrations:migrate
     # config/packages/loevgaard_sylius_brand.yaml
     
     imports:
-        - { resource: "@LoevgaardSyliusBrandPlugin/config/app/fixtures.yaml" }
+        - { resource: "@LoevgaardSyliusBrandPlugin/config/fixtures.yaml" }
     ```
 
 - Or write your own:
@@ -244,7 +242,7 @@ $ php bin/console doctrine:migrations:migrate
                                       - product_code_3
     ```
 
-    See example at `config/app/fixtures.yaml`.
+    See example at `config/fixtures.yaml`.
 
  3. Load your fixtures
 

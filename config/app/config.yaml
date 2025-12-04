@@ -1,3 +1,0 @@
-imports:
-    - "@LoevgaardSyliusBrandPlugin/config/grids/loevgaard_sylius_brand_admin_brand.yaml"
-    - "@LoevgaardSyliusBrandPlugin/config/app/twig_hooks.yaml"
