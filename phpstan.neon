@@ -51,10 +51,10 @@ parameters:
             path: src/Fixture
         -
             identifier: method.nonObject
-            path: src/Configuration
+            path: src/DependencyInjection
         -
             identifier: class.notFound
-            path: src/Configuration
+            path: src/DependencyInjection
         -
             identifier: method.nonObject
             path: src/Fixture
