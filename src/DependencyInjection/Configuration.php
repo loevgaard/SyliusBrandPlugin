@@ -8,8 +8,6 @@ use Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType;
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandType;
 use Loevgaard\SyliusBrandPlugin\Model\Brand;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImage;
-use Loevgaard\SyliusBrandPlugin\Repository\BrandImageRepository;
-use Loevgaard\SyliusBrandPlugin\Repository\BrandRepository;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Sylius\Component\Resource\Factory\Factory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
@@ -45,7 +43,7 @@ final class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode('model')->defaultValue(Brand::class)->cannotBeEmpty()->end()
                                         ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('repository')->defaultValue(BrandRepository::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('repository')->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->scalarNode('form')->defaultValue(BrandType::class)->cannotBeEmpty()->end()
                                     ->end()
@@ -61,7 +59,7 @@ final class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode('model')->defaultValue(BrandImage::class)->cannotBeEmpty()->end()
                                         ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('repository')->defaultValue(BrandImageRepository::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('repository')->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->scalarNode('form')->defaultValue(BrandImageType::class)->cannotBeEmpty()->end()
         ;
