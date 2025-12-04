@@ -1,0 +1,18 @@
+loevgaard_sylius_brand:
+    ui:
+        name: Navn
+        code: Kode
+        brand: Merke
+        brands: Merker
+        edit_brand: Rediger merke
+        new_brand: Nytt merke
+        image: Bilde
+
+    form:
+        brand:
+            name: Navn
+            code: Kode
+            images: Bilder
+        product:
+            brand: Merke
+            select_brand: Velg merke...

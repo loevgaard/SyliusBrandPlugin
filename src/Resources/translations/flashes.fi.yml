@@ -1,0 +1,3 @@
+loevgaard_sylius_brand:
+    brand:
+        delete_error: 'Brändiä ei voi poistaa. Se on käytössä yhdessä tai useammassa tuotteessa.'

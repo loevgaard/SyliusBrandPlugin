@@ -1,0 +1,18 @@
+loevgaard_sylius_brand:
+    ui:
+        name: Namn
+        code: Kod
+        brand: Varumärke
+        brands: Varumärken
+        edit_brand: Redigera varumärke
+        new_brand: Nytt varumärke
+        image: Bild
+
+    form:
+        brand:
+            name: Namn
+            code: Kod
+            images: Bilder
+        product:
+            brand: Varumärke
+            select_brand: Välj varumärke...

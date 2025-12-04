@@ -1,0 +1,3 @@
+loevgaard_sylius_brand:
+    brand:
+        delete_error: 'Marka nie może zostać usunięta. Jest używana przez jeden lub więcej produktów.'

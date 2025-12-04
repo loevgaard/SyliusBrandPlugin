@@ -1,0 +1,18 @@
+loevgaard_sylius_brand:
+    ui:
+        name: Nom
+        code: Code
+        brand: Marque
+        brands: Marques
+        edit_brand: Modifier la marque
+        new_brand: Nouvelle marque
+        image: Image
+
+    form:
+        brand:
+            name: Nom
+            code: Code
+            images: Images
+        product:
+            brand: Marque
+            select_brand: Sélectionner une marque...

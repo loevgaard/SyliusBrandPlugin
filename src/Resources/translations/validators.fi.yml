@@ -1,0 +1,13 @@
+loevgaard_sylius_brand:
+    brand:
+        code:
+            max_length: Brändikoodi ei saa olla pidempi kuin {{ limit }} merkkiä|Brändikoodi ei saa olla pidempi kuin {{ limit }} merkkiä.
+            regex: Brändikoodi voi sisältää vain kirjaimia, numeroita, viivoja ja alaviivoja.
+            unique: Brändikoodin on oltava yksilöllinen.
+        name:
+            max_length: Brändin nimi ei saa olla pidempi kuin {{ limit }} merkkiä|Brändin nimi ei saa olla pidempi kuin {{ limit }} merkkiä.
+            min_length: Brändin nimen on oltava vähintään {{ limit }} merkkiä pitkä|Brändin nimen on oltava vähintään {{ limit }} merkkiä pitkä.
+    brand_image:
+        file:
+            max_size: Kuva on liian suuri - {{ size }}{{ suffix }}. Suurin sallittu koko on {{ limit }}{{ suffix }}.
+            upload_ini_size: Kuva on liian suuri. Suurin sallittu koko on {{ limit }}{{ suffix }}.

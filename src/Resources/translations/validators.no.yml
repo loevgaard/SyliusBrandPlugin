@@ -1,0 +1,13 @@
+loevgaard_sylius_brand:
+    brand:
+        code:
+            max_length: Merkekoden kan ikke være lengre enn {{ limit }} tegn|Merkekoden kan ikke være lengre enn {{ limit }} tegn.
+            regex: Merkekoden kan kun inneholde bokstaver, tall, bindestreker og understrekinger.
+            unique: Merkekoden må være unik.
+        name:
+            max_length: Merkenavnet kan ikke være lengre enn {{ limit }} tegn|Merkenavnet kan ikke være lengre enn {{ limit }} tegn.
+            min_length: Merkenavnet må være minst {{ limit }} tegn langt|Merkenavnet må være minst {{ limit }} tegn langt.
+    brand_image:
+        file:
+            max_size: Bildet er for stort - {{ size }}{{ suffix }}. Maksimal tillatt størrelse er {{ limit }}{{ suffix }}.
+            upload_ini_size: Bildet er for stort. Maksimal tillatt størrelse er {{ limit }}{{ suffix }}.

@@ -1,0 +1,13 @@
+loevgaard_sylius_brand:
+    brand:
+        code:
+            max_length: Il codice della marca non deve superare {{ limit }} caratteri|Il codice della marca non deve superare {{ limit }} caratteri.
+            regex: Il codice della marca può contenere solo lettere, numeri, trattini e underscore.
+            unique: Il codice della marca deve essere univoco.
+        name:
+            max_length: Il nome della marca non deve superare {{ limit }} caratteri|Il nome della marca non deve superare {{ limit }} caratteri.
+            min_length: Il nome della marca deve contenere almeno {{ limit }} caratteri|Il nome della marca deve contenere almeno {{ limit }} caratteri.
+    brand_image:
+        file:
+            max_size: L'immagine è troppo grande - {{ size }}{{ suffix }}. La dimensione massima consentita è {{ limit }}{{ suffix }}.
+            upload_ini_size: L'immagine è troppo grande. La dimensione massima consentita è {{ limit }}{{ suffix }}.

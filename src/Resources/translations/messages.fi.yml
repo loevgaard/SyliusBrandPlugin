@@ -1,0 +1,18 @@
+loevgaard_sylius_brand:
+    ui:
+        name: Nimi
+        code: Koodi
+        brand: Brändi
+        brands: Brändit
+        edit_brand: Muokkaa brändiä
+        new_brand: Uusi brändi
+        image: Kuva
+
+    form:
+        brand:
+            name: Nimi
+            code: Koodi
+            images: Kuvat
+        product:
+            brand: Brändi
+            select_brand: Valitse brändi...

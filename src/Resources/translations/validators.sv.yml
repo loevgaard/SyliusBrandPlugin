@@ -1,0 +1,13 @@
+loevgaard_sylius_brand:
+    brand:
+        code:
+            max_length: Varumärkeskoden får inte vara längre än {{ limit }} tecken|Varumärkeskoden får inte vara längre än {{ limit }} tecken.
+            regex: Varumärkeskoden får endast innehålla bokstäver, siffror, bindestreck och understreck.
+            unique: Varumärkeskoden måste vara unik.
+        name:
+            max_length: Varumärkesnamnet får inte vara längre än {{ limit }} tecken|Varumärkesnamnet får inte vara längre än {{ limit }} tecken.
+            min_length: Varumärkesnamnet måste vara minst {{ limit }} tecken långt|Varumärkesnamnet måste vara minst {{ limit }} tecken långt.
+    brand_image:
+        file:
+            max_size: Bilden är för stor - {{ size }}{{ suffix }}. Maximal tillåten storlek är {{ limit }}{{ suffix }}.
+            upload_ini_size: Bilden är för stor. Maximal tillåten storlek är {{ limit }}{{ suffix }}.
