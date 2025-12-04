@@ -80,10 +80,7 @@ class LoevgaardSyliusBrandExtensionTest extends AbstractExtensionTestCase
     {
         $this->load();
 
-        $this->assertContainerBuilderHasService(
-            'loevgaard_sylius_brand.custom_factory.brand_image',
-            BrandImageFactory::class,
-        );
+        $this->assertContainerBuilderHasService(BrandImageFactory::class);
     }
 
     #[Test]
@@ -123,16 +120,13 @@ class LoevgaardSyliusBrandExtensionTest extends AbstractExtensionTestCase
     {
         $this->load();
 
-        $this->assertContainerBuilderHasService('loevgaard_sylius_brand.fixture.brand', BrandFixture::class);
+        $this->assertContainerBuilderHasService(BrandFixture::class);
         $this->assertContainerBuilderHasServiceDefinitionWithTag(
-            'loevgaard_sylius_brand.fixture.brand',
+            BrandFixture::class,
             'sylius_fixtures.fixture',
         );
 
-        $this->assertContainerBuilderHasService(
-            'loevgaard_sylius_brand.fixture.example_factory.brand',
-            BrandExampleFactory::class,
-        );
+        $this->assertContainerBuilderHasService(BrandExampleFactory::class);
     }
 
     #[Test]
@@ -140,12 +134,9 @@ class LoevgaardSyliusBrandExtensionTest extends AbstractExtensionTestCase
     {
         $this->load();
 
-        $this->assertContainerBuilderHasService(
-            'loevgaard_sylius_brand.twig.component.brand.form',
-            FormComponent::class,
-        );
+        $this->assertContainerBuilderHasService(FormComponent::class);
         $this->assertContainerBuilderHasServiceDefinitionWithTag(
-            'loevgaard_sylius_brand.twig.component.brand.form',
+            FormComponent::class,
             'sylius.live_component.admin',
             ['key' => 'loevgaard_sylius_brand:brand:form'],
         );

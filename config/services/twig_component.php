@@ -9,7 +9,7 @@ use Loevgaard\SyliusBrandPlugin\Twig\Component\Brand\FormComponent;
 
 return static function (ContainerConfigurator $container): void {
     $container->services()
-        ->set('loevgaard_sylius_brand.twig.component.brand.form', FormComponent::class)
+        ->set(FormComponent::class)
             ->args([
                 service('loevgaard_sylius_brand.repository.brand'),
                 service('form.factory'),

@@ -10,14 +10,14 @@ use Sylius\Component\Core\Uploader\ImageUploaderInterface;
 
 return static function (ContainerConfigurator $container): void {
     $container->services()
-        ->set('loevgaard_sylius_brand.fixture.brand', BrandFixture::class)
+        ->set(BrandFixture::class)
             ->args([
                 service('loevgaard_sylius_brand.manager.brand'),
-                service('loevgaard_sylius_brand.fixture.example_factory.brand'),
+                service(BrandExampleFactory::class),
             ])
             ->tag('sylius_fixtures.fixture')
 
-        ->set('loevgaard_sylius_brand.fixture.example_factory.brand', BrandExampleFactory::class)
+        ->set(BrandExampleFactory::class)
             ->args([
                 service('sylius.repository.product'),
                 service('loevgaard_sylius_brand.factory.brand'),

@@ -16,7 +16,6 @@ use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\Config\FileLocatorInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Webmozart\Assert\Assert;
 
 class BrandExampleFactory extends AbstractExampleFactory
 {
