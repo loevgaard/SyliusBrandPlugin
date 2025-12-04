@@ -41,6 +41,9 @@ parameters:
             identifier: missingType.generics
             path: src/Form
         -
+            identifier: missingType.generics
+            path: tests/Form
+        -
             identifier: trait.unused
             path: src/Doctrine/ORM
         -
