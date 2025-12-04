@@ -23,6 +23,8 @@ parameters:
     # Report unmatched ignored errors
     reportUnmatchedIgnoredErrors: false
 
+    treatPhpDocTypesAsCertain: false
+
     # Ignored errors - Doctrine type mismatches are intentional design choices
     ignoreErrors:
         # Nullable properties allow entity creation before values are set
