@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Fixture\Factory;
 
-use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandRepositoryInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
+use Loevgaard\SyliusBrandPlugin\Repository\BrandRepositoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

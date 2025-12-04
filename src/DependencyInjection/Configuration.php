@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\DependencyInjection;
 
-use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandImageRepository;
-use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandRepository;
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType;
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandType;
 use Loevgaard\SyliusBrandPlugin\Model\Brand;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImage;
+use Loevgaard\SyliusBrandPlugin\Repository\BrandImageRepository;
+use Loevgaard\SyliusBrandPlugin\Repository\BrandRepository;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Sylius\Component\Resource\Factory\Factory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;

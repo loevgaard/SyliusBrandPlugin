@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Loevgaard\SyliusBrandPlugin\Doctrine\ORM;
+namespace Loevgaard\SyliusBrandPlugin\Repository;
 
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;

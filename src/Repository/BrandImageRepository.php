@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Loevgaard\SyliusBrandPlugin\Doctrine\ORM;
+namespace Loevgaard\SyliusBrandPlugin\Repository;
 
 use Doctrine\ORM\QueryBuilder;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImageInterface;

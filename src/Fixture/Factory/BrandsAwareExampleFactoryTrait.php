@@ -6,9 +6,9 @@ namespace Loevgaard\SyliusBrandPlugin\Fixture\Factory;
 
 use Faker\Factory;
 use Faker\Generator;
-use Loevgaard\SyliusBrandPlugin\Doctrine\ORM\BrandRepositoryInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
+use Loevgaard\SyliusBrandPlugin\Repository\BrandRepositoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Webmozart\Assert\Assert;
