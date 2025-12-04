@@ -106,9 +106,11 @@ The plugin uses Sylius's trait/interface pattern for extending the Product entit
 
 - `src/Model/` - Domain entities (Brand, BrandImage) and traits for extending Product
 - `src/Form/` - Symfony form types and extensions (including ProductTypeExtension for brand field)
-- `src/Doctrine/ORM/` - Repositories and repository traits
+- `src/Repository/` - Doctrine repositories for Brand and BrandImage
 - `src/Fixture/` - Sylius fixture integration for brands
-- `src/Resources/config/` - Service definitions and routing
+- `config/` - Service definitions, routing, grids, and validation (new Symfony bundle structure)
+- `templates/` - Twig templates for admin views
+- `translations/` - Translation files for all supported languages
 - `tests/Application/` - Full Sylius test application
 
 ### Resources (Sylius Resource Bundle)
@@ -122,7 +124,7 @@ Both can be customized via configuration (model, controller, repository, factory
 ### Admin Integration
 
 - Menu listener adds "Brands" item to Catalog section
-- Grid configuration in `src/Resources/config/grids/`
+- Grid configuration in `config/grids/`
 - Product form extension adds brand autocomplete field
 - Optional: Brand column on product grid (import `sylius_admin_product.yaml`)
 
@@ -132,7 +134,7 @@ Both can be customized via configuration (model, controller, repository, factory
 
 ### Translations
 
-Translation files in `src/Resources/translations/`:
+Translation files in `translations/`:
 - **Domains**: `messages`, `flashes`, `validators`
 - **Languages**: English (en), German (de), French (fr), Spanish (es), Italian (it), Dutch (nl), Polish (pl), Danish (da), Swedish (sv), Norwegian (no), Finnish (fi)
 - **Key prefix**: `loevgaard_sylius_brand.*`

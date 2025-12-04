@@ -1,4 +1,4 @@
 imports:
-    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yaml" }
-    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yaml" }
-    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/fixtures.yaml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/config/app/config.yaml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/config/grids/sylius_admin_product.yaml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/config/app/fixtures.yaml" }

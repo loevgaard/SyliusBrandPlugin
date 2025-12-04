@@ -43,7 +43,7 @@ Choose your option:
 
 - Import `config/app/config.yaml` rather than `config/config.yml` (which no longer exists)
 
-  `- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/config.yml" }` > `- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yaml" }`
+  `- { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/config.yml" }` > `- { resource: "@LoevgaardSyliusBrandPlugin/config/app/config.yaml" }`
 
 ### Add new (optional) config 
 
@@ -53,7 +53,7 @@ If you wish to display Brand column at Product list grid (`sylius_admin_product`
 # config/services.yaml
 imports:
     # ...
-    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/grids/sylius_admin_product.yaml" }
+    - { resource: "@LoevgaardSyliusBrandPlugin/config/grids/sylius_admin_product.yaml" }
 ``` 
 
 ### Extend `ProductRepository` in your app
