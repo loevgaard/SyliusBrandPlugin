@@ -4,7 +4,7 @@
 [![Total Downloads](http://poser.pugx.org/loevgaard/sylius-brand-plugin/downloads)](https://packagist.org/packages/loevgaard/sylius-brand-plugin)
 [![License](http://poser.pugx.org/loevgaard/sylius-brand-plugin/license)](https://packagist.org/packages/loevgaard/sylius-brand-plugin)
 [![build](https://github.com/loevgaard/SyliusBrandPlugin/actions/workflows/build.yaml/badge.svg)](https://github.com/loevgaard/SyliusBrandPlugin/actions/workflows/build.yaml)
-[![codecov](https://codecov.io/gh/loevgaard/SyliusBrandPlugin/graph/badge.svg?token=QCEUZCJTJ7)](https://codecov.io/gh/loevgaard/SyliusBrandPlugin)
+[![codecov](https://codecov.io/github/loevgaard/SyliusBrandPlugin/graph/badge.svg?token=QCEUZCJTJ7)](https://codecov.io/github/loevgaard/SyliusBrandPlugin)
 
 <a href="https://sylius.com/plugins/" target="_blank"><img src="https://sylius.com/assets/badge-approved-by-sylius.png" width="100"></a>
 
