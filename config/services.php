@@ -10,6 +10,5 @@ return static function (ContainerConfigurator $container): void {
     $container->import('services/factory.php');
     $container->import('services/fixture.php');
     $container->import('services/form.php');
-    $container->import('services/menu.php');
     $container->import('services/twig_component.php');
 };

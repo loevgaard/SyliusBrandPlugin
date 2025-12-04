@@ -2,14 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Loevgaard\SyliusBrandPlugin\Menu;
+namespace Loevgaard\SyliusBrandPlugin\EventSubscriber;
 
 use Knp\Menu\ItemInterface;
 use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-final class AdminMenuListener
+final class AdminMenuSubscriber implements EventSubscriberInterface
 {
-    public function addAdminMenuItems(MenuBuilderEvent $event): void
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            'sylius.menu.admin.main' => 'add',
+        ];
+    }
+
+    public function add(MenuBuilderEvent $event): void
     {
         $menu = $event->getMenu();
 
