@@ -16,7 +16,6 @@ class BrandFixture extends AbstractResourceFixture
 
     protected function configureResourceNode(ArrayNodeDefinition $resourceNode): void
     {
-        /** @phpstan-ignore class.notFound,method.nonObject */
         $resourceNode->children()
             ->scalarNode('name')->cannotBeEmpty()->end()
             ->scalarNode('code')->cannotBeEmpty()->end()

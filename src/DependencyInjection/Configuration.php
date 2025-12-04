@@ -29,7 +29,6 @@ final class Configuration implements ConfigurationInterface
 
     private function addResourcesSection(ArrayNodeDefinition $node): void
     {
-        /** @phpstan-ignore class.notFound,method.nonObject */
         $node
             ->children()
                 ->arrayNode('resources')

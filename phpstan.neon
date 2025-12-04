@@ -49,3 +49,15 @@ parameters:
         -
             identifier: trait.unused
             path: src/Fixture
+        -
+            identifier: method.nonObject
+            path: src/Configuration
+        -
+            identifier: class.notFound
+            path: src/Configuration
+        -
+            identifier: method.nonObject
+            path: src/Fixture
+        -
+            identifier: class.notFound
+            path: src/Fixture
