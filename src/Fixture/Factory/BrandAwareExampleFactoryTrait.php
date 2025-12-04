@@ -6,17 +6,17 @@ namespace Loevgaard\SyliusBrandPlugin\Fixture\Factory;
 
 use Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
-use Loevgaard\SyliusBrandPlugin\Repository\BrandRepositoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
+use Sylius\Resource\Doctrine\Persistence\RepositoryInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 trait BrandAwareExampleFactoryTrait
 {
-    protected BrandRepositoryInterface $brandRepository;
-
-    public function __construct(BrandRepositoryInterface $brandRepository)
+    /**
+     * @param RepositoryInterface<BrandInterface> $brandRepository
+     */
+    public function __construct(protected readonly RepositoryInterface $brandRepository)
     {
-        $this->brandRepository = $brandRepository;
     }
 
     protected function configureBrandOptions(OptionsResolver $resolver, int $chanceOfRandomBrand = 90): void

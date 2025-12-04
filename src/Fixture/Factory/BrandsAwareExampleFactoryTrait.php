@@ -8,20 +8,20 @@ use Faker\Factory;
 use Faker\Generator;
 use Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
-use Loevgaard\SyliusBrandPlugin\Repository\BrandRepositoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
+use Sylius\Resource\Doctrine\Persistence\RepositoryInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Webmozart\Assert\Assert;
 
 trait BrandsAwareExampleFactoryTrait
 {
-    protected BrandRepositoryInterface $brandRepository;
-
     protected Generator $faker;
 
-    public function __construct(BrandRepositoryInterface $brandRepository)
+    /**
+     * @param RepositoryInterface<BrandInterface> $brandRepository
+     */
+    public function __construct(protected readonly RepositoryInterface $brandRepository)
     {
-        $this->brandRepository = $brandRepository;
         $this->faker = Factory::create();
     }
 
