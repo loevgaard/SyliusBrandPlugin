@@ -50,7 +50,7 @@ final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension impl
                             'label' => 'loevgaard_sylius_brand.ui.image',
                             'path' => '.',
                             'options' => [
-                                'template' => '@LoevgaardSyliusBrandPlugin/Grid/Field/image.html.twig',
+                                'template' => '@LoevgaardSyliusBrandPlugin/grid/field/image.html.twig',
                             ],
                         ],
                         'name' => [
@@ -99,13 +99,13 @@ final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension impl
                 // Product form brand field
                 'sylius_admin.product.create.content.form.sections.general' => [
                     'brand' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Product/Form/_brand.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/product/form/_brand.html.twig',
                         'priority' => 250,
                     ],
                 ],
                 'sylius_admin.product.update.content.form.sections.general' => [
                     'brand' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Product/Form/_brand.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/product/form/_brand.html.twig',
                         'priority' => 250,
                     ],
                 ],
@@ -117,7 +117,7 @@ final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension impl
                         'props' => [
                             'form' => '@=_context.form',
                             'resource' => '@=_context.resource',
-                            'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form.html.twig',
+                            'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form.html.twig',
                         ],
                         'configuration' => [
                             'method' => 'PUT',
@@ -130,57 +130,57 @@ final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension impl
                         'enabled' => false,
                     ],
                     'side_navigation' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/side_navigation.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/side_navigation.html.twig',
                         'priority' => 100,
                     ],
                     'form_sections' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections.html.twig',
                         'priority' => 0,
                     ],
                 ],
                 'loevgaard_sylius_brand.brand.update.content.form.side_navigation' => [
                     'general' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/side_navigation/general.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/side_navigation/general.html.twig',
                         'configuration' => [
                             'active' => true,
                         ],
                         'priority' => 100,
                     ],
                     'media' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/side_navigation/media.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/side_navigation/media.html.twig',
                         'priority' => 0,
                     ],
                 ],
                 'loevgaard_sylius_brand.brand.update.content.form.form_sections' => [
                     'general' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/general.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/general.html.twig',
                         'configuration' => [
                             'active' => true,
                         ],
                         'priority' => 100,
                     ],
                     'media' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/media.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/media.html.twig',
                         'priority' => 0,
                     ],
                 ],
                 'loevgaard_sylius_brand.brand.update.content.form.form_sections.general' => [
                     'code' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/general/code.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/general/code.html.twig',
                         'priority' => 100,
                     ],
                     'name' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/general/name.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/general/name.html.twig',
                         'priority' => 0,
                     ],
                 ],
                 'loevgaard_sylius_brand.brand.update.content.form.form_sections.media' => [
                     'images' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/media/images.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/media/images.html.twig',
                         'priority' => 100,
                     ],
                     'add_image' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/media/add_image.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/media/add_image.html.twig',
                         'priority' => 0,
                     ],
                 ],
@@ -192,7 +192,7 @@ final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension impl
                         'props' => [
                             'form' => '@=_context.form',
                             'resource' => '@=_context.resource',
-                            'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form.html.twig',
+                            'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form.html.twig',
                         ],
                         'priority' => 0,
                     ],
@@ -202,57 +202,57 @@ final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension impl
                         'enabled' => false,
                     ],
                     'side_navigation' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/side_navigation.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/side_navigation.html.twig',
                         'priority' => 100,
                     ],
                     'form_sections' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections.html.twig',
                         'priority' => 0,
                     ],
                 ],
                 'loevgaard_sylius_brand.brand.create.content.form.side_navigation' => [
                     'general' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/side_navigation/general.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/side_navigation/general.html.twig',
                         'configuration' => [
                             'active' => true,
                         ],
                         'priority' => 100,
                     ],
                     'media' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/side_navigation/media.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/side_navigation/media.html.twig',
                         'priority' => 0,
                     ],
                 ],
                 'loevgaard_sylius_brand.brand.create.content.form.form_sections' => [
                     'general' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/general.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/general.html.twig',
                         'configuration' => [
                             'active' => true,
                         ],
                         'priority' => 100,
                     ],
                     'media' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/media.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/media.html.twig',
                         'priority' => 0,
                     ],
                 ],
                 'loevgaard_sylius_brand.brand.create.content.form.form_sections.general' => [
                     'code' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/general/code.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/general/code.html.twig',
                         'priority' => 100,
                     ],
                     'name' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/general/name.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/general/name.html.twig',
                         'priority' => 0,
                     ],
                 ],
                 'loevgaard_sylius_brand.brand.create.content.form.form_sections.media' => [
                     'images' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/media/images.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/media/images.html.twig',
                         'priority' => 100,
                     ],
                     'add_image' => [
-                        'template' => '@LoevgaardSyliusBrandPlugin/Admin/Brand/form/sections/media/add_image.html.twig',
+                        'template' => '@LoevgaardSyliusBrandPlugin/admin/brand/form/sections/media/add_image.html.twig',
                         'priority' => 0,
                     ],
                 ],

@@ -6,7 +6,7 @@ sylius_grid:
                     type: twig
                     label: loevgaard_sylius_brand.ui.brand
                     options:
-                        template: "@LoevgaardSyliusBrandPlugin/Grid/Field/brand.html.twig"
+                        template: "@LoevgaardSyliusBrandPlugin/grid/field/brand.html.twig"
             filters:
                 brand:
                     type: entity
