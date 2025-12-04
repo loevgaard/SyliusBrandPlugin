@@ -12,7 +12,6 @@ use Symfony\UX\LiveComponent\Form\Type\LiveCollectionType;
 
 final class BrandType extends AbstractResourceType
 {
-    /** @param array<string, mixed> $options */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder

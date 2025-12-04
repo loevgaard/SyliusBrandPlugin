@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Loevgaard\SyliusBrandPlugin\Form\Type;
 
-use Loevgaard\SyliusBrandPlugin\Model\Brand;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\UX\Autocomplete\Form\AsEntityAutocompleteField;
@@ -13,7 +12,7 @@ use Symfony\UX\Autocomplete\Form\BaseEntityAutocompleteType;
 #[AsEntityAutocompleteField(route: 'sylius_admin_entity_autocomplete')]
 final class BrandAutocompleteChoiceType extends AbstractType
 {
-    public function __construct(private readonly string $brandClass = Brand::class)
+    public function __construct(private readonly string $brandClass)
     {
     }
 
