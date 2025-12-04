@@ -6,6 +6,7 @@ namespace Loevgaard\SyliusBrandPlugin\Tests\EventSubscriber;
 
 use Knp\Menu\ItemInterface;
 use Loevgaard\SyliusBrandPlugin\EventSubscriber\AdminMenuSubscriber;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
@@ -14,7 +15,7 @@ class AdminMenuSubscriberTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @test */
+    #[Test]
     public function it_subscribes_to_admin_menu_event(): void
     {
         $events = AdminMenuSubscriber::getSubscribedEvents();
@@ -23,7 +24,7 @@ class AdminMenuSubscriberTest extends TestCase
         self::assertSame('add', $events['sylius.menu.admin.main']);
     }
 
-    /** @test */
+    #[Test]
     public function it_adds_brands_menu_item_to_catalog_section(): void
     {
         $brandsItem = $this->prophesize(ItemInterface::class);
@@ -45,7 +46,7 @@ class AdminMenuSubscriberTest extends TestCase
         $subscriber->add($event->reveal());
     }
 
-    /** @test */
+    #[Test]
     public function it_adds_brands_menu_item_to_first_child_when_catalog_does_not_exist(): void
     {
         $brandsItem = $this->prophesize(ItemInterface::class);

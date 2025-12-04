@@ -7,6 +7,7 @@ namespace Loevgaard\SyliusBrandPlugin\Tests\Model;
 use Loevgaard\SyliusBrandPlugin\Model\Brand;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImage;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 
@@ -14,7 +15,7 @@ class BrandImageTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @test */
+    #[Test]
     public function it_returns_null_when_no_brand_is_set(): void
     {
         $brandImage = new BrandImage();
@@ -22,7 +23,7 @@ class BrandImageTest extends TestCase
         self::assertNull($brandImage->getBrand());
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_brand_when_owner_is_a_brand(): void
     {
         $brand = new Brand();
@@ -33,7 +34,7 @@ class BrandImageTest extends TestCase
         self::assertSame($brand, $brandImage->getBrand());
     }
 
-    /** @test */
+    #[Test]
     public function it_sets_brand_as_owner(): void
     {
         $brand = $this->prophesize(BrandInterface::class);
@@ -44,7 +45,7 @@ class BrandImageTest extends TestCase
         self::assertSame($brand->reveal(), $brandImage->getOwner());
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_setting_null_brand(): void
     {
         $brand = new Brand();

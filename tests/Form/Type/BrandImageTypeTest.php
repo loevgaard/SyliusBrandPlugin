@@ -6,11 +6,12 @@ namespace Loevgaard\SyliusBrandPlugin\Tests\Form\Type;
 
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImage;
+use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 class BrandImageTypeTest extends TypeTestCase
 {
-    /** @test */
+    #[Test]
     public function it_has_correct_block_prefix(): void
     {
         $form = $this->factory->create(BrandImageType::class);
@@ -18,7 +19,7 @@ class BrandImageTypeTest extends TypeTestCase
         self::assertSame('loevgaard_sylius_brand_brand_image', $form->getConfig()->getName());
     }
 
-    /** @test */
+    #[Test]
     public function it_has_type_field(): void
     {
         $form = $this->factory->create(BrandImageType::class);
@@ -26,7 +27,7 @@ class BrandImageTypeTest extends TypeTestCase
         self::assertTrue($form->has('type'));
     }
 
-    /** @test */
+    #[Test]
     public function it_has_file_field(): void
     {
         $form = $this->factory->create(BrandImageType::class);
@@ -34,7 +35,7 @@ class BrandImageTypeTest extends TypeTestCase
         self::assertTrue($form->has('file'));
     }
 
-    /** @test */
+    #[Test]
     public function it_submits_valid_data(): void
     {
         $brandImage = new BrandImage();
@@ -49,7 +50,7 @@ class BrandImageTypeTest extends TypeTestCase
         self::assertSame('logo', $brandImage->getType());
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_null_type(): void
     {
         $brandImage = new BrandImage();
@@ -64,7 +65,7 @@ class BrandImageTypeTest extends TypeTestCase
         self::assertNull($brandImage->getType());
     }
 
-    /** @test */
+    #[Test]
     public function it_creates_correct_view(): void
     {
         $form = $this->factory->create(BrandImageType::class);

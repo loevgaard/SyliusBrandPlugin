@@ -8,12 +8,13 @@ use Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType;
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandType;
 use Loevgaard\SyliusBrandPlugin\Model\Brand;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImage;
+use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\UX\LiveComponent\Form\Type\LiveCollectionType;
 
 class BrandTypeTest extends TypeTestCase
 {
-    /** @test */
+    #[Test]
     public function it_has_correct_block_prefix(): void
     {
         $form = $this->factory->create(BrandType::class);
@@ -21,7 +22,7 @@ class BrandTypeTest extends TypeTestCase
         self::assertSame('loevgaard_sylius_brand_brand', $form->getConfig()->getName());
     }
 
-    /** @test */
+    #[Test]
     public function it_has_code_field(): void
     {
         $form = $this->factory->create(BrandType::class);
@@ -29,7 +30,7 @@ class BrandTypeTest extends TypeTestCase
         self::assertTrue($form->has('code'));
     }
 
-    /** @test */
+    #[Test]
     public function it_has_name_field(): void
     {
         $form = $this->factory->create(BrandType::class);
@@ -37,7 +38,7 @@ class BrandTypeTest extends TypeTestCase
         self::assertTrue($form->has('name'));
     }
 
-    /** @test */
+    #[Test]
     public function it_has_images_field(): void
     {
         $form = $this->factory->create(BrandType::class);
@@ -45,7 +46,7 @@ class BrandTypeTest extends TypeTestCase
         self::assertTrue($form->has('images'));
     }
 
-    /** @test */
+    #[Test]
     public function it_submits_valid_data(): void
     {
         $brand = new Brand();
@@ -63,7 +64,7 @@ class BrandTypeTest extends TypeTestCase
         self::assertSame('Test Brand', $brand->getName());
     }
 
-    /** @test */
+    #[Test]
     public function it_submits_data_with_images(): void
     {
         $brand = new Brand();
@@ -85,7 +86,7 @@ class BrandTypeTest extends TypeTestCase
         self::assertCount(2, $brand->getImages());
     }
 
-    /** @test */
+    #[Test]
     public function it_creates_correct_view(): void
     {
         $form = $this->factory->create(BrandType::class);
@@ -97,7 +98,7 @@ class BrandTypeTest extends TypeTestCase
         self::assertArrayHasKey('images', $view->children);
     }
 
-    /** @test */
+    #[Test]
     public function it_disables_code_field_for_existing_brand(): void
     {
         $brand = new Brand();
@@ -110,7 +111,7 @@ class BrandTypeTest extends TypeTestCase
         self::assertTrue($view->children['code']->vars['disabled']);
     }
 
-    /** @test */
+    #[Test]
     public function it_enables_code_field_for_new_brand(): void
     {
         $brand = new Brand();

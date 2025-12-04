@@ -7,6 +7,7 @@ namespace Loevgaard\SyliusBrandPlugin\Tests\Fixture\Factory;
 use Loevgaard\SyliusBrandPlugin\Fixture\Factory\BrandExampleFactory;
 use Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
@@ -18,7 +19,7 @@ class BrandExampleFactoryTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @test */
+    #[Test]
     public function it_creates_brand_with_name_and_code(): void
     {
         $brand = $this->prophesize(BrandInterface::class);
@@ -44,7 +45,7 @@ class BrandExampleFactoryTest extends TestCase
         self::assertSame($brand->reveal(), $result);
     }
 
-    /** @test */
+    #[Test]
     public function it_associates_products_with_brand(): void
     {
         $brand = $this->prophesize(BrandInterface::class);
@@ -79,7 +80,7 @@ class BrandExampleFactoryTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_exception_when_name_is_missing(): void
     {
         $factory = new BrandExampleFactory(
@@ -94,7 +95,7 @@ class BrandExampleFactoryTest extends TestCase
         $factory->create(['code' => 'test']);
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_exception_when_code_is_missing(): void
     {
         $factory = new BrandExampleFactory(

@@ -8,6 +8,7 @@ use Loevgaard\SyliusBrandPlugin\Factory\BrandImageFactory;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImage;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImageInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Sylius\Component\Resource\Factory\FactoryInterface;
@@ -16,7 +17,7 @@ class BrandImageFactoryTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @test */
+    #[Test]
     public function it_creates_new_brand_image(): void
     {
         $brandImage = new BrandImage();
@@ -31,7 +32,7 @@ class BrandImageFactoryTest extends TestCase
         self::assertSame($brandImage, $result);
     }
 
-    /** @test */
+    #[Test]
     public function it_creates_brand_image_for_brand(): void
     {
         $brand = $this->prophesize(BrandInterface::class);

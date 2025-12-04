@@ -6,6 +6,7 @@ namespace Loevgaard\SyliusBrandPlugin\Tests\EventSubscriber;
 
 use Loevgaard\SyliusBrandPlugin\EventSubscriber\BrandDeletionSubscriber;
 use Loevgaard\SyliusBrandPlugin\Model\BrandInterface;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
@@ -17,7 +18,7 @@ class BrandDeletionSubscriberTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @test */
+    #[Test]
     public function it_subscribes_to_brand_pre_delete_event(): void
     {
         $events = BrandDeletionSubscriber::getSubscribedEvents();
@@ -26,7 +27,7 @@ class BrandDeletionSubscriberTest extends TestCase
         self::assertSame('guard', $events['loevgaard_sylius_brand.brand.pre_delete']);
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_deletion_when_brand_has_no_products(): void
     {
         $brand = $this->prophesize(BrandInterface::class);
@@ -42,7 +43,7 @@ class BrandDeletionSubscriberTest extends TestCase
         $subscriber->guard($event->reveal());
     }
 
-    /** @test */
+    #[Test]
     public function it_stops_deletion_when_brand_is_used_in_products(): void
     {
         $brand = $this->prophesize(BrandInterface::class);
@@ -59,7 +60,7 @@ class BrandDeletionSubscriberTest extends TestCase
         $subscriber->guard($event->reveal());
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_exception_for_non_brand_subject(): void
     {
         $productRepository = $this->prophesize(ProductRepositoryInterface::class);

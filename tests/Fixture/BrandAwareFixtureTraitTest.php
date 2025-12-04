@@ -7,6 +7,7 @@ namespace Loevgaard\SyliusBrandPlugin\Tests\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Loevgaard\SyliusBrandPlugin\Fixture\BrandAwareFixtureTrait;
 use Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Sylius\Bundle\CoreBundle\Fixture\AbstractResourceFixture;
@@ -18,7 +19,7 @@ class BrandAwareFixtureTraitTest extends TestCase
     use ConfigurationTestCaseTrait;
     use ProphecyTrait;
 
-    /** @test */
+    #[Test]
     public function it_configures_brand_node(): void
     {
         $this->assertConfigurationIsValid([
@@ -30,7 +31,7 @@ class BrandAwareFixtureTraitTest extends TestCase
         ], 'custom.*.brand');
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_null_brand(): void
     {
         $this->assertConfigurationIsValid([
@@ -42,7 +43,7 @@ class BrandAwareFixtureTraitTest extends TestCase
         ], 'custom.*.brand');
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_missing_brand(): void
     {
         $this->assertConfigurationIsValid([

@@ -7,6 +7,7 @@ namespace Loevgaard\SyliusBrandPlugin\Tests\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Loevgaard\SyliusBrandPlugin\Fixture\BrandFixture;
 use Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
@@ -16,7 +17,7 @@ class BrandFixtureTest extends TestCase
     use ConfigurationTestCaseTrait;
     use ProphecyTrait;
 
-    /** @test */
+    #[Test]
     public function it_returns_correct_fixture_name(): void
     {
         $fixture = $this->getConfiguration();
@@ -24,25 +25,25 @@ class BrandFixtureTest extends TestCase
         self::assertSame('loevgaard_sylius_brand_plugin_brand', $fixture->getName());
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_empty_custom_brands(): void
     {
         $this->assertConfigurationIsValid([[]], 'custom');
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_random_brand_generation(): void
     {
         $this->assertConfigurationIsValid([['random' => 4]], 'random');
     }
 
-    /** @test */
+    #[Test]
     public function it_rejects_negative_random_count(): void
     {
         $this->assertPartialConfigurationIsInvalid([['random' => -1]], 'random');
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_brand_with_name_and_code(): void
     {
         $this->assertConfigurationIsValid([
@@ -57,7 +58,7 @@ class BrandFixtureTest extends TestCase
         ], 'custom');
     }
 
-    /** @test */
+    #[Test]
     public function it_rejects_empty_name(): void
     {
         $this->assertPartialConfigurationIsInvalid([
@@ -72,7 +73,7 @@ class BrandFixtureTest extends TestCase
         ], 'custom.*.name');
     }
 
-    /** @test */
+    #[Test]
     public function it_rejects_empty_code(): void
     {
         $this->assertPartialConfigurationIsInvalid([
@@ -87,7 +88,7 @@ class BrandFixtureTest extends TestCase
         ], 'custom.*.code');
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_products_configuration(): void
     {
         $this->assertConfigurationIsValid([
@@ -101,13 +102,13 @@ class BrandFixtureTest extends TestCase
         ], 'custom.*.products');
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_empty_products(): void
     {
         $this->assertConfigurationIsValid([['custom' => [['products' => []]]]], 'custom.*.products');
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_images_configuration(): void
     {
         $this->assertConfigurationIsValid([
@@ -124,7 +125,7 @@ class BrandFixtureTest extends TestCase
         ], 'custom.*.images');
     }
 
-    /** @test */
+    #[Test]
     public function it_allows_empty_images(): void
     {
         $this->assertConfigurationIsValid([['custom' => [['images' => []]]]], 'custom.*.images');

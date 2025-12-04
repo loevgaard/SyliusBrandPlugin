@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Loevgaard\SyliusBrandPlugin\Tests\EventSubscriber;
 
 use Loevgaard\SyliusBrandPlugin\EventSubscriber\ImageUploadSubscriber;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
@@ -15,7 +16,7 @@ class ImageUploadSubscriberTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @test */
+    #[Test]
     public function it_subscribes_to_brand_image_pre_create_event(): void
     {
         $events = ImageUploadSubscriber::getSubscribedEvents();
@@ -24,7 +25,7 @@ class ImageUploadSubscriberTest extends TestCase
         self::assertSame('uploadImage', $events['loevgaard_sylius_brand.brand_image.pre_create']);
     }
 
-    /** @test */
+    #[Test]
     public function it_uploads_image_when_file_exists(): void
     {
         $image = $this->prophesize(ImageInterface::class);
@@ -42,7 +43,7 @@ class ImageUploadSubscriberTest extends TestCase
         $subscriber->uploadImage($event->reveal());
     }
 
-    /** @test */
+    #[Test]
     public function it_does_not_upload_when_file_does_not_exist(): void
     {
         $image = $this->prophesize(ImageInterface::class);
@@ -60,7 +61,7 @@ class ImageUploadSubscriberTest extends TestCase
         $subscriber->uploadImage($event->reveal());
     }
 
-    /** @test */
+    #[Test]
     public function it_stops_event_when_path_is_null_after_upload(): void
     {
         $image = $this->prophesize(ImageInterface::class);
