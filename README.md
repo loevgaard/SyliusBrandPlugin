@@ -85,7 +85,7 @@ imports:
 # config/routes/loevgaard_sylius_brand.yaml
 
 loevgaard_sylius_brand:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing.yaml"
+    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routes.yaml"
 ```
 
 ### Step 4: Extend services and entities

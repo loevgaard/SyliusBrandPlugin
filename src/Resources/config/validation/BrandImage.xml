@@ -3,7 +3,6 @@
 <constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
-
     <class name="Loevgaard\SyliusBrandPlugin\Model\BrandImage">
         <property name="file">
             <constraint name="Image">
@@ -14,5 +13,4 @@
             </constraint>
         </property>
     </class>
-
 </constraint-mapping>

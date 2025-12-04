@@ -3,9 +3,7 @@
 <constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
-
     <class name="Loevgaard\SyliusBrandPlugin\Model\Brand">
-
         <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
             <option name="fields">code</option>
             <option name="message">loevgaard_sylius_brand.brand.code.unique</option>
@@ -13,7 +11,6 @@
         </constraint>
         <property name="code">
             <constraint name="NotBlank">
-                <option name="message">loevgaard_sylius_brand.brand.code.not_blank</option>
                 <option name="groups">loevgaard_sylius_brand</option>
             </constraint>
             <constraint name="Length">
@@ -30,7 +27,6 @@
 
         <property name="name">
             <constraint name="NotBlank">
-                <option name="message">loevgaard_sylius_brand.brand.name.not_blank</option>
                 <option name="groups">loevgaard_sylius_brand</option>
             </constraint>
             <constraint name="Length">
@@ -43,8 +39,7 @@
         </property>
 
         <property name="images">
-            <constraint name="Valid" />
+            <constraint name="Valid"/>
         </property>
     </class>
-
 </constraint-mapping>

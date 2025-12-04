@@ -1,6 +1,0 @@
-loevgaard_sylius_brand_shop:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/shop.yaml"
-
-loevgaard_sylius_brand_admin:
-    resource: "@LoevgaardSyliusBrandPlugin/Resources/config/routing/admin.yaml"
-    prefix: /admin
