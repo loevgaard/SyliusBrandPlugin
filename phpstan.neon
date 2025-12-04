@@ -39,6 +39,9 @@ parameters:
             path: src/Fixture
         -
             identifier: missingType.generics
+            path: tests/Fixture
+        -
+            identifier: missingType.generics
             path: src/Form
         -
             identifier: missingType.generics
