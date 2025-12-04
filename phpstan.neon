@@ -65,3 +65,9 @@ parameters:
         -
             identifier: class.notFound
             path: src/Fixture
+        -
+            identifier: offsetAccess.nonOffsetAccessible
+            path: tests/Form
+        -
+            identifier: missingType.iterableValue
+            path: tests/Form
