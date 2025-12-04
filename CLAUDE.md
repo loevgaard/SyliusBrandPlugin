@@ -108,6 +108,7 @@ The plugin uses Sylius's trait/interface pattern for extending the Product entit
 - `src/Form/` - Symfony form types and extensions (including ProductTypeExtension for brand field)
 - `src/Repository/` - Doctrine repositories for Brand and BrandImage
 - `src/Fixture/` - Sylius fixture integration for brands
+- `assets/` - Static assets including fixture images
 - `config/` - Service definitions, routing, grids, and validation (new Symfony bundle structure)
 - `templates/` - Twig templates for admin views
 - `translations/` - Translation files for all supported languages

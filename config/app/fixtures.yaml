@@ -25,8 +25,8 @@ sylius_fixtures:
                                 code: setono
                                 images:
                                     - type: logo
-                                      path: '@LoevgaardSyliusBrandPlugin/Resources/fixtures/images/logos/setono.jpg'
-                                    - path: '@LoevgaardSyliusBrandPlugin/Resources/fixtures/images/logos/setono-borderless.png'
+                                      path: '@LoevgaardSyliusBrandPlugin/assets/fixtures/images/logos/setono.jpg'
+                                    - path: '@LoevgaardSyliusBrandPlugin/assets/fixtures/images/logos/setono-borderless.png'
                                 products:
                                     - setono-cap
                                     - setono-t_shirt
@@ -35,4 +35,4 @@ sylius_fixtures:
                                 code: sylius
                                 images:
                                     - type: logo
-                                      path: '@LoevgaardSyliusBrandPlugin/Resources/fixtures/images/logos/sylius.png'
+                                      path: '@LoevgaardSyliusBrandPlugin/assets/fixtures/images/logos/sylius.png'
