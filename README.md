@@ -6,41 +6,13 @@
 
 <a href="https://sylius.com/plugins/" target="_blank"><img src="https://sylius.com/assets/badge-approved-by-sylius.png" width="100"></a>
 
-If you want to add a brand to your products this is the plugin to use. Use cases:
-- Add brand logo to your product pages
-- Filter by brand in the frontend or backend, i.e. product lists
+Add brand to your products in Sylius.
 
 ## Requirements
 
 - PHP 8.2+
 - Sylius 2.0+
 - Symfony 6.4 or 7.4
-
-## Screenshots
-
-<details><summary>CLICK TO SEE</summary>
-
-Menu:
-
-![Screenshot showing admin menu](docs/images/admin-menu-with-brand.png)
-
-Brand admin pages:
-
-![Screenshot showing brand admin index page](docs/images/admin-brand-index.png)
-
-![Screenshot showing brand admin update page](docs/images/admin-brand-update.png)
-
-![Screenshot showing brand admin media tab at update page](docs/images/admin-brand-update-tab-media.png)
-
-Products admin pages:
-
-![Screenshot showing product admin index page with brand filter](docs/images/admin-product-index-filter-with-brand.png)
-
-![Screenshot showing product admin index page with brand column](docs/images/admin-product-index-brand-column.png)
-
-![Screenshot showing brand tab at product admin update page](docs/images/admin-product-update-tab-brand.png)
-
-</details>
 
 ## Installation
 
@@ -176,12 +148,6 @@ php bin/console sylius:fixture:load my_brand_fixtures
 
 ## Development
 
-To run the test application:
-
-```bash
-composer try
-```
-
 ### Customization
 
 #### Twig Hooks
@@ -200,13 +166,7 @@ The plugin uses Sylius Twig Hooks for customization. Available hook points:
 - `loevgaard_sylius_brand.brand.create.content.form.form_sections.media`
 - `loevgaard_sylius_brand.brand.update.content.form.form_sections.media`
 
-## Contributing
-
-Please run `composer all` to run all checks and tests before committing.
-
 ### Translations
-
-We use [Crowdin](https://crowdin.com/project/sylius-brand-plugin) for translations. You can help out by translating this project into your mother tongue.
 
 Currently supported languages:
 - English (en)
