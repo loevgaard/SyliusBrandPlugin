@@ -1,7 +1,7 @@
 {% extends '@SyliusUi/Form/imagesTheme.html.twig' %}
 
 {% block loevgaard_sylius_brand_brand_image_widget %}
-    {% spaceless %}
+    {% apply spaceless %}
         <div class="ui upload box segment">
             {{ form_row(form.type) }}
             {% if form.vars.value.path|default(null) is null %}
@@ -17,5 +17,5 @@
                 {{- form_errors(form.file) -}}
             </div>
         </div>
-    {% endspaceless %}
+    {% endapply %}
 {% endblock %}
