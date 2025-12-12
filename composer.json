@@ -6,7 +6,7 @@
     "require": {
         "php": ">=8.2",
         "doctrine/collections": "^2.0",
-        "doctrine/orm": "^3.0",
+        "doctrine/orm": "^2.0 || ^3.0",
         "knplabs/knp-menu": "^3.8",
         "sylius/core": "^2.0",
         "sylius/core-bundle": "^2.0",
