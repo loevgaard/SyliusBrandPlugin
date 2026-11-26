@@ -14,6 +14,7 @@ use Loevgaard\SyliusBrandPlugin\Form\Extension\ProductTypeExtension;
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandAutocompleteChoiceType;
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandImageType;
 use Loevgaard\SyliusBrandPlugin\Form\Type\BrandType;
+use Loevgaard\SyliusBrandPlugin\Grid\Mutator\AdminProductGridMutator;
 use Loevgaard\SyliusBrandPlugin\Model\Brand;
 use Loevgaard\SyliusBrandPlugin\Model\BrandImage;
 use Loevgaard\SyliusBrandPlugin\Twig\Component\Brand\FormComponent;
@@ -176,5 +177,31 @@ class LoevgaardSyliusBrandExtensionTest extends AbstractExtensionTestCase
 
         $this->assertContainerBuilderHasParameter('loevgaard_sylius_brand.model.brand.class', Brand::class);
         $this->assertContainerBuilderHasParameter('loevgaard_sylius_brand.model.brand_image.class', BrandImage::class);
+    }
+
+    #[Test]
+    public function it_does_not_register_the_admin_product_grid_mutator_by_default(): void
+    {
+        $this->load();
+
+        $this->assertContainerBuilderNotHasService(AdminProductGridMutator::class);
+    }
+
+    #[Test]
+    public function it_registers_the_admin_product_grid_mutator_when_enabled(): void
+    {
+        $this->load(['admin_product_grid' => true]);
+
+        $this->assertContainerBuilderHasService(AdminProductGridMutator::class);
+        $this->assertContainerBuilderHasServiceDefinitionWithTag(
+            AdminProductGridMutator::class,
+            'sylius.grid_mutator',
+            ['grid' => 'sylius_admin_product'],
+        );
+        $this->assertContainerBuilderHasServiceDefinitionWithArgument(
+            AdminProductGridMutator::class,
+            0,
+            '%loevgaard_sylius_brand.model.brand.class%',
+        );
     }
 }

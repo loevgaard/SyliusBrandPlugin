@@ -15,13 +15,17 @@ final class LoevgaardSyliusBrandExtension extends AbstractResourceExtension impl
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
-        /** @var array{resources: array<string, mixed>} $config */
+        /** @var array{admin_product_grid: array{enabled: bool}, resources: array<string, mixed>} $config */
         $config = $this->processConfiguration($this->getConfiguration([], $container), $configs);
         $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
 
         $this->registerResources('loevgaard_sylius_brand', SyliusResourceBundle::DRIVER_DOCTRINE_ORM, $config['resources'], $container);
 
         $loader->load('services.php');
+
+        if ($config['admin_product_grid']['enabled']) {
+            $loader->load('services/grid.php');
+        }
     }
 
     public function prepend(ContainerBuilder $container): void
