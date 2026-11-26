@@ -127,7 +127,7 @@ Both can be customized via configuration (model, controller, repository, factory
 - Menu listener adds "Brands" item to Catalog section
 - Grid configuration in `config/grids/`
 - Product form extension adds brand autocomplete field
-- Optional: Brand column on product grid (import `sylius_admin_product.yaml`)
+- Optional: Brand column and filter on product grid (`admin_product_grid: true` registers `AdminProductGridMutator`; legacy: import `sylius_admin_product.yaml`)
 
 ### Events
 

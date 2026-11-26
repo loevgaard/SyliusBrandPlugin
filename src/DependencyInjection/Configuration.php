@@ -22,9 +22,21 @@ final class Configuration implements ConfigurationInterface
 
         $rootNode = $treeBuilder->getRootNode();
 
+        $this->addAdminProductGridSection($rootNode);
         $this->addResourcesSection($rootNode);
 
         return $treeBuilder;
+    }
+
+    private function addAdminProductGridSection(ArrayNodeDefinition $node): void
+    {
+        $node
+            ->children()
+                ->arrayNode('admin_product_grid')
+                    ->canBeEnabled()
+                ->end()
+            ->end()
+        ;
     }
 
     private function addResourcesSection(ArrayNodeDefinition $node): void

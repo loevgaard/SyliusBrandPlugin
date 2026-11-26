@@ -10,6 +10,7 @@
         "knplabs/knp-menu": "^3.8",
         "sylius/core": "^2.0",
         "sylius/core-bundle": "^2.0",
+        "sylius/grid-bundle": "^1.16",
         "sylius/product-bundle": "^2.0",
         "sylius/resource-bundle": "^1.13",
         "sylius/ui-bundle": "^2.0",

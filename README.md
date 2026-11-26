@@ -103,6 +103,17 @@ php bin/console doctrine:migrations:migrate
 
 ### Show Brand column in admin products list
 
+For Sylius applications using `sylius/grid-bundle` 1.16 or later, enable the PHP grid mutator:
+
+```yaml
+# config/packages/loevgaard_sylius_brand.yaml
+
+loevgaard_sylius_brand:
+    admin_product_grid: true
+```
+
+For applications served from YAML grids only, the legacy import remains available:
+
 ```yaml
 # config/packages/loevgaard_sylius_brand.yaml
 
